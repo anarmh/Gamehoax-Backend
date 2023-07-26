@@ -453,22 +453,6 @@
       "PackagePath": "staticwebassets\\assets\\image-pan-zoom-hover\\src\\Nzoom.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\1.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\2.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\Slider1.png",
-      "PackagePath": "staticwebassets\\assets\\img\\Slider1.png"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\Slider4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\Slider4.jpg"
-    },
-    {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about\\1.jpg"
     },
@@ -605,10 +589,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\footer-bg.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\gamer-chair-with-multicolored-neon-lights (1).jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\gamer-chair-with-multicolored-neon-lights (1).jpg"
-    },
-    {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\loading.gif",
       "PackagePath": "staticwebassets\\assets\\img\\loading.gif"
     },
@@ -699,6 +679,26 @@
     {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\shop\\left-banner.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\shop\\left-banner.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\1.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\2.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\3.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\4.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\5.png"
     },
     {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",

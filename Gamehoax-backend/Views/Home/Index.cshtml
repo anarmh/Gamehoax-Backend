@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomeVM
+@{
     ViewData["Title"] = "Home Page";
 }
  <main>
@@ -6,18 +7,14 @@
             <div class="container">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img src="~/assets/img/1.jpg" />
+
+                        @foreach (var slider in Model.Sliders)
+                    {
+                         <div class="swiper-slide">
+                        <img src="~/assets/img/slider/@slider.Image" />
                       </div>
-                      <div class="swiper-slide">
-                        <img src="~/assets/img/2.jpg" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="~/assets/img/Slider4.jpg" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="~/assets/img/gamer-chair-with-multicolored-neon-lights (1).jpg" />
-                      </div>
+                    }
+                     
                     </div>
                   </div>
             </div>
@@ -28,21 +25,23 @@
         <section id="service-icons">
             <div class="container theme-container">
                 <div class="row">
+                    @foreach (var item in Model.ServiceIcons)
+                {
                     <div class="col-sm-6 col-md-3 col-lg-3">
                         <div class="column-inner">
                             <div class="wp-wrapper">
                                 <div class="service-list service-1 style-1">
                                     <div class="service-content d-flex align-items-center justify-content-center">
                                         <div class="icon">
-                                            <i class="fa-solid fa-truck-fast fs-3"></i>
+                                            <i class="fa-solid @item.Icon fs-3"></i>
                                         </div>
 
                                         <div class="content">
                                             <div class="service-title ">
-                                                Free Delivery
+                                                @item.Title
                                             </div>
                                             <div class="service-other-text">
-                                                Free Shipping On All Order
+                                                @item.Description
                                             </div>
                                         </div>
                                     </div>
@@ -50,59 +49,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3">
-                        <div class="column-inner">
-                            <div class="wp-wrapper">
-                                <div class="service-list service-2 style-1">
-                                    <div class="service-content d-flex align-items-center justify-content-center">
-                                        <div class="icon">
-                                            <i class="fa-solid fa-sack-dollar fs-3"></i>
-                                        </div>
-
-                                        <div class="content">
-                                            <div class="service-title">Money Return</div>
-                                            <div class="service-other-text">Back Guarantee in 7 days</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3">
-                        <div class="column-inner ">
-                            <div class="wp-wrapper">
-                                <div class="service-list service-3 style-1">
-                                    <div class="service-content d-flex align-items-center justify-content-center">
-                                        <div class="icon">
-                                            <i class="fa-solid fa-percent fs-3"></i>
-                                        </div>
-
-                                        <div class="content">
-                                            <div class="service-title">Member Discount</div>
-                                            <div class="service-other-text">On every order over $130.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3">
-                        <div class="column-inner">
-                            <div class="wp-wrapper">
-                                <div class="service-list service-4 style-1">
-                                    <div class="service-content d-flex align-items-center justify-content-center">
-                                        <div class="icon">
-                                            <i class="fa-solid fa-hand-holding-dollar fs-3"></i>
-                                        </div>
-                                        <div class="content">
-                                            <div class="service-title">Return Policy</div>
-                                            <div class="service-other-text">Support 24 hours a day</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                }
+                    
+                  
                 </div>
             </div>
         </section>

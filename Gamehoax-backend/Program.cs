@@ -1,4 +1,6 @@
 using Gamehoax_backend.Data;
+using Gamehoax_backend.Services.Interfaces;
+using Gamehoax_backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-
+builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IServiceIconService, ServiceIconService>();
 
 var app = builder.Build();
 
