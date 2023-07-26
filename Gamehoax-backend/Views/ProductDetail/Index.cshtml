@@ -1,0 +1,662 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@section Css {
+
+        <link rel="stylesheet" href="~/assets/scss/pages/product-detail/product-detail.css">
+}
+
+<main>
+    <section id="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <a href="home.html">Home</a>
+                        <span> / ProductDetail</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="product-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-5  main">
+                    <div class="zoom-container ">
+
+                        <img src="~/assets/img/product/1.jpg" alt="" class="xzoom" xoriginal="~/assets/img/product/1.jpg">
+
+                        <div class="xzoom-thumbs">
+                            <a href="~/assets/img/product/2.jpg">
+                                <img class="xzoom-gallery" src="~/assets/img/product/2.jpg" xpreview="~/assets/img/product/2.jpg">
+                            </a>
+                            <a href="~/assets/img/product/3.jpg">
+                                <img class="xzoom-gallery" src="~/assets/img/product/3.jpg">
+                            </a>
+                            <a href="~/assets/img/product/4.jpg">
+                                <img class="xzoom-gallery" src="~/assets/img/product/4.jpg">
+                            </a>
+
+                            <a href="~/assets/img/product/1.jpg">
+                                <img class="xzoom-gallery" src="~/assets/img/product/1.jpg">
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-7">
+                    <div class="summary">
+                        <h1 class="product-title">BangBangShooting</h1>
+                        <p class="price"><span>£</span><span>56.00</span></p>
+                        <p class="description">When the joystick is adaptive, it can automatically adjust its behavior or settings based on the device or platform it is being used on. For example, in the case of gaming joysticks, adaptive functionality can allow the joystick to work seamlessly on different devices such as computers, gaming consoles, or mobile devices. It ensures that the joystick's controls and inputs are optimized for the specific device it is connected to, providing a better user experience.</p>
+                        <form action="">
+                            <div class="quantity">
+                                <span class="template-quantity">Qty: </span>
+                                <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                <div class="quantity-button">
+                                    <button type="button" class="plus" value="+">
+                                        +
+                                    </button>
+                                    <button type="button" class="minus" value="-">
+                                        -
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="submit" class="single-add-to-cart">Add to cart</button>
+                        </form>
+
+                        <div class="add-to-wish">
+                            <a href="wishlist.html">
+                                <i class="fa fa-heart"></i>
+                                <span>Add to wishlist</span>
+                            </a>
+                        </div>
+
+
+                        <div class="product-meta">
+                            <span class="sku-wrapper">SKU: <span class="sku">Mol85</span></span>
+                            <span class="category">
+                                Categories:
+                                <a href="">Minecraft</a>,
+                                <a href=""> Overwatch</a>
+                            </span>
+
+                            <span class="tag">
+                                Tags:
+                                <a href="">Pretium</a>,
+                                <a href=""> Quis</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mobile d-none">
+                    <div class="col-12">
+                        <div class="zoom-container ">
+
+                            <img src="~/assets/img/product/1.jpg" alt="" class="xzoom" xoriginal="~/assets/img/product/1.jpg">
+
+                            <div class="xzoom-thumbs">
+                                <a href="~/assets/img/product/2.jpg">
+                                    <img class="xzoom-gallery" src="~/assets/img/product/2.jpg" xpreview="~/assets/img/product/2.jpg">
+                                </a>
+                                <a href="~/assets/img/product/3.jpg">
+                                    <img class="xzoom-gallery" src="~/assets/img/product/3.jpg">
+                                </a>
+                                <a href="~/assets/img/product/4.jpg">
+                                    <img class="xzoom-gallery" src="~/assets/img/product/4.jpg">
+                                </a>
+
+                                <a href="~/assets/img/product/1.jpg">
+                                    <img class="xzoom-gallery" src="~/assets/img/product/1.jpg">
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="summary">
+                            <h1 class="product-title">BangBangShooting</h1>
+                            <p class="price"><span>£</span><span>56.00</span></p>
+                            <p class="description">When the joystick is adaptive, it can automatically adjust its behavior or settings based on the device or platform it is being used on. For example, in the case of gaming joysticks, adaptive functionality can allow the joystick to work seamlessly on different devices such as computers, gaming consoles, or mobile devices. It ensures that the joystick's controls and inputs are optimized for the specific device it is connected to, providing a better user experience.</p>
+                            <form action="">
+                                <div class="quantity">
+                                    <span class="template-quantity">Qty: </span>
+                                    <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="quantity-button">
+                                        <button type="button" class="plus" value="+">
+                                            +
+                                        </button>
+                                        <button type="button" class="minus" value="-">
+                                            -
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type="submit" class="single-add-to-cart">Add to cart</button>
+                            </form>
+
+                            <div class="add-to-wish">
+                                <a href="wishlist.html">
+                                    <i class="fa fa-heart"></i>
+                                    <span>Add to wishlist</span>
+                                </a>
+                            </div>
+
+
+                            <div class="product-meta">
+                                <span class="sku-wrapper">SKU: <span class="sku">Mol85</span></span>
+                                <span class="category">
+                                    Categories:
+                                    <a href="">Minecraft</a>,
+                                    <a href=""> Overwatch</a>
+                                </span>
+
+                                <span class="tag">
+                                    Tags:
+                                    <a href="">Pretium</a>,
+                                    <a href=""> Quis</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section id="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="tab-menu">
+                    <ul>
+                        <li><a href="" class="tab active-menu" data-id="1">Description</a></li>
+                        <li><a href="" class="tab " data-id="2">Additional Information</a></li>
+                        <li><a href="" class="tab" data-id="3">Reviews (0)</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    <div class="description item" data-id="1">
+                        <h2>Description</h2>
+                        <h5>Paragraph text</h5>
+                        <p>Adaptive functionality can be particularly useful for gaming, as it allows gamers to use the same joystick on multiple devices without the need for additional configuration or adjustments. This makes the joystick more versatile and user-friendly, as it can easily switch between different platforms without any compatibility issues.</p>
+                        <h5>Unordered list</h5>
+                        <ul>
+                            <li>
+                                Elevate your gaming performance with our cutting-edge joysticks. Designed for precision and control, these joysticks will provide you with an immersive gaming experience like never before. Take your gaming skills to new heights and conquer every virtual challenge with ease.
+                            </li>
+                            <li>
+                                Enhance your gaming accuracy and speed with our high-performance gaming mice. Featuring advanced sensors and customizable settings, these mice are tailored to meet the demands of even the most intense gaming sessions. Dominate the battlefield and outmaneuver your opponents with our top-notch gaming mice.
+                            </li>
+                            <li>
+                                Discover the power of storage with our reliable gaming disks. Offering ample space and lightning-fast data transfer, these disks are the perfect companion for storing your favorite games, videos, and more. Say goodbye to storage limitations and keep your gaming library organized and accessible at all times.
+                            </li>
+                            <li>
+                                Immerse yourself in the world of virtual sound with our premium gaming headsets. Designed for crystal-clear audio and precise communication, these headsets will take your gaming experience to the next level. Whether you're playing solo or teaming up with friends, our qulaqliqs will ensure you never miss a single sound cue.
+                            </li>
+                            <li>
+                                Elevate your gaming experience with our premium gaming mouse pads. Designed for precision and control, our mouse pads provide a smooth and responsive surface for accurate mouse movements. Whether you prefer speed or control, our mouse pads offer the perfect balance for enhanced gaming performance.
+                            </li>
+                        </ul>
+                        <h5>
+                            Ordered list
+                        </h5>
+                        <ol>
+                            <li>Joystick</li>
+                            <li>Mouse</li>
+                            <li>Disk</li>
+                            <li>Headset</li>
+                            <li>Mouse Pad</li>
+                        </ol>
+                        <p>They are equipped with directional buttons and various buttons, allowing users to move characters and perform actions within the game. Some joysticks also feature vibration feedback to provide a more immersive gaming experience, while others offer analog sticks for more precise control.</p>
+                    </div>
+                    <div class="information item d-none" data-id="2">
+                        <h2>Additional Information</h2>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Brand:</th>
+                                    <td>Logitech</td>
+                                </tr>
+                                <tr>
+                                    <th>Model:</th>
+                                    <td> G29 Driving Force</td>
+                                </tr>
+                                <tr>
+                                    <th>Features:</th>
+                                    <td>Steering wheel set, pedals, force feedback, 900-degree rotation angle.</td>
+                                </tr>
+                                <tr>
+                                    <th>Weight:</th>
+                                    <td>1.7 kg</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="review item d-none" data-id="3">
+                        <div class="tab-pane fade active show" id="tab-reve">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="product-details-frame">
+                                        <ul class="review-list">
+                                            <li class="review-item">
+                                                <div class="review-media">
+                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-01-446x550_t.jpg" alt="review"></a>
+                                                    <h5 class="review-meta">
+                                                        <a href="#">miron mahmud</a><span>June 02, 2020</span>
+                                                    </h5>
+                                                </div>
+                                                <ul class="review-rating">
+                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rate-blank"> <i class="fa fa-star"></i></li>
+                                                </ul>
+                                                <p class="review-desc">
+                                                    Discover a wide range of features and functionalities in our joysticks, including customizable buttons, ergonomic grips, and adjustable sensitivity settings. Elevate your gaming performance with our top-quality joysticks and unlock your true gaming potential.
+                                                </p>
+                                                <form class="review-reply">
+                                                    <input type="text" placeholder="reply your thoughts"><button><i class="icofont-reply"></i>reply</button>
+                                                </form>
+                                                <ul class="review-reply-list">
+                                                    <li class="review-reply-item">
+                                                        <div class="review-media">
+                                                            <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-02-446x550_t.jpg" alt="review"></a>
+                                                            <h5 class="review-meta">
+                                                                <a href="#">labonno khan</a><span><b></b>June 02, 2020</span>
+                                                            </h5>
+                                                        </div>
+                                                        <p class="review-desc">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing
+                                                            elit. Ducimus hic amet qui velit, molestiae suscipit
+                                                            perferendis, autem doloremque blanditiis dolores nulla
+                                                            excepturi ea nobis!
+                                                        </p>
+                                                        <form class="review-reply">
+                                                            <input type="text" placeholder="reply your thoughts"><button><i class="icofont-reply"></i>reply</button>
+                                                        </form>
+                                                    </li>
+                                                    <li class="review-reply-item">
+                                                        <div class="review-media">
+                                                            <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-03-446x550_t.jpg" alt="review"></a>
+                                                            <h5 class="review-meta">
+                                                                <a href="#">tahmina bonny</a><span>June 02, 2020</span>
+                                                            </h5>
+                                                        </div>
+                                                        <p class="review-desc">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing
+                                                            elit. Ducimus hic amet qui velit, molestiae suscipit
+                                                            perferendis, autem doloremque blanditiis dolores nulla
+                                                            excepturi ea nobis!
+                                                        </p>
+                                                        <form class="review-reply">
+                                                            <input type="text" placeholder="reply your thoughts"><button><i class="icofont-reply"></i>reply</button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="review-item">
+                                                <div class="review-media">
+                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-01-446x550_t.jpg" alt="review"></a>
+                                                    <h5 class="review-meta">
+                                                        <a href="#">shipu shikdar</a><span>June 02, 2020</span>
+                                                    </h5>
+                                                </div>
+                                                <ul class="review-rating">
+                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
+                                                    <li class="icofont-ui-rate-blank"><i class="fa fa-star"></i></li>
+                                                </ul>
+                                                <p class="review-desc">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Ducimus hic amet qui velit, molestiae suscipit
+                                                    perferendis, autem doloremque blanditiis dolores nulla
+                                                    excepturi ea nobis!
+                                                </p>
+                                                <form class="review-reply">
+                                                    <input type="text" placeholder="reply your thoughts"><button><i class="icofont-reply"></i>reply</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-details-frame">
+                                        <h3 class="frame-title">add your review</h3>
+                                        <form class="review-form">
+                                            <div class="row">
+
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" placeholder="Describe"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <button class="btn btn-inline">
+                                                        <i class="icofont-water-drop"></i><span>drop your review</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="related-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-5">Related Products</h2>
+
+                </div>
+                <div class="swiper related ">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
+                                </div>
+                                <span class="percent">-29%</span>
+                                <div class="product-detail">
+
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>The Little Tank Hunter</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£85.00</span>
+                                        <span class="actual-price">£60.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
+                                </div>
+                                <span class="percent">-27%</span>
+                                <div class="product-detail">
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star "></i>
+                                        <i class="fa-solid fa-star "></i>
+                                        <i class="fa-solid fa-star "></i>
+                                        <i class="fa-solid fa-star "></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>Reginald’s Death Arena</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£96.00</span>
+                                        <span class="actual-price">£70.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
+                                </div>
+                                <span class="percent">-20%</span>
+                                <div class="product-detail">
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>Train Station Renovation</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£100.00</span>
+                                        <span class="actual-price">£80.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
+                                </div>
+                                <span class="percent">-20%</span>
+                                <div class="product-detail">
+
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>Reginald’s Death Arena</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£115.00</span>
+                                        <span class="actual-price">£92.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
+                                </div>
+                                <span class="percent">-13%</span>
+                                <div class="product-detail">
+
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star "></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>Reginald’s Death Arena</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£98.00</span>
+                                        <span class="actual-price">£85.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-carousel">
+                                <div class="action-buttons">
+                                    <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
+                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
+                                </div>
+                                <span class="percent">-10%</span>
+                                <div class="product-detail">
+                                    <div class="content stars">
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star orange"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="content title">
+                                        <span>Babol The Walking Box</span>
+                                    </div>
+                                    <div class=" content price">
+                                        <span class="discount">£100.00</span>
+                                        <span class="actual-price">£90.00</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-button-outer">
+
+                                    <a href="wishlist.html">
+                                        <i title="heart" class="fa-solid fa-heart"></i>
+                                    </a>
+
+                                    <a href="cart.html">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </a>
+
+                                    <a href="product-detail.html">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="swiper-button-next next-prev"></div>
+                    <div class="swiper-button-prev next-prev"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+@section Scripts {
+       <script src="~/assets/js/zoom.js"></script>
+       <script src="~/assets/js/product-detail.js"></script>
+}

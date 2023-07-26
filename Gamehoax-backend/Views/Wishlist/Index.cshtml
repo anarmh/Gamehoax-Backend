@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Css {
+
+        <link rel="stylesheet" href="~/assets/scss/pages/wishlist/wishlist.css">
+}
+
+
+
+<main>
+    <section id="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page">
+                        <div class="link">
+                            <a href="./home.html">
+                                <span>Home</span>
+                            </a>
+                            <span class="shop"> » Wishlist</span>
+                        </div>
+                        <div class="title">
+                            <h3>Wishlist</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="wishlist">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="" method="post">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Serial</th>
+                                    <th class="product-image">Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="product-remove">
+                                        <a href="">1</a>
+                                    </td>
+                                    <td class="product-image">
+                                        <img src="~/assets/img/product/6.jpg" alt="">
+                                    </td>
+                                    <td class="product-name">
+                                        <p>Taishou x Alice Epilogue</p>
+                                    </td>
+                                    <td class="product-price">
+
+                                        <span> <span>£</span>160.00</span>
+
+                                    </td>
+                                    <td class="product-quantity">
+                                        <span>Qty: </span>
+                                        <input type="number" step="1" min="0" max="1986" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
+
+                                    </td>
+                                    <td class="product-remove">
+                                        <a href="">x</a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <table class="mobile d-none">
+
+
+                            <tbody>
+                                <tr class="product-table mb-3">
+                                    <td class="product-remove" data-title="Action">
+                                        <a href="">x</a>
+                                    </td>
+                                    <td class="product-image" data-title="Image">
+                                        <img src="~/assets/img/product/6.jpg" alt="">
+                                    </td>
+                                    <td class="product-name" data-title="Name">
+                                        <p>Taishou x Alice Epilogue</p>
+                                    </td>
+                                    <td class="product-price" data-title="Price">
+
+                                        <span> <span>£</span>160.00</span>
+
+                                    </td>
+                                    <td class="product-quantity" data-title="Quantity">
+                                        <span>Qty: </span>
+                                        <input type="number" step="1" min="0" max="1986" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
+
+                                    </td>
+
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+
+
+@section Scripts {
+
+    <script src="~/assets/js/wishlist.js"></script>
+}

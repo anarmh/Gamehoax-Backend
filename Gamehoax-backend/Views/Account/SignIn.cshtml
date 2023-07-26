@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+
+
+@section Css {
+
+    <link rel="stylesheet" href="~/assets/scss/pages/login/login.css">
+}
+
+<main>
+    <section id="login">
+        <div class="container d-flex justify-content-center my-5">
+            <div class="box">
+                <form action="" method="post">
+                    <h2>Sign In</h2>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required>
+                        <span>Enter Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="login">
+                    <div class="links">
+                        <a asp-action="ForgotPassword">Forgot Password?</a>
+                        <a asp-action="SignUp">SignUp</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/assets/js/login.js"></script>
+}

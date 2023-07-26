@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+@section Css {
+   
+    <link rel="stylesheet" href="~/assets/scss/pages/register/register.css">
+}
+
+<main>
+    <section id="register">
+        <div class="container d-flex justify-content-center my-5">
+            <div class="box">
+                <form action="" method="post">
+                    <h2>Sign Up</h2>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <span>Fullname</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required>
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required>
+                        <span>Enter Password</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required>
+                        <span>Repeat Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Register">
+                    <div class="links">
+                        <!-- <a href="#">Forgot Password?</a> -->
+                        <a asp-action="SignIn">SignIn</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/assets/js/register.js"></script>
+}
