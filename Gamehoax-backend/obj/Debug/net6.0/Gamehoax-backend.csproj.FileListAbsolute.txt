@@ -247,3 +247,8 @@ D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\runtimes\unix\lib\net6.0\S
 D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Gamehoax-backend\Gamehoax-backend\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
