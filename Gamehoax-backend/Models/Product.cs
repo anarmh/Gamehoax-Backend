@@ -13,9 +13,14 @@
         public ICollection<ProductImage> ProductImages { get; set; }
         public ICollection<ProductTag> ProductTags { get; set; }
         public ICollection<Review> Reviews { get; set; }
-        public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+        public ICollection<WishlistProduct> WishlistProducts { get; set; }
+        public ICollection<CartProduct> CartProducts { get; set; }
+        public int BrandModelId { get; set; }
+        public BrandModel BrandModel { get; set; }
         public int DiscountId { get; set; }
         public Discount Discount { get; set; }
+        public int RatingId { get; set; }
+        public Rating Rating { get; set; }
+       
     }
 }

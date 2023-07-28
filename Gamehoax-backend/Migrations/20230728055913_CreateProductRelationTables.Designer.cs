@@ -4,6 +4,7 @@ using Gamehoax_backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gamehoax_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230728055913_CreateProductRelationTables")]
+    partial class CreateProductRelationTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,7 +117,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brand");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.BrandModel", b =>
@@ -145,7 +147,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.ToTable("BrandModels");
+                    b.ToTable("BrandModel");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Cart", b =>
@@ -175,7 +177,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Cart");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.CartProduct", b =>
@@ -198,7 +200,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartProducts");
+                    b.ToTable("CartProduct");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Category", b =>
@@ -232,7 +234,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Discount", b =>
@@ -260,7 +262,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discount");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Product", b =>
@@ -318,7 +320,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("RatingId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.ProductCategory", b =>
@@ -341,7 +343,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategory");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.ProductImage", b =>
@@ -377,7 +379,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImage");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.ProductTag", b =>
@@ -400,7 +402,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("ProductTags");
+                    b.ToTable("ProductTag");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Rating", b =>
@@ -425,7 +427,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ratings");
+                    b.ToTable("Rating");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Review", b =>
@@ -465,7 +467,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("RatingId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.ServiceIcon", b =>
@@ -524,31 +526,6 @@ namespace Gamehoax_backend.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("Gamehoax_backend.Models.Subscribe", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("SoftDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Subscribes");
-                });
-
             modelBuilder.Entity("Gamehoax_backend.Models.Tag", b =>
                 {
                     b.Property<int>("Id")
@@ -571,7 +548,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tag");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Wishlist", b =>
@@ -598,7 +575,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Wishlists");
+                    b.ToTable("Wishlist");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.WishlistProduct", b =>
@@ -621,7 +598,7 @@ namespace Gamehoax_backend.Migrations
 
                     b.HasIndex("WishlistId");
 
-                    b.ToTable("WishlistProducts");
+                    b.ToTable("WishlistProduct");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

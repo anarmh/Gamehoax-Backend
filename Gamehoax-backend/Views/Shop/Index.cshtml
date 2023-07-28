@@ -1,4 +1,4 @@
-﻿
+﻿@model ShopVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -40,19 +40,11 @@
                             </div>
 
                             <ul class="product-categories">
-                                <li><a href="">Batman</a></li>
-                                <li><a href="">Bloodborne</a></li>
-                                <li><a href="">Dark Souls</a></li>
-                                <li><a href="">Destiny 2</a></li>
-                                <li><a href="">Diablo ııı</a></li>
-                                <li><a href="">Fallout 3</a></li>
-                                <li><a href="">Fortnite</a></li>
-                                <li><a href="">Minecraft</a></li>
-                                <li><a href="">Overwatch</a></li>
-                                <li><a href="">PUBG</a></li>
-                                <li><a href="">Racing</a></li>
-                                <li><a href="">Survival horror</a></li>
-                                <li><a href="">God of War 2</a></li>
+                                @foreach (var category in Model.Categories)
+                            {
+                                 <li><a href="">@category.Name</a></li>
+                            }
+                               
                             </ul>
                         </aside>
 
@@ -72,7 +64,7 @@
                                 </div>
 
                                 <div class="price_label" >
-                                    Price: <span class="from">£50</span> — <span class="to">£200</span>
+                                    Price: <span id="min-value" class="from">£50</span> — <span id="max-value" class="to">£200</span>
                                 </div>
 
                             </form>
@@ -82,19 +74,11 @@
                                 <h3 class="widget-title">Product Tags</h3>
                             </div>
                             <div class="tagcloud">
-                                <a href="">Adipiscing</a>
-                                <a href="">Augue</a>
-                                <a href="">Bibendum</a>
-                                <a href="">Cras</a>
-                                <a href="">Dapibus</a>
-                                <a href="">Eget</a>
-                                <a href="">Etiam</a>
-                                <a href="">Leo</a>
-                                <a href="">Pretium</a>
-                                <a href="">Quis</a>
-                                <a href="">Sem</a>
-                                <a href="">Ultricies</a>
-                                <a href="">Viverra</a>
+                                @foreach (var tag in Model.Tags)
+                            {
+                                <a href="">@tag.Name</a>
+                            }
+                               
                             </div>
                         </aside>
                         <aside id="top-rated-products">
@@ -102,79 +86,38 @@
                                 <h3 class="widget-title">Top Rated Products</h3>
                             </div>
                             <ul>
+                            @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
+                            {
                                 <li>
                                     <a href="">
                                         <div class="content">
                                             <div class="left">
-                                                <img src="~/assets/img/product/6.jpg" alt="" >
+                                                <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
                                             </div>
                                             <div class="right">
                                                 <div class="title">
-                                                    <span>LEGO Builder's Journey</span>
+                                                    <span>@item.Title</span>
                                                 </div>
-
-                                                    <div class="stars">
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                    </div>
-                                                    <div class="amount">
-                                                        <span>£<span class="price">98.00</span></span>
-                                                    </div>
-                                            </div>
-                                        </div>
-
-                                     </a>
-                                 </li>
-                                <li><a href="">
-                                    <div class="content">
-                                        <div class="left">
-                                            <img src="~/assets/img/product/4.jpg" alt="" >
-                                        </div>
-                                        <div class="right">
-                                            <div class="title">
-                                                <span>Legend of Musical light</span>
-                                            </div>
 
                                                 <div class="stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
+                                                    @for (int i = 0; i < item.Rating.RatingCount; i++)
+                                                    {
+                                                        <i class="fa-solid fa-star orange"></i>
+                                                    }
+                                                    @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
+                                                    {
+                                                        <i class="fa-solid fa-star"></i>
+                                                    }
                                                 </div>
                                                 <div class="amount">
-                                                    <span>£<span class="price">100.00</span></span>
+                                                    <span>£<span class="price">@item.Price</span></span>
                                                 </div>
-                                        </div>
-                                    </div>
-                                </a></li>
-                                <li><a href="">
-
-                                    <div class="content">
-                                        <div class="left">
-                                            <img src="~/assets/img/product/11.jpg" alt="" >
-                                        </div>
-                                        <div class="right">
-                                            <div class="title">
-                                                <span>The Little Tank Hunter</span>
                                             </div>
-
-                                                <div class="stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="amount">
-                                                    <span>£<span class="price">60.00</span></span>
-                                                </div>
                                         </div>
-                                    </div>
-                                </a></li>
+
+                                    </a>
+                                </li>
+                            }
                             </ul>
                         </aside>
 
@@ -204,42 +147,48 @@
                             </div>
                             <div class="container-fluid">
                                 <div class="row">
-
-                                    <div class="col-sm-12 col-md-6 col-lg-4">
+                                    @foreach (var product in Model.Products)
+                            {
+                                     <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                                         <div class="card-carousel">
                                             <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/17.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
+                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
                                             </div>
                                             <div class="product-detail">
 
                                             <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                               @for (int i = 0; i < product.Rating.RatingCount; i++)
+                                                {
+                                                    <i class="fa-solid fa-star orange"></i>
+                                                }
+                                                @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
+                                                {
+                                                     <i class="fa-solid fa-star"></i>
+                                                }
+                                              
+                                              
                                             </div>
                                             <div class="content title">
-                                                <span>LEGO Builder’s Journey</span>
+                                                <span>@product.Title</span>
                                             </div>
                                             <div class="content price">
-                                                <span class="actual-price">£110.00</span>
+                                                <span class="actual-price">£@product.Price</span>
                                             </div>
 
                                              </div>
 
                                              <div class="product-button-outer">
 
-                                                    <a href="">
+                                                    <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
                                                         <i class="fa-solid fa-heart"></i>
                                                     </a>
 
-                                                    <a href=""> 
+                                                    <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id"> 
                                                         <i class="fa-solid fa-cart-arrow-down"></i>
                                                     </a>
 
-                                                       <a href="product-detail.html">
+                                                       <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
                                                         <i class="fa-solid fa-eye"></i>
                                                        </a>
 
@@ -247,473 +196,11 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/13.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/5.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star "></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Shop Mahjong connect</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£180.00</span>
-                                                <span class="actual-price">£110.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="product-detail.html">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
-                                            </div>
-                                            <span class="percent">-29%</span>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>The Little Tank Hunter</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£85.00</span>
-                                                <span class="actual-price">£60.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
-                                            </div>
-                                            <span class="percent">-27%</span>
-                                            <div class="product-detail">
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Reginald’s Death Arena</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£96.00</span>
-                                                <span class="actual-price">£70.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
-                                            </div>
-                                            <span class="percent">-20%</span>
-                                            <div class="product-detail">
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Train Station Renovation</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£100.00</span>
-                                                <span class="actual-price">£80.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
-                                            </div>
-                                            <span class="percent">-13%</span>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Reginald’s Death Arena</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£98.00</span>
-                                                <span class="actual-price">£85.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
-                                            </div>
-                                            <span class="percent">-20%</span>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Reginald’s Death Arena</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="discount">£115.00</span>
-                                                <span class="actual-price">£92.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Legend of Mana Remastered</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="actual-price">£100.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/15.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/2.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Reginald’s Death Arena</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="actual-price">£160.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/16.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/14.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                                <i class="fa-solid fa-star "></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>BangBangShooting</span>
-                                            </div>
-                                            <div class=" content price">
-
-                                                <span class="actual-price">£56.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/14.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/13.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Labyrinths of the World</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="actual-price">£110.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/9.jpg" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/12.jpg" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                            <div class="content stars">
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star orange"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="content title">
-                                                <span>Taishou x Alice Epilogue</span>
-                                            </div>
-                                            <div class=" content price">
-                                                <span class="actual-price">£160.00</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a href="">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a href=""> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a href="product-detail.html">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
+                            }
+
+                                   
+                                  
+                                   
                                 </div>
 
                                 <div class="pagination">
@@ -753,517 +240,56 @@
                                 </div>
                                 <div class="container-fluid">
                                     <div class="row">
-
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/17.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
+                                @foreach (var product in Model.Products)
+                                {
+                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="card-carousel">
+                                            <div class="action-buttons">
+                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
+                                            </div>
+                                            <div class="product-detail">
 
                                                 <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
+                                                    @for (int i = 0; i < product.Rating.RatingCount; i++)
+                                                    {
+                                                        <i class="fa-solid fa-star orange"></i>
+                                                    }
+                                                    @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
+                                                    {
+                                                        <i class="fa-solid fa-star"></i>
+                                                    }
+
+
                                                 </div>
                                                 <div class="content title">
-                                                    <span>LEGO Builder’s Journey</span>
+                                                    <span>@product.Title</span>
                                                 </div>
                                                 <div class="content price">
-                                                    <span class="actual-price">£110.00</span>
+                                                    <span class="actual-price">£@product.Price</span>
                                                 </div>
 
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
+                                            <div class="product-button-outer">
 
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/13.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/5.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
+                                                <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </a>
 
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Shop Mahjong connect</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£180.00</span>
-                                                    <span class="actual-price">£110.00</span>
-                                                </div>
+                                                <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                                </a>
 
-                                                 </div>
+                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </a>
 
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-29%</span>
-                                                <div class="product-detail">
 
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>The Little Tank Hunter</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£85.00</span>
-                                                    <span class="actual-price">£60.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-27%</span>
-                                                <div class="product-detail">
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£96.00</span>
-                                                    <span class="actual-price">£70.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-20%</span>
-                                                <div class="product-detail">
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Train Station Renovation</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£100.00</span>
-                                                    <span class="actual-price">£80.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-13%</span>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£98.00</span>
-                                                    <span class="actual-price">£85.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-20%</span>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£115.00</span>
-                                                    <span class="actual-price">£92.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Legend of Mana Remastered</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£100.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/15.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/2.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£160.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/16.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/14.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>BangBangShooting</span>
-                                                </div>
-                                                <div class=" content price">
-
-                                                    <span class="actual-price">£56.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/14.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/13.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Labyrinths of the World</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£110.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/9.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/12.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Taishou x Alice Epilogue</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£160.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
+                                    </div>
+                                }
                                     </div>
 
                                     <div class="pagination">
@@ -1294,19 +320,11 @@
 
                                             <aside id="product-category">
                                                 <ul class="product-categories">
-                                                    <li><a href="">Batman</a></li>
-                                                    <li><a href="">Bloodborne</a></li>
-                                                    <li><a href="">Dark Souls</a></li>
-                                                    <li><a href="">Destiny 2</a></li>
-                                                    <li><a href="">Diablo ııı</a></li>
-                                                    <li><a href="">Fallout 3</a></li>
-                                                    <li><a href="">Fortnite</a></li>
-                                                    <li><a href="">Minecraft</a></li>
-                                                    <li><a href="">Overwatch</a></li>
-                                                    <li><a href="">PUBG</a></li>
-                                                    <li><a href="">Racing</a></li>
-                                                    <li><a href="">Survival horror</a></li>
-                                                    <li><a href="">God of War 2</a></li>
+                                                    @foreach (var category in Model.Categories)
+                                                {
+                                                     <li><a href="">@category.Name</a></li>
+                                                }
+                                                   
                                                 </ul>
                                             </aside>
 
@@ -1360,19 +378,12 @@
                                         <div class="accordion-body">
                                             <aside id="product-tag">
                                             <div class="tagcloud">
-                                                <a href="">Adipiscing</a>
-                                                <a href="">Augue</a>
-                                                <a href="">Bibendum</a>
-                                                <a href="">Cras</a>
-                                                <a href="">Dapibus</a>
-                                                <a href="">Eget</a>
-                                                <a href="">Etiam</a>
-                                                <a href="">Leo</a>
-                                                <a href="">Pretium</a>
-                                                <a href="">Quis</a>
-                                                <a href="">Sem</a>
-                                                <a href="">Ultricies</a>
-                                                <a href="">Viverra</a>
+                                                @foreach (var tag in Model.Tags)
+                                                {
+                                                    <a href="">@tag.Name</a>
+                                                }
+                                               
+                                             
                                             </div>
                                         </aside>
                                         </div>
@@ -1392,79 +403,39 @@
                                         <div class="accordion-body">
                                             <aside id="top-rated-products">
                                                 <ul>
-                                                    <li>
+                                                    @foreach (var item in Model.Products.OrderByDescending(m=>m.Rating.RatingCount).Take(3))
+                                                {
+                                                      <li>
                                                         <a href="">
                                                             <div class="content">
                                                                 <div class="left">
-                                                                    <img src="~/assets/img/product/6.jpg" alt="" >
+                                                                    <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="" >
                                                                 </div>
                                                                 <div class="right">
                                                                     <div class="title">
-                                                                        <span>LEGO Builder's Journey</span>
+                                                                        <span>@item.Title</span>
                                                                     </div>
 
                                                                         <div class="stars">
+                                                                        @for (int i = 0; i < item.Rating.RatingCount; i++)
+                                                                        {
                                                                             <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
+                                                                        }
+                                                                        @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
+                                                                        {
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                        }
                                                                         </div>
                                                                         <div class="amount">
-                                                                            <span>£<span class="price">98.00</span></span>
+                                                                            <span>£<span class="price">@item.Price</span></span>
                                                                         </div>
                                                                 </div>
                                                             </div>
 
                                                          </a>
                                                      </li>
-                                                    <li><a href="">
-                                                        <div class="content">
-                                                            <div class="left">
-                                                                <img src="~/assets/img/product/4.jpg" alt="" >
-                                                            </div>
-                                                            <div class="right">
-                                                                <div class="title">
-                                                                    <span>Legend of Musical light</span>
-                                                                </div>
-
-                                                                    <div class="stars">
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                    </div>
-                                                                    <div class="amount">
-                                                                        <span>£<span class="price">100.00</span></span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
-                                                    <li><a href="">
-
-                                                        <div class="content">
-                                                            <div class="left">
-                                                                <img src="~/assets/img/product/11.jpg" alt="" >
-                                                            </div>
-                                                            <div class="right">
-                                                                <div class="title">
-                                                                    <span>The Little Tank Hunter</span>
-                                                                </div>
-
-                                                                    <div class="stars">
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star "></i>
-                                                                    </div>
-                                                                    <div class="amount">
-                                                                        <span>£<span class="price">60.00</span></span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
+                                                }
+                                                  
                                                 </ul>
                                             </aside>
                                         </div>
@@ -1501,523 +472,56 @@
                                 </div>
                                 <div class="container-fluid">
                                     <div class="row">
-
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/17.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
+                                @foreach (var product in Model.Products)
+                                {
+                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="card-carousel">
+                                            <div class="action-buttons">
+                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
+                                            </div>
+                                            <div class="product-detail">
 
                                                 <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
+                                                    @for (int i = 0; i < product.Rating.RatingCount; i++)
+                                                    {
+                                                        <i class="fa-solid fa-star orange"></i>
+                                                    }
+                                                    @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
+                                                    {
+                                                        <i class="fa-solid fa-star"></i>
+                                                    }
+
+
                                                 </div>
                                                 <div class="content title">
-                                                    <span>LEGO Builder’s Journey</span>
+                                                    <span>@product.Title</span>
                                                 </div>
                                                 <div class="content price">
-                                                    <span class="actual-price">£110.00</span>
+                                                    <span class="actual-price">£@product.Price</span>
                                                 </div>
 
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
+                                            <div class="product-button-outer">
 
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/13.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/5.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
+                                                <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </a>
 
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Shop Mahjong connect</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£180.00</span>
-                                                    <span class="actual-price">£110.00</span>
-                                                </div>
+                                                <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                                </a>
 
-                                                 </div>
+                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </a>
 
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-29%</span>
-                                                <div class="product-detail">
 
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>The Little Tank Hunter</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£85.00</span>
-                                                    <span class="actual-price">£60.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-27%</span>
-                                                <div class="product-detail">
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£96.00</span>
-                                                    <span class="actual-price">£70.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-20%</span>
-                                                <div class="product-detail">
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Train Station Renovation</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£100.00</span>
-                                                    <span class="actual-price">£80.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-13%</span>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£98.00</span>
-                                                    <span class="actual-price">£85.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
-                                                </div>
-                                                <span class="percent">-20%</span>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="discount">£115.00</span>
-                                                    <span class="actual-price">£92.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Legend of Mana Remastered</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£100.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/15.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/2.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Reginald’s Death Arena</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£160.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/16.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/14.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                    <i class="fa-solid fa-star "></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>BangBangShooting</span>
-                                                </div>
-                                                <div class=" content price">
-
-                                                    <span class="actual-price">£56.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/14.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/13.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Labyrinths of the World</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£110.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-sm-12 col-md-6 col-lg-4 ">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/9.jpg" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/12.jpg" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content title">
-                                                    <span>Taishou x Alice Epilogue</span>
-                                                </div>
-                                                <div class=" content price">
-                                                    <span class="actual-price">£160.00</span>
-                                                </div>
-
-                                                 </div>
-
-                                                 <div class="product-button-outer">
-
-                                                        <a href="">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </a>
-
-                                                        <a href=""> 
-                                                            <i class="fa-solid fa-cart-arrow-down"></i>
-                                                        </a>
-
-                                                           <a href="product-detail.html">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                           </a>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
+                                    </div>
+                                }
                                     </div>
 
                                     <div class="pagination">
@@ -2049,19 +553,12 @@
 
                                             <aside id="product-category">
                                                 <ul class="product-categories">
-                                                    <li><a href="">Batman</a></li>
-                                                    <li><a href="">Bloodborne</a></li>
-                                                    <li><a href="">Dark Souls</a></li>
-                                                    <li><a href="">Destiny 2</a></li>
-                                                    <li><a href="">Diablo ııı</a></li>
-                                                    <li><a href="">Fallout 3</a></li>
-                                                    <li><a href="">Fortnite</a></li>
-                                                    <li><a href="">Minecraft</a></li>
-                                                    <li><a href="">Overwatch</a></li>
-                                                    <li><a href="">PUBG</a></li>
-                                                    <li><a href="">Racing</a></li>
-                                                    <li><a href="">Survival horror</a></li>
-                                                    <li><a href="">God of War 2</a></li>
+                                                    @foreach (var item in Model.Categories)
+                                                {
+                                                    <li><a href="">@item.Name</a></li>
+                                                }
+                                                  
+                                                   
                                                 </ul>
                                             </aside>
 
@@ -2115,19 +612,12 @@
                                         <div class="accordion-body">
                                             <aside id="product-tag">
                                             <div class="tagcloud">
-                                                <a href="">Adipiscing</a>
-                                                <a href="">Augue</a>
-                                                <a href="">Bibendum</a>
-                                                <a href="">Cras</a>
-                                                <a href="">Dapibus</a>
-                                                <a href="">Eget</a>
-                                                <a href="">Etiam</a>
-                                                <a href="">Leo</a>
-                                                <a href="">Pretium</a>
-                                                <a href="">Quis</a>
-                                                <a href="">Sem</a>
-                                                <a href="">Ultricies</a>
-                                                <a href="">Viverra</a>
+                                                @foreach (var tag in Model.Tags)
+                                                {
+                                                    <a href="">@tag.Name</a>
+                                                }
+                                               
+                                                
                                             </div>
                                         </aside>
                                         </div>
@@ -2147,80 +637,40 @@
                                         <div class="accordion-body">
                                             <aside id="top-rated-products">
                                                 <ul>
+                                                @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
+                                                {
                                                     <li>
                                                         <a href="">
                                                             <div class="content">
                                                                 <div class="left">
-                                                                    <img src="~/assets/img/product/6.jpg" alt="" >
+                                                                    <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
                                                                 </div>
                                                                 <div class="right">
                                                                     <div class="title">
-                                                                        <span>LEGO Builder's Journey</span>
+                                                                        <span>@item.Title</span>
                                                                     </div>
-
-                                                                        <div class="stars">
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                        </div>
-                                                                        <div class="amount">
-                                                                            <span>£<span class="price">98.00</span></span>
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-
-                                                         </a>
-                                                     </li>
-                                                    <li><a href="">
-                                                        <div class="content">
-                                                            <div class="left">
-                                                                <img src="~/assets/img/product/4.jpg" alt="" >
-                                                            </div>
-                                                            <div class="right">
-                                                                <div class="title">
-                                                                    <span>Legend of Musical light</span>
-                                                                </div>
 
                                                                     <div class="stars">
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
+                                                                        @for (int i = 0; i < item.Rating.RatingCount; i++)
+                                                                        {
+                                                                            <i class="fa-solid fa-star orange"></i>
+                                                                        }
+                                                                        @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
+                                                                        {
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                        }
                                                                     </div>
                                                                     <div class="amount">
-                                                                        <span>£<span class="price">100.00</span></span>
+                                                                        <span>£<span class="price">@item.Price</span></span>
                                                                     </div>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
-                                                    <li><a href="">
-
-                                                        <div class="content">
-                                                            <div class="left">
-                                                                <img src="~/assets/img/product/11.jpg" alt="" >
-                                                            </div>
-                                                            <div class="right">
-                                                                <div class="title">
-                                                                    <span>The Little Tank Hunter</span>
                                                                 </div>
-
-                                                                    <div class="stars">
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star orange"></i>
-                                                                        <i class="fa-solid fa-star "></i>
-                                                                    </div>
-                                                                    <div class="amount">
-                                                                        <span>£<span class="price">60.00</span></span>
-                                                                    </div>
                                                             </div>
-                                                        </div>
-                                                    </a></li>
-                                                </ul>
+
+                                                        </a>
+                                                    </li>
+                                                }
+
+                                            </ul>
                                             </aside>
                                         </div>
                                       </div>
