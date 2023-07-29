@@ -42,7 +42,7 @@
                             <ul class="product-categories">
                                 @foreach (var category in Model.Categories)
                             {
-                                 <li><a href="">@category.Name</a></li>
+                                 <li><a data-id="@category.Id" class="category">@category.Name</a></li>
                             }
                                
                             </ul>
@@ -52,11 +52,11 @@
                             <div class="title-outer">
                                 <h3 class="widget-title">Filter by price</h3>
                             </div>
-                            <form method="get" action="">
+                            <form id="filter-price" method="get" action="">
                                 <div class="range-slider">
-                                    <input type="range" class="min-price" value="70" min="10" max="200"
+                                    <input type="range" class="min-price" value="10" min="10" max="200"
                                         step="10" style="accent-color: #ffba00;">
-                                    <input type="range" class="max-price" value="160" min="10" max="200"
+                                    <input type="range" class="max-price" value="200" min="10" max="200"
                                         step="10" style="accent-color: #ffba00;">
                                 </div>
                                 <div class="button">
@@ -76,7 +76,7 @@
                             <div class="tagcloud">
                                 @foreach (var tag in Model.Tags)
                             {
-                                <a href="">@tag.Name</a>
+                                <a data-id="@tag.Id" class="tag">@tag.Name</a>
                             }
                                
                             </div>
@@ -135,88 +135,31 @@
                                 <div class="left">
                                     <p>Showing 1–12 of 24 results</p>
                                 </div>
+                               
                                 <div class="right">
-                                    <select name="" id="">
-                                        <option value="selected">Default Sorting</option>
-                                        <option value="selected">Sort by popularity</option>
-                                        <option value="selected">Sort by average rating</option>
-                                        <option value="selected">Sort by price: low to high</option>
-                                        <option value="selected">Sort by price: high to low</option>
+                                    <select name="" id="sort">
+                                        <option value="1" selected>Default Sorting</option>
+                                        <option value="2">Sort by popularity</option>
+                                        <option value="3">Sort by average rating</option>
+                                        <option value="4">Sort by price: low to high</option>
+                                        <option value="5">Sort by price: high to low</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="container-fluid">
-                                <div class="row">
-                                    @foreach (var product in Model.Products)
-                            {
-                                     <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
-                                            </div>
-                                            <div class="product-detail">
 
-                                            <div class="content stars">
-                                               @for (int i = 0; i < product.Rating.RatingCount; i++)
-                                                {
-                                                    <i class="fa-solid fa-star orange"></i>
-                                                }
-                                                @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
-                                                {
-                                                     <i class="fa-solid fa-star"></i>
-                                                }
-                                              
-                                              
-                                            </div>
-                                            <div class="content title">
-                                                <span>@product.Title</span>
-                                            </div>
-                                            <div class="content price">
-                                                <span class="actual-price">£@product.Price</span>
-                                            </div>
-
-                                             </div>
-
-                                             <div class="product-button-outer">
-
-                                                    <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id"> 
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                       <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                       </a>
-
-                                             </div>
-                                        </div>
-
-                                    </div>
-                            }
-
-                                   
-                                  
-                                   
-                                </div>
-
-                                <div class="pagination">
-                                    <ul>
-                                        <li><a href="">
-                                            ←
-                                        </a></li>
-                                        <li><a href="">1</a></li>
-                                        <li><a href="">2</a></li>
-                                        <li><a href="">→</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="row productss-area">
+                               <partial name="_ProductsPartial" model="Model.PaginateDatas" />
 
 
+                               
 
+
+                          </div>
+
+
+                       
+ 
 
                     </div>
                         <div class="tablet d-none">
@@ -229,7 +172,7 @@
                                         <p>Showing 1–12 of 24 results</p>
                                     </div>
                                     <div class="right">
-                                        <select name="" id="">
+                                        <select name="" id="sort">
                                             <option value="selected">Default Sorting</option>
                                             <option value="selected">Sort by popularity</option>
                                             <option value="selected">Sort by average rating</option>
@@ -239,57 +182,8 @@
                                     </div>
                                 </div>
                                 <div class="container-fluid">
-                                    <div class="row">
-                                @foreach (var product in Model.Products)
-                                {
-                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
-                                            </div>
-                                            <div class="product-detail">
-
-                                                <div class="content stars">
-                                                    @for (int i = 0; i < product.Rating.RatingCount; i++)
-                                                    {
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                    }
-                                                    @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
-                                                    {
-                                                        <i class="fa-solid fa-star"></i>
-                                                    }
-
-
-                                                </div>
-                                                <div class="content title">
-                                                    <span>@product.Title</span>
-                                                </div>
-                                                <div class="content price">
-                                                    <span class="actual-price">£@product.Price</span>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="product-button-outer">
-
-                                                <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-heart"></i>
-                                                </a>
-
-                                                <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-cart-arrow-down"></i>
-                                                </a>
-
-                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-eye"></i>
-                                                </a>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                }
+                                    <div class="row productss-area">
+                                    <partial name="_ProductsPartial" model="Model.PaginateDatas" />
                                     </div>
 
                                     <div class="pagination">
@@ -690,7 +584,7 @@
                 </div>
             </div>
         </section>
-
+            
     </main>
 
 
@@ -699,3 +593,4 @@
 @section Scripts {
     <script src="~/assets/js/shop.js"></script>
 }
+

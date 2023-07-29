@@ -57,6 +57,76 @@ $(document).ready(function(){
         $(this).find('.contact-content').toggle();
          });
 
+
+
+    //FILTER
+    $(document).on("submit", "#filter-price", function (e) {
+        e.preventDefault();
+        let value1 = $(".min-price").val();
+        let value2 = $(".max-price").val();
+        let data = { value1: value1, value2: value2 }
+        let parent = $(".productss-area");
+
+        $.ajax({
+            url: "/Shop/GetRangeProducts",
+            type: "Get",
+            data: data,
+            success: function (res) {
+                console.log(res)
+                $(parent).html(res);
+
+                //if (value1 == "10" && value2 == "500") {
+                //    $(".shop-navigation").addClass("d-none")
+                //}
+
+            }
+
+        })
+    })
+    function getProductsById(clickedElem, url) {
+        $(document).on("click", clickedElem, function (e) {
+            e.preventDefault();
+
+            let id = $(this).attr("data-id");
+            let data = { id: id };
+            let parent = $(".productss-area")
+            $.ajax({
+                url: url,
+                type: "Get",
+                data: data,
+                success: function (res) {
+                    debugger
+                    $(parent).html(res);
+                }
+            })
+        })
+
+    }
+    getProductsById(".category", "/Shop/GetProductsByCategory");
+    getProductsById(".tag", "/Shop/GetProductsByTag");
+
+
+
+    //SORT
+    $(document).on("change", "#sort", function (e) {
+        e.preventDefault();
+        let sortValue = $(this).val();
+        console.log(sortValue)
+        let data = { sortValue: sortValue };
+        let parent = $(".productss-area");
+
+        $.ajax({
+            url: "/Shop/Sort",
+            type: "Get",
+            data: data,
+            success: function (res) {
+                $(parent).html(res);
+
+            }
+
+        })
+    })
+
 });
 
 
@@ -77,3 +147,4 @@ var toTopButton = document.getElementById("to-top");
       behavior: "smooth"
     });
   });
+
