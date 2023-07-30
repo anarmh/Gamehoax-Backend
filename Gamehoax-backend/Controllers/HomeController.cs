@@ -12,12 +12,22 @@ namespace Gamehoax_backend.Controllers
         private readonly IServiceIconService _serviceIconService;
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
-        public HomeController(ISliderService sliderService, IServiceIconService serviceIconService, ICategoryService categoryService, IProductService productService)
+        private readonly ITestimonialService _testimonialService;
+        private readonly IBlogService _blogService;
+
+        public HomeController(ISliderService sliderService, 
+                              IServiceIconService serviceIconService,
+                              ICategoryService categoryService, 
+                              IProductService productService,
+                              ITestimonialService testimonialService,
+                              IBlogService blogService)
         {
             _sliderService = sliderService;
             _serviceIconService = serviceIconService;
             _categoryService = categoryService;
             _productService = productService;
+            _testimonialService= testimonialService;
+            _blogService = blogService;
         }
 
         public async Task<IActionResult> Index()
@@ -26,12 +36,17 @@ namespace Gamehoax_backend.Controllers
             List<ServiceIcon> serviceIcons=await _serviceIconService.GetAllAsync();
             List<Category> categories=await _categoryService.GetAllAsync();
             List<Product> products=await _productService.GetAllAsync();
+            List<Testimonial> testimonials=await _testimonialService.GetAllAsync();
+            List<Blog> blogs=await _blogService.GetAllAsync();
+
             HomeVM model= new() 
             { 
                 Sliders= sliders,
                 ServiceIcons= serviceIcons,
                 Categories= categories,
-                Products= products
+                Products= products,
+                Testimonials= testimonials,
+                Blogs=blogs,
             };
             return View(model);
         }

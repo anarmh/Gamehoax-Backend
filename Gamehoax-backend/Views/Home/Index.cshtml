@@ -356,64 +356,33 @@
 
                                 <div class="swiper testmonial">
                                     <div class="swiper-wrapper">
-                                      <div class="swiper-slide">
+                                        @foreach (var testimonial in Model.Testimonials)
+                                {
+                                    <div class="swiper-slide">
                                         <div class="testmonial-inner">
                                             <div class="img">
-                                                <img src="~/assets/img/testmonial/1.jpg" alt="">
+                                                <img src="~/assets/img/testmonial/@testimonial.Image" alt="">
                                             </div>
                                             <div class="testmonial-text">
-                                                    <div class="testimonial-title">
-                                                        <span>Din Desuza</span>
-                                                    </div>
-                                                    <div class="testimonial-designation">
-                                                        <span>(Iphone Developer)</span>
-                                                    </div>
+                                                <div class="testimonial-title">
+                                                    <span>@testimonial.Name</span>
+                                                </div>
+                                                <div class="testimonial-designation">
+                                                    <span>(@testimonial.Position)</span>
+                                                </div>
                                             </div>
                                             <div class="testimonial-wrapper">
                                                 <div class="testimonial-content">
-                                                   <p>Being an iPhone developer offers exciting opportunities to contribute to the thriving app ecosystem, reaching millions of users worldwide. Your creativity and technical expertise can make a significant impact on the user experience and the overall success of the applications you develop.</p>
+                                                    <p>@testimonial.Description</p>
                                                 </div>
                                             </div>
                                         </div>
 
 
-                                      </div>
-                                      <div class="swiper-slide">   <div class="testmonial-inner">
-                                        <div class="img">
-                                            <img src="~/assets/img/testmonial/3.jpg" alt="">
-                                        </div>
-                                        <div class="testmonial-text">
-                                                <div class="testimonial-title">
-                                                    <span>Luies Charls</span>
-                                                </div>
-                                                <div class="testimonial-designation">
-                                                    <span>(Web Designer)</span>
-                                                </div>
-                                        </div>
-                                        <div class="testimonial-wrapper">
-                                            <div class="testimonial-content">
-                                               <p>As a web designer, you specialize in creating user-friendly, functional, and visually appealing websites. With your visual communication skills and technical abilities, you aim to enhance the user experience while bringing web projects to life.</p>
-                                            </div>
-                                        </div>
-                                    </div></div>
-                                      <div class="swiper-slide">   <div class="testmonial-inner">
-                                        <div class="img">
-                                            <img src="~/assets/img/testmonial/2.jpg" alt="">
-                                        </div>
-                                        <div class="testmonial-text">
-                                                <div class="testimonial-title">
-                                                    <span>Reema Ghurde</span>
-                                                </div>
-                                                <div class="testimonial-designation">
-                                                    <span>(Senior Manager)</span>
-                                                </div>
-                                        </div>
-                                        <div class="testimonial-wrapper">
-                                            <div class="testimonial-content">
-                                               <p>As a senior manager, you provide guidance, mentorship, and support to your team members, fostering their professional growth and development. You set performance expectations, provide feedback, and help individuals align their work with organizational objectives.</p>
-                                            </div>
-                                        </div>
-                                    </div></div>
+                                    </div>
+                                }
+                                    
+                                  
 
                                     </div>
                                     <div class="swiper-pagination dots">
@@ -456,274 +425,77 @@
                     </div>
                     <div class="swiper dealOfTheDay">
                         <div class="swiper-wrapper">
+                        @foreach (var item in Model.Products.OrderByDescending(m => m.Discount.Percent))
+                        {
                             <div data-aos="fade-right" class="swiper-slide">
                                 <div class="card-carousel">
                                     <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
+                                        <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
                                     </div>
-                                    <span class="percent">-29%</span>
+                                    @if (@item.Discount.Percent == 0)
+                                    {
+                                        <span class="percent d-none">-@item.Discount.Percent%</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="percent">-@item.Discount.Percent%</span>
+                                    }
+
                                     <div class="product-detail">
 
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                                        <div class="content stars">
+                                            @for (int i = 0; i < @item.Rating.RatingCount; i++)
+                                            {
+                                                <i class="fa-solid fa-star orange"></i>
+                                            }
+                                            @for (int i = 0; i < (5 - @item.Rating.RatingCount); i++)
+                                            {
+                                                <i class="fa-solid fa-star"></i>
+                                            }
+                                        </div>
+                                        <div class="content title">
+                                            <span>@item.Title</span>
+                                        </div>
+                                        <div class=" content price">
+                                            @if (item.Discount.Percent == 0)
+                                            {
+                                                <span class="discount d-none">£@item.Price</span>
+                                                <span class="actual-price ">£@item.Price</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="discount">£@item.Price</span>
+
+                                                <span class="actual-price">£@(item.Price - ((item.Price * item.Discount.Percent) / 100))</span>
+                                            }
+
+
+
+                                        </div>
+
                                     </div>
-                                    <div class="content title">
-                                        <span>The Little Tank Hunter</span>
+
+                                    <div class="product-button-outer">
+
+                                        <a href="wishlist.html">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </a>
+
+                                        <a href="cart.html">
+                                            <i class="fa-solid fa-cart-arrow-down"></i>
+                                        </a>
+
+                                        <a href="product-detail.html">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+
                                     </div>
-                                    <div class=" content price">
-                                        <span class="discount">£85.00</span>
-                                        <span class="actual-price">£60.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
                                 </div>
 
 
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
-                                    </div>
-                                    <span class="percent">-27%</span>
-                                    <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£96.00</span>
-                                        <span class="actual-price">£70.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
-                                    </div>
-                                    <span class="percent">-20%</span>
-                                    <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Train Station Renovation</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£100.00</span>
-                                        <span class="actual-price">£80.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
-                                    </div>
-                                    <span class="percent">-20%</span>
-                                    <div class="product-detail">
-
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£115.00</span>
-                                        <span class="actual-price">£92.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
-                                    </div>
-                                    <span class="percent">-13%</span>
-                                    <div class="product-detail">
-
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£98.00</span>
-                                        <span class="actual-price">£85.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                    </div>
-                                    <span class="percent">-10%</span>
-                                    <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Babol The Walking Box</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£100.00</span>
-                                        <span class="actual-price">£90.00</span>
-                                    </div>
-
-                                     </div>
-
-                                     <div class="product-button-outer">
-
-                                            <a href="wishlist.html">
-                                                <i title="heart" class="fa-solid fa-heart"></i>
-                                            </a>
-
-                                            <a href="cart.html"> 
-                                                <i class="fa-solid fa-cart-arrow-down"></i>
-                                            </a>
-
-                                               <a href="product-detail.html">
-                                                <i class="fa-solid fa-eye"></i>
-                                               </a>
-
-                                     </div>
-                                </div>
-
-
-                              </div>
-
+                            </div>
+                        }
 
                         </div>
                         <div class="swiper-button-next next-prev"></div>
@@ -748,22 +520,24 @@
 
                         <div class="swiper blog">
                             <div class="swiper-wrapper">
-                              <div data-aos="fade-right" class="swiper-slide">
+                                @foreach (var blog in Model.Blogs)
+                        {
+                             <div data-aos="fade-right" class="swiper-slide">
                                 <div class="card-carousel">
                                     <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/1.jpg" alt="">
+                                        <img class="w-100 main" src="~/assets/img/blog/@blog.Image" alt="">
 
                                     </div>
                                     <div class="post-content-inner">
                                         <div class="post-detail">
                                             <div class="blog-meta">
                                                 <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Jan&nbsp;18,2021</span>
+                                                    <i class="fa @blog.Icon"></i>
+                                                    <span>@blog.CreateDate.ToString("MM-dd-yyyy")</span>
                                                 </div>
                                             </div>
                                             <div class="blog-title">
-                                                <a href="blog.html"><span>Strategy Lovers Essential</span></a>
+                                                <a asp-controller="Blog" asp-action="Index" asp-route-id="@blog.Id"><span>@blog.Title</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -772,222 +546,8 @@
 
 
                               </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/2.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>May&nbsp;30,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href="blog.html"><span>Unforgettable Adventures</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/3.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Apr&nbsp;13,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Thrilling Moments of Terror</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/4.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Feb&nbsp;13,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Pushing the Limits of Excitement</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/5.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Feb&nbsp;4,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Journey into Legends</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/6.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Feb&nbsp;4,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>For Mobile Gaming Enthusiasts</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/7.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Feb&nbsp;4,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Reviving the Classics</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/8.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Mar&nbsp;10,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Stunning Graphics, Magnificent Worlds</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/9.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Sep&nbsp;11,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Unleash Your Creativity</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
-                              <div data-aos="fade-right" class="swiper-slide">
-                                <div class="card-carousel">
-                                    <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/blog/10.jpg" alt="">
-
-                                    </div>
-                                    <div class="post-content-inner">
-                                        <div class="post-detail">
-                                            <div class="blog-meta">
-                                                <div class="show-date">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <span>Oct&nbsp;7,2021</span>
-                                                </div>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href=""><span>Fun Moments with Friends</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                              </div>
+                        }
+                             
 
                             </div>
                             <div class="swiper-button-next next-prev"></div>
@@ -998,7 +558,7 @@
                           <div class="col-12 ">
                               <div class="all-blog">
                                 <div class="view-all-blogs">
-                                    <a href="blog.html">
+                                    <a asp-controller="Blog" asp-action="Index">
                                         <i class="fa fa-eye"></i>
                                         <span> View All Blogs</span>
                                     </a>

@@ -26,6 +26,8 @@ namespace Gamehoax_backend.Data
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
 
 
@@ -53,7 +55,10 @@ namespace Gamehoax_backend.Data
             modelBuilder.Entity<Cart>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Subscribe>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<BrandModel>().HasQueryFilter(m => !m.SoftDelete);
-          
+            modelBuilder.Entity<Testimonial>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Review>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.SoftDelete);
+
         }
     }
 }
