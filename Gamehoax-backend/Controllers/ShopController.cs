@@ -160,7 +160,7 @@ namespace Gamehoax_backend.Controllers
         }
 
 
-        public async Task<IActionResult> Sort(string? sortValue, int page = 1, int take = 3)
+        public async Task<IActionResult> Sort(string sortValue, int page = 1, int take = 3)
         {
             ViewBag.sortValue = sortValue;
 

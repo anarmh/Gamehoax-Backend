@@ -14,13 +14,15 @@ namespace Gamehoax_backend.Controllers
         private readonly IProductService _productService;
         private readonly ITestimonialService _testimonialService;
         private readonly IBlogService _blogService;
+        private readonly IBrandService _brandService;
 
         public HomeController(ISliderService sliderService, 
                               IServiceIconService serviceIconService,
                               ICategoryService categoryService, 
                               IProductService productService,
                               ITestimonialService testimonialService,
-                              IBlogService blogService)
+                              IBlogService blogService,
+                              IBrandService brandService)
         {
             _sliderService = sliderService;
             _serviceIconService = serviceIconService;
@@ -28,6 +30,7 @@ namespace Gamehoax_backend.Controllers
             _productService = productService;
             _testimonialService= testimonialService;
             _blogService = blogService;
+            _brandService= brandService;
         }
 
         public async Task<IActionResult> Index()
@@ -38,6 +41,7 @@ namespace Gamehoax_backend.Controllers
             List<Product> products=await _productService.GetAllAsync();
             List<Testimonial> testimonials=await _testimonialService.GetAllAsync();
             List<Blog> blogs=await _blogService.GetAllAsync();
+            List<Brand> brands=await _brandService.GetAllAsync();
 
             HomeVM model= new() 
             { 
@@ -47,6 +51,7 @@ namespace Gamehoax_backend.Controllers
                 Products= products,
                 Testimonials= testimonials,
                 Blogs=blogs,
+                Brands= brands,
             };
             return View(model);
         }

@@ -25,9 +25,9 @@
         <section id="service-icons">
             <div class="container theme-container">
                 <div class="row">
-                    @foreach (var item in Model.ServiceIcons)
+                    @foreach (var item in Model.ServiceIcons.Take(4))
                 {
-                    <div class="col-sm-6 col-md-3 col-lg-3">
+                    <div class="col-sm-6 col-md-3 col-lg-3 mb-3">
                         <div class="column-inner">
                             <div class="wp-wrapper">
                                 <div class="service-list service-1 style-1">
@@ -577,64 +577,20 @@
                 <div class="row">
                     <div class="swiper brand">
                         <div class="swiper-wrapper">
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
+                            @foreach (var brand in Model.Brands)
+                        {
+                            <div class="swiper-slide ">
+                                <div class="card-carousel">
 
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-01.png" alt="">
+                                    <img class="w-100 main" src="~/assets/img/brand/@brand.Image" alt="">
 
-
-                            </div>
-
-
-                          </div>
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
-
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-02.png" alt="">
-
-
-                            </div>
-
-
-                          </div>
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
-
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-03.png" alt="">
-
-
-                            </div>
-
-
-                          </div>
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
-
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-04.png" alt="">
-
-
-                            </div>
-
-
-                          </div>
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-05.png" alt="">
 
                                 </div>
+
+
                             </div>
-
-
-                          </div>
-                          <div class="swiper-slide " >
-                            <div class="card-carousel">
-                                    <img class="w-100 main" src="~/assets/img/brand/brand-01.png" alt="">
-                            </div>
-
-
-                          </div>
-
+                        }
+                         
 
 
                         </div>

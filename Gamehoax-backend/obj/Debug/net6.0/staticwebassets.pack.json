@@ -453,26 +453,6 @@
       "PackagePath": "staticwebassets\\assets\\image-pan-zoom-hover\\src\\Nzoom.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\1.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\2.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\3.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\4.jpg"
-    },
-    {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\about\\5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\5.jpg"
-    },
-    {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\1.jpg"
     },
@@ -711,6 +691,26 @@
     {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\3.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\4.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\5.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\6.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\7.jpg"
+    },
+    {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\8.jpg"
     },
     {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\parallax.jpg",

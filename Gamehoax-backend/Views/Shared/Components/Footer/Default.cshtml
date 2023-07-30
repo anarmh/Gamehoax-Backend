@@ -1,0 +1,93 @@
+﻿@model LayoutVM
+
+<footer>
+    <section id="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="first">
+                        <h3>Address Info</h3>
+                        <ul>
+                            <li>
+                                <div class="address content">
+                                    <div class="icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="contact address"><span>@Model.SettingDatas["FooterAddress"]</span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="phone content">
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="contact">
+                                        <span>@Model.SettingDatas["FooterPhone"]</span>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="email content">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="contact">
+                                        <span>@Model.SettingDatas["FooterEmail"]</span>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="product-detail.html">Product Detail</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <h3>Extrass</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="title-outer">
+                        <h3>Our Newsletter</h3>
+                        <p>There are many variations of passages of form humour or randomised</p>
+                        <div class="tnp tnp-widget">
+                            <form action="" method="post">
+                                <input type="hidden">
+                                <input type="hidden">
+                                <div class="tnp-field tnp-field-email">
+                                    <input type="email" class="tnp-email">
+
+                                </div>
+                                <div class="tnp-field tnp-field-button">
+                                    <input class="tnp-submit" type="submit" value="Subscribe">
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="backtotop">
+        <a id="to-top" href="#">Top</a>
+    </div>
+
+</footer>
