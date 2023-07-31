@@ -1,106 +1,90 @@
 ﻿@model Paginate<ProductVM>
    
 
+@if (Model.Datas.Count > 0)
+{
 
-    @if (Model.Datas.Count > 0)
+
+    @foreach (var product in Model.Datas)
     {
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+            <div class="card-carousel">
+                <div class="action-buttons">
+                    <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
+                </div>
+                <div class="product-detail">
 
+                    <div class="content stars">
+                        @for (int i = 0; i < product.Rating; i++)
+                        {
+                            <i class="fa-solid fa-star orange"></i>
+                        }
+                        @for (int i = 0; i < (5 - product.Rating); i++)
+                        {
+                            <i class="fa-solid fa-star"></i>
+                        }
 
-        @foreach (var product in Model.Datas)
-        {
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                <div class="card-carousel">
-                    <div class="action-buttons">
-                        <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                        <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
-                    </div>
-                    <div class="product-detail">
-
-                        <div class="content stars">
-                            @for (int i = 0; i < product.Rating; i++)
-                            {
-                                <i class="fa-solid fa-star orange"></i>
-                            }
-                            @for (int i = 0; i < (5 - product.Rating); i++)
-                            {
-                                <i class="fa-solid fa-star"></i>
-                            }
-
-
-                        </div>
-                        <div class="content title">
-                            <span>@product.Title</span>
-                        </div>
-                        <div class="content price">
-                            <span class="actual-price">£@product.Price</span>
-                        </div>
 
                     </div>
-
-                    <div class="product-button-outer">
-
-                        <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
-                            <i class="fa-solid fa-heart"></i>
-                        </a>
-
-                        <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
-                            <i class="fa-solid fa-cart-arrow-down"></i>
-                        </a>
-
-                        <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                            <i class="fa-solid fa-eye"></i>
-                        </a>
-
+                    <div class="content title">
+                        <span>@product.Title</span>
                     </div>
+                    <div class="content price">
+                        <span class="actual-price">£@product.Price</span>
+                    </div>
+
                 </div>
 
-            </div>
-        }
-         @*   
-            <div class="pagination d-flex justify-content-center mt-3">
-            <nav aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
-                    <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)" tabindex="-1">←</a>
-                    </li>
-                    @for (int i = 1; i <= Model.TotalPage; i++)
-                    {
-                        <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")">
-                            <a class="page-link @(Model.CurrentPage == i ? "active-paginate" : "")" asp-route-page="@i">@i</a>
-                        </li>
-                    }
+                <div class="product-button-outer">
 
-                    <li class="page-item @(Model.HasNext ? "" : "disabled")">
-                    <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">→</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>*@
-
-        <div class="pagination ">
-            <ul>
-            <li class="@(Model.HasPrevious? "": "disabled")">
-                    <a asp-route-sortValue="@ViewBag.sortValue" asp-route-page="@(Model.CurrentPage -1)">
-                        ←
+                    <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
+                        <i class="fa-solid fa-heart"></i>
                     </a>
+
+                    <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </a>
+
+                    <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    }
+
+    <div class="pagination d-flex justify-content-center mt-3">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item @(Model.HasPrevious ? "" : "d-none")">
+                    <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)" asp-action="Index" asp-route-sortValue="@ViewBag.sortValue" tabindex="-1">Prev</a>
                 </li>
                 @for (int i = 1; i <= Model.TotalPage; i++)
                 {
-                    <li class=" @(Model.CurrentPage == i ? "disabled" : "") ">
-                    <a  asp-route-page="@i">@i</a>
+                    <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")" style="box-shadow:none !important; outline:none !important;">
+                        <a class="page-link @(Model.CurrentPage == i ? "active-paginate" : "")" asp-action="Index" asp-route-sortValue="@ViewBag.sortValue" asp-route-page="@i" style="box-shadow:none !important">@i</a>
                     </li>
                 }
 
-
-                <li class=" @(Model.HasNext? " " :"disabled") ">
-                    <a  asp-route-sortValue="@ViewBag.sortValue" asp-route-page="@(Model.CurrentPage +1)">→</a>
+                <li class="page-item @(Model.HasNext ? "" : "d-none")">
+                    <a class="page-link" asp-action="Index" asp-route-sortValue="@ViewBag.sortValue" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
                 </li>
             </ul>
-        </div>
-            
-       
-    }
+        </nav>
+    </div>
 
+
+}
+
+else
+{
+    <div class="alert alert-warning" style="background-color:orange;" role="alert">
+        Product Not Found...
+    </div>
+}
 
 
 @section Scripts{

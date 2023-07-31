@@ -2709,6 +2709,12 @@ body{
 }
 
 
+.active-paginate {
+    background-color: #ffba00 !important;
+    color: #170f1f !important;
+    font-weight:600 !important;
+}
+
 .active{
     color: #f9aa01 
 }
@@ -3277,8 +3283,8 @@ body{
                     display: block;
                     text-decoration: none;
                     color: #ffffff;
-                    width: 35px;
-                    height: 35px;
+                   /* width: 35px;
+                    height: 35px;*/
                     background-color:transparent;
                     font-weight: 500;
                     line-height: 34px;

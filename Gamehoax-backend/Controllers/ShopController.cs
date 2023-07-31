@@ -24,50 +24,54 @@ namespace Gamehoax_backend.Controllers
             _context= context;
         }
 
-        public async Task<IActionResult> Index(int page=1, int take=2, string sortValue=null, string searchText=null, int? categoryId=null, int? tagId=null,int? value1=null,int? value2=null)
+        public async Task<IActionResult> Index(int page=1, int take=2)
         {
 
-            List<Product> paginateProducts = await _productService.GetPaginateDatasAsync(page,take,sortValue,searchText,categoryId,tagId,value1,value2);
+            List<Product> paginateProducts = await _productService.GetPaginateDatasAsync(page,take);
             List<ProductVM> mappedDatas = _productService.GetMappedDatas(paginateProducts);
+            int pageCount = await GetPageCountAsync(take);
+            //ViewBag.categoryId = categoryId;
+            //ViewBag.tagId = tagId;
+            //ViewBag.value1 = value1;
+            //ViewBag.value2 = value2;
+            //ViewBag.searchText = searchText;
+            //ViewBag.sortValue = sortValue;
 
-            ViewBag.categoryId = categoryId;
-            ViewBag.tagId = tagId;
-            ViewBag.value1 = value1;
-            ViewBag.value2 = value2;
-            ViewBag.searchText = searchText;
-            ViewBag.sortValue = sortValue;
 
+            //int pageCount = 0;
+            //if (categoryId != null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, null, null, categoryId, null, null, null);
+            //}
+            //if (tagId != null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, null, null, null, tagId, null, null);
+            //}
+            //if (value1 != null && value2 != null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, null, null, null, null, value1, value2);
+            //}
+            //if (searchText != null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, null, searchText, null, null, null, null);
 
-            int pageCount = 0;
-            if (categoryId != null)
-            {
-                pageCount = await GetPageCountAsync(take, null, null, categoryId, null, null, null);
-            }
-            if (tagId != null)
-            {
-                pageCount = await GetPageCountAsync(take, null, null, null, tagId, null, null);
-            }
-            if (value1 != null && value2 != null)
-            {
-                pageCount = await GetPageCountAsync(take, null, null, null, null, value1, value2);
-            }
-            if (searchText != null)
-            {
-                pageCount = await GetPageCountAsync(take, null, searchText, null, null, null, null);
+            //}
+            //if (sortValue != null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, sortValue, null, null, null, null, null);
 
-            }
-            if (sortValue != null)
-            {
-                pageCount = await GetPageCountAsync(take, sortValue, null, null, null, null, null);
-
-            }
+            //}
+            //if(sortValue==null && searchText==null && value1==null && value2==null && categoryId==null && tagId==null)
+            //{
+            //    pageCount = await GetPageCountAsync(take, null, null, null, null, null, null);
+            //}
 
             Paginate<ProductVM> paginatedDatas = new(mappedDatas, page, pageCount);
 
             List<Product> products= await _productService.GetAllAsync();
             List<Category> categories= await _categoryService.GetAllAsync();
             List<Tag> tags= await _tagService.GetAllAsync();
-           int countProducts= await _productService.GetCountAsync();
+         
             
             ShopVM model = new()
             {
@@ -75,41 +79,42 @@ namespace Gamehoax_backend.Controllers
                 Categories= categories,
                 Tags= tags,
                 PaginateDatas= paginatedDatas,
-                CountProducts= countProducts,
+               
             };
             return View(model);
         }
 
 
 
-        private async Task<int> GetPageCountAsync(int take, string sortValue,string searchText,int? categoryId, int? tagId,int? value1,int? value2)
+        private async Task<int> GetPageCountAsync(int take)
         {
+            int prodCount=await _productService.GetCountAsync();
 
-            int prodCount=0;
-            if (sortValue != null)
-            {
-                prodCount = await _productService.GetProductsCountBySortTextAsync(sortValue);
-            }
-            if (searchText != null)
-            {
-                prodCount = await _productService.GetProductsCountBySearchTextAsync(searchText);
-            }
-            if (categoryId != null)
-            {
-                prodCount = await _productService.GetProductsCountByCategoryAsync(categoryId);
-            }
-            if (tagId != null)
-            {
-                prodCount = await _productService.GetProductsCountByCategoryAsync(categoryId);
-            }
-            if (value1 != null && value2 != null)
-            {
-                prodCount = await _productService.GetProductsCountByRangeAsync(value1, value2);
-            }
-            if (sortValue == null && searchText == null && categoryId == null && tagId == null  && value1 == null && value2 == null)
-            {
-                prodCount = await _productService.GetCountAsync();
-            }
+            //int prodCount=0;
+            //if (sortValue != null)
+            //{
+            //    prodCount = await _productService.GetProductsCountBySortTextAsync(sortValue);
+            //}
+            //if (searchText != null)
+            //{
+            //    prodCount = await _productService.GetProductsCountBySearchTextAsync(searchText);
+            //}
+            //if (categoryId != null)
+            //{
+            //    prodCount = await _productService.GetProductsCountByCategoryAsync(categoryId);
+            //}
+            //if (tagId != null)
+            //{
+            //    prodCount = await _productService.GetProductsCountByTagAsync(categoryId);
+            //}
+            //if (value1 != null && value2 != null)
+            //{
+            //    prodCount = await _productService.GetProductsCountByRangeAsync(value1, value2);
+            //}
+            //if (sortValue == null && searchText == null && categoryId == null && tagId == null  && value1 == null && value2 == null)
+            //{
+            //    prodCount = await _productService.GetCountAsync();
+            //}
 
             return (int)Math.Ceiling((decimal)prodCount / take);
         }
@@ -139,7 +144,7 @@ namespace Gamehoax_backend.Controllers
 
             var products = await _productService.GetProductsByCategoryIdAsync(id, page, take);
 
-            int pageCount = await GetPageCountAsync(take, null, null, (int)id, null, null, null);
+            int pageCount = await GetPageCountAsync(take);
 
             Paginate<ProductVM> model = new(products, page, pageCount);
 
@@ -154,7 +159,7 @@ namespace Gamehoax_backend.Controllers
 
             var products = await _productService.GetProductsByTagIdAsync(id, page, take);
 
-            int pageCount = await GetPageCountAsync(take, null, null, (int)id, null, null, null);
+            int pageCount = await GetPageCountAsync(take);
 
             Paginate<ProductVM> model = new(products, page, pageCount);
 

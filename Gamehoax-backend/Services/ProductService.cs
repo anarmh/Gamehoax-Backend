@@ -3,6 +3,7 @@ using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Gamehoax_backend.Services
 {
@@ -79,7 +80,7 @@ namespace Gamehoax_backend.Services
             return mappedDatas;
         }
 
-        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take, string sortValue, string searchText, int? categoryId, int? tagId, int? value1, int? value2)
+        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take)
         {
             List<Product> products= await _context.Products.
                 Include(m=>m.ProductImages).
@@ -91,81 +92,89 @@ namespace Gamehoax_backend.Services
                 ThenInclude(m=>m.Tag).
                 Skip((page-1)*take).
                 Take(take).ToListAsync();
-
-            if (sortValue != null)
-            {
-                if (sortValue == "1")
-                {
-                    products= await _context.Products.Include(m=>m.ProductImages).Include(m=>m.Rating).Skip((page -1 ) * take).Take(take).ToListAsync();
-                }
-                if(sortValue == "2")
-                {
-                    products= await _context.Products.Include(m=>m.ProductImages).Include(m=>m.Rating).OrderByDescending(m=>m.CreateDate).Skip((page - 1) * take).Take(take).ToListAsync();
-                }
-                if (sortValue == "3")
-                {
-                    products= await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Rating.RatingCount).Skip((page - 1)*take).Take(take).ToListAsync();
-                }
-                if (sortValue == "4")
-                {
-                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderBy(m => m.Price).Skip((page-1) *take).Take(take).ToListAsync();
-                }
-                if (sortValue == "4")
-                {
-                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Price).Skip((page - 1) *take).Take(take).ToListAsync();
-                }
-            }
-
-            if (searchText != null)
-            {
-                products = await _context.Products
-                .Include(p => p.ProductImages)
-                .Include(p=>p.Rating)
-                .Include(p=>p.Discount)
-                .OrderByDescending(p => p.Id)
-                .Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
-                .Skip((page - 1) *take)
-                .Take(take)
-                .ToListAsync();
-            }
-
-            if (categoryId != null)
-            {
-                products = await _context.Categories
-                 .Where(p => p.Id == categoryId)
-                 .Include(p=>p.ProductCategories)
-                .ThenInclude(p => p.Product)
-                .ThenInclude(p => p.ProductImages)
-                .SelectMany(p => p.ProductCategories.Select(pc => pc.Product))
-                .Skip((page - 1) * take)
-                .Take(take)
-                .ToListAsync();
-            }
+         
 
 
-            if (tagId != null)
-            {
-                products = await _context.Tags
-                 .Where(p => p.Id == tagId)
-                 .Include(p => p.ProductTags)
-                .ThenInclude(p => p.Product)
-                .ThenInclude(p => p.ProductImages)
-                .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
-                .Skip((page - 1) * take)
-                .Take(take)
-                .ToListAsync();
-            }
 
-            if (value1 != null && value2 != null)
-            {
-                products = await _context.Products
-               .Include(p => p.ProductImages)
-               .Where(p => p.Price >= value1 && p.Price <= value2)
-               .Skip((page -1) * take)
-               .Take(take)
-               .ToListAsync();
+            //if (sortValue != null)
+            //{
+            //    if (sortValue == "1")
+            //    {
+            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).Skip((page -1) * take).Take(take).ToListAsync();
+            //    }
+            //    if (sortValue == "2")
+            //    {
+            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.CreateDate).Skip((page - 1) * take).Take(take).ToListAsync();
+            //    }
+            //    if (sortValue == "3")
+            //    {
+            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Rating.RatingCount).Skip((page-1) *take).Take(take).ToListAsync();
+            //    }
+            //    if (sortValue == "4")
+            //    {
+            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderBy(m => m.Price).Skip((page-1) *take).Take(take).ToListAsync();
+            //    }
+            //    if (sortValue == "5")
+            //    {
+            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Price).Skip((page-1) * take).Take(take).ToListAsync();
+            //    }
+            //}
 
-            }
+            //if (searchText != null)
+            //{
+            //    products = await _context.Products
+            //    .Include(p => p.ProductImages)
+            //    .Include(p => p.Rating)
+            //    .Include(p => p.Discount)
+            //    .OrderByDescending(p => p.Id)
+            //    .Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
+            //    .Skip((page * take) - take)
+            //    .Take(take)
+            //    .ToListAsync();
+            //}
+
+            //if (categoryId != null)
+            //{
+            //    products = await _context.Categories
+            //     .Where(p => p.Id == categoryId)
+            //     .Include(p => p.ProductCategories)
+            //    .ThenInclude(p => p.Product)
+            //    .ThenInclude(p => p.ProductImages)
+            //    .SelectMany(p => p.ProductCategories.Select(pc => pc.Product))
+            //    .Skip((page * take) - take)
+            //    .Take(take)
+            //    .ToListAsync();
+            //}
+
+
+            //if (tagId != null)
+            //{
+            //    products = await _context.Tags
+            //     .Where(p => p.Id == tagId)
+            //     .Include(p => p.ProductTags)
+            //    .ThenInclude(p => p.Product)
+            //    .ThenInclude(p => p.ProductImages)
+            //    .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
+            //    .Skip((page * take) - take)
+            //    .Take(take)
+            //    .ToListAsync();
+            //}
+
+            //if (value1 != null && value2 != null)
+            //{
+            //    products = await _context.Products
+            //   .Include(p => p.ProductImages)
+            //   .Include(p => p.ProductTags)
+            //   .ThenInclude(p => p.Tag)
+            //   .Include(p => p.ProductCategories)
+            //   .ThenInclude(p => p.Category)
+            //   .Include(p => p.Rating)
+            //   .Where(p => p.Price >= value1 && p.Price <= value2)
+            //   .Skip((page * take) - take)
+            //   .Take(take)
+            //   .ToListAsync();
+
+            //}
 
 
             return products;
@@ -207,7 +216,7 @@ namespace Gamehoax_backend.Services
                                                                      .ThenInclude(p => p.ProductImages)
                                                                      .Where(pc => pc.Id == id)
                                                                     .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
-                                                                     .Skip((page - 1) * take)
+                                                                     .Skip((page -1) * take)
                                                                      .Take(take)
                                                                      .ToListAsync();
             foreach (var product in products)

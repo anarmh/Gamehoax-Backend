@@ -110,16 +110,19 @@ $(document).ready(function(){
     //SORT
     $(document).on("change", "#sort", function (e) {
         e.preventDefault();
+       
         let sortValue = $(this).val();
         console.log(sortValue)
         let data = { sortValue: sortValue };
+        console.log(data)
         let parent = $(".productss-area");
-
+        console.log(parent)
         $.ajax({
             url: "/Shop/Sort",
             type: "Get",
             data: data,
             success: function (res) {
+                console.log(res)
                 $(parent).html(res);
 
             }
