@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductDetailVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -27,23 +27,17 @@
             <div class="row">
                 <div class="col-5  main">
                     <div class="zoom-container ">
-
-                        <img src="~/assets/img/product/1.jpg" alt="" class="xzoom" xoriginal="~/assets/img/product/1.jpg">
+                            
+                        <img src="~/assets/img/product/@Model.Images?.FirstOrDefault(m=>m.IsMain)?.Image" alt="" class="xzoom" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
                         <div class="xzoom-thumbs">
-                            <a href="~/assets/img/product/2.jpg">
-                                <img class="xzoom-gallery" src="~/assets/img/product/2.jpg" xpreview="~/assets/img/product/2.jpg">
-                            </a>
-                            <a href="~/assets/img/product/3.jpg">
-                                <img class="xzoom-gallery" src="~/assets/img/product/3.jpg">
-                            </a>
-                            <a href="~/assets/img/product/4.jpg">
-                                <img class="xzoom-gallery" src="~/assets/img/product/4.jpg">
-                            </a>
-
-                            <a href="~/assets/img/product/1.jpg">
-                                <img class="xzoom-gallery" src="~/assets/img/product/1.jpg">
-                            </a>
+                            @foreach (var item in Model.Images)
+                            {
+                                <a href="~/assets/img/product/@item.Image">
+                                    <img class="xzoom-gallery" src="~/assets/img/product/@item.Image" xpreview="~/assets/img/product/@item.Image">
+                                </a>
+                            }
+                          
                         </div>
 
 
@@ -53,8 +47,16 @@
                 <div class="col-7">
                     <div class="summary">
                         <h1 class="product-title">BangBangShooting</h1>
-                        <p class="price"><span>£</span><span>56.00</span></p>
-                        <p class="description">When the joystick is adaptive, it can automatically adjust its behavior or settings based on the device or platform it is being used on. For example, in the case of gaming joysticks, adaptive functionality can allow the joystick to work seamlessly on different devices such as computers, gaming consoles, or mobile devices. It ensures that the joystick's controls and inputs are optimized for the specific device it is connected to, providing a better user experience.</p>
+                        <p class="price">
+                            @if (Model.Percent!=0){
+                                <span style="text-decoration: line-through !important; color: #808080;">£</span>
+
+                                <span class="" style="text-decoration: line-through !important; color: #808080;">@Model.ActualPrice</span>
+                            }
+                           
+                            <span>£</span><span class="discount" ">@Model.DiscountPrice</span>
+                          </p>
+                        <p class="description"> @Model.Description</p>
                         <form action="">
                             <div class="quantity">
                                 <span class="template-quantity">Qty: </span>
@@ -80,17 +82,25 @@
 
 
                         <div class="product-meta">
-                            <span class="sku-wrapper">SKU: <span class="sku">Mol85</span></span>
+                            <span class="sku-wrapper">SKU: <span class="sku">@Model.SKU</span></span>
                             <span class="category">
                                 Categories:
-                                <a href="">Minecraft</a>,
-                                <a href=""> Overwatch</a>
+                                @foreach (var item in Model.ProductCategories)
+                                {
+                                    <a href=""> @item.Category.Name</a>
+                                }
+                              
+                               
                             </span>
 
                             <span class="tag">
                                 Tags:
-                                <a href="">Pretium</a>,
-                                <a href=""> Quis</a>
+                                @foreach (var item in Model.ProductTags)
+                                {
+                                    <a href="">@item.Tag.Name</a>
+                                }
+                              
+                              
                             </span>
                         </div>
                     </div>
@@ -101,22 +111,17 @@
                     <div class="col-12">
                         <div class="zoom-container ">
 
-                            <img src="~/assets/img/product/1.jpg" alt="" class="xzoom" xoriginal="~/assets/img/product/1.jpg">
+                            <img src="~/assets/img/product/@Model.Images?.Where(m=>m.IsMain).FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
                             <div class="xzoom-thumbs">
-                                <a href="~/assets/img/product/2.jpg">
-                                    <img class="xzoom-gallery" src="~/assets/img/product/2.jpg" xpreview="~/assets/img/product/2.jpg">
-                                </a>
-                                <a href="~/assets/img/product/3.jpg">
-                                    <img class="xzoom-gallery" src="~/assets/img/product/3.jpg">
-                                </a>
-                                <a href="~/assets/img/product/4.jpg">
-                                    <img class="xzoom-gallery" src="~/assets/img/product/4.jpg">
-                                </a>
 
-                                <a href="~/assets/img/product/1.jpg">
-                                    <img class="xzoom-gallery" src="~/assets/img/product/1.jpg">
-                                </a>
+
+                                    @foreach (var item in Model.Images)
+                                    {
+                                    <a href="~/assets/img/product/@item.Image">
+                                        <img class="xzoom-gallery" src="~/assets/img/product/@item.Image" xpreview="~/assets/img/product/@item.Image">
+                                    </a>
+                                    }
                             </div>
 
 
@@ -124,9 +129,16 @@
                     </div>
                     <div class="col-12">
                         <div class="summary">
-                            <h1 class="product-title">BangBangShooting</h1>
-                            <p class="price"><span>£</span><span>56.00</span></p>
-                            <p class="description">When the joystick is adaptive, it can automatically adjust its behavior or settings based on the device or platform it is being used on. For example, in the case of gaming joysticks, adaptive functionality can allow the joystick to work seamlessly on different devices such as computers, gaming consoles, or mobile devices. It ensures that the joystick's controls and inputs are optimized for the specific device it is connected to, providing a better user experience.</p>
+                            <h1 class="product-title">@Model.Title</h1>
+                        @if (Model.Percent != 0)
+                        {
+                                <span style="text-decoration: line-through !important; color: #808080;">£</span>
+
+                                <span class="" style="text-decoration: line-through !important; color: #808080;">@Model.ActualPrice</span>
+                        }
+
+                            <span>£</span><span class="discount" ">@Model.DiscountPrice</span>
+                            <p class="description">@Model.Description</p>
                             <form action="">
                                 <div class="quantity">
                                     <span class="template-quantity">Qty: </span>
@@ -152,17 +164,22 @@
 
 
                             <div class="product-meta">
-                                <span class="sku-wrapper">SKU: <span class="sku">Mol85</span></span>
+                                <span class="sku-wrapper">SKU: <span class="sku">@Model.SKU</span></span>
                                 <span class="category">
                                     Categories:
-                                    <a href="">Minecraft</a>,
-                                    <a href=""> Overwatch</a>
+                                  
+                                    @foreach (var item in Model.ProductCategories)
+                                {
+                                    <a href=""> @item.Category.Name</a>
+                                }
                                 </span>
 
                                 <span class="tag">
                                     Tags:
-                                    <a href="">Pretium</a>,
-                                    <a href=""> Quis</a>
+                                    @foreach (var item in Model.ProductTags)
+                                    {
+                                    <a href="">@item.Tag.Name</a>
+                                    }
                                 </span>
                             </div>
                         </div>
@@ -188,34 +205,14 @@
                     <div class="description item" data-id="1">
                         <h2>Description</h2>
                         <h5>Paragraph text</h5>
-                        <p>Adaptive functionality can be particularly useful for gaming, as it allows gamers to use the same joystick on multiple devices without the need for additional configuration or adjustments. This makes the joystick more versatile and user-friendly, as it can easily switch between different platforms without any compatibility issues.</p>
-                        <h5>Unordered list</h5>
-                        <ul>
-                            <li>
-                                Elevate your gaming performance with our cutting-edge joysticks. Designed for precision and control, these joysticks will provide you with an immersive gaming experience like never before. Take your gaming skills to new heights and conquer every virtual challenge with ease.
-                            </li>
-                            <li>
-                                Enhance your gaming accuracy and speed with our high-performance gaming mice. Featuring advanced sensors and customizable settings, these mice are tailored to meet the demands of even the most intense gaming sessions. Dominate the battlefield and outmaneuver your opponents with our top-notch gaming mice.
-                            </li>
-                            <li>
-                                Discover the power of storage with our reliable gaming disks. Offering ample space and lightning-fast data transfer, these disks are the perfect companion for storing your favorite games, videos, and more. Say goodbye to storage limitations and keep your gaming library organized and accessible at all times.
-                            </li>
-                            <li>
-                                Immerse yourself in the world of virtual sound with our premium gaming headsets. Designed for crystal-clear audio and precise communication, these headsets will take your gaming experience to the next level. Whether you're playing solo or teaming up with friends, our qulaqliqs will ensure you never miss a single sound cue.
-                            </li>
-                            <li>
-                                Elevate your gaming experience with our premium gaming mouse pads. Designed for precision and control, our mouse pads provide a smooth and responsive surface for accurate mouse movements. Whether you prefer speed or control, our mouse pads offer the perfect balance for enhanced gaming performance.
-                            </li>
-                        </ul>
+                        <p> @Model.Description</p>
+                      
                         <h5>
-                            Ordered list
+                          Product Name
                         </h5>
                         <ol>
-                            <li>Joystick</li>
-                            <li>Mouse</li>
-                            <li>Disk</li>
-                            <li>Headset</li>
-                            <li>Mouse Pad</li>
+                            <li>@Model.Name</li>
+                           
                         </ol>
                         <p>They are equipped with directional buttons and various buttons, allowing users to move characters and perform actions within the game. Some joysticks also feature vibration feedback to provide a more immersive gaming experience, while others offer analog sticks for more precise control.</p>
                     </div>
@@ -225,19 +222,19 @@
                             <tbody>
                                 <tr>
                                     <th>Brand:</th>
-                                    <td>Logitech</td>
+                                    <td>@Model.BrandName</td>
                                 </tr>
                                 <tr>
                                     <th>Model:</th>
-                                    <td> G29 Driving Force</td>
+                                    <td>@Model.ModelName</td>
                                 </tr>
                                 <tr>
                                     <th>Features:</th>
-                                    <td>Steering wheel set, pedals, force feedback, 900-degree rotation angle.</td>
+                                    <td>@Model.Feature</td>
                                 </tr>
                                 <tr>
                                     <th>Weight:</th>
-                                    <td>1.7 kg</td>
+                                    <td>@Model.Weight</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -250,7 +247,7 @@
                                         <ul class="review-list">
                                             <li class="review-item">
                                                 <div class="review-media">
-                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-01-446x550_t.jpg" alt="review"></a>
+                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/@Model.Category.Image" alt="review"></a>
                                                     <h5 class="review-meta">
                                                         <a href="#">miron mahmud</a><span>June 02, 2020</span>
                                                     </h5>
@@ -356,273 +353,63 @@
                 </div>
                 <div class="swiper related ">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/11.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/10.jpg" alt="">
-                                </div>
-                                <span class="percent">-29%</span>
-                                <div class="product-detail">
-
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                        @foreach (var item in Model.Products)
+                        {
+                            <div class="swiper-slide">
+                                <div class="card-carousel">
+                                    <div class="action-buttons">
+                                        <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
+                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
                                     </div>
-                                    <div class="content title">
-                                        <span>The Little Tank Hunter</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£85.00</span>
-                                        <span class="actual-price">£60.00</span>
+                                    @if (item.Discount.Percent != 0)
+                                    {
+                                        <span class="percent">-@item.Discount.Percent%</span>
+                                    }
+                                   
+                                    <div class="product-detail">
+
+                                        <div class="content stars">
+                                            @for (int i = 0; i < item.Rating.RatingCount; i++)
+                                            {
+                                                <i class="fa-solid fa-star orange"></i>
+                                            }
+                                            @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
+                                            {
+                                                <i class="fa-solid fa-star"></i>
+                                            }
+                                        </div>
+                                        <div class="content title">
+                                            <span>The Little Tank Hunter</span>
+                                        </div>
+                                        <div class=" content price">
+                                            <span class="discount">£@item.Price</span>
+                                            <span class="actual-price">£@(item.Price-(item.Price*item.Discount.Percent)/100)</span>
+                                        </div>
+
                                     </div>
 
+                                    <div class="product-button-outer">
+
+                                        <a href="wishlist.html">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </a>
+
+                                        <a href="cart.html">
+                                            <i class="fa-solid fa-cart-arrow-down"></i>
+                                        </a>
+
+                                        <a href="product-detail.html">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+
+                                    </div>
                                 </div>
 
-                                <div class="product-button-outer">
 
-                                    <a href="wishlist.html">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
                             </div>
-
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/10.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/9.jpg" alt="">
-                                </div>
-                                <span class="percent">-27%</span>
-                                <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star "></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£96.00</span>
-                                        <span class="actual-price">£70.00</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="product-button-outer">
-
-                                    <a href="wishlist.html">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/12.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/8.jpg" alt="">
-                                </div>
-                                <span class="percent">-20%</span>
-                                <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Train Station Renovation</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£100.00</span>
-                                        <span class="actual-price">£80.00</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="product-button-outer">
-
-                                    <a href="wishlist.html">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/2.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/15.jpg" alt="">
-                                </div>
-                                <span class="percent">-20%</span>
-                                <div class="product-detail">
-
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£115.00</span>
-                                        <span class="actual-price">£92.00</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="product-button-outer">
-
-                                    <a href="wishlist.html">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/1.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/17.jpg" alt="">
-                                </div>
-                                <span class="percent">-13%</span>
-                                <div class="product-detail">
-
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star "></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Reginald’s Death Arena</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£98.00</span>
-                                        <span class="actual-price">£85.00</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="product-button-outer">
-
-                                    <a href="wishlist.html">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card-carousel">
-                                <div class="action-buttons">
-                                    <img class="w-100 main" src="~/assets/img/product/5.jpg" alt="">
-                                    <img class="w-100 hover d-none" src="~/assets/img/product/6.jpg" alt="">
-                                </div>
-                                <span class="percent">-10%</span>
-                                <div class="product-detail">
-                                    <div class="content stars">
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star orange"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <div class="content title">
-                                        <span>Babol The Walking Box</span>
-                                    </div>
-                                    <div class=" content price">
-                                        <span class="discount">£100.00</span>
-                                        <span class="actual-price">£90.00</span>
-                                    </div>
-
-                                </div>
-
-                                <div class="product-button-outer">
-
-                                    <a href="wishlist.html">
-                                        <i title="heart" class="fa-solid fa-heart"></i>
-                                    </a>
-
-                                    <a href="cart.html">
-                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                    </a>
-
-                                    <a href="product-detail.html">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-
-                        </div>
+                        }
+                      
+                      
 
 
                     </div>

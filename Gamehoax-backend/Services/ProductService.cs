@@ -33,6 +33,26 @@ namespace Gamehoax_backend.Services
 
         }
 
+        public async Task<Product> GetAllDataById(int? id)
+        {
+
+            return await _context.Products.Include(m => m.ProductImages).
+                                            Include(m => m.BrandModel).
+                                            ThenInclude(m=>m.Brand).
+                                            Include(m => m.Discount).
+                                            Include(m => m.Rating).
+                                            Include(m => m.Reviews).
+                                            Include(m => m.ProductCategories).
+                                            ThenInclude(m => m.Category).
+                                            Include(m => m.ProductTags).
+                                            ThenInclude(m => m.Tag).
+                                            Include(m => m.CartProducts).
+                                            ThenInclude(m => m.Cart).
+                                            Include(m => m.WishlistProducts).
+                                            ThenInclude(m => m.Wishlist).
+                                            FirstOrDefaultAsync(m=>m.Id==id);
+        }
+
         public async Task<int> GetCountAsync() => await _context.Products.CountAsync();
         
 
@@ -41,6 +61,8 @@ namespace Gamehoax_backend.Services
             List<ProductVM> mappedDatas = new();
             foreach (var product in products)
             {
+                var tags = product.ProductTags.Select(pt => pt.Tag).ToList();
+                var categories=product.ProductCategories.Select(pt => pt.Category).ToList();
                 ProductVM productList = new()
                 {
                     Id = product.Id,
@@ -49,6 +71,8 @@ namespace Gamehoax_backend.Services
                     ProductImages = product.ProductImages.ToList(),
                     Rating = product.Rating.RatingCount,
                     Percent = product.Discount.Percent,
+                    Categories= categories,
+                    Tags= tags,
                 };
                 mappedDatas.Add(productList);
             }

@@ -9,6 +9,7 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<List<Product>> GetAllAsync();
         Task<List<Product>> GetPaginateDatasAsync(int page,int take, string sortValue,string searchText,int? categoryId,int? tagId,int? value1,int? value2);
         List<ProductVM> GetMappedDatas(List<Product> products);
+        Task<Product> GetAllDataById(int? id);
         Task<int> GetCountAsync();
         Task<int> GetProductsCountBySearchTextAsync(string searchText);
         Task<int> GetProductsCountBySortTextAsync(string sortValue);

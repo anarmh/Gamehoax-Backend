@@ -10,8 +10,8 @@ namespace Gamehoax_backend.Viewmodel
         public decimal Percent { get; set; }
         public int Rating { get; set; }
         public ICollection<ProductImage> ProductImages { get; set; }
-        public ICollection<ProductCategory> ProductCategories { get; set; }
-        public ICollection<ProductTag> ProductTags { get; set; }
+        public ICollection<Tag> Tags { get; set; }
+        public ICollection<Category> Categories { get; set; }
 
     }
 }

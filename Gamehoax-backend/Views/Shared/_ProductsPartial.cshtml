@@ -79,7 +79,7 @@
 
         <div class="pagination ">
             <ul>
-                <li class="@(Model.HasPrevious? "":"disabled")">
+            <li class="@(Model.HasPrevious? "": "disabled")">
                     <a asp-route-sortValue="@ViewBag.sortValue" asp-route-page="@(Model.CurrentPage -1)">
                         ←
                     </a>

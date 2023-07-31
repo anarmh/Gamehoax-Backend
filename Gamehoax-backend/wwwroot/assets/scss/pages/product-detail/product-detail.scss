@@ -2020,49 +2020,48 @@ body{
   
 }
 
-#product-detail{
-    .zoom-container{
+#product-detail {
+    .zoom-container {
         position: relative;
         // max-width: 100%;
-        .xzoom{
-                width: 100%;
-                height: 100%;
+        .xzoom {
+            width: 100%;
+            height: 100%;
         }
 
-                .xzoom-thumbs {
-                        padding-top: 10px;
-                    a{
+        .xzoom-thumbs {
+            padding-top: 10px;
 
-                        text-decoration: none;
-                        img{
-                            display: inline-block;
-                            width: 24%;
-                            height: 25%;
-                            border: 1px solid #888888;
-                        }
-                    }
-                
-                
-                }
-                .xzoom-preview{
+            a {
+                text-decoration: none;
+
+                img {
+                    display: inline-block;
+                    width: 24%;
+                    height: 25%;
                     border: 1px solid #888888;
-                    box-shadow: 0 4px 20px 2px rgba(231, 219, 219, 0.2);
-                  
                 }
-                .active{
-                    box-shadow: 0 0 3px 0 #ffba00;
-                    border: 1px solid #ffba00;
-                }
+            }
+        }
 
+        .xzoom-preview {
+            border: 1px solid #888888;
+            box-shadow: 0 4px 20px 2px rgba(231, 219, 219, 0.2);
+        }
+
+        .active {
+            box-shadow: 0 0 3px 0 #ffba00;
+            border: 1px solid #ffba00;
+        }
     }
 
 
-    .summary{
+    .summary {
         margin-bottom: 30px;
         overflow: hidden;
         position: relative;
-        .product-title{
 
+        .product-title {
             margin: 0 0 10px;
             font-size: 22px;
             font-weight: 400;
@@ -2072,48 +2071,51 @@ body{
             clear: none;
         }
 
-        .price{
-
+        .price {
             color: #f9aa01;
             font-weight: 500;
             font-size: 22px;
             letter-spacing: 0.6px;
+
+            .discount {
+                text-decoration: line-through !important;
+                color: #808080;
+            }
         }
 
-        .description{
-
+        .description {
             margin: 10px 0;
         }
 
 
-        form{
-            
-                &::before{
+        form {
 
-                    content: "";
-                    display: table;
-                }
+            &::before {
+                content: "";
+                display: table;
+            }
 
             margin: 50px 0;
-            .quantity{
-                margin:0 10px 0 0;
+
+            .quantity {
+                margin: 0 10px 0 0;
                 float: left;
-                .template-quantity{
-    
+
+                .template-quantity {
                     font-weight: 600;
                     color: #ffffff;
-                   
                 }
+
                 input[type="number"]::-webkit-inner-spin-button,
                 input[type="number"]::-webkit-outer-spin-button {
-                  -webkit-appearance: none;
-                  margin: 0;
-                 
+                    -webkit-appearance: none;
+                    margin: 0;
                 }
-                input.qty{
+
+                input.qty {
                     background: #170f1f;
                     border: 1px solid #342c3d;
-                    text-align: center!important;
+                    text-align: center !important;
                     width: 54px;
                     height: 44px;
                     display: inline;
@@ -2124,17 +2126,15 @@ body{
                     color: #ffffff;
                     outline: none;
                 }
-    
-                .quantity-button{
-    
+
+                .quantity-button {
                     display: inline-block;
                     vertical-align: bottom;
                     width: 35px;
-    
-                   
-    
-                    button.plus{
-                       
+
+
+
+                    button.plus {
                         padding: 0px;
                         font-size: 0px;
                         line-height: 22px;
@@ -2149,19 +2149,20 @@ body{
                         -ms-border-radius: 0px;
                         -o-border-radius: 0px;
                         border-radius: 0px;
-                        &::before{
+
+                        &::before {
                             content: "\f106";
                             font-family: 'FontAwesome';
                             display: block;
                             font-size: 16px;
                         }
-                        &:hover{
+
+                        &:hover {
                             color: #f9aa01;
                         }
-                    
                     }
-    
-                    button.minus{
+
+                    button.minus {
                         padding: 0px;
                         font-size: 0px;
                         line-height: 22px;
@@ -2176,24 +2177,23 @@ body{
                         -ms-border-radius: 0px;
                         -o-border-radius: 0px;
                         border-radius: 0px;
-                        &::before{
+
+                        &::before {
                             content: "\f107";
                             font-family: 'FontAwesome';
                             display: block;
                             font-size: 16px;
                         }
-                        &:hover{
+
+                        &:hover {
                             color: #f9aa01;
                         }
                     }
                 }
-    
-    
-               
             }
-    
-    
-            .single-add-to-cart{
+
+
+            .single-add-to-cart {
                 float: left;
                 font-size: 14px;
                 font-weight: 400;
@@ -2207,36 +2207,37 @@ body{
                 border-radius: 0px;
                 -webkit-border-radius: 0px;
                 color: #FFFFFF;
-               &:hover{
-                color: #f9aa01;
-               }
-               &::after{
-                clear: both;
-               }
-              
-            }
 
+                &:hover {
+                    color: #f9aa01;
+                }
+
+                &::after {
+                    clear: both;
+                }
+            }
         }
 
-        .add-to-wish{
+        .add-to-wish {
+            padding: 30px 0;
+            border-bottom: 1px solid #342c3d;
 
-               padding: 30px 0;
-               border-bottom: 1px solid #342c3d;
-            a{
+            a {
                 color: #ffffff;
                 text-decoration: none;
                 font-size: 14px;
-                span{
+
+                span {
                     padding-left: 4px;
                 }
-                &:hover{
 
+                &:hover {
                     color: #f9aa01;
                 }
             }
         }
 
-        .product-meta{
+        .product-meta {
             clear: both;
             display: inline-block;
             font-weight: 600;
@@ -2244,47 +2245,51 @@ body{
             padding-top: 20px;
             position: relative;
             width: 100%;
-            .sku-wrapper{
+
+            .sku-wrapper {
                 color: #ffffff;
                 display: block;
                 font-weight: 600;
-                .sku{
+
+                .sku {
                     font-weight: normal;
                     color: #808080;
                 }
             }
 
-            .category{
+            .category {
                 display: block;
                 padding: 10px 0;
                 color: #ffffff;
                 font-weight: 600;
-                a{
+
+                a {
                     text-decoration: none;
                     color: #808080;
                     font-weight: normal;
-                    &:hover{
+
+                    &:hover {
                         color: #f9aa01;
                     }
                 }
             }
 
-            .tag{
+            .tag {
                 color: #ffffff;
                 display: block;
                 font-weight: 600;
 
-                a{
+                a {
                     text-decoration: none;
                     color: #808080;
                     font-weight: normal;
-                    &:hover{
+
+                    &:hover {
                         color: #f9aa01;
                     }
                 }
             }
         }
-      
     }
 }
 

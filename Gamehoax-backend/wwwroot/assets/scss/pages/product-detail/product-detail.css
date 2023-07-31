@@ -1429,9 +1429,13 @@ footer .backtotop #to-top:hover::after {
     font-size: 22px;
     letter-spacing: 0.6px;
   }
-  #product-detail .summary .description {
-    margin: 10px 0;
-  }
+    #product-detail .summary .price .discount {
+        text-decoration: line-through !important;
+        color: #808080;
+    }
+    #product-detail .summary .description {
+        margin: 10px 0;
+    }
   #product-detail .summary form {
     margin: 50px 0;
   }

@@ -67,6 +67,7 @@ namespace Gamehoax_backend.Controllers
             List<Product> products= await _productService.GetAllAsync();
             List<Category> categories= await _categoryService.GetAllAsync();
             List<Tag> tags= await _tagService.GetAllAsync();
+           int countProducts= await _productService.GetCountAsync();
             
             ShopVM model = new()
             {
@@ -74,6 +75,7 @@ namespace Gamehoax_backend.Controllers
                 Categories= categories,
                 Tags= tags,
                 PaginateDatas= paginatedDatas,
+                CountProducts= countProducts,
             };
             return View(model);
         }
