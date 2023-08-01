@@ -63,7 +63,7 @@
         .tablet{
             display: none !important;
             .col-12{
-                display: none !important;
+                display: block !important;
             }
             .toolbar{
                  display: none !important;
@@ -2163,7 +2163,7 @@
             display: none !important;
         }
         .col-12{
-            display: block;
+            display: block!important;
         }
        
         .tablet{

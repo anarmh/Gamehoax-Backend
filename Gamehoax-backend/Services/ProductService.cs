@@ -79,7 +79,7 @@ namespace Gamehoax_backend.Services
             return mappedDatas;
         }
 
-        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take,string sortValue)
+        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take,string sortValue, string searchText,int? categoryId, int? tagId)
         {
             List<Product> products= await _context.Products.
                 Include(m=>m.ProductImages).
@@ -119,45 +119,46 @@ namespace Gamehoax_backend.Services
                 }
             }
 
-            //if (searchText != null)
-            //{
-            //    products = await _context.Products
-            //    .Include(p => p.ProductImages)
-            //    .Include(p => p.Rating)
-            //    .Include(p => p.Discount)
-            //    .OrderByDescending(p => p.Id)
-            //    .Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
-            //    .Skip((page * take) - take)
-            //    .Take(take)
-            //    .ToListAsync();
-            //}
+            if (searchText != null)
+            {
+                products = await _context.Products
+                .Include(p => p.ProductImages)
+                .Include(p => p.Rating)
+                .Include(p => p.Discount)
+                .OrderByDescending(p => p.Id)
+                .Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
+                .Skip((page-1) * take)
+                .Take(take)
+                .ToListAsync();
+            }
 
-            //if (categoryId != null)
-            //{
-            //    products = await _context.Categories
-            //     .Where(p => p.Id == categoryId)
-            //     .Include(p => p.ProductCategories)
-            //    .ThenInclude(p => p.Product)
-            //    .ThenInclude(p => p.ProductImages)
-            //    .SelectMany(p => p.ProductCategories.Select(pc => pc.Product))
-            //    .Skip((page * take) - take)
-            //    .Take(take)
-            //    .ToListAsync();
-            //}
+            if (categoryId != null)
+            {
+                products = await _context.ProductCategories
+                 .Include(p => p.Product)
+                 .ThenInclude(p => p.ProductImages)
+                 .Include(p=>p.Product.Rating)
+                 .Where(p => p.Category.Id == categoryId)
+                 .Select(pc => pc.Product)
+                 .Skip((page -1) * take)
+                 .Take(take)
+                 .ToListAsync();
+            }
 
 
-            //if (tagId != null)
-            //{
-            //    products = await _context.Tags
-            //     .Where(p => p.Id == tagId)
-            //     .Include(p => p.ProductTags)
-            //    .ThenInclude(p => p.Product)
-            //    .ThenInclude(p => p.ProductImages)
-            //    .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
-            //    .Skip((page * take) - take)
-            //    .Take(take)
-            //    .ToListAsync();
-            //}
+            if (tagId != null)
+            {
+                products = await _context.ProductTags
+                
+                .Include(p => p.Product)
+                .ThenInclude(p => p.ProductImages)
+                .Include(p => p.Product.Rating)
+                .Where(p => p.Tag.Id == tagId)
+                .Select(pc => pc.Product)
+                .Skip((page - 1) * take)
+                .Take(take)
+                .ToListAsync();
+            }
 
             //if (value1 != null && value2 != null)
             //{
@@ -180,14 +181,14 @@ namespace Gamehoax_backend.Services
 
         }
 
-        public async Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 3)
+        public async Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 2)
         {
             List<ProductVM> model = new();
-            List<Product> products = await _context.Categories.Include(p => p.ProductCategories)
-                                                                     .ThenInclude(p => p.Product)
+            List<Product> products = await _context.ProductCategories.Include(p => p.Product)
                                                                      .ThenInclude(p => p.ProductImages)
-                                                                     .Where(pc => pc.Id == id)
-                                                                    .SelectMany(p => p.ProductCategories.Select(pc => pc.Product))
+                                                                     .Include (p => p.Product.Rating)
+                                                                     .Where(pc => pc.Category.Id == id)
+                                                                     .Select(pc => pc.Product)
                                                                      .Skip((page-1) * take)
                                                                      .Take(take)
                                                                      .ToListAsync();
@@ -206,15 +207,15 @@ namespace Gamehoax_backend.Services
             return model;
         }
 
-        public async Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 3)
+        public async Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 2)
         {
 
             List<ProductVM> model = new();
-            List<Product> products = await _context.Tags.Include(p => p.ProductTags)
-                                                                     .ThenInclude(p => p.Product)
+            List<Product> products = await _context.ProductTags.Include(p => p.Product)
                                                                      .ThenInclude(p => p.ProductImages)
-                                                                     .Where(pc => pc.Id == id)
-                                                                    .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
+                                                                     .Include(p => p.Product.Rating)
+                                                                     .Where(pc => pc.Tag.Id == id)
+                                                                     .Select(pc => pc.Product)
                                                                      .Skip((page -1) * take)
                                                                      .Take(take)
                                                                      .ToListAsync();
@@ -235,11 +236,10 @@ namespace Gamehoax_backend.Services
 
         public async Task<int> GetProductsCountByCategoryAsync(int? id)
         {
-            return await _context.Categories
-                 .Include(p => p.ProductCategories)
-                 .ThenInclude(c => c.Product)
-                 .Where(pc => pc.Id == id)
-                  .SelectMany(p => p.ProductCategories.Select(pc => pc.Product))
+            return await _context.ProductCategories
+                 .Include(p => p.Product)
+                 .Where(pc => pc.Category.Id == id)
+                 .Select(pc => pc.Product)
                  .CountAsync();
         }
 
@@ -296,12 +296,27 @@ namespace Gamehoax_backend.Services
         public async Task<int> GetProductsCountByTagAsync(int? id)
         {
 
-            return await _context.Tags
-                 .Include(p => p.ProductTags)
-                 .ThenInclude(c => c.Tag)
-                 .Where(pc => pc.Id == id)
-                .SelectMany(p => p.ProductTags.Select(pc => pc.Product))
+            return await _context.ProductTags
+                 .Include(p => p.Product)
+                 .Where(pc => pc.Tag.Id == id)
+                .Select(pc => pc.Product)
                  .CountAsync();
+        }
+
+        public async Task<List<Product>> GetAllBySearchText(string searchText,int page=1, int take = 2)
+        {
+            var products = await _context.Products
+                .Include(p => p.ProductImages)
+                .Include(p => p.Rating)
+                .OrderByDescending(p => p.Id)
+                .Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
+                .Skip((page-1)*take)
+                .Take(take)
+                .ToListAsync();
+
+            var ratingCounts = products.Select(p => p.Rating.RatingCount).ToList();
+
+            return products;
         }
     }
 }

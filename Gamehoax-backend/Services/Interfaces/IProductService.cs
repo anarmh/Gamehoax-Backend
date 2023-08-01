@@ -7,7 +7,7 @@ namespace Gamehoax_backend.Services.Interfaces
     public interface IProductService
     {
         Task<List<Product>> GetAllAsync();
-        Task<List<Product>> GetPaginateDatasAsync(int page,int take,string sortValue);
+        Task<List<Product>> GetPaginateDatasAsync(int page,int take,string sortValue,string searchText,int? categoryId,int? tagId);
         List<ProductVM> GetMappedDatas(List<Product> products);
         Task<Product> GetAllDataById(int? id);
         Task<int> GetCountAsync();
@@ -16,7 +16,8 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<int> GetProductsCountByRangeAsync(int? value1, int? value2);
         Task<int> GetProductsCountByCategoryAsync(int? id);
         Task<int> GetProductsCountByTagAsync(int? id);
-        Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 3);
-        Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 3);
+        Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 2);
+        Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 2);
+        Task<List<Product>> GetAllBySearchText(string searchText,int page=1 ,int take=2);
     }
 }

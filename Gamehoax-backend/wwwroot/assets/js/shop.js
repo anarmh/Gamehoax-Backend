@@ -83,28 +83,7 @@ $(document).ready(function(){
 
         })
     })
-    function getProductsById(clickedElem, url) {
-        $(document).on("click", clickedElem, function (e) {
-            e.preventDefault();
-
-            let id = $(this).attr("data-id");
-            let data = { id: id };
-            let parent = $(".productss-area")
-            $.ajax({
-                url: url,
-                type: "Get",
-                data: data,
-                success: function (res) {
-                    debugger
-                    $(parent).html(res);
-                }
-            })
-        })
-
-    }
-    getProductsById(".category", "/Shop/GetProductsByCategory");
-    getProductsById(".tag", "/Shop/GetProductsByTag");
-
+   
 
 
    

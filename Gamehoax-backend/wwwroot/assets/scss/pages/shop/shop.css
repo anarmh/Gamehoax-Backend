@@ -2325,7 +2325,7 @@ footer .backtotop #to-top:hover::after {
     display: none !important;
   }
   #shop .col-12 {
-    display: block;
+    display: block !important;
   }
   #shop .tablet {
     display: block !important;

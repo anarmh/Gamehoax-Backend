@@ -1,6 +1,8 @@
 ﻿@model ShopVM
 @{
     ViewData["Title"] = "Index";
+   
+    
 }
 
 @section Css {
@@ -42,7 +44,7 @@
                             <ul class="product-categories">
                                 @foreach (var category in Model.Categories)
                             {
-                                 <li><a data-id="@category.Id" class="category">@category.Name</a></li>
+                                <li><a style="cursor:pointer;" data-id="@category.Id" class="category">@category.Name</a></li>
                             }
                                
                             </ul>
@@ -76,7 +78,7 @@
                             <div class="tagcloud">
                                 @foreach (var tag in Model.Tags)
                             {
-                                <a data-id="@tag.Id" class="tag">@tag.Name</a>
+                                <a style="cursor:pointer;" data-id="@tag.Id" class="tag">@tag.Name</a>
                             }
                                
                             </div>
@@ -133,11 +135,11 @@
                     <div class="col-9">
                             <div class="toolbar">
                                 <div class="left">
-                                    <p>Showing 1–12 of 24 results</p>
+                            <p>Showing <span>@Model.PaginateDatas.CurrentPage–@Model.PaginateDatas.TotalPage</span> of <span>@Model.PaginateDatas.Datas.Count()</span> results</p>
                                 </div>
                                
                                 <div class="right">
-                                    <select name="SortValue" id="sort">
+                            <select name="SortValue" id="sort" >
                                         <option value="1" selected>Default Sorting</option>
                                         <option value="2">Sort by popularity</option>
                                         <option value="3">Sort by average rating</option>
@@ -159,415 +161,135 @@
  
 
                     </div>
-                        <div class="tablet d-none">
-                            <div class="col-12">
+                   
+                </div>
+
+                <div class="tablet d-none">
+                    <div class="col-12">
 
 
 
-                                <div class="toolbar">
-                                    <div class="left">
-                                        <p>Showing 1–12 of 24 results</p>
-                                    </div>
-                                    <div class="right">
-                                    <select name="" id="sort">
-                                            <option value="selected">Default Sorting</option>
-                                            <option value="selected">Sort by popularity</option>
-                                            <option value="selected">Sort by average rating</option>
-                                            <option value="selected">Sort by price: low to high</option>
-                                            <option value="selected">Sort by price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="row productss-area">
-                                    @foreach (var product in Model.Products)
-                                    {
-                                        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                                            <div class="card-carousel">
-                                                <div class="action-buttons">
-                                                    <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                                                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
-                                                </div>
-                                                <div class="product-detail">
-
-                                                    <div class="content stars">
-                                                        @for (int i = 0; i < product.Rating.RatingCount; i++)
-                                                        {
-                                                            <i class="fa-solid fa-star orange"></i>
-                                                        }
-                                                        @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
-                                                        {
-                                                            <i class="fa-solid fa-star"></i>
-                                                        }
+                        <div class="toolbar">
+                            <div class="left">
+                                <p>Showing 1–12 of 24 results</p>
+                            </div>
+                            <div class="right">
+                                <select name="" id="sort">
+                                    <option value="selected">Default Sorting</option>
+                                    <option value="selected">Sort by popularity</option>
+                                    <option value="selected">Sort by average rating</option>
+                                    <option value="selected">Sort by price: low to high</option>
+                                    <option value="selected">Sort by price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row productss-area">
+                                <partial name="_ProductsPartial" model="Model.PaginateDatas" />
+                            </div>
 
 
-                                                    </div>
-                                                    <div class="content title">
-                                                        <span>@product.Title</span>
-                                                    </div>
-                                                    <div class="content price">
-                                                        <span class="actual-price">£@product.Price</span>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="product-button-outer">
-
-                                                    <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </a>
-
-                                                    <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
-                                                        <i class="fa-solid fa-cart-arrow-down"></i>
-                                                    </a>
-
-                                                    <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    }
-                                    </div>
-
-                                   
-                                </div>
-
-                                <div class="accordion my-3" id="accordionPanelsStayOpenExample">
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            <aside id="product-category">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Shop by Category</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                                        <div class="accordion-body" >
-
-                                            <aside id="product-category">
-                                                <ul class="product-categories">
-                                                    @foreach (var category in Model.Categories)
-                                                {
-                                                     <li><a href="">@category.Name</a></li>
-                                                }
-                                                   
-                                                </ul>
-                                            </aside>
-
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                            <aside id="product-price"> 
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Filter by price</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                        <div class="accordion-body">
-                                            <aside id="product-price"> 
-                                            <form method="get" action="">
-                                                <div class="range-slider">
-                                                    <input type="range" class="min-price" value="70" min="10" max="200"
-                                                        step="10" style="accent-color: #ffba00;">
-                                                    <input type="range" class="max-price" value="160" min="10" max="200"
-                                                        step="10" style="accent-color: #ffba00;">
-                                                </div>
-                                                <div class="button">
-                                                    <button type="submit" >Filter</button>
-                                                </div>
-
-                                                <div class="price_label" >
-                                                    Price: <span class="from">£50</span> — <span class="to">£200</span>
-                                                </div>
-
-                                            </form>
-                                        </aside>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                            <aside id="product-tag">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Product Tags</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                        <div class="accordion-body">
-                                            <aside id="product-tag">
-                                            <div class="tagcloud">
-                                                @foreach (var tag in Model.Tags)
-                                                {
-                                                    <a href="">@tag.Name</a>
-                                                }
-                                               
-                                             
-                                            </div>
-                                        </aside>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="accordion-item " style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                            <aside id="top-rated-products">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Top Rated Products</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-                                        <div class="accordion-body">
-                                            <aside id="top-rated-products">
-                                                <ul>
-                                                    @foreach (var item in Model.Products.OrderByDescending(m=>m.Rating.RatingCount).Take(3))
-                                                {
-                                                      <li>
-                                                        <a href="">
-                                                            <div class="content">
-                                                                <div class="left">
-                                                                    <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="" >
-                                                                </div>
-                                                                <div class="right">
-                                                                    <div class="title">
-                                                                        <span>@item.Title</span>
-                                                                    </div>
-
-                                                                        <div class="stars">
-                                                                        @for (int i = 0; i < item.Rating.RatingCount; i++)
-                                                                        {
-                                                                            <i class="fa-solid fa-star orange"></i>
-                                                                        }
-                                                                        @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
-                                                                        {
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                        }
-                                                                        </div>
-                                                                        <div class="amount">
-                                                                            <span>£<span class="price">@item.Price</span></span>
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-
-                                                         </a>
-                                                     </li>
-                                                }
-                                                  
-                                                </ul>
-                                            </aside>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                <aside id="left-banner-widget-2">
-                                    <div class="left-banner">
-                                        <a href="">
-                                            <img src="~/assets/img/shop/left-banner.jpg" alt="">
-                                        </a>
-                                    </div>
-
-                                </aside>
-
-                              </div> 
                         </div>
 
-                        <div class="mobile d-none">
-                            <div class="col-12">
-                                <div class="toolbar">
-                                    <div class="left">
-                                        <p>Showing 1–12 of 24 results</p>
-                                    </div>
-                                    <div class="right">
-                                        <select name="" id="sort">
-                                            <option value="selected">Default Sorting</option>
-                                            <option value="selected">Sort by popularity</option>
-                                            <option value="selected">Sort by average rating</option>
-                                            <option value="selected">Sort by price: low to high</option>
-                                            <option value="selected">Sort by price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="row">
-                                @foreach (var product in Model.Products)
-                                {
-                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                                        <div class="card-carousel">
-                                            <div class="action-buttons">
-                                                <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                                                <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
+                        <div class="accordion my-3" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item" style="background-color: #170f1f;">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        <aside id="product-category">
+                                            <div class="title-outer">
+                                                <h3 class="widget-title">Shop by Category</h3>
                                             </div>
-                                            <div class="product-detail">
+                                        </aside>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
 
-                                                <div class="content stars">
-                                                    @for (int i = 0; i < product.Rating.RatingCount; i++)
-                                                    {
-                                                        <i class="fa-solid fa-star orange"></i>
-                                                    }
-                                                    @for (int i = 0; i < (5 - product.Rating.RatingCount); i++)
-                                                    {
-                                                        <i class="fa-solid fa-star"></i>
-                                                    }
-
-
-                                                </div>
-                                                <div class="content title">
-                                                    <span>@product.Title</span>
-                                                </div>
-                                                <div class="content price">
-                                                    <span class="actual-price">£@product.Price</span>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="product-button-outer">
-
-                                                <a asp-controller="Wishlist" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-heart"></i>
-                                                </a>
-
-                                                <a asp-controller="Cart" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-cart-arrow-down"></i>
-                                                </a>
-
-                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                                    <i class="fa-solid fa-eye"></i>
-                                                </a>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                }
-                                    </div>
-
-                                    <div class="pagination">
-                                        <ul>
-                                            <li><a href="">
-                                                ←
-                                            </a></li>
-                                            <li><a href="">1</a></li>
-                                            <li><a href="">2</a></li>
-                                            <li><a href="">→</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-                                <div class="accordion my-3" id="accordionPanelsStayOpenExample">
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            <aside id="product-category">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Shop by Category</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                                        <div class="accordion-body" >
-
-                                            <aside id="product-category">
-                                                <ul class="product-categories">
-                                                    @foreach (var item in Model.Categories)
+                                        <aside id="product-category">
+                                            <ul class="product-categories">
+                                                @foreach (var category in Model.Categories)
                                                 {
-                                                    <li><a href="">@item.Name</a></li>
+                                                    <li><a href="">@category.Name</a></li>
                                                 }
-                                                  
-                                                   
-                                                </ul>
-                                            </aside>
 
-                                        </div>
-                                      </div>
+                                            </ul>
+                                        </aside>
+
                                     </div>
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                            <aside id="product-price"> 
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Filter by price</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                        <div class="accordion-body">
-                                            <aside id="product-price"> 
+                                </div>
+                            </div>
+                            <div class="accordion-item" style="background-color: #170f1f;">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        <aside id="product-price">
+                                            <div class="title-outer">
+                                                <h3 class="widget-title">Filter by price</h3>
+                                            </div>
+                                        </aside>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <aside id="product-price">
                                             <form method="get" action="">
                                                 <div class="range-slider">
                                                     <input type="range" class="min-price" value="70" min="10" max="200"
-                                                        step="10" style="accent-color: #ffba00;">
+                                                           step="10" style="accent-color: #ffba00;">
                                                     <input type="range" class="max-price" value="160" min="10" max="200"
-                                                        step="10" style="accent-color: #ffba00;">
+                                                           step="10" style="accent-color: #ffba00;">
                                                 </div>
                                                 <div class="button">
-                                                    <button type="submit" >Filter</button>
+                                                    <button type="submit">Filter</button>
                                                 </div>
 
-                                                <div class="price_label" >
+                                                <div class="price_label">
                                                     Price: <span class="from">£50</span> — <span class="to">£200</span>
                                                 </div>
 
                                             </form>
                                         </aside>
-                                        </div>
-                                      </div>
                                     </div>
-                                    <div class="accordion-item" style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                            <aside id="product-tag">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Product Tags</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                        <div class="accordion-body">
-                                            <aside id="product-tag">
+                                </div>
+                            </div>
+                            <div class="accordion-item" style="background-color: #170f1f;">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                        <aside id="product-tag">
+                                            <div class="title-outer">
+                                                <h3 class="widget-title">Product Tags</h3>
+                                            </div>
+                                        </aside>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <aside id="product-tag">
                                             <div class="tagcloud">
                                                 @foreach (var tag in Model.Tags)
                                                 {
                                                     <a href="">@tag.Name</a>
                                                 }
-                                               
-                                                
+
+
                                             </div>
                                         </aside>
-                                        </div>
-                                      </div>
                                     </div>
-                                    <div class="accordion-item " style="background-color: #170f1f;">
-                                      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                            <aside id="top-rated-products">
-                                                <div class="title-outer">
-                                                    <h3 class="widget-title">Top Rated Products</h3>
-                                                </div>
-                                            </aside>
-                                        </button>
-                                      </h2>
-                                      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-                                        <div class="accordion-body">
-                                            <aside id="top-rated-products">
-                                                <ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item " style="background-color: #170f1f;">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                        <aside id="top-rated-products">
+                                            <div class="title-outer">
+                                                <h3 class="widget-title">Top Rated Products</h3>
+                                            </div>
+                                        </aside>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body">
+                                        <aside id="top-rated-products">
+                                            <ul>
                                                 @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
                                                 {
                                                     <li>
@@ -602,23 +324,207 @@
                                                 }
 
                                             </ul>
+                                        </aside>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <aside id="left-banner-widget-2">
+                            <div class="left-banner">
+                                <a href="">
+                                    <img src="~/assets/img/shop/left-banner.jpg" alt="">
+                                </a>
+                            </div>
+
+                        </aside>
+
+                    </div>
+                </div>
+
+                <div class="mobile d-none">
+                    <div class="col-12">
+                        <div class="toolbar">
+                            <div class="left">
+                                <p>Showing 1–12 of 24 results</p>
+                            </div>
+                            <div class="right">
+                                <select name="" id="sort">
+                                    <option value="selected">Default Sorting</option>
+                                    <option value="selected">Sort by popularity</option>
+                                    <option value="selected">Sort by average rating</option>
+                                    <option value="selected">Sort by price: low to high</option>
+                                    <option value="selected">Sort by price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row productss-area">
+                                <partial name="_ProductsPartial" model="Model.PaginateDatas" />
+
+                                @*   <div class="pagination">
+                                <ul>
+                                <li><a href="">
+                                ←
+                                </a></li>
+                                <li><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">→</a></li>
+                                </ul>
+                                </div>*@
+                            </div>
+
+
+                            <div class="accordion my-3" id="accordionPanelsStayOpenExample">
+                                <div class="accordion-item" style="background-color: #170f1f;">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                            <aside id="product-category">
+                                                <div class="title-outer">
+                                                    <h3 class="widget-title">Shop by Category</h3>
+                                                </div>
+                                            </aside>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                        <div class="accordion-body">
+
+                                            <aside id="product-category">
+                                                <ul class="product-categories">
+                                                    @foreach (var item in Model.Categories)
+                                                    {
+                                                        <li><a href="">@item.Name</a></li>
+                                                    }
+
+
+                                                </ul>
+                                            </aside>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item" style="background-color: #170f1f;">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                            <aside id="product-price">
+                                                <div class="title-outer">
+                                                    <h3 class="widget-title">Filter by price</h3>
+                                                </div>
+                                            </aside>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                        <div class="accordion-body">
+                                            <aside id="product-price">
+                                                <form method="get" action="">
+                                                    <div class="range-slider">
+                                                        <input type="range" class="min-price" value="70" min="10" max="200"
+                                                               step="10" style="accent-color: #ffba00;">
+                                                        <input type="range" class="max-price" value="160" min="10" max="200"
+                                                               step="10" style="accent-color: #ffba00;">
+                                                    </div>
+                                                    <div class="button">
+                                                        <button type="submit">Filter</button>
+                                                    </div>
+
+                                                    <div class="price_label">
+                                                        Price: <span class="from">£50</span> — <span class="to">£200</span>
+                                                    </div>
+
+                                                </form>
                                             </aside>
                                         </div>
-                                      </div>
                                     </div>
-                                  </div>
-                                  <aside id="left-banner-widget-2">
-                                    <div class="left-banner">
-                                        <a href="">
-                                            <img src="~/assets/img/shop/left-banner.jpg" alt="">
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="accordion-item" style="background-color: #170f1f;">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                            <aside id="product-tag">
+                                                <div class="title-outer">
+                                                    <h3 class="widget-title">Product Tags</h3>
+                                                </div>
+                                            </aside>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                        <div class="accordion-body">
+                                            <aside id="product-tag">
+                                                <div class="tagcloud">
+                                                    @foreach (var tag in Model.Tags)
+                                                    {
+                                                        <a href="">@tag.Name</a>
+                                                    }
 
-                                </aside>
-                              </div> 
+
+                                                </div>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item " style="background-color: #170f1f;">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                            <aside id="top-rated-products">
+                                                <div class="title-outer">
+                                                    <h3 class="widget-title">Top Rated Products</h3>
+                                                </div>
+                                            </aside>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                        <div class="accordion-body">
+                                            <aside id="top-rated-products">
+                                                <ul>
+                                                    @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
+                                                    {
+                                                        <li>
+                                                            <a href="">
+                                                                <div class="content">
+                                                                    <div class="left">
+                                                                        <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
+                                                                    </div>
+                                                                    <div class="right">
+                                                                        <div class="title">
+                                                                            <span>@item.Title</span>
+                                                                        </div>
+
+                                                                        <div class="stars">
+                                                                            @for (int i = 0; i < item.Rating.RatingCount; i++)
+                                                                            {
+                                                                                <i class="fa-solid fa-star orange"></i>
+                                                                            }
+                                                                            @for (int i = 0; i < (5 - item.Rating.RatingCount); i++)
+                                                                            {
+                                                                                <i class="fa-solid fa-star"></i>
+                                                                            }
+                                                                        </div>
+                                                                        <div class="amount">
+                                                                            <span>£<span class="price">@item.Price</span></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </a>
+                                                        </li>
+                                                    }
+
+                                                </ul>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <aside id="left-banner-widget-2">
+                                <div class="left-banner">
+                                    <a href="">
+                                        <img src="~/assets/img/shop/left-banner.jpg" alt="">
+                                    </a>
+                                </div>
+
+                            </aside>
                         </div>
-                        </div>
+                    </div>
                 </div>
+            </div>
             </div>
         </section>
             

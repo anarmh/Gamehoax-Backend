@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-3">
                     <div class="header-right">
-                        <form action="/Shop" method="get">
+                        <form  asp-controller="Shop" asp-action="Index" id="search-area" >
                             <div class="navbar">
 
                                 <div class="search-box">
@@ -122,7 +122,7 @@
                                         <i class="fas fa-search search"></i>
                                     </div>
                                     <div class="search-field">
-                                        <input type="text" placeholder="Search...">
+                                        <input name="search" type="text" class="search-text" placeholder="Search...">
                                         <i class="fas fa-search search"></i>
                                     </div>
 
