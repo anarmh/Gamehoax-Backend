@@ -1,11 +1,11 @@
 "use strict";
 
 
-let searchToggle=document.querySelector(".searchToggle")
+let toggleSearch =document.querySelector(".searchToggle")
 
-searchToggle.addEventListener("click", function(){
+toggleSearch.addEventListener("click", function(){
 
-  searchToggle.classList.toggle("active")
+    toggleSearch.classList.toggle("active")
 })
 
 

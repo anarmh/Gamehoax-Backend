@@ -765,6 +765,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\reset-password.js"
     },
     {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop-filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\shop-filter.js"
+    },
+    {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop.js",
       "PackagePath": "staticwebassets\\assets\\js\\shop.js"
     },

@@ -59,11 +59,11 @@ namespace Gamehoax_backend.Services
 
         public List<ProductVM> GetMappedDatas(List<Product> products)
         {
+           
             List<ProductVM> mappedDatas = new();
             foreach (var product in products)
             {
-                var tags = product.ProductTags.Select(pt => pt.Tag).ToList();
-                var categories=product.ProductCategories.Select(pt => pt.Category).ToList();
+                
                 ProductVM productList = new()
                 {
                     Id = product.Id,
@@ -71,16 +71,15 @@ namespace Gamehoax_backend.Services
                     Price = product.Price,
                     ProductImages = product.ProductImages.ToList(),
                     Rating = product.Rating.RatingCount,
-                    Percent = product.Discount.Percent,
-                    Categories= categories,
-                    Tags= tags,
+                   
+                  
                 };
                 mappedDatas.Add(productList);
             }
             return mappedDatas;
         }
 
-        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take)
+        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take,string sortValue)
         {
             List<Product> products= await _context.Products.
                 Include(m=>m.ProductImages).
@@ -92,33 +91,33 @@ namespace Gamehoax_backend.Services
                 ThenInclude(m=>m.Tag).
                 Skip((page-1)*take).
                 Take(take).ToListAsync();
-         
 
 
 
-            //if (sortValue != null)
-            //{
-            //    if (sortValue == "1")
-            //    {
-            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).Skip((page -1) * take).Take(take).ToListAsync();
-            //    }
-            //    if (sortValue == "2")
-            //    {
-            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.CreateDate).Skip((page - 1) * take).Take(take).ToListAsync();
-            //    }
-            //    if (sortValue == "3")
-            //    {
-            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Rating.RatingCount).Skip((page-1) *take).Take(take).ToListAsync();
-            //    }
-            //    if (sortValue == "4")
-            //    {
-            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderBy(m => m.Price).Skip((page-1) *take).Take(take).ToListAsync();
-            //    }
-            //    if (sortValue == "5")
-            //    {
-            //        products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Price).Skip((page-1) * take).Take(take).ToListAsync();
-            //    }
-            //}
+
+            if (sortValue != null)
+            {
+                if (sortValue == "1")
+                {
+                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).Skip((page - 1) * take).Take(take).ToListAsync();
+                }
+                if (sortValue == "2")
+                {
+                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.CreateDate).Skip((page - 1) * take).Take(take).ToListAsync();
+                }
+                if (sortValue == "3")
+                {
+                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Rating.RatingCount).Skip((page - 1) * take).Take(take).ToListAsync();
+                }
+                if (sortValue == "4")
+                {
+                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderBy(m => m.Price).Skip((page - 1) * take).Take(take).ToListAsync();
+                }
+                if (sortValue == "5")
+                {
+                    products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(m => m.Price).Skip((page - 1) * take).Take(take).ToListAsync();
+                }
+            }
 
             //if (searchText != null)
             //{
