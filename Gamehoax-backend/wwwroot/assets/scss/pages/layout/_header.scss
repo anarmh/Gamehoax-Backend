@@ -279,25 +279,29 @@
             .search-box{
                 padding-top:10px;
             }
-
+            .wishlist{
+                padding-right:10px !important;
+            }
             .image-count{
-
+               
                 a{
                     width: 20px !important;
                     height: 20px !important;
+                    display:flex;
+                    
                     img{
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                      }
                 }
-               
+             
                  
             }
 
             span{
 
-                font-size: 10px;
+                font-size: 15px;
             }
         }
     }
@@ -585,7 +589,7 @@
         float: right;
 
         span{
-        display: block;
+        display:inline  !important;
         color: #ffba00;
         }
 
@@ -723,11 +727,11 @@
           
         .wishlist{
            padding-right: 10px;
-            display: flex;
+           
             .wish{
                 text-decoration: none;
                 background-color: #1d1427;
-               display: block;
+               
                font-size: 20px;
                color: #888888;
               
@@ -740,7 +744,7 @@
       
        .basket{
         
-        display: flex;
+       
         .cart{
             text-decoration: none;
             background-color: #1d1427;

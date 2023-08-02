@@ -37,7 +37,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
-
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IServiceIconService, ServiceIconService>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -49,7 +49,7 @@ builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
-
+builder.Services.AddScoped<ICartService, CartService>();
 var app = builder.Build();
 
 

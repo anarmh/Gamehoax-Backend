@@ -1,8 +1,12 @@
-﻿
+﻿@model List<CartDetailVM>
 @{
     ViewData["Title"] = "Index";
+    decimal grandTotal = 0;
 }
-
+   @foreach (var item in Model)
+    {
+    grandTotal += item.Total;
+}
 
 @section Css {
 
@@ -16,7 +20,7 @@
                 <div class="col-12">
                     <div class="page">
                         <div class="link">
-                            <a href="./home.html">
+                            <a asp-controller="Home" asp-action="Index">
                                 <span>Home</span>
                             </a>
                             <span class="shop"> » Cart</span>
@@ -33,9 +37,12 @@
     <section id="cart">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <form action="" method="post">
-                        <table>
+                @if (Model.Count > 0)
+                {
+                    <div class="col-12">
+
+
+                        <table class="product-table">
                             <thead>
                                 <tr>
                                     <th>Action</th>
@@ -47,36 +54,40 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td class="product-remove">
-                                        <a href="">x</a>
-                                    </td>
-                                    <td class="product-image">
-                                        <img src="~/assets/img/product/6.jpg" alt="">
-                                    </td>
-                                    <td class="product-name">
-                                        <p>Taishou x Alice Epilogue</p>
-                                    </td>
-                                    <td class="product-price">
+                            <tbody class="tbody-basket">
+                                @foreach (var item in Model)
+                                {
+                                    <tr data-id="@item.Id">
+                                        <td class="product-remove">
+                                            <a class="delete-product" style="cursor:pointer;">x</a>
+                                        </td>
+                                        <td class="product-image">
+                                            <img src="~/assets/img/product/@item.Image" alt="">
+                                        </td>
+                                        <td class="product-name">
+                                            <p>@item.Title</p>
+                                        </td>
+                                        <td class="product-price">
 
-                                        <span> <span>£</span>160.00</span>
+                                            <span> <span>£</span>@item.Price.ToString("0.00")</span>
 
-                                    </td>
-                                    <td class="product-quantity">
-                                        <span>Qty: </span>
-                                        <input type="number" step="1" min="0" max="1986" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
-                                        <div class="quantity-button">
-                                            <button type="button" class="plus" value="+">+</button>
-                                            <button type="button" class="minus" value="-">-</button>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">
+                                        </td>
+                                        <td class="product-quantity">
+                                            <span>Qty: </span>
+                                            <input type="number" step="1" min="0" max="1986" value="@item.Count" size="4" pattern="[0-9]*" inputmode="numeric" disabled="">
+                                            <div class="quantity-button">
+                                                <button type="button" class="plus" value="+">+</button>
+                                                <button type="button" class="minus" value="-">-</button>
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal">
 
-                                        <span> <span>£</span>320.00</span>
+                                            <span> <span>£</span>@item.Total.ToString("0.00")</span>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                }
+                           
 
                             </tbody>
                         </table>
@@ -86,60 +97,77 @@
 
 
                             <tbody>
-                                <tr class="product-table mb-3">
-                                    <td class="product-remove" data-title="Action">
-                                        <a href="">x</a>
-                                    </td>
-                                    <td class="product-image" data-title="Image">
-                                        <img src="~/assets/img/product/6.jpg" alt="">
-                                    </td>
-                                    <td class="product-name" data-title="Name">
-                                        <p>Taishou x Alice Epilogue</p>
-                                    </td>
-                                    <td class="product-price" data-title="Price">
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="product-table mb-3" data-id="@item.Id">
+                                        <td class="product-remove" data-title="Action">
+                                            <a href="">x</a>
+                                        </td>
+                                        <td class="product-image" data-title="Image">
+                                            <img src="~/assets/img/product/@item.Image" alt="">
+                                        </td>
+                                        <td class="product-name" data-title="Name">
+                                            <p>@item.Title</p>
+                                        </td>
+                                        <td class="product-price" data-title="Price">
 
-                                        <span> <span>£</span>160.00</span>
+                                            <span> <span>£</span>@item.Price.ToString("0.00")</span>
 
-                                    </td>
-                                    <td class="product-quantity" data-title="Quantity">
-                                        <span>Qty: </span>
-                                        <input type="number" step="1" min="0" max="1986" value="2" size="4" pattern="[0-9]*" inputmode="numeric">
-                                        <div class="quantity-button">
-                                            <button type="button" class="plus" value="+">+</button>
-                                            <button type="button" class="minus" value="-">-</button>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal" data-title="Subtotal">
+                                        </td>
+                                        <td class="product-quantity" data-title="Quantity">
+                                            <span>Qty: </span>
+                                            <input type="number" step="1" min="0" max="1986" value="@item.Count" size="4" pattern="[0-9]*" inputmode="numeric" disabled="">
+                                            <div class="quantity-button">
+                                                <button type="button" class="plus" value="+">+</button>
+                                                <button type="button" class="minus" value="-">-</button>
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal" data-title="Subtotal">
 
-                                        <span> <span>£</span>320.00</span>
+                                            <span> <span>£</span>@item.Total.ToString("0.00")</span>
 
-                                    </td>
+                                        </td>
 
-                                </tr>
+                                    </tr>
+                                }
+                              
                                 <tr>
                                     <td class="product-total" data-title="Total">
-                                        <div class="amount"> <span>£</span>320.00</div>
+                                   @*      @foreach (var item in Model)
+                                    {
+                                        grandTotal += item.Total;
+                                    }*@
+                                        <div class="amount"> <span>£</span>@grandTotal.ToString("0.00")</div>
                                     </td>
                                 </tr>
 
                             </tbody>
                         </table>
-                    </form>
-                </div>
 
-                <div class="col-6"></div>
-                <div class="col-6">
-                    <table>
-                        <tbody>
-                            <tr class="total-price">
-                                <th> <div>Total:</div> </th>
-                                <td>  <div class="amount"> <span>£</span>320.00</div></td>
-                            </tr>
-                        </tbody>
+                    </div>
 
-                    </table>
+                    <div class="col-6"></div>
+                    <div class="col-6 footer-total">
+                        <table>
+                            <tbody>
+                                <tr class="total-price">
+                                    <th> <div>Total:</div> </th>
+                                 
+                                    <td>  <div class="amount"> <span>£</span>@grandTotal.ToString("0.00")</div></td>
+                                </tr>
+                            </tbody>
 
-                </div>
+                        </table>
+
+                    </div>
+                }
+                
+                 else
+                    {
+                        <div class="alert alert-warning d-none" role="alert" style="background-color:orange;">
+                        Basket Empty! Please Add product in your basket..
+                        </div>
+                    }
             </div>
         </div>
     </section>
@@ -148,4 +176,5 @@
 @section Scripts {
    
     <script src="~/assets/js/cart.js"></script>
+    <script src="~/assets/js/common.js"></script>
 }

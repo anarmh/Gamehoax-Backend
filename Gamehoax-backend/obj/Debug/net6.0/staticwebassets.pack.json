@@ -741,6 +741,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\cart.js"
     },
     {
+      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\common.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common.js"
+    },
+    {
       "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\contact.js",
       "PackagePath": "staticwebassets\\assets\\js\\contact.js"
     },

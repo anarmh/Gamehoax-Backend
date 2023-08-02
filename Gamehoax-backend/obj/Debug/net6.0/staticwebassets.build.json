@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8yJJYvtdbh0XaQTkG56WCwi3C9CbnshUcJvJ/a5Eul8=",
+  "Hash": "AqtZkB3nAOi/KGMtcrbhkhJJs3Hmtkw3FLx2uLh09io=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -3177,6 +3177,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\cart.js"
+    },
+    {
+      "Identity": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\common.js",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/js/common.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\common.js"
     },
     {
       "Identity": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\contact.js",

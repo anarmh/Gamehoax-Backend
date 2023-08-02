@@ -79,7 +79,7 @@ namespace Gamehoax_backend.Services
             return mappedDatas;
         }
 
-        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take,string sortValue, string searchText,int? categoryId, int? tagId)
+        public async Task<List<Product>> GetPaginateDatasAsync(int page, int take,string sortValue, string searchText,int? categoryId, int? tagId,int? value1,int? value2)
         {
             List<Product> products= await _context.Products.
                 Include(m=>m.ProductImages).
@@ -160,21 +160,21 @@ namespace Gamehoax_backend.Services
                 .ToListAsync();
             }
 
-            //if (value1 != null && value2 != null)
-            //{
-            //    products = await _context.Products
-            //   .Include(p => p.ProductImages)
-            //   .Include(p => p.ProductTags)
-            //   .ThenInclude(p => p.Tag)
-            //   .Include(p => p.ProductCategories)
-            //   .ThenInclude(p => p.Category)
-            //   .Include(p => p.Rating)
-            //   .Where(p => p.Price >= value1 && p.Price <= value2)
-            //   .Skip((page * take) - take)
-            //   .Take(take)
-            //   .ToListAsync();
+            if (value1 != null && value2 != null)
+            {
+                products = await _context.Products
+               .Include(p => p.ProductImages)
+               .Include(p => p.ProductTags)
+               .ThenInclude(p => p.Tag)
+               .Include(p => p.ProductCategories)
+               .ThenInclude(p => p.Category)
+               .Include(p => p.Rating)
+               .Where(p => p.Price >= value1 && p.Price <= value2)
+               .Skip((page-1) * take)
+               .Take(take)
+               .ToListAsync();
 
-            //}
+            }
 
 
             return products;
@@ -317,6 +317,20 @@ namespace Gamehoax_backend.Services
             var ratingCounts = products.Select(p => p.Rating.RatingCount).ToList();
 
             return products;
+        }
+
+        public async Task<Product> GetByIdAsync(int? id)
+        {
+            return await _context.Products.Include(m => m.ProductImages)
+                                          .Include(p => p.Rating)
+                                          .Include(p => p.BrandModel)
+                                          .Include(p => p.Discount)
+                                          .Include(p => p.ProductCategories)
+                                          .ThenInclude(p=>p.Category)
+                                          .Include(p => p.ProductTags)
+                                          .ThenInclude(p=>p.Tag)
+                                          .Include(p => p.Reviews)
+                                          .FirstOrDefaultAsync(m => m.Id == id);
         }
     }
 }

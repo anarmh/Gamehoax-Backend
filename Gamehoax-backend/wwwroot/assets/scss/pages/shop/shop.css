@@ -184,9 +184,13 @@
   #site-header-main .header-right .search-box {
     padding-top: 10px;
   }
+    #site-header-main .header-right .wishlist {
+        padding-right: 20px !important;
+    }
   #site-header-main .header-right .image-count a {
     width: 20px !important;
     height: 20px !important;
+    display:flex !important;
   }
   #site-header-main .header-right .image-count a img {
     width: 100%;
@@ -195,7 +199,7 @@
        object-fit: cover;
   }
   #site-header-main .header-right span {
-    font-size: 10px;
+    font-size: 15px;
   }
 }
 @media (max-width: 1199.98px) {
@@ -410,7 +414,7 @@
   float: right;
 }
 #site-header-main .header-right span {
-  display: block;
+
   color: #ffba00;
 }
 #site-header-main .header-right .navbar .search-box {
