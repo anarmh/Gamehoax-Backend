@@ -28,8 +28,6 @@
         let prod = $(this).parent().parent();
         let tbody = $(".tbody-basket").children();
         let data = { id: id };
-        let alert = $(".alert-warning")
-        let footerTotal = $(".footer-total")
 
         $.ajax({
             type: "POST",
@@ -38,13 +36,13 @@
             success: function (res) {
                 if ($(tbody).length == 1) {
                     $(".product-table").addClass("d-none");
-                    $(alert).removeClass("d-none");
-                    $(footerTotal).addClass("d-none");
+                    $(".alert-warning").removeClass("d-none");
+                    $(".footer-total").addClass("d-none");
                 }
-                $(prod).remove();
+                prod.remove();
                 res--;
-                $(".cart-count").text(res);
-                grandTotal();
+                $(".cart-count").text('(' + res+')');
+               
             }
         })
         return false;

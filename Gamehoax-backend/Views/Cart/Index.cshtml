@@ -161,13 +161,10 @@
 
                     </div>
                 }
-                
-                 else
-                    {
-                        <div class="alert alert-warning d-none" role="alert" style="background-color:orange;">
-                        Basket Empty! Please Add product in your basket..
-                        </div>
-                    }
+
+                <div class="alert  @(Model.Count <= 0 ? "" : "alert-warning d-none")" role="alert" style="background-color:orange;">
+                    Basket Empty! Please Add product in your basket..
+                </div>
             </div>
         </div>
     </section>
