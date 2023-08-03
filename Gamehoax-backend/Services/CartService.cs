@@ -52,7 +52,7 @@ namespace Gamehoax_backend.Services
         }
 
         
-        public async void DeleteData(int? id)
+        public  void DeleteData(int? id)
         {
             var baskets = JsonConvert.DeserializeObject<List<CartVM>>(_accessor.HttpContext.Request.Cookies["basket"]);
             var deletedProduct = baskets.FirstOrDefault(b => b.ProductId == id);
@@ -78,28 +78,6 @@ namespace Gamehoax_backend.Services
         }
 
 
-        public async Task<decimal> GetTotalPrice()
-        {
-            List<CartVM> basket;
-
-            if (_accessor.HttpContext.Request.Cookies["basket"] != null)
-            {
-                basket = JsonConvert.DeserializeObject<List<CartVM>>(_accessor.HttpContext.Request.Cookies["basket"]);
-            }
-            else
-            {
-                basket = new List<CartVM>();
-            }
-
-            decimal total = 0;
-
-            foreach (var basketData in basket)
-            {
-                Product dbProduct = await _productService.GetByIdAsync(basketData.ProductId);
-                total += (dbProduct.Price * basketData.Count);
-            }
-
-            return total;
-        }
+      
     }
 }

@@ -1,6 +1,7 @@
-﻿
+﻿@model List<WishlistDetailVM>
 @{
     ViewData["Title"] = "Index";
+    int count = 1;
 }
 
 @section Css {
@@ -8,7 +9,11 @@
         <link rel="stylesheet" href="~/assets/scss/pages/wishlist/wishlist.css">
 }
 
-
+<style>
+    .checked{
+        color:red !important;
+    }
+</style>
 
 <main>
     <section id="page-title">
@@ -17,7 +22,7 @@
                 <div class="col-12">
                     <div class="page">
                         <div class="link">
-                            <a href="./home.html">
+                            <a asp-controller="Home" asp-action="Index">
                                 <span>Home</span>
                             </a>
                             <span class="shop"> » Wishlist</span>
@@ -34,48 +39,50 @@
     <section id="wishlist">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <form action="" method="post">
-                        <table>
+                @if (Model.Count > 0)
+                {
+                    <div class="col-12">
+
+                        <table class="product-table-wishlist">
                             <thead>
                                 <tr>
                                     <th>Serial</th>
                                     <th class="product-image">Image</th>
                                     <th>Name</th>
                                     <th>Price</th>
-                                    <th>Quantity</th>
+                                   
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td class="product-remove">
-                                        <a href="">1</a>
-                                    </td>
-                                    <td class="product-image">
-                                        <img src="~/assets/img/product/6.jpg" alt="">
-                                    </td>
-                                    <td class="product-name">
-                                        <p>Taishou x Alice Epilogue</p>
-                                    </td>
-                                    <td class="product-price">
+                            <tbody class="tbody-wishlist">
+                                @foreach (var item in Model)
+                                {
+                                    <tr data-id="@item.Id">
+                                        <td class="product-remove">
+                                            <span>@count</span>
+                                        </td>
+                                        <td class="product-image">
+                                            <img src="~/assets/img/product/@item.Image" alt="">
+                                        </td>
+                                        <td class="product-name">
+                                            <p>@item.Name</p>
+                                        </td>
+                                        <td class="product-price">
 
-                                        <span> <span>£</span>160.00</span>
+                                            <span> <span>£</span>@item.Price</span>
 
-                                    </td>
-                                    <td class="product-quantity">
-                                        <span>Qty: </span>
-                                        <input type="number" step="1" min="0" max="1986" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                        </td>
 
-                                    </td>
-                                    <td class="product-remove">
-                                        <a href="">x</a>
-                                    </td>
+                                        <td class="product-remove">
+                                            <a class="delete-wishlist" style="cursor:pointer;">x</a>
+                                        </td>
 
-                                </tr>
-
+                                    </tr>
+                                    count++;
+                                }
+                               
                             </tbody>
                         </table>
 
@@ -84,42 +91,44 @@
 
 
                             <tbody>
-                                <tr class="product-table mb-3">
-                                    <td class="product-remove" data-title="Action">
-                                        <a href="">x</a>
-                                    </td>
-                                    <td class="product-image" data-title="Image">
-                                        <img src="~/assets/img/product/6.jpg" alt="">
-                                    </td>
-                                    <td class="product-name" data-title="Name">
-                                        <p>Taishou x Alice Epilogue</p>
-                                    </td>
-                                    <td class="product-price" data-title="Price">
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="product-table mb-3">
+                                        <td class="product-remove" data-title="Action">
+                                            <a href="">x</a>
+                                        </td>
+                                        <td class="product-image" data-title="Image">
+                                            <img src="~/assets/img/product/@item.Image" alt="">
+                                        </td>
+                                        <td class="product-name" data-title="Name">
+                                            <p>@item.Name</p>
+                                        </td>
+                                        <td class="product-price" data-title="Price">
 
-                                        <span> <span>£</span>160.00</span>
+                                            <span>£</span> <span>@item.Price</span>
 
-                                    </td>
-                                    <td class="product-quantity" data-title="Quantity">
-                                        <span>Qty: </span>
-                                        <input type="number" step="1" min="0" max="1986" value="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                        </td>
 
-                                    </td>
-
-
-                                </tr>
+                                    </tr>
+                                }
+                             
 
 
                             </tbody>
                         </table>
-                    </form>
-                </div>
 
+                    </div>
+                }
+               
+                 <div class="alert  @(Model.Count <= 0 ? "" : "alert-warning d-none")" role="alert" style="background-color:#f9aa01; color:#342c3d;">
+                    Wishlist Empty! Please Add product in your wishlist..
+                </div>
 
 
 
             </div>
         </div>
-        </div>
+        
     </section>
 </main>
 

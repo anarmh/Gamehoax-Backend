@@ -50,6 +50,7 @@ builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
 var app = builder.Build();
 
 

@@ -38,11 +38,11 @@
 
                 <div class="product-button-outer" >
 
-                    <a data-id="@product.Id" style="cursor:pointer">
+                    <a class="add-to-wish  @(Model.Datas.Count > 0 ? "checked" : "")" data-id="@product.Id" style="cursor:pointer;">
                         <i class="fa-solid fa-heart"></i>
                     </a>
 
-                    <a id="add-to-cart" data-id="@product.Id" style="cursor:pointer">
+                    <a id="add-to-cart" data-id="@product.Id" style="cursor:pointer;">
                         <i class="fa-solid fa-cart-arrow-down"></i>
                     </a>
 

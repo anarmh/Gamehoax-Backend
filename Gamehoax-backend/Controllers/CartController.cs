@@ -10,14 +10,12 @@ namespace Gamehoax_backend.Controllers
     public class CartController : Controller
     {
         private readonly IHttpContextAccessor _accessor;
-        private readonly AppDbContext _context;
         private readonly ICartService _cartService;
         private readonly IProductService _productService;
-        public CartController(ICartService cartService, IProductService productService, AppDbContext context, IHttpContextAccessor accessor)
+        public CartController(ICartService cartService, IProductService productService, IHttpContextAccessor accessor)
         {
             _cartService = cartService;
             _productService = productService;
-            _context = context;
             _accessor = accessor;
         }
 
@@ -39,7 +37,7 @@ namespace Gamehoax_backend.Controllers
                         CartDetailVM cartDetail = new()
                         {
                             Id = dbProduct.Id,
-                            Title = dbProduct.Title,
+                            Name = dbProduct.Name,
                             Image = dbProduct.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
                             Count = item.Count,
                             Price = dbProduct.Price,
@@ -84,5 +82,36 @@ namespace Gamehoax_backend.Controllers
             return Ok(baskets.Count);
         }
 
+        [HttpPost]
+        public IActionResult IncrementProductCount(int? id)
+        {
+            if(id is null) return BadRequest();
+
+            var baskets = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["basket"]);
+
+            int count = baskets.FirstOrDefault(m => m.ProductId == id).Count++;
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+            return Ok(count);
+
+        }
+
+        [HttpPost]
+        public IActionResult DecrementProductCount(int? id)
+        {
+            if(id is null) return BadRequest();
+
+            var baskets = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["basket"]);
+            var product = baskets.FirstOrDefault(m=>m.ProductId == id);
+
+            if (product.Count == 1)
+            {
+                return Ok();
+            }
+
+            var count= product.Count--;
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
+            return Ok(count);
+        }
     }
 }

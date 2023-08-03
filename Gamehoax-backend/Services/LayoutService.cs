@@ -7,17 +7,20 @@ namespace Gamehoax_backend.Services
     {
         private readonly ISettingService _settingService;
         private readonly ICartService _cartService;
-        public LayoutService(ISettingService settingService, ICartService cartService)
+        private readonly IWishlistService _wishlistService;
+        public LayoutService(ISettingService settingService, ICartService cartService,IWishlistService wishlistService)
         {
             _settingService = settingService;
             _cartService = cartService;
+            _wishlistService= wishlistService;
         }
 
         public async  Task<LayoutVM> GetAllDatas()
         {
             var datas =  _settingService.GetAll();
-            int count = _cartService.GetCount();
-            return new LayoutVM { SettingDatas= datas,BasketCount=count };
+            int cartCount = _cartService.GetCount();
+            int wishCount = _wishlistService.GetCount();
+            return new LayoutVM { SettingDatas= datas,BasketCount= cartCount,WishlistCount=wishCount };
         }
     }
 }

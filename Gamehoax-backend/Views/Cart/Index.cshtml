@@ -6,7 +6,7 @@
    @foreach (var item in Model)
     {
     grandTotal += item.Total;
-}
+    }
 
 @section Css {
 
@@ -65,24 +65,24 @@
                                             <img src="~/assets/img/product/@item.Image" alt="">
                                         </td>
                                         <td class="product-name">
-                                            <p>@item.Title</p>
+                                            <p>@item.Name</p>
                                         </td>
                                         <td class="product-price">
 
-                                            <span> <span>£</span>@item.Price.ToString("0.00")</span>
+                                            <span> <span>£</span> <span class="item-price"> @item.Price.ToString("0.00") </span> </span>
 
                                         </td>
                                         <td class="product-quantity">
                                             <span>Qty: </span>
-                                            <input type="number" step="1" min="0" max="1986" value="@item.Count" size="4" pattern="[0-9]*" inputmode="numeric" disabled="">
+                                            <input type="number" class="counter" step="1" min="0" max="1986" value="@item.Count" size="4" pattern="[0-9]*" inputmode="numeric" disabled="">
                                             <div class="quantity-button">
-                                                <button type="button" class="plus" value="+">+</button>
-                                                <button type="button" class="minus" value="-">-</button>
+                                                <button type="button" class="plus inc" value="+">+</button>
+                                                <button type="button" class="minus dec" value="-">-</button>
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
 
-                                            <span> <span>£</span>@item.Total.ToString("0.00")</span>
+                                          <span>£</span><span class="total-price">@item.Total.ToString("0.00")</span>
 
                                         </td>
                                     </tr>
@@ -107,24 +107,24 @@
                                             <img src="~/assets/img/product/@item.Image" alt="">
                                         </td>
                                         <td class="product-name" data-title="Name">
-                                            <p>@item.Title</p>
+                                            <p>@item.Name</p>
                                         </td>
                                         <td class="product-price" data-title="Price">
 
-                                            <span> <span>£</span>@item.Price.ToString("0.00")</span>
+                                            <span> <span>£</span><span class="item-price"> @item.Price.ToString("0.00") </span></span>
 
                                         </td>
                                         <td class="product-quantity" data-title="Quantity">
                                             <span>Qty: </span>
                                             <input type="number" step="1" min="0" max="1986" value="@item.Count" size="4" pattern="[0-9]*" inputmode="numeric" disabled="">
                                             <div class="quantity-button">
-                                                <button type="button" class="plus" value="+">+</button>
-                                                <button type="button" class="minus" value="-">-</button>
+                                                <button type="button" class="plus inc" value="+">+</button>
+                                                <button type="button" class="minus dec" value="-">-</button>
                                             </div>
                                         </td>
                                         <td class="product-subtotal" data-title="Subtotal">
 
-                                            <span> <span>£</span>@item.Total.ToString("0.00")</span>
+                                            <span> <span>£</span><span class="total-price">@item.Total.ToString("0.00")</span></span>
 
                                         </td>
 
@@ -137,7 +137,7 @@
                                     {
                                         grandTotal += item.Total;
                                     }*@
-                                        <div class="amount"> <span>£</span>@grandTotal.ToString("0.00")</div>
+                                        <div class="amount"> <span>£</span> <span class="grand-total">@grandTotal.ToString("0.00")</span></div>
                                     </td>
                                 </tr>
 
@@ -152,8 +152,8 @@
                             <tbody>
                                 <tr class="total-price">
                                     <th> <div>Total:</div> </th>
-                                 
-                                    <td>  <div class="amount"> <span>£</span>@grandTotal.ToString("0.00")</div></td>
+
+                                    <td>  <div class="amount"> <span>£</span><span class="grand-total">@grandTotal.ToString("0.00")</span></div></td>
                                 </tr>
                             </tbody>
 
@@ -162,7 +162,7 @@
                     </div>
                 }
 
-                <div class="alert  @(Model.Count <= 0 ? "" : "alert-warning d-none")" role="alert" style="background-color:orange;">
+                <div class="alert  @(Model.Count <= 0 ? "" : "alert-warning d-none")" role="alert" style="background-color:#f9aa01; color:#342c3d;">
                     Basket Empty! Please Add product in your basket..
                 </div>
             </div>

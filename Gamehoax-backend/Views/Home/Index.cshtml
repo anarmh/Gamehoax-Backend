@@ -175,7 +175,7 @@
                                                 <i class="fa-solid fa-heart"></i>
                                             </a>
 
-                                            <a href="cart.html">
+                                            <a id="add-to-cart-rating" data-id="@item.Id" style="cursor:pointer">
                                                 <i class="fa-solid fa-cart-arrow-down"></i>
                                             </a>
 
@@ -234,7 +234,7 @@
                                                 <i class="fa-solid fa-heart"></i>
                                             </a>
 
-                                            <a href="cart.html">
+                                            <a id="add-to-cart-date" data-id="@item.Id" style="cursor:pointer">
                                                 <i class="fa-solid fa-cart-arrow-down"></i>
                                             </a>
 
@@ -315,7 +315,7 @@
                                                 <i class="fa-solid fa-heart"></i>
                                             </a>
 
-                                            <a href="cart.html">
+                                            <a id="add-to-cart-discount" data-id="@item.Id" style="cursor:pointer">
                                                 <i class="fa-solid fa-cart-arrow-down"></i>
                                             </a>
 
@@ -482,11 +482,11 @@
                                             <i class="fa-solid fa-heart"></i>
                                         </a>
 
-                                        <a href="cart.html">
+                                        <a id="add-to-cart-sale" data-id="@item.Id" style="cursor:pointer">
                                             <i class="fa-solid fa-cart-arrow-down"></i>
                                         </a>
 
-                                        <a href="product-detail.html">
+                                        <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
 

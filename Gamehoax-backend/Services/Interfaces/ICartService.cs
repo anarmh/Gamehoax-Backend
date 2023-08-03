@@ -8,7 +8,6 @@ namespace Gamehoax_backend.Services.Interfaces
     {
         void AddProduct(List<CartVM> basket, Product product);
         List<CartVM> GetDatasFromCookie();
-        Task<decimal> GetTotalPrice();
         int GetCount();
         void DeleteData(int? id);
     }
