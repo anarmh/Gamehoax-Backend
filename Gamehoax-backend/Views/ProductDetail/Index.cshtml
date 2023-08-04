@@ -1,8 +1,15 @@
 ﻿@model ProductDetailVM
+
 @{
     ViewData["Title"] = "Index";
+    var fc = false;
 }
 
+<style>
+    .checked {
+        color: red !important;
+    }
+</style>
 
 @section Css {
 
@@ -62,10 +69,10 @@
                                 <span class="template-quantity">Qty: </span>
                                 <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
                                 <div class="quantity-button">
-                                    <button type="button" class="plus incrementDetail" data-id="@Model.Id" value="+">
+                                    <button type="button" class="plus incrementDetail"  value="+">
                                         +
                                     </button>
-                                    <button type="button" class="minus decrementDetail" data-id="@Model.Id" value="-">
+                                    <button type="button" class="minus decrementDetail"  value="-">
                                         -
                                     </button>
                                 </div>
@@ -73,8 +80,20 @@
                             <button type="button" class="single-add-to-cart"  data-id="@Model.Id">Add to cart</button>
                         </form>
 
-                        <div class="add-to-wish">
-                            <a href="wishlist.html">
+                        <div class="wishlist-content" >
+                            @if (ViewBag.Cookie != null)
+                            {
+                                @foreach (var item in ViewBag.Cookie)
+                                {
+                                    @if (item.ProductId == Model.Id)
+                                    {
+                                         fc = true;
+                                    }
+
+                                }
+
+                            }
+                            <a class=" add-to-wish" @((fc)?"checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
                                 <i class="fa fa-heart"></i>
                                 <span>Add to wishlist</span>
                             </a>
@@ -144,19 +163,31 @@
                                     <span class="template-quantity">Qty: </span>
                                     <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
                                     <div class="quantity-button">
-                                        <button type="button" class="plus" value="+">
+                                        <button type="button" class="plus incrementDetail" value="+">
                                             +
                                         </button>
-                                        <button type="button" class="minus" value="-">
+                                        <button type="button" class="minus decrementDetail" value="-">
                                             -
                                         </button>
                                     </div>
                                 </div>
-                                <button type="submit" class="single-add-to-cart">Add to cart</button>
+                                <button type="submit" class="single-add-to-cart" data-id="@Model.Id">Add to cart</button>
                             </form>
 
-                            <div class="add-to-wish">
-                                <a href="wishlist.html">
+                            <div class="wishlist-content">
+                                @if (ViewBag.Cookie != null)
+                                {
+                                    @foreach (var item in ViewBag.Cookie)
+                                    {
+                                        @if (item.ProductId == Model.Id)
+                                        {
+                                        fc = true;
+                                        }
+
+                                    }
+
+                                }
+                                <a class="add-to-wish" @((fc)?"checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
                                     <i class="fa fa-heart"></i>
                                     <span>Add to wishlist</span>
                                 </a>
@@ -247,7 +278,7 @@
                                         <ul class="review-list">
                                             <li class="review-item">
                                                 <div class="review-media">
-                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/@Model.Category.Image" alt="review"></a>
+                                                    <a class="review-avatar" href="#"><img src="~/assets/img/product/1.jpg" alt="review"></a>
                                                     <h5 class="review-meta">
                                                         <a href="#">miron mahmud</a><span>June 02, 2020</span>
                                                     </h5>
@@ -398,7 +429,7 @@
                                             <i class="fa-solid fa-cart-arrow-down"></i>
                                         </a>
 
-                                        <a href="product-detail.html">
+                                        <a asp-controller="ProductDetail" asp-action="Index">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
 

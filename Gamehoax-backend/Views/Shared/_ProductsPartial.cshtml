@@ -49,13 +49,13 @@
                     @if (ViewBag.Cookie != null)
                     {
                          @foreach (var item in ViewBag.Cookie)
-                    {
-                        if (@item.ProductId == product.Id)
                         {
-                            fc = true;
-                        }
+                           @if (item.ProductId == product.Id)
+                            {
+                                fc = true;
+                            }
                         
-                    }
+                        }
 
                     }
                    

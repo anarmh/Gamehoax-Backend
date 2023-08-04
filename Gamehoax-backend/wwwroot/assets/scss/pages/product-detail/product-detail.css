@@ -541,7 +541,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -641,7 +641,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -754,7 +754,7 @@ footer #footer-top h3 {
   text-transform: capitalize;
   line-height: 20px;
   font-weight: 600;
-  letter-spacing: 0.4;
+  letter-spacing: 0.4px;
   background: transparent;
   border: none;
   padding-bottom: 20px;
@@ -862,7 +862,7 @@ footer .backtotop #to-top {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+ 
   -o-transition: all 0.1s ease-in-out;
 }
 footer .backtotop #to-top::before {
@@ -876,7 +876,7 @@ footer .backtotop #to-top::before {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+  
   -o-transition: all 0.1s ease-in-out;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -1076,7 +1076,7 @@ footer .backtotop #to-top:hover::after {
     border: 1px solid var(--border);
   }
   #tabs .review .review-item .review-rating {
-    padding: o;
+    padding: 0;
   }
   #tabs .review .review-item:last-child {
     margin-bottom: 0px;
@@ -1106,7 +1106,7 @@ footer .backtotop #to-top:hover::after {
     transition: all linear 0.3s;
     -webkit-transition: all linear 0.3s;
     -moz-transition: all linear 0.3s;
-    -ms-transition: all linear 0.3s;
+  
     -o-transition: all linear 0.3s;
     text-decoration: none;
   }
@@ -1162,7 +1162,7 @@ footer .backtotop #to-top:hover::after {
     transition: all linear 0.3s;
     -webkit-transition: all linear 0.3s;
     -moz-transition: all linear 0.3s;
-    -ms-transition: all linear 0.3s;
+   
     -o-transition: all linear 0.3s;
     border: 1px solid #342c3d;
     box-shadow: none !important;
@@ -1538,21 +1538,21 @@ footer .backtotop #to-top:hover::after {
   #product-detail .summary form .single-add-to-cart::after {
     clear: both;
   }
-  #product-detail .summary .add-to-wish {
-    padding: 30px 0;
-    border-bottom: 1px solid #342c3d;
-  }
-  #product-detail .summary .add-to-wish a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  #product-detail .summary .add-to-wish a span {
-    padding-left: 4px;
-  }
-  #product-detail .summary .add-to-wish a:hover {
-    color: #f9aa01;
-  }
+    #product-detail .summary .wishlist-content {
+        padding: 30px 0;
+        border-bottom: 1px solid #342c3d;
+    }
+        #product-detail .summary .wishlist-content a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+            #product-detail .summary .wishlist-content a span {
+                padding-left: 4px;
+            }
+    #product-detail .summary .wishlist-content a:hover {
+        color: #f9aa01;
+    }
   #product-detail .summary .product-meta {
     clear: both;
     display: inline-block;
@@ -1754,21 +1754,21 @@ footer .backtotop #to-top:hover::after {
   #product-detail .summary form .single-add-to-cart::after {
     clear: both;
   }
-  #product-detail .summary .add-to-wish {
-    padding: 20px 0;
-    border-bottom: 1px solid #342c3d;
-  }
-  #product-detail .summary .add-to-wish a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  #product-detail .summary .add-to-wish a span {
-    padding-left: 4px;
-  }
-  #product-detail .summary .add-to-wish a:hover {
-    color: #f9aa01;
-  }
+    #product-detail .summary .wishlist-content {
+        padding: 20px 0;
+        border-bottom: 1px solid #342c3d;
+    }
+    #product-detail .summary .wishlist-content a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+        #product-detail .summary .wishlist-content a span {
+            padding-left: 4px;
+        }
+        #product-detail .summary .wishlist-content a:hover {
+            color: #f9aa01;
+        }
   #product-detail .summary .product-meta {
     clear: both;
     display: inline-block;
@@ -1979,21 +1979,21 @@ footer .backtotop #to-top:hover::after {
   #product-detail .mobile .col-12 .summary form .single-add-to-cart::after {
     clear: both;
   }
-  #product-detail .mobile .col-12 .summary .add-to-wish {
-    padding: 30px 0;
-    border-bottom: 1px solid #342c3d;
-  }
-  #product-detail .mobile .col-12 .summary .add-to-wish a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  #product-detail .mobile .col-12 .summary .add-to-wish a span {
-    padding-left: 4px;
-  }
-  #product-detail .mobile .col-12 .summary .add-to-wish a:hover {
-    color: #f9aa01;
-  }
+    #product-detail .mobile .col-12 .summary .wishlist-content {
+        padding: 30px 0;
+        border-bottom: 1px solid #342c3d;
+    }
+        #product-detail .mobile .col-12 .summary .wishlist-content a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+            #product-detail .mobile .col-12 .summary .wishlist-content a span {
+                padding-left: 4px;
+            }
+            #product-detail .mobile .col-12 .summary .wishlist-content a:hover {
+                color: #f9aa01;
+            }
   #product-detail .mobile .col-12 .summary .product-meta {
     clear: both;
     display: inline-block;
@@ -2194,21 +2194,21 @@ footer .backtotop #to-top:hover::after {
   #product-detail .summary form .single-add-to-cart::after {
     clear: both;
   }
-  #product-detail .summary .add-to-wish {
-    padding: 20px 0;
-    border-bottom: 1px solid #342c3d;
-  }
-  #product-detail .summary .add-to-wish a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  #product-detail .summary .add-to-wish a span {
-    padding-left: 4px;
-  }
-  #product-detail .summary .add-to-wish a:hover {
-    color: #f9aa01;
-  }
+    #product-detail .summary .wishlist-content {
+        padding: 20px 0;
+        border-bottom: 1px solid #342c3d;
+    }
+        #product-detail .summary .wishlist-content a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+            #product-detail .summary .wishlist-content a span {
+                padding-left: 4px;
+            }
+            #product-detail .summary .wishlist-content a:hover {
+                color: #f9aa01;
+            }
   #product-detail .summary .product-meta {
     clear: both;
     display: inline-block;
@@ -2445,17 +2445,17 @@ body {
   padding: 30px 0;
   border-bottom: 1px solid #342c3d;
 }
-#product-detail .summary .add-to-wish a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-}
-#product-detail .summary .add-to-wish a span {
-  padding-left: 4px;
-}
-#product-detail .summary .add-to-wish a:hover {
-  color: #f9aa01;
-}
+    #product-detail .summary .wishlist-content a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+        #product-detail .summary .wishlist-content a span {
+            padding-left: 4px;
+        }
+        #product-detail .summary .wishlist-content a:hover {
+            color: #f9aa01;
+        }
 #product-detail .summary .product-meta {
   clear: both;
   display: inline-block;
@@ -2765,7 +2765,7 @@ body {
   border: 1px solid var(--border);
 }
 #tabs .review .review-item .review-rating {
-  padding: o;
+  padding: 0;
 }
 #tabs .review .review-item:last-child {
   margin-bottom: 0px;
@@ -2795,7 +2795,7 @@ body {
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
-  -ms-transition: all linear 0.3s;
+
   -o-transition: all linear 0.3s;
   text-decoration: none;
 }
@@ -2851,7 +2851,7 @@ body {
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
-  -ms-transition: all linear 0.3s;
+
   -o-transition: all linear 0.3s;
   border: 1px solid #342c3d;
   box-shadow: none !important;
