@@ -1,76 +1,11 @@
 ﻿$(document).ready(function () {
 
 
-    //add to cart from home
-    $(document).on("click", "#add-to-cart-rating", function (e) {
-      
-        let id = $(this).attr("data-id");
-        console.log(id)
-        let data = { id: id };
-        $.ajax({
-            type: "POST",
-            url: "/Cart/AddToCart",
-            data: data,
-            success: function (res) {
-                $('.cart-count').text('(' + res + ')');
-            }
-        })
-        return false;
-    })
+  
 
 
-    $(document).on("click", "#add-to-cart-date", function (e) {
-      
-        let id = $(this).attr("data-id");
-        console.log(id)
-        let data = { id: id };
-        $.ajax({
-            type: "POST",
-            url: "/Cart/AddToCart",
-            data: data,
-            success: function (res) {
-                $('.cart-count').text('(' + res + ')');
-            }
-        })
-        return false;
-    })
-
-    $(document).on("click", "#add-to-cart-discount", function (e) {
-       
-        let id = $(this).attr("data-id");
-        console.log(id)
-        let data = { id: id };
-        $.ajax({
-            type: "POST",
-            url: "/Cart/AddToCart",
-            data: data,
-            success: function (res) {
-                $('.cart-count').text('(' + res + ')');
-            }
-        })
-        return false;
-    })
-
-    $(document).on("click", "#add-to-cart-sale", function (e) {
-
-        let id = $(this).attr("data-id");
-        console.log(id)
-        let data = { id: id };
-        $.ajax({
-            type: "POST",
-            url: "/Cart/AddToCart",
-            data: data,
-            success: function (res) {
-                $('.cart-count').text('(' + res + ')');
-            }
-        })
-        return false;
-    })
-
-
-
-    let cart_count = $(".cart-count").text();
-    console.log(cart_count);
+    //let cart_count = $(".cart-count").text();
+    //console.log(cart_count);
 
     //add  cart from shop
 
@@ -131,16 +66,14 @@
         return false;
     })
 
-    function subTotal(res, priceValue, total_el, count) {
-        let subtotal = parseFloat(priceValue * res);
+    function subTotal(res, priceValue, total_el) {
         
-        console.log(res, priceValue, total_el, count);
-        total_el.text(subtotal);
-        count.val(res);
+        //counterss.val(res);
 
         
         let mega = count_all();
-        $(".cart-count").text(`(`+mega+`)`);
+        //console.log(mega);
+        $(".cart-count").text(`(${mega})`);
     }
 
 
@@ -154,16 +87,21 @@
 
         let total = parseFloat($(this).parent().parent().next().find(".total-price").text());
         let total_el = $(this).parent().parent().next().find(".total-price");
-        let count = $(this).parent().prev();
-     
+        let counterss = $(this).parent().prev();
+        //console.log(count);
+        //console.log(counterss);
+
        
         $.ajax({
             type: "POST",
             url: `Cart/IncrementProductCount?id=${id}`,
             success: function (res) {
                 res++;
-                subTotal(res, priceValue, total, total_el, count)
+                subTotal(res, priceValue, total, total_el)
                 grandTotal();
+                counterss.val(res);
+                let subtotal = parseFloat(priceValue * res);
+                $(total_el).text(subtotal);
             }
         })
     })
@@ -181,50 +119,94 @@
 
         let total = parseFloat($(this).parent().parent().next().find(".total-price").text());
         let total_el = $(this).parent().parent().next().find(".total-price");
-        let count = $(this).parent().prev();
+        let counterss = $(this).parent().prev();
 
 
         $.ajax({
             type: "POST",
             url: `Cart/DecrementProductCount?id=${id}`,
             success: function (res) {
-                if ($(count).val() == 1) {
+                if ($(counterss).val() == 1) {
                     return;
                 }
                 res--;
-                subTotal(res, priceValue, total, total_el, count)
+                subTotal(res, priceValue, total, total_el)
                 grandTotal();
+                counterss.val(res);
+                let subtotal = parseFloat(priceValue * res);
+                $(total_el).text(subtotal);
             }
         })
     })
 
-    //add to wishlist
-    //$(document).on("click", ".add-to-wish", function (e) {
-    //    e.preventDefault();
-    //    alert();
-    //    let el = $(this);
-    //    if (el.hasClass('checked')) {
-    //        console.log('Element'+el);
-    //        el.removeClass('checked');
-    //        return false;
-    //    } else {
-    //        let id = $(this).attr("data-id");
-    //        console.log('ID'+id);
-    //        let data = { id: id };
-    //        let countWishlist = (".wish-count");
-    //        $.ajax({
-    //            type: "POST",
-    //            url: "/Wishlist/AddToWishlist",
-    //            data: data,
-    //            success: function (res) {
-    //                el.addClass('checked');
-    //                $(countWishlist).text(`(${res})`);
-    //            }
-    //        })
-    //    }
-    //    return false;
-    //})
+    //add to cart from home
+    $(document).on("click", "#add-to-cart-rating", function (e) {
 
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let data = { id: id };
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.cart-count').text('(' + res + ')');
+            }
+        })
+        return false;
+    })
+
+
+    $(document).on("click", "#add-to-cart-date", function (e) {
+
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let data = { id: id };
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.cart-count').text('(' + res + ')');
+            }
+        })
+        return false;
+    })
+
+    $(document).on("click", "#add-to-cart-discount", function (e) {
+
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let data = { id: id };
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.cart-count').text('(' + res + ')');
+            }
+        })
+        return false;
+    })
+
+    $(document).on("click", "#add-to-cart-sale", function (e) {
+
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let data = { id: id };
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.cart-count').text('(' + res + ')');
+            }
+        })
+        return false;
+    })
+
+   
+    //add to wish
     $(".add-to-wish").unbind().click(function (e) {
         e.stopPropagation();
         let el = $(this);
@@ -295,6 +277,7 @@
 
 function count_all() {
     let cnts = (document.querySelectorAll('.counter'));
+    //console.log(".counter")
     let total_sum = 0;
     cnts.forEach(cnt => {
         total_sum += parseFloat(cnt.value)

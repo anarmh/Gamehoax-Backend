@@ -40,8 +40,12 @@ namespace Gamehoax_backend.Controllers
 
         public async Task<IActionResult> Index(int page=1, int take=2,string sortValue=null,string searchText=null,int? categoryId=null, int? tagId=null,int? value1=null, int? value2=null)
         {
-           var myCookie = JsonConvert.DeserializeObject<List<WishlistVM>>(_accessor.HttpContext.Request.Cookies["wishlist"]);
-            ViewBag.Cookie = myCookie;
+            if(_accessor.HttpContext.Request.Cookies["wishlist"] != null)
+            {
+                var myCookie = JsonConvert.DeserializeObject<List<WishlistVM>>(_accessor.HttpContext.Request.Cookies["wishlist"]);
+                ViewBag.Cookie = myCookie;
+            }
+          
 
 
             List<Product> paginateProducts = await _productService.GetPaginateDatasAsync(page,take,sortValue,searchText,categoryId,tagId,value1,value2);

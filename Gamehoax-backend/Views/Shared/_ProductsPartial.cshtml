@@ -46,8 +46,9 @@
                 </div>
 
                 <div class="product-button-outer" >
-                    
-                    @foreach (var item in @ViewBag.Cookie)
+                    @if (ViewBag.Cookie != null)
+                    {
+                         @foreach (var item in ViewBag.Cookie)
                     {
                         if (@item.ProductId == product.Id)
                         {
@@ -55,6 +56,9 @@
                         }
                         
                     }
+
+                    }
+                   
                     <a class="add-to-wish @((fc)?"checked":"") @(fc = false) " data-id="@product.Id" style="cursor:pointer;">
                         <i class="fa-solid fa-heart"></i>
                     </a>
