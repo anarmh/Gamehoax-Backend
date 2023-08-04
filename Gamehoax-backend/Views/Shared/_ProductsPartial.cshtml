@@ -1,8 +1,18 @@
 ﻿@model Paginate<ProductVM>
    
+@{
+    var fc = false;
+
+}
+<style>
+    .checked{
+        color:red !important;
+    }
+</style>
 
 @if (Model.Datas.Count > 0)
 {
+    
 
 
     @foreach (var product in Model.Datas)
@@ -33,14 +43,22 @@
                     <div class="content price">
                         <span class="actual-price">£@product.Price</span>
                     </div>
-
                 </div>
 
                 <div class="product-button-outer" >
-
-                    <a class="add-to-wish  @(Model.Datas.Count > 0 ? "checked" : "")" data-id="@product.Id" style="cursor:pointer;">
+                    
+                    @foreach (var item in @ViewBag.Cookie)
+                    {
+                        if (@item.ProductId == product.Id)
+                        {
+                            fc = true;
+                        }
+                        
+                    }
+                    <a class="add-to-wish @((fc)?"checked":"") @(fc = false) " data-id="@product.Id" style="cursor:pointer;">
                         <i class="fa-solid fa-heart"></i>
                     </a>
+                    
 
                     <a id="add-to-cart" data-id="@product.Id" style="cursor:pointer;">
                         <i class="fa-solid fa-cart-arrow-down"></i>

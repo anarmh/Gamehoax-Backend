@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FgcBna6tYiK7ss1A+JgOAO4+W6yVxa9Lpx/MlH/G+/YdnA+OR2v4eg5m6bbPO+2sYThP131lTtsXclxswuyS3g==",
+  "dgSpecHash": "2vueSa6UPDmzSyIs/2olpzUfPUHvaUt0BZvbKLZVzOJd+FTBkX2Cpw3VMa/cSyV6/aaBboFa6vUx0YtZhj3Sdw==",
   "success": true,
-  "projectFilePath": "D:\\Gamehoax-backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+  "projectFilePath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anar\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Anar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

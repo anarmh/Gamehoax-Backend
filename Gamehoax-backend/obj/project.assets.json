@@ -10927,11 +10927,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Gamehoax-backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+      "projectUniqueName": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
       "projectName": "Gamehoax-backend",
-      "projectPath": "D:\\Gamehoax-backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+      "projectPath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
       "packagesPath": "C:\\Users\\Anar\\.nuget\\packages\\",
-      "outputPath": "D:\\Gamehoax-backend\\Gamehoax-backend\\obj\\",
+      "outputPath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anar\\AppData\\Roaming\\NuGet\\NuGet.Config",

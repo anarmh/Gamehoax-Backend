@@ -1,931 +1,931 @@
 {
   "Files": [
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Gamehoax-backend.bundle.scp.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Gamehoax-backend.bundle.scp.css",
       "PackagePath": "staticwebassets\\Gamehoax-backend.bundle.scp.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\admin\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\css\\style.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\css\\style.css",
       "PackagePath": "staticwebassets\\admin\\css\\style.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\img\\testimonial-1.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\admin\\img\\testimonial-1.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\img\\testimonial-2.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\img\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\admin\\img\\testimonial-2.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\img\\user.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\img\\user.jpg",
       "PackagePath": "staticwebassets\\admin\\img\\user.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\js\\main.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\js\\main.js",
       "PackagePath": "staticwebassets\\admin\\js\\main.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\chart\\chart.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\chart\\chart.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\chart\\chart.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\easing\\easing.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\easing\\easing.js",
       "PackagePath": "staticwebassets\\admin\\lib\\easing\\easing.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\easing\\easing.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\easing\\easing.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\easing\\easing.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\LICENSE",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\LICENSE",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\owl.carousel.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\owl.carousel.js",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\js\\moment-timezone.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\moment.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\js\\moment.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\waypoints\\links.php",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\waypoints\\links.php",
       "PackagePath": "staticwebassets\\admin\\lib\\waypoints\\links.php"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\waypoints\\waypoints.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\waypoints\\waypoints.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_accordion.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_accordion.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_accordion.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_containers.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_containers.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_containers.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_helpers.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_helpers.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_helpers.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_offcanvas.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_offcanvas.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_labels.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_labels.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\forms\\_validation.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\forms\\_validation.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_position.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_position.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_container.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_container.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\utilities\\_api.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\utilities\\_api.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\image-pan-zoom-hover\\index.html",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\image-pan-zoom-hover\\index.html",
       "PackagePath": "staticwebassets\\assets\\image-pan-zoom-hover\\index.html"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\image-pan-zoom-hover\\src\\Nzoom.min.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\image-pan-zoom-hover\\src\\Nzoom.min.js",
       "PackagePath": "staticwebassets\\assets\\image-pan-zoom-hover\\src\\Nzoom.min.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\1.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\1.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\10.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\10.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\10.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\2.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\2.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\3.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\3.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\4.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\4.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\5.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\5.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\6.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\6.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\7.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\7.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\8.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\8.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\8.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\9.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\9.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\9.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\search.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\blog\\search.png",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\search.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\body-bg.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\body-bg.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\body-bg.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-01.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-01.png",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\brand-01.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-02.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-02.png",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\brand-02.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-03.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-03.png",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\brand-03.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-04.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-04.png",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\brand-04.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-05.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\brand-05.png",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\brand-05.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\basket (1).png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\basket (1).png",
       "PackagePath": "staticwebassets\\assets\\img\\cart\\basket (1).png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-50.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-50.png",
       "PackagePath": "staticwebassets\\assets\\img\\cart\\icons8-cart-50.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-64 (1).png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-64 (1).png",
       "PackagePath": "staticwebassets\\assets\\img\\cart\\icons8-cart-64 (1).png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-64.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cart\\icons8-cart-64.png",
       "PackagePath": "staticwebassets\\assets\\img\\cart\\icons8-cart-64.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-01-446x550_t.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-01-446x550_t.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\category-image-01-446x550_t.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-02-446x550_t.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-02-446x550_t.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\category-image-02-446x550_t.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-03-446x550_t.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\category-image-03-446x550_t.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\category-image-03-446x550_t.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\cms-banner-03.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\cms-banner-03.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\cms-banner-03.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\cms-banner-04.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\category\\cms-banner-04.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\cms-banner-04.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cms-banner-01.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cms-banner-01.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\cms-banner-01.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cms-banner-02.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\cms-banner-02.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\cms-banner-02.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\footer-bg.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\footer-bg.png",
       "PackagePath": "staticwebassets\\assets\\img\\footer-bg.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\loading.gif",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\loading.gif",
       "PackagePath": "staticwebassets\\assets\\img\\loading.gif"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\logo (1).png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\logo (1).png",
       "PackagePath": "staticwebassets\\assets\\img\\logo (1).png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\newsletter.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\newsletter.png",
       "PackagePath": "staticwebassets\\assets\\img\\newsletter.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\1.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\1.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\10.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\10.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\10.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\11.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\11.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\11.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\12.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\12.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\12.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\13.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\13.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\13.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\14.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\14.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\14.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\15.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\15.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\15.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\16.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\16.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\16.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\17.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\17.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\17.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\2.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\2.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\3.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\3.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\4.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\4.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\5.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\5.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\6.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\6.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\7.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\7.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\8.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\8.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\8.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\9.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\9.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\9.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\service-icon.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\service-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\service-icon.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\shop\\category-banner.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\shop\\category-banner.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\shop\\category-banner.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\shop\\left-banner.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\shop\\left-banner.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\shop\\left-banner.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\1.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\1.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\2.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\2.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\3.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\3.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\4.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\4.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\5.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\5.png",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\5.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\1.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\2.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\2.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\3.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\3.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\4.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\4.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\5.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\5.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\6.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\6.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\7.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\7.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\8.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\8.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\8.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\parallax.jpg",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\parallax.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\parallax.jpg"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\quote.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\quote.png",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\quote.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\img\\wishlist\\icons8-heart-64.png",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\wishlist\\icons8-heart-64.png",
       "PackagePath": "staticwebassets\\assets\\img\\wishlist\\icons8-heart-64.png"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\about.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\about.js",
       "PackagePath": "staticwebassets\\assets\\js\\about.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\blog.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\blog.js",
       "PackagePath": "staticwebassets\\assets\\js\\blog.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\assets\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\cart.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\cart.js",
       "PackagePath": "staticwebassets\\assets\\js\\cart.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\common.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\common.js",
       "PackagePath": "staticwebassets\\assets\\js\\common.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\contact.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\contact.js",
       "PackagePath": "staticwebassets\\assets\\js\\contact.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\home.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\home.js",
       "PackagePath": "staticwebassets\\assets\\js\\home.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\login.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\login.js",
       "PackagePath": "staticwebassets\\assets\\js\\login.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\product-detail.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\product-detail.js",
       "PackagePath": "staticwebassets\\assets\\js\\product-detail.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\register.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\register.js",
       "PackagePath": "staticwebassets\\assets\\js\\register.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\reset-password.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\reset-password.js",
       "PackagePath": "staticwebassets\\assets\\js\\reset-password.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop-filter.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop-filter.js",
       "PackagePath": "staticwebassets\\assets\\js\\shop-filter.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\shop.js",
       "PackagePath": "staticwebassets\\assets\\js\\shop.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\wishlist.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\wishlist.js",
       "PackagePath": "staticwebassets\\assets\\js\\wishlist.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\js\\zoom.js",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\zoom.js",
       "PackagePath": "staticwebassets\\assets\\js\\zoom.js"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\About\\about.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\About\\about.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\About\\about.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\About\\about.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\blog\\blog.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\blog\\blog.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\blog\\blog.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\blog\\blog.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\bootstrap\\bootstrap.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\bootstrap\\bootstrap.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\bootstrap\\bootstrap.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\cart\\cart.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\cart\\cart.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\cart\\cart.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\cart\\cart.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\contact\\contact.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\contact\\contact.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\contact\\contact.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\contact\\contact.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\home\\home.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\home\\home.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\home\\home.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\home\\home.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\layout\\_footer.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\layout\\_footer.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\layout\\_footer.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\layout\\_header.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\layout\\_header.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\layout\\_header.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\login\\login.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\login\\login.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\login\\login.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\login\\login.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\product-detail\\product-detail.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\product-detail\\product-detail.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\product-detail\\product-detail.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\product-detail\\product-detail.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\register\\register.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\register\\register.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\register\\register.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\register\\register.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\reset-password\\reset-password.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\reset-password\\reset-password.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\reset-password\\reset-password.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\reset-password\\reset-password.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\shop\\shop.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\shop\\shop.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\shop\\shop.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\shop\\shop.scss"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.css",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.css",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\wishlist\\wishlist.css"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.css.map",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.css.map",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\wishlist\\wishlist.css.map"
     },
     {
-      "Id": "D:\\Gamehoax-backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.scss",
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\wishlist\\wishlist.scss"
     },
     {

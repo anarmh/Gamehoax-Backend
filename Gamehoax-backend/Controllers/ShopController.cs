@@ -4,8 +4,10 @@ using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
 using Gamehoax_backend.Viewmodel.Cart;
+using Gamehoax_backend.Viewmodel.Wishlist;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 
@@ -18,22 +20,29 @@ namespace Gamehoax_backend.Controllers
         private readonly ICategoryService _categoryService;
         private readonly ITagService _tagService;
         private readonly ICartService _cartService;
+        private readonly IHttpContextAccessor _accessor;
 
         public ShopController(IProductService productService, 
                               ICategoryService categoryService, 
                               ITagService tagService,
                               AppDbContext context,
-                              ICartService cartService)
+                              ICartService cartService,
+                               IHttpContextAccessor accessor
+                              )
         {
             _productService = productService;
             _categoryService = categoryService;
             _tagService = tagService;
             _context= context;
             _cartService= cartService;
+            _accessor = accessor;
         }
 
         public async Task<IActionResult> Index(int page=1, int take=2,string sortValue=null,string searchText=null,int? categoryId=null, int? tagId=null,int? value1=null, int? value2=null)
         {
+           var myCookie = JsonConvert.DeserializeObject<List<WishlistVM>>(_accessor.HttpContext.Request.Cookies["wishlist"]);
+            ViewBag.Cookie = myCookie;
+
 
             List<Product> paginateProducts = await _productService.GetPaginateDatasAsync(page,take,sortValue,searchText,categoryId,tagId,value1,value2);
             List<ProductVM> mappedDatas = _productService.GetMappedDatas(paginateProducts);
