@@ -62,15 +62,15 @@
                                 <span class="template-quantity">Qty: </span>
                                 <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
                                 <div class="quantity-button">
-                                    <button type="button" class="plus" value="+">
+                                    <button type="button" class="plus incrementDetail" data-id="@Model.Id" value="+">
                                         +
                                     </button>
-                                    <button type="button" class="minus" value="-">
+                                    <button type="button" class="minus decrementDetail" data-id="@Model.Id" value="-">
                                         -
                                     </button>
                                 </div>
                             </div>
-                            <button type="submit" class="single-add-to-cart">Add to cart</button>
+                            <button type="button" class="single-add-to-cart"  data-id="@Model.Id">Add to cart</button>
                         </form>
 
                         <div class="add-to-wish">

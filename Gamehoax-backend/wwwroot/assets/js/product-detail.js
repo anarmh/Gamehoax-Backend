@@ -72,11 +72,11 @@ $(document).ready(function(){
     $(`.item[data-id=${id}]`).removeClass("d-none").slick("setPosition");
   });
 
-    /* 1. Visualizing things on Hover - See next part for action on click */
+  
     $('#stars li').on('mouseover', function () {
-        var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+        var onStar = parseInt($(this).data('value'), 10); 
 
-        // Now highlight all the stars that's not after the current hovered star
+       
         $(this).parent().children('li.star').each(function (e) {
             if (e < onStar) {
                 $(this).addClass('hover');
@@ -93,9 +93,9 @@ $(document).ready(function(){
     });
 
 
-    /* 2. Action to perform on click */
+  
     $('#stars li').on('click', function () {
-        var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+        var onStar = parseInt($(this).data('value'), 10); 
         var stars = $(this).parent().children('li.star');
 
         for (let i = 0; i < stars.length; i++) {
@@ -106,7 +106,7 @@ $(document).ready(function(){
             $(stars[i]).addClass('selected');
         }
 
-        // JUST RESPONSE (Not needed)
+      
         var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
         var msg = "";
         if (ratingValue > 1) {

@@ -551,7 +551,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -651,7 +651,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -764,7 +764,7 @@ footer #footer-top h3 {
   text-transform: capitalize;
   line-height: 20px;
   font-weight: 600;
-  letter-spacing: 0.4;
+  letter-spacing: 0.4px;
   background: transparent;
   border: none;
   padding-bottom: 20px;
@@ -872,7 +872,7 @@ footer .backtotop #to-top {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+ 
   -o-transition: all 0.1s ease-in-out;
 }
 footer .backtotop #to-top::before {
@@ -886,7 +886,7 @@ footer .backtotop #to-top::before {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+ 
   -o-transition: all 0.1s ease-in-out;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -1132,10 +1132,13 @@ footer .backtotop #to-top:hover::after {
   #shop .tablet .card-carousel .product-button-outer a:last-child {
     border: none;
   }
-  #shop .tablet .card-carousel .product-button-outer a:hover i {
-    color: #f9aa01;
-    font-size: 15px;
-  }
+    #shop .tablet .card-carousel .product-button-outer a:hover .add-to-wish{
+        color:red !important;
+    }
+    #shop .tablet .card-carousel .product-button-outer a:hover i {
+        color: #f9aa01;
+        font-size: 15px;
+    }
   #shop .tablet .pagination {
     display: none !important;
     width: 100%;
@@ -1168,7 +1171,7 @@ footer .backtotop #to-top:hover::after {
     color: #f9aa01;
   }
   #shop .tablet .accordion {
-    margin: 20 0 !important;
+    margin: 20px 0 !important;
     display: none !important;
     border: 1px solid #342c3d !important;
     background-color: #170f1f !important;
@@ -3182,10 +3185,13 @@ body {
 #shop .card-carousel .product-button-outer a:last-child {
   border: none;
 }
-#shop .card-carousel .product-button-outer a:hover i {
-  color: #f9aa01;
-  font-size: 15px;
-}
+    #shop .card-carousel .product-button-outer a:hover .add-to-wish{
+        color:red !important;
+    }
+   /* #shop .card-carousel .product-button-outer a:hover i {
+        color: #f9aa01;
+        font-size: 15px;
+    }*/
 #shop .clearfix {
   width: 100%;
   height: 20px;

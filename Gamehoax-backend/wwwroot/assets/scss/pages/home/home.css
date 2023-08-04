@@ -545,7 +545,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -645,7 +645,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -758,7 +758,7 @@ footer #footer-top h3 {
   text-transform: capitalize;
   line-height: 20px;
   font-weight: 600;
-  letter-spacing: 0.4;
+  letter-spacing: 0.4px;
   background: transparent;
   border: none;
   padding-bottom: 20px;
@@ -866,7 +866,7 @@ footer .backtotop #to-top {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+ 
   -o-transition: all 0.1s ease-in-out;
 }
 footer .backtotop #to-top::before {
@@ -880,7 +880,7 @@ footer .backtotop #to-top::before {
   transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
+ 
   -o-transition: all 0.1s ease-in-out;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -1324,8 +1324,7 @@ footer .backtotop #to-top:hover::after {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+   
   }
   #testmonials .custom-testmonial .swiper .swiper-slide .testmonial-inner .img img {
     display: block;
@@ -2159,8 +2158,7 @@ footer .backtotop #to-top:hover::after {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+   
   }
   #testmonials .custom-testmonial .swiper .swiper-slide .testmonial-inner .img img {
     display: block;
@@ -2890,8 +2888,7 @@ footer .backtotop #to-top:hover::after {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+   
   }
   #testmonials .custom-testmonial .swiper .swiper-slide .testmonial-inner .img img {
     display: block;
@@ -3469,7 +3466,7 @@ body {
   border: none;
 }
 #our-products .swiper .swiper-slide .card-carousel .product-button-outer a:hover i {
-  color: #f9aa01;
+  
   font-size: 15px;
 }
 #our-products .swiper .next-prev {
@@ -3534,8 +3531,7 @@ body {
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+ 
 }
 #testmonials .custom-testmonial .swiper .swiper-slide .testmonial-inner .img img {
   display: block;
@@ -3793,7 +3789,7 @@ body {
   border: none;
 }
 #deal-of-the-day .swiper .swiper-slide .card-carousel .product-button-outer a:hover i {
-  color: #f9aa01;
+  
   font-size: 15px;
 }
 #deal-of-the-day .swiper .next-prev {

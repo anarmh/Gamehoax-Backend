@@ -55,17 +55,28 @@ namespace Gamehoax_backend.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int? id)
+        public async Task<IActionResult> AddToCart(int? id, int? count)
         {
 
             if (id is null) return BadRequest();
+            count = count == null ? 0 : count;
 
             Product product = await _productService.GetByIdAsync(id);
             if (product is null) return NotFound();
 
             List<CartVM> basket = _cartService.GetDatasFromCookie();
 
-            _cartService.AddProduct(basket, product);
+            if(count == 0)
+            {
+                    _cartService.AddProduct(basket, product);
+            }
+            else
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    _cartService.AddProduct(basket, product);
+                }
+            }
 
             return Ok(basket.Sum(m => m.Count));
            
@@ -99,17 +110,22 @@ namespace Gamehoax_backend.Controllers
         [HttpPost]
         public IActionResult DecrementProductCount(int? id)
         {
-            if(id is null) return BadRequest();
+            if (id is null) return BadRequest();
 
             var baskets = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["basket"]);
-            var product = baskets.FirstOrDefault(m=>m.ProductId == id);
+            var product = baskets.FirstOrDefault(m => m.ProductId == id);
+            int count = 0;
 
             if (product.Count == 1)
             {
                 return Ok();
             }
 
-            var count= product.Count--;
+            else
+            {
+                count = product.Count--;
+            }
+
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(baskets));
             return Ok(count);
         }

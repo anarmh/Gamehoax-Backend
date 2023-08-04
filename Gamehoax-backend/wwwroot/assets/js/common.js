@@ -223,6 +223,7 @@
                     el.removeClass('checked'); 
                     $(countWishlist).text(`(${res})`);
                     res--;
+                    $(countWishlist).text(`(${res})`);
                 }
             })
             el.removeClass('checked');
@@ -266,12 +267,76 @@
                 }
                 $(prod).remove();
                 res--;
-                $(".wish-count").text(res)
+                $(".wish-count").text(`(${res})`)
             }
         })
         return false;
     })
-   
+
+
+
+
+
+    //Product-detail-AddToCart
+
+    $(document).on("click", ".single-add-to-cart", function (e) {
+       
+        let id = $(this).attr("data-id");
+      
+        let data = { id: id, count: $('.qty').val() };
+        let countBasket = (".cart-count");
+
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.qty').val(1);
+                $(countBasket).text(`(${res})`);
+            }
+        })
+        return false;
+    })
+
+    //Increment product count-Detail
+    $(document).on("click", ".incrementDetail", function () {
+        let id = $(this).attr("data-id");
+        let input = $(this).parent().prev();
+        
+        let inputValue = $(this).parent().prev().val();
+       
+        inputValue++;
+        $(input).val(inputValue);
+       
+        /*$.ajax({
+            type: "POST",
+            url: `/Cart/IncrementProductCount?id=${id}`,
+            success: function (res) {
+                console.log(res);
+            }
+        })*/
+    })
+    //Decrement product count-Detail
+    $(document).on("click", ".decrementDetail", function () {
+        let id = $(this).attr("data-id");
+        let input = $(this).parent().prev();
+        let inputValue = $(this).parent().prev().val();
+        if (inputValue != 1) {
+            inputValue--;
+           /* $.ajax({
+                type: "POST",
+                url: `/Cart/DecrementProductCount?id=${id}`,
+                success: function (res) {
+                    console.log(res)
+                    if ($(inputValue) == 1) {
+                        return;
+                    }
+                }
+            })*/
+            $(input).val(inputValue);
+        }
+    })
+
 })
 
 
