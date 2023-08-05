@@ -24,7 +24,7 @@ namespace Gamehoax_backend.Controllers
             if (_accessor.HttpContext.Request.Cookies["wishlist"] != null)
             {
                 var myCookie = JsonConvert.DeserializeObject<List<WishlistVM>>(_accessor.HttpContext.Request.Cookies["wishlist"]);
-                ViewBag.Cookie = myCookie;
+                ViewBag.cookie = myCookie;
             }
             try
             {

@@ -3096,10 +3096,7 @@ body {
 #related-products .swiper .swiper-slide .card-carousel .product-button-outer a:last-child {
   border: none;
 }
-#related-products .swiper .swiper-slide .card-carousel .product-button-outer a:hover i {
-  color: #f9aa01;
-  font-size: 15px;
-}
+
 #related-products .swiper .next-prev {
   color: #f9aa01;
   display: none;

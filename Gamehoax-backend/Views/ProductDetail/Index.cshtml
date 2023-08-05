@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     var fc = false;
+  
 }
 
 <style>
@@ -35,12 +36,12 @@
                 <div class="col-5  main">
                     <div class="zoom-container ">
                             
-                        <img src="~/assets/img/product/@Model.Images?.FirstOrDefault(m=>m.IsMain)?.Image" alt="" class="xzoom" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
+                        <img src="~/assets/img/product/@Model.Images?.FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
                         <div class="xzoom-thumbs">
                             @foreach (var item in Model.Images)
                             {
-                                <a href="~/assets/img/product/@item.Image>
+                                <a href="~/assets/img/product/@item.Image">
                                     <img class="xzoom-gallery" src="~/assets/img/product/@item.Image" xpreview="~/assets/img/product/@item.Image">
                                 </a>
                             }
@@ -83,9 +84,9 @@
                         <div class="wishlist-content" >
                             @if (ViewBag.Cookie != null)
                             {
-                                @foreach (var item in ViewBag.Cookie)
+                                @foreach (var itemCookie in ViewBag.Cookie)
                                 {
-                                    @if (item.ProductId == Model.Id)
+                                      @if (itemCookie.ProductId == Model.Id)
                                     {
                                          fc = true;
                                     }
@@ -93,7 +94,7 @@
                                 }
 
                             }
-                            <a class=" add-to-wish" @((fc)?"checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
+                            <a class="add-to-wish @((fc)?"checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
                                 <i class="fa fa-heart"></i>
                                 <span>Add to wishlist</span>
                             </a>
@@ -175,22 +176,23 @@
                             </form>
 
                             <div class="wishlist-content">
-                                @if (ViewBag.Cookie != null)
+                                @if (ViewBag.cookie != null)
                                 {
-                                    @foreach (var item in ViewBag.Cookie)
+                                    @foreach (var item in ViewBag.cookie)
                                     {
                                         @if (item.ProductId == Model.Id)
                                         {
-                                        fc = true;
+                                          fc = true;
                                         }
 
                                     }
 
                                 }
-                                <a class="add-to-wish" @((fc)?"checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
+                                <a class="add-to-wish" @((fc)? "checked":"") @(fc = false) " data-id="@Model.Id" style="cursor:pointer;">
                                     <i class="fa fa-heart"></i>
-                                    <span>Add to wishlist</span>
+                                   
                                 </a>
+                                <span>Add to wishlist</span>
                             </div>
 
 
@@ -420,12 +422,23 @@
                                     </div>
 
                                     <div class="product-button-outer">
+                                         @if (ViewBag.cookie != null)
+                                        {
+                                            @foreach (var cookie in ViewBag.cookie)
+                                            {
+                                                @if (cookie.ProductId == item.Id)
+                                                {
+                                                  fc = true;
+                                                }
 
-                                        <a href="wishlist.html">
+                                            }
+
+                                        }
+                                        <a class=" add-to-wish @((fc)?"checked":"") @(fc = false) " data-id="@item.Id" style="cursor:pointer;">
                                             <i class="fa-solid fa-heart"></i>
                                         </a>
 
-                                        <a href="cart.html">
+                                        <a id="add-to-cart-productDetail" data-id="@item.Id" style="cursor:pointer;">
                                             <i class="fa-solid fa-cart-arrow-down"></i>
                                         </a>
 

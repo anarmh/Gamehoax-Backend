@@ -298,45 +298,22 @@
         return false;
     })
 
-    //Increment product count-Detail
-    $(document).on("click", ".incrementDetail", function () {
-        let id = $(this).attr("data-id");
-        let input = $(this).parent().prev();
-        
-        let inputValue = $(this).parent().prev().val();
-       
-        inputValue++;
-        $(input).val(inputValue);
-       
-        /*$.ajax({
-            type: "POST",
-            url: `/Cart/IncrementProductCount?id=${id}`,
-            success: function (res) {
-                console.log(res);
-            }
-        })*/
-    })
-    //Decrement product count-Detail
-    $(document).on("click", ".decrementDetail", function () {
-        let id = $(this).attr("data-id");
-        let input = $(this).parent().prev();
-        let inputValue = $(this).parent().prev().val();
-        if (inputValue != 1) {
-            inputValue--;
-           /* $.ajax({
-                type: "POST",
-                url: `/Cart/DecrementProductCount?id=${id}`,
-                success: function (res) {
-                    console.log(res)
-                    if ($(inputValue) == 1) {
-                        return;
-                    }
-                }
-            })*/
-            $(input).val(inputValue);
-        }
-    })
+    
+    $(document).on("click", "#add-to-cart-productDetail", function (e) {
 
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let data = { id: id };
+        $.ajax({
+            type: "POST",
+            url: "/Cart/AddToCart",
+            data: data,
+            success: function (res) {
+                $('.cart-count').text('(' + res + ')');
+            }
+        })
+        return false;
+    })
 })
 
 
