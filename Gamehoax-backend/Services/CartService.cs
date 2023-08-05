@@ -2,18 +2,21 @@
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel.Cart;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace Gamehoax_backend.Services
 {
     public class CartService : ICartService
     {
+        private readonly AppDbContext _context;
         private readonly IHttpContextAccessor _accessor;
         private readonly IProductService _productService;
-        public CartService(IProductService productService, IHttpContextAccessor accessor)
+        public CartService(IProductService productService, IHttpContextAccessor accessor, AppDbContext context)
         {
-            _productService= productService;
+            _productService = productService;
             _accessor = accessor;
+            _context = context;
         }
 
         public void AddProduct(List<CartVM> basket, Product product)
@@ -78,6 +81,16 @@ namespace Gamehoax_backend.Services
         }
 
 
-      
+
+        public async Task<Cart> GetByUserIdAsync(string userId)
+        {
+            return await _context.Carts.Include(c => c.CartProducts).FirstOrDefaultAsync(c => c.AppUserId == userId);
+        }
+
+        public async Task<List<CartProduct>> GetAllByCartIdAsync(int? cartId)
+        {
+            return await _context.CartProducts.Where(c => c.CartId == cartId).ToListAsync();
+        }
+
     }
 }

@@ -10,5 +10,7 @@ namespace Gamehoax_backend.Services.Interfaces
         List<CartVM> GetDatasFromCookie();
         int GetCount();
         void DeleteData(int? id);
+        Task<Cart> GetByUserIdAsync(string userId);
+        Task<List<CartProduct>> GetAllByCartIdAsync(int? cartId);
     }
 }

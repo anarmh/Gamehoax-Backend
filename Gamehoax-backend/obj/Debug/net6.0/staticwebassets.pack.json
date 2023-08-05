@@ -929,6 +929,10 @@
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\wishlist\\wishlist.scss"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\templates\\account.html",
+      "PackagePath": "staticwebassets\\templates\\account.html"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Gamehoax-backend.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -9,5 +9,7 @@ namespace Gamehoax_backend.Services.Interfaces
         List<WishlistVM> GetDatasFromCookie();
         void DeleteData(int? id);
         int GetCount();
+        Task<Wishlist> GetByUserIdAsync(string userId);
+        Task<List<WishlistProduct>> GetAllByWishlistIdAsync(int? wishlistId);
     }
 }

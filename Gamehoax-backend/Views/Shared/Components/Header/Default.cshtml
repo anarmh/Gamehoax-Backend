@@ -1,5 +1,7 @@
-﻿@model LayoutVM
+﻿@using Microsoft.AspNetCore.Identity;
 
+@model LayoutVM
+@inject UserManager<AppUser> userManager;
 
 <header>
     <section id="topbar-outer">
@@ -46,15 +48,35 @@
                 <div class="col-3">
                     <div class="login-register">
                         <div class="icons">
-                            <a asp-controller="Account" asp-action="SignUp" class="signUp">
-                                <i class="fas fa-user-plus"></i>
-                                <i class="material-icons">Sign Up</i>
-                            </a>
-                            <a asp-controller="Account" asp-action="SignIn" class="signIn">
-                                <i class="fas fa-sign-in-alt"></i>
-                                <i class="material-icons">Sign In</i>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <ul class="bx-log-out d-flex list-unstyled">
+                                    <li class="pt-2">
+                                       @User.Identity.Name
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <form asp-controller="Account" asp-action="Logout" asp-route-userId="@userManager.Users.Where(m=>m.UserName==User.Identity.Name).FirstOrDefault().Id" method="post" style="display:inline">
+                                            <button style="border:none; color: #ffffff; background:transparent;" type="submit" class="nav-link">Logout</button>
+                                        </form>
+                                    </li>
+                                   
+                                </ul>
+                            }
+                            else
+                            {
+                                <a asp-controller="Account" asp-action="SignUp" class="signUp">
+                                    <i class="fas fa-user-plus"></i>
+                                    <i class="material-icons">Sign Up</i>
+                                </a>
+                                <a asp-controller="Account" asp-action="SignIn" class="signIn">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <i class="material-icons">Sign In</i>
 
-                            </a>
+                                </a>
+
+                            }
+                           
 
 
                         </div>
