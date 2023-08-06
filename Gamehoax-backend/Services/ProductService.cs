@@ -85,6 +85,7 @@ namespace Gamehoax_backend.Services
                 Include(m=>m.ProductImages).
                 Include(m=>m.Rating).
                 Include(m=>m.Discount).
+                Include(m=>m.BrandModel).
                 Include(m=>m.ProductCategories).
                 ThenInclude(m=>m.Category).
                 Include(m=>m.ProductTags).

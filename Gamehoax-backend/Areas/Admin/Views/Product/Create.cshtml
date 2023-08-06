@@ -1,0 +1,80 @@
+﻿@model ProductCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container my-5">
+    <form class="forms-sample" asp-action="Create" method="post" enctype="multipart/form-data">
+        <label style="padding-left:6px;" for="formFile" class="form-label my-2">Choose Photos</label>
+        <input class="form-control" id="customFile" asp-for="Photos" />
+        <span class="text-danger" asp-validation-for="Photos"></span>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Name</label>
+            <input class="form-control" id="customFile" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Price</label>
+            <input class="form-control" asp-for="Price" type="number" step=".01" />
+            <span class="text-danger" asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Title</label>
+            <input class="form-control" id="customFile" asp-for="Title" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add SKU</label>
+            <input class="form-control" id="customFile" asp-for="SKU" />
+            <span class="text-danger" asp-validation-for="SKU"></span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Categoies</label>
+            <select class="form-control" id="customFile" asp-for="CategoryIds" asp-items="@ViewBag.categories"></select>
+            <span class="text-danger" asp-validation-for="CategoryIds">@ViewBag.error</span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Tags</label>
+            <select class="form-control" id="customFile" asp-for="TagIds" asp-items="@ViewBag.tags"></select>
+            <span class="text-danger" asp-validation-for="TagIds">@ViewBag.error</span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Model</label>
+            <select class="form-control" id="customFile" asp-for="BrandModelId" asp-items="@ViewBag.brandModels"></select>
+            <span class="text-danger" asp-validation-for="BrandModelId">@ViewBag.error</span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Discount</label>
+            <select class="form-control" id="customFile" asp-for="DiscountId" asp-items="@ViewBag.discounts"></select>
+            <span class="text-danger" asp-validation-for="DiscountId">@ViewBag.error</span>
+        </div>
+        
+       
+        <div class="form-group">
+            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Feature</label>
+            <input class="form-control" asp-for="Feature" type="text" />
+            <span class="text-danger" asp-validation-for="Feature"></span>
+        </div>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Weight</label>
+            <input class="form-control" asp-for="Weight" type="number" />
+            <span class="text-danger" asp-validation-for="Weight"></span>
+        </div>
+
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Description</label>
+            <textarea class="form-control" asp-for="Description" rows="5"></textarea>
+            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+        </div>
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-outline-light" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+

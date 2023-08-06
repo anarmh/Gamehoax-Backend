@@ -1,9 +1,12 @@
-﻿@model ProductDetailVM
+﻿@using Microsoft.AspNetCore.Identity;
+
+@model ProductDetailVM
+@inject UserManager<AppUser> userManager;
 
 @{
     ViewData["Title"] = "Index";
     var fc = false;
-  
+   
 }
 
 <style>
@@ -278,97 +281,133 @@
                                 <div class="col-lg-12">
                                     <div class="product-details-frame">
                                         <ul class="review-list">
-                                            <li class="review-item">
-                                                <div class="review-media">
-                                                    <a class="review-avatar" href="#"><img src="~/assets/img/product/1.jpg" alt="review"></a>
-                                                    <h5 class="review-meta">
-                                                        <a href="#">miron mahmud</a><span>June 02, 2020</span>
-                                                    </h5>
-                                                </div>
-                                                <ul class="review-rating">
-                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rate-blank"> <i class="fa fa-star"></i></li>
-                                                </ul>
-                                                <p class="review-desc">
-                                                    Discover a wide range of features and functionalities in our joysticks, including customizable buttons, ergonomic grips, and adjustable sensitivity settings. Elevate your gaming performance with our top-quality joysticks and unlock your true gaming potential.
-                                                </p>
-                                              
-                                               
-                                            </li>
-                                            <li class="review-item">
-                                                <div class="review-media">
-                                                    <a class="review-avatar" href="#"><img src="~/assets/img/category/category-image-01-446x550_t.jpg" alt="review"></a>
-                                                    <h5 class="review-meta">
-                                                        <a href="#">shipu shikdar</a><span>June 02, 2020</span>
-                                                    </h5>
-                                                </div>
-                                                <ul class="review-rating">
-                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rating"><i class="fa fa-star"></i></li>
-                                                    <li class="icofont-ui-rate-blank"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                                <p class="review-desc">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                    Ducimus hic amet qui velit, molestiae suscipit
-                                                    perferendis, autem doloremque blanditiis dolores nulla
-                                                    excepturi ea nobis!
-                                                </p>
-                                               
-                                            </li>
+                                            @foreach (var item in Model.Reviews)
+                                            {
+                                                <li class="review-item">
+                                                    <div class="review-media">
+                                                        <a class="review-avatar" href="#"><img src="~/assets/img/product/1.jpg" alt="review"></a>
+                                                        <h5 class="review-meta">
+                                                            <a href="#">@item.Name</a><span>@item.CreateDate.ToString("dd MMMMM yyyy")</span>
+                                                        </h5>
+                                                    </div>
+                                                    <ul class="review-rating">
+                                                        @for (int i = 0; i <= item.Rating.RatingCount; i++)
+                                                        {
+                                                            <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
+                                                        }
+                                                       
+                                                     
+                                                    </ul>
+                                                    <p class="review-desc">
+                                                      @item.Describe
+                                                    </p>
+
+
+                                                </li>
+                                            }
+                                          
+                                          
                                         </ul>
                                     </div>
-                                    <div class="product-details-frame">
-                                        <h3 class="frame-title">add your review</h3>
-                                        <form class="review-form">
-                                            <div class="row">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="product-details-frame">
+                                            <h3 class="frame-title">add your review</h3>
+                                            <form class="review-form" method="post" asp-action="PostComment" asp-route-id="@Model.Id" asp-route-userId="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Id" asp-route-userId="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Id">
+                                                <div class="row">
 
-                                                <div class="col-lg-12">
-                                                    <div class='rating-stars text-center'>
-                                                        <ul id='stars'>
-                                                            <li class='star' title='Poor' data-value='1'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Fair' data-value='2'>
-                                                                <i class='fa fa-star fa-fw'></i>
+                                                    <div class="col-lg-12">
+                                                        <div class='rating-stars text-center'>
+                                                            <ul id='stars'>
+                                                                @for (int i = 0; i < 5; i++)
+                                                                {
+                                                                    <li class='star' title='@i' data-value='@i'>
+                                                                        <i class='fa fa-star fa-fw'></i>
+                                                                    </li>
+                                                                }
+
+                                                                @*  <li class='star' title='Fair' data-value='2'>
+                                                            <i class='fa fa-star fa-fw'></i>
                                                             </li>
                                                             <li class='star' title='Good' data-value='3'>
-                                                                <i class='fa fa-star fa-fw'></i>
+                                                            <i class='fa fa-star fa-fw'></i>
                                                             </li>
                                                             <li class='star' title='Excellent' data-value='4'>
-                                                                <i class='fa fa-star fa-fw'></i>
+                                                            <i class='fa fa-star fa-fw'></i>
                                                             </li>
                                                             <li class='star' title='WOW!!!' data-value='5'>
-                                                                <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                        </ul>
+                                                            <i class='fa fa-star fa-fw'></i>
+                                                            </li>*@
+                                                            </ul>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" asp-for="ReviewVM.Describe" placeholder="Describe"></textarea>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" placeholder="Describe"></textarea>
+                                                @*    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" placeholder="Email">
+                                                        </div>
+                                                    </div>*@
+                                                   
+                                                    <div class="col-lg-12">
+                                                        <button class="btn btn-inline">
+                                                            <i class="icofont-water-drop"></i><span>drop your review</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Name">
+                                            </form>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="product-details-frame">
+                                            <h3 class="frame-title">add your review</h3>
+                                            <form class="review-form" method="post" >
+                                                <div class="row">
+
+                                                    <div class="col-lg-12">
+                                                        <div class='rating-stars text-center'>
+                                                            <ul id='stars'>
+                                                                @for (int i = 0; i < 5; i++)
+                                                                {
+                                                                    <li class='star' title='@i' data-value='@i'>
+                                                                        <i class='fa fa-star fa-fw'></i>
+                                                                    </li>
+                                                                }
+
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" asp-for="ReviewVM.Describe" placeholder="Describe"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <button class="btn btn-inline" asp-controller="Account" asp-action="SignIn">
+                                                            <i class="icofont-water-drop"></i><span>drop your review</span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <button class="btn btn-inline">
-                                                        <i class="icofont-water-drop"></i><span>drop your review</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            </form>
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
                         </div>
@@ -471,3 +510,4 @@
        <script src="~/assets/js/zoom.js"></script>
        <script src="~/assets/js/product-detail.js"></script>
 }
+

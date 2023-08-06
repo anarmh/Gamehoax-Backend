@@ -55,6 +55,9 @@ builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
+builder.Services.AddScoped<IRatingService, RatingService>();
+builder.Services.AddScoped<IBrandModelService, BrandModelService>();
 var app = builder.Build();
 
 

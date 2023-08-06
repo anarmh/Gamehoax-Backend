@@ -1,7 +1,9 @@
-﻿using Gamehoax_backend.Models;
+﻿using Gamehoax_backend.Data;
+using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
 using Gamehoax_backend.Viewmodel.Wishlist;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -9,13 +11,15 @@ namespace Gamehoax_backend.Controllers
 {
     public class ProductDetailController : Controller
     {
+        private readonly AppDbContext _context;
         private readonly IProductService _productService;
         private readonly IHttpContextAccessor _accessor;
 
-        public ProductDetailController(IProductService productService, IHttpContextAccessor accessor)
+        public ProductDetailController(IProductService productService, IHttpContextAccessor accessor,AppDbContext context)
         {
             _productService = productService;
             _accessor = accessor;
+            _context=context;
         }
 
         public async Task<IActionResult> Index(int? id)
@@ -53,6 +57,7 @@ namespace Gamehoax_backend.Controllers
                     ModelName=product.BrandModel.Name,
                     Feature=product.Feature,
                     Name=product.Name,
+                    Reviews=product.Reviews,
                     Products=products,
                 };
 
@@ -65,6 +70,28 @@ namespace Gamehoax_backend.Controllers
                 return View();
             }
          
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> PostComment(ProductDetailVM model,int? id,int? ratingValue,string userId)
+        {
+            if (id == null || userId == null) return BadRequest();
+            if (!ModelState.IsValid) return RedirectToAction(nameof(Index), new { id});
+
+            Review review = new()
+            {
+                Describe = model.ReviewVM.Describe,
+                AppUserId= userId,
+                ProductId=(int)id,
+                RatingId=(int)ratingValue,
+            };
+            
+
+            await _context.Reviews.AddAsync(review);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index), new { id});
         }
     }
 }

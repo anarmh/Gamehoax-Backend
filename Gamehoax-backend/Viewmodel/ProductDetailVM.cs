@@ -24,5 +24,6 @@ namespace Gamehoax_backend.Viewmodel
         public string Feature { get; set; }
         public string Name { get; set; }
         public List<Product> Products { get; set; }
+        public ReviewVM ReviewVM { get; set; }
     }
 }

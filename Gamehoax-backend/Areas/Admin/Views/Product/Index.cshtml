@@ -1,0 +1,107 @@
+﻿@using Gamehoax_backend.Helpers;
+@model Paginate<ProductListVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container my-3">
+    <h2 class="text-center">Products</h2>
+    <div class="create-btn ">
+        <a asp-controller="Product" asp-action="Create" class="btn btn-outline-success ">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                   
+                    <th>
+                        Price
+                    </th>
+                   
+                    <th>
+                        Weight
+                    </th>
+                   
+                    <th>
+                        Model
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Datas)
+                {
+                    <tr>
+                        <td class="py-1">
+                            <img src="~/assets/img/product/@item.Image" style="width:100px;height:100px" />
+                        </td>
+                        <td class="py-1">
+                            @item.Name
+                        </td>
+                       
+                        <td class="py-1">
+                            @item.Price
+                        </td>
+                        <td class="py-1">
+                            @item.Weight
+                        </td>
+                        <td class="py-1">
+                            @item.Model
+                        </td>
+                        <td class="py-1">
+                            @foreach (var category in item.Categories)
+                            {
+                                <div>@category.Name</div>
+                            }
+                        </td>
+                       
+                       
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info  ">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning  my-2">Edit</a>
+                            <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <div class="pagination d-flex justify-content-center mt-3">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+                        <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)" tabindex="-1">Previous</a>
+                    </li>
+                    @for (int i = 1; i <= Model.TotalPage; i++)
+                    {
+                        <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")">
+                            <a class="page-link @(Model.CurrentPage == i ? "active-paginate" : "")" asp-route-page="@i">@i</a>
+                        </li>
+                    }
+
+                    <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                        <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
