@@ -212,12 +212,12 @@
         let el = $(this);
         if (el.hasClass('checked')) {
             let id = el.attr("data-id");
-           
+            
             let data = { id: id };
             let countWishlist = $(".wish-count");
             $.ajax({
                 type: "Post",
-                url: `Wishlist/DeleteDataFromWishlist`,
+                url: `Wishlist/DeleteDataFromWishlist?id=${id}`,
                 data: data,
                 success: function (res) {
                     el.removeClass('checked'); 
@@ -229,12 +229,12 @@
             el.removeClass('checked');
         } else {
             let id = $(this).attr("data-id");
-            console.log('ID' + id);
+           
             let data = { id: id };
             let countWishlist = (".wish-count");
             $.ajax({
                 type: "POST",
-                url: "/Wishlist/AddToWishlist",
+                url: `/Wishlist/AddToWishlist?id=${id}`,
                 data: data,
                 success: function (res) {
                     el.addClass('checked');
@@ -256,7 +256,7 @@
 
         $.ajax({
             type: "Post",
-            url: `Wishlist/DeleteDataFromWishlist`,
+            url: `Wishlist/DeleteDataFromWishlist?id=${id}`,
             data: data,
             success: function (res) {
                 if ($(tbody).length == 1) {
@@ -280,10 +280,12 @@
     //Product-detail-AddToCart
 
     $(document).on("click", ".single-add-to-cart", function (e) {
-       
+       console.log()
         let id = $(this).attr("data-id");
+        let inputCount = $(".qty-input").val();
+        console.log(inputCount)
+        let data = { id: id, count: inputCount };
       
-        let data = { id: id, count: $('.qty').val() };
         let countBasket = (".cart-count");
 
         $.ajax({
@@ -291,13 +293,25 @@
             url: "/Cart/AddToCart",
             data: data,
             success: function (res) {
-                $('.qty').val(1);
+                $('.qty-input').val(1);
                 $(countBasket).text(`(${res})`);
             }
         })
         return false;
     })
 
+
+    $(document).on("click", '.incrementDetail', function (e) {
+        let count = $('.qty-input').val();
+        $('.qty-input').val(parseInt(count)+1);
+    });
+
+    $(document).on("click", '.decrementDetail', function (e) {
+        let count = $('.qty-input').val();
+        if ($(count) != '1') {
+            $('.qty-input').val(parseInt(count) - 1);
+        }
+    });
     
     $(document).on("click", "#add-to-cart-productDetail", function (e) {
 

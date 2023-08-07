@@ -6,7 +6,7 @@
 @{
     ViewData["Title"] = "Index";
     var fc = false;
-   
+    var user = await userManager.GetUserAsync(User);
 }
 
 <style>
@@ -71,7 +71,7 @@
                         <form action="">
                             <div class="quantity">
                                 <span class="template-quantity">Qty: </span>
-                                <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                <input type="number" class="qty qty-input" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
                                 <div class="quantity-button">
                                     <button type="button" class="plus incrementDetail"  value="+">
                                         +
@@ -233,7 +233,7 @@
                     <ul>
                         <li><a href="" class="tab active-menu" data-id="1">Description</a></li>
                         <li><a href="" class="tab " data-id="2">Additional Information</a></li>
-                        <li><a href="" class="tab" data-id="3">Reviews (0)</a></li>
+                        <li><a href="" class="tab" data-id="3">Reviews (@Model.Reviews.Count)</a></li>
                     </ul>
                 </div>
 
@@ -283,19 +283,29 @@
                                         <ul class="review-list">
                                             @foreach (var item in Model.Reviews)
                                             {
-                                                <li class="review-item">
+                                                <li class="review-item" style="border:1px solid #888888">
                                                     <div class="review-media">
-                                                        <a class="review-avatar" href="#"><img src="~/assets/img/product/1.jpg" alt="review"></a>
+                                                        <a class="review-avatar" href="#"><img src="~/assets/img/product/2.jpg" alt="review"></a>
                                                         <h5 class="review-meta">
-                                                            <a href="#">@item.Name</a><span>@item.CreateDate.ToString("dd MMMMM yyyy")</span>
+                                                            @if (item.AppUser != null)
+                                                            {
+                                                                <a href="#">@item.AppUser.FullName</a>
+                                                            }
+                                                         
+                                                                <span>@item.CreateDate.ToString("dd MMMMM yyyy HH:mm")</span>
+                                                           
+                                                          
                                                         </h5>
                                                     </div>
                                                     <ul class="review-rating">
-                                                        @for (int i = 0; i <= item.Rating.RatingCount; i++)
+                                                        @for (int i = 1; i <= item.RatingId-1; i++)
                                                         {
                                                             <li class="icofont-ui-rating"> <i class="fa fa-star"></i></li>
                                                         }
-                                                       
+                                                        @for (int i = 1; i <=5- (item.RatingId - 1); i++)
+                                                        {
+                                                            <li> <i class="fa-solid fa-star" style="color:#888888"></i></li>
+                                                        }
                                                      
                                                     </ul>
                                                     <p class="review-desc">
@@ -313,35 +323,27 @@
                                     {
                                         <div class="product-details-frame">
                                             <h3 class="frame-title">add your review</h3>
-                                            <form class="review-form" method="post" asp-action="PostComment" asp-route-id="@Model.Id" asp-route-userId="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Id" asp-route-userId="@userManager.Users.FirstOrDefault(u=>u.UserName==User.Identity.Name).Id">
+                                            <form class="review-form" method="post" asp-action="PostComment"  >
                                                 <div class="row">
 
                                                     <div class="col-lg-12">
                                                         <div class='rating-stars text-center'>
                                                             <ul id='stars'>
-                                                                @for (int i = 0; i < 5; i++)
+                                                                <input type="hidden" name="ratingId" value="" class="rating-value">
+                                                                <input type="hidden" name="Id" value="@Model.Id" class="product-value">
+                                                                <input type="hidden" name="UserId" value="@user.Id" class="user-value">
+                                                                @for (int i = 1, x=2; i <= 5; i++, x++)
                                                                 {
-                                                                    <li class='star' title='@i' data-value='@i'>
+                                                                    <li class='star'  id="add-rating-value" title='@i' data-x='@x' data-value='@i' style="cursor:pointer;">
                                                                         <i class='fa fa-star fa-fw'></i>
                                                                     </li>
                                                                 }
 
-                                                                @*  <li class='star' title='Fair' data-value='2'>
-                                                            <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Good' data-value='3'>
-                                                            <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='Excellent' data-value='4'>
-                                                            <i class='fa fa-star fa-fw'></i>
-                                                            </li>
-                                                            <li class='star' title='WOW!!!' data-value='5'>
-                                                            <i class='fa fa-star fa-fw'></i>
-                                                            </li>*@
+                                                          
                                                             </ul>
                                                         </div>
                                                         <div class="form-group">
-                                                            <textarea class="form-control" asp-for="ReviewVM.Describe" placeholder="Describe"></textarea>
+                                                            <textarea class="form-control describe" name="Describe" value="ReviewVM.Describe" placeholder="Describe"></textarea>
                                                         </div>
                                                     </div>
                                                 @*    <div class="col-lg-6">
@@ -481,7 +483,7 @@
                                             <i class="fa-solid fa-cart-arrow-down"></i>
                                         </a>
 
-                                        <a asp-controller="ProductDetail" asp-action="Index">
+                                        <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
 
@@ -507,7 +509,8 @@
 
 
 @section Scripts {
-       <script src="~/assets/js/zoom.js"></script>
-       <script src="~/assets/js/product-detail.js"></script>
+    <script src="~/assets/js/product-detail.js"></script>
+    <script src="~/assets/js/zoom.js"></script>
+      
 }
 

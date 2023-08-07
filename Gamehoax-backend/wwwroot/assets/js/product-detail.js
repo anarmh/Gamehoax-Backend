@@ -69,7 +69,7 @@ $(document).ready(function(){
   
     let id = $(this).data("id");
     $(".item").addClass("d-none");
-    $(`.item[data-id=${id}]`).removeClass("d-none").slick("setPosition");
+    $(`.item[data-id=${id}]`).removeClass("d-none");
   });
 
   
@@ -118,6 +118,18 @@ $(document).ready(function(){
 
 
     });
+
+    $(document).on("click", "#add-rating-value", function () {
+
+        let rateValue = $(this).attr("data-x");
+        
+       let input= $(".rating-value");
+        $(input).val(rateValue);
+        console.log($(input).val(rateValue));
+    })
+
+    
+
 });
 
 
