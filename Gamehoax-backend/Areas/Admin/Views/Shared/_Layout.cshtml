@@ -26,7 +26,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="~/admin/css/bootstrap.min.css" rel="stylesheet">
-
+    @await RenderSectionAsync("AdminCss", required: false)
     <!-- Template Stylesheet -->
     <link href="~/admin/css/style.css" rel="stylesheet">
 </head>
@@ -219,6 +219,7 @@
     <script src="~/admin/lib/tempusdominus/js/moment.min.js"></script>
     <script src="~/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="~/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://kit.fontawesome.com/9c6e6ff268.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("AdminScripts", required: false)
     <!-- Template Javascript -->
     <script src="~/admin/js/main.js"></script>

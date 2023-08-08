@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Gamehoax-backend.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\css\\admin.css",
+      "PackagePath": "staticwebassets\\admin\\css\\admin.css"
+    },
+    {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\admin\\css\\bootstrap.min.css"
     },
@@ -593,6 +597,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\newsletter.png"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\0e6a4496-c9a9-4b3f-abe5-976c5f7b0cd8_15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\0e6a4496-c9a9-4b3f-abe5-976c5f7b0cd8_15.jpg"
+    },
+    {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\1.jpg"
     },
@@ -657,12 +665,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\product\\5.jpg"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\52f74035-6c3d-42b0-8e5a-cfc985398e69_10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\52f74035-6c3d-42b0-8e5a-cfc985398e69_10.jpg"
+    },
+    {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\542bd39b-fbab-4741-9971-4d12c7098b3b_5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\542bd39b-fbab-4741-9971-4d12c7098b3b_5.jpg"
     },
     {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg"
     },
     {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\7.jpg",
@@ -673,8 +689,24 @@
       "PackagePath": "staticwebassets\\assets\\img\\product\\8.jpg"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\83e1eaa6-d1c1-4e6a-a6dd-c031dfd855ff_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\83e1eaa6-d1c1-4e6a-a6dd-c031dfd855ff_4.jpg"
+    },
+    {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\9.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\a22a1df7-0cf5-4937-b319-ec55f2860e7a_9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\a22a1df7-0cf5-4937-b319-ec55f2860e7a_9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\ef4d2811-9433-4ae3-96c1-26df85415ec1_11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\ef4d2811-9433-4ae3-96c1-26df85415ec1_11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\efdb11b3-78d1-4a32-8695-85d02b2a18ea_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\efdb11b3-78d1-4a32-8695-85d02b2a18ea_5.jpg"
     },
     {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\service-icon.png",

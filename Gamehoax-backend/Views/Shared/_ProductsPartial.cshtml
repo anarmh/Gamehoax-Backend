@@ -20,8 +20,8 @@
         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
             <div class="card-carousel ">
                 <div class="action-buttons">
-                    <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
-                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.Where(m=>m.IsHover).FirstOrDefault().Image" alt="">
+                    <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
+                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
                 </div>
                 <div class="product-detail">
 

@@ -1,0 +1,33 @@
+﻿body {
+
+
+
+}
+
+
+
+
+.images {
+    position: relative ;
+}
+
+    .images:hover button {
+        opacity: 1;
+    }
+
+    .images img {
+        transition: all 0.5s;
+    }
+
+    .images:hover img {
+        filter: brightness(50%)
+    }
+
+    .images button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        opacity: 0;
+        transition: all 0.5s;
+        transform:translate(-50%,-50%)
+    }

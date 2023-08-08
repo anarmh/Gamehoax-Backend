@@ -167,8 +167,9 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 }
                 newProduct.ProductImages = productImages;
                 newProduct.ProductImages.FirstOrDefault().IsMain = true;
+                newProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
 
-                if(model.CategoryIds.Count > 0)
+                if (model.CategoryIds.Count > 0)
                 {
                     foreach (var item in model.CategoryIds)
                     {
@@ -220,7 +221,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 newProduct.Title= model.Title;
                 newProduct.Description= model.Description;
 
-
+                await _context.ProductImages.AddRangeAsync(productImages);
                 await _context.Products.AddAsync(newProduct);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -228,6 +229,179 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             catch (Exception ex)
             {
 
+                ViewBag.error = ex.Message;
+                return View();
+            }
+           
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            try
+            {
+                if (id is null) return BadRequest();
+                Product dbProduct = await _productService.GetAllDataById((int)id);
+                if (dbProduct is null) return NotFound();
+              
+
+                ViewBag.categories = await GetCategoriesAsync();
+                ViewBag.tags = await GetTagsAsync();
+                ViewBag.brandModels = await GetBrandModelsAsync();
+                ViewBag.discounts = await GetDiscountsAsync();
+                ViewBag.ratingCount = await GetRatingCountAsync();
+
+                ProductEditVM model = new()
+                {
+                    Id = dbProduct.Id,
+                    Name = dbProduct.Name,
+                    Title = dbProduct.Title,
+                    Description = dbProduct.Description,
+                    Feature = dbProduct.Feature,
+                    Weight = dbProduct.Weight,
+                    Price = dbProduct.Price,
+                    SKU=dbProduct.SKU,
+                    Images= dbProduct.ProductImages,
+                    CategoryIds=dbProduct.ProductCategories.Select(m=>m.Category.Id).ToList(),
+                    TagIds=dbProduct.ProductTags.Select(m=>m.Tag.Id).ToList(),
+                    BrandModelId=dbProduct.BrandModelId,
+                    DiscountId=dbProduct.DiscountId,
+                    RatingId=dbProduct.RatingId
+                };
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = ex.Message;
+                return View();
+            }
+            
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id ,ProductEditVM updatedProduct)
+        {
+            try
+            {
+
+                ViewBag.categories = await GetCategoriesAsync();
+                ViewBag.tags = await GetTagsAsync();
+                ViewBag.brandModels = await GetBrandModelsAsync();
+                ViewBag.discounts = await GetDiscountsAsync();
+                ViewBag.ratingCount = await GetRatingCountAsync();
+
+                if (id is null) return BadRequest();
+                Product dbProduct = await _productService.GetAllDataById((int)id);
+                if (dbProduct is null) return NotFound();
+
+                if (!ModelState.IsValid)
+                {
+                    updatedProduct.Images = dbProduct.ProductImages;
+                    return View(updatedProduct);
+                }
+                if (updatedProduct.Photos != null)
+                {
+                    foreach (var photo in updatedProduct.Photos)
+                    {
+                        if (!photo.CheckFileType("image/"))
+                        {
+                            ModelState.AddModelError("Photos", "File type must be image");
+                            updatedProduct.Images = dbProduct.ProductImages;
+                            return View(updatedProduct);
+                        }
+                        if (!photo.CheckFileSize(600))
+                        {
+                            ModelState.AddModelError("Photos", "Image size must be max 600kb");
+                            updatedProduct.Images = dbProduct.ProductImages;
+                            return View(updatedProduct);
+                        }
+                    }
+
+                    foreach (var item in dbProduct.ProductImages)
+                    {
+                        string dbPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/images", item.Image);
+                        FileHelper.DeleteFile(dbPath);
+                    }
+                    List<ProductImage> productImages = new();
+
+                    foreach (var photo in updatedProduct.Photos)
+                    {
+                        string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+
+                        string path = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/product", fileName);
+
+                        await FileHelper.SaveFileAsync(path, photo);
+
+                        ProductImage productImage = new()
+                        {
+                            Image = fileName
+                        };
+                        productImages.Add(productImage);
+                    }
+                    dbProduct.ProductImages = productImages;
+                    dbProduct.ProductImages.FirstOrDefault().IsMain = true;
+                    dbProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
+
+                    await _context.ProductImages.AddRangeAsync(productImages);
+                }
+                else
+                {
+                    updatedProduct.Images = dbProduct.ProductImages;
+                }
+
+
+                if (updatedProduct.TagIds.Count > 0)
+                {
+                    List<ProductTag> productTags = new();
+
+                    foreach (var item in updatedProduct.TagIds)
+                    {
+                        ProductTag productTag = new()
+                        {
+                            TagId = item
+                        };
+                        productTags.Add(productTag);
+                    }
+                    dbProduct.ProductTags = productTags;
+                }
+
+                if (updatedProduct.CategoryIds.Count > 0)
+                {
+                    List<ProductCategory> productCategories = new();
+
+                    foreach (var item in updatedProduct.CategoryIds)
+                    {
+                        ProductCategory productCategory = new()
+                        {
+                            CategoryId = item
+                        };
+                        productCategories.Add(productCategory);
+                    }
+                    dbProduct.ProductCategories = productCategories;
+                }
+
+                dbProduct.Name = updatedProduct.Name;
+                dbProduct.Description = updatedProduct.Description;
+                dbProduct.Price = updatedProduct.Price;
+                dbProduct.Weight = updatedProduct.Weight;
+                dbProduct.Title = updatedProduct.Title;
+                dbProduct.BrandModelId = updatedProduct.BrandModelId;
+                dbProduct.Feature = updatedProduct.Feature;
+                dbProduct.RatingId = updatedProduct.RatingId;
+                dbProduct.SKU = updatedProduct.SKU;
+                dbProduct.DiscountId = updatedProduct.DiscountId;
+              
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+
+
+
+
+               
+            }
+            catch (Exception ex)
+            {
                 ViewBag.error = ex.Message;
                 return View();
             }
