@@ -1,4 +1,6 @@
-﻿using Gamehoax_backend.Data;
+﻿using Gamehoax_backend.Areas.Admin.ViewModels.Products;
+using Gamehoax_backend.Data;
+using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
@@ -10,9 +12,11 @@ namespace Gamehoax_backend.Services
     public class ProductService : IProductService
     {
         private readonly AppDbContext _context;
-        public ProductService(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public ProductService(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         public async Task<List<Product>> GetAllAsync()
         {
@@ -333,5 +337,7 @@ namespace Gamehoax_backend.Services
                                           .Include(p => p.Reviews)
                                           .FirstOrDefaultAsync(m => m.Id == id);
         }
+
+       
     }
 }

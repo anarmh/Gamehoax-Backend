@@ -18,6 +18,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
         private readonly ICategoryService _categoryService;
         private readonly ITagService _tagService;
         private readonly IDiscountService _discountService;
+        private readonly IRatingService _ratingService;
        
         public ProductController(AppDbContext context,
                                  IWebHostEnvironment env,
@@ -25,8 +26,8 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                                  IBrandModelService brandModelService,
                                  ICategoryService categoryService,
                                  ITagService tagService,
-                                 IDiscountService discountService
-                               
+                                 IDiscountService discountService,
+                                 IRatingService ratingService
                                )
         {
             _context = context;
@@ -36,7 +37,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             _categoryService = categoryService;
             _tagService = tagService;
             _discountService = discountService;
-            
+            _ratingService= ratingService;
         }
         public async Task<IActionResult> Index(int page=1,int take=5)
         {
@@ -97,7 +98,12 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             List<Discount> discounts = await _discountService.GetAllAsync();
             return new SelectList(discounts, "Id", "Name");
         }
-      
+        private async Task<SelectList> GetRatingCountAsync()
+        {
+            List<Rating> ratings = await _ratingService.GetAllAsync();
+            return new SelectList(ratings, "Id", "RatingCount");
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> Create() 
@@ -106,7 +112,126 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             ViewBag.tags = await GetTagsAsync();
             ViewBag.brandModels = await GetBrandModelsAsync();
             ViewBag.discounts = await GetDiscountsAsync();
+            ViewBag.ratingCount = await GetRatingCountAsync();
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ProductCreateVM model)
+        {
+            try
+            {
+
+                ViewBag.categories = await GetCategoriesAsync();
+                ViewBag.tags = await GetTagsAsync();
+                ViewBag.brandModels = await GetBrandModelsAsync();
+                ViewBag.discounts = await GetDiscountsAsync();
+                ViewBag.ratingCount = await GetRatingCountAsync();
+                if (!ModelState.IsValid) return View(model);
+
+                Product newProduct = new();
+                List<ProductImage> productImages = new();
+                List<ProductCategory> productCategories = new();
+                List<ProductTag> productTags = new();
+
+
+                foreach (var photo in model.Photos)
+                {
+                    if (!photo.CheckFileType("image/"))
+                    {
+                        ModelState.AddModelError("Photos", "File type must be image");
+                        return View(model);
+                    }
+                    if (!photo.CheckFileSize(600))
+                    {
+                        ModelState.AddModelError("Photos", "Image size must be max 600kb");
+                        return View(model);
+                    }
+                }
+
+                foreach (var photo in model.Photos)
+                {
+                    string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+
+                    string path = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/product", fileName);
+
+                    await FileHelper.SaveFileAsync(path, photo);
+
+                    ProductImage productImage = new()
+                    {
+                        Image = fileName
+                    };
+
+                    productImages.Add(productImage);
+                }
+                newProduct.ProductImages = productImages;
+                newProduct.ProductImages.FirstOrDefault().IsMain = true;
+
+                if(model.CategoryIds.Count > 0)
+                {
+                    foreach (var item in model.CategoryIds)
+                    {
+                        ProductCategory productCategory = new()
+                        {
+                            CategoryId = item
+                        };
+                        productCategories.Add(productCategory);
+                    }
+                    newProduct.ProductCategories = productCategories;
+                }
+                else
+                {
+                    ModelState.AddModelError("Categories", "Don`t be empty");
+                    return View(model);
+                }
+                if (model.TagIds.Count > 0)
+                {
+                    foreach (var item in model.TagIds)
+                    {
+                        ProductTag productTag = new()
+                        {
+                            TagId = item
+                        };
+                        productTags.Add(productTag);
+                    }
+                    newProduct.ProductTags = productTags;
+                }
+                else
+                {
+                    ModelState.AddModelError("Tags", "Don`t be empty");
+                    return View(model);
+                }
+
+                var convertedPrice = decimal.Parse(model.Price);
+                var convertWeight=decimal.Parse(model.Weight);
+                Random random = new();
+
+
+                newProduct.Name= model.Name;
+                newProduct.SKU = model.SKU+random.Next(100,1000);
+                newProduct.Description= model.Description;
+                newProduct.Price = convertedPrice;
+                newProduct.RatingId= model.RatingId;
+                newProduct.Feature=model.Feature;
+                newProduct.BrandModelId= model.BrandModelId;
+                newProduct.DiscountId= model.DiscountId;
+                newProduct.Weight = convertWeight;
+                newProduct.Title= model.Title;
+                newProduct.Description= model.Description;
+
+
+                await _context.Products.AddAsync(newProduct);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+
+                ViewBag.error = ex.Message;
+                return View();
+            }
+           
         }
     }
 }

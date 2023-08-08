@@ -1,4 +1,5 @@
-﻿using Gamehoax_backend.Helpers;
+﻿using Gamehoax_backend.Areas.Admin.ViewModels.Products;
+using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Viewmodel;
 
@@ -20,5 +21,7 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 2);
         Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 2);
         Task<List<Product>> GetAllBySearchText(string searchText,int page=1 ,int take=2);
+       
+
     }
 }

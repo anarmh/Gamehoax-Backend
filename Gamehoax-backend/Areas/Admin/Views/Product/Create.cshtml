@@ -3,72 +3,153 @@
     ViewData["Title"] = "Create";
 }
 
-
 <div class="container my-5">
     <form class="forms-sample" asp-action="Create" method="post" enctype="multipart/form-data">
-        <label style="padding-left:6px;" for="formFile" class="form-label my-2">Choose Photos</label>
-        <input class="form-control" id="customFile" asp-for="Photos" />
-        <span class="text-danger" asp-validation-for="Photos"></span>
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Name</label>
-            <input class="form-control" id="customFile" asp-for="Name" />
-            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+        <div class="form-group mb-3">
+            <div class="row g-4 ">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Name" class="form-control" id="floatingInput" placeholder="Name">
+                            <label for="floatingInput">Name</label>
+                            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Price" class="form-control" id="floatingInput" placeholder="Price">
+                            <label for="floatingInput">Price</label>
+                            <span class="text-danger" asp-validation-for="Price">@ViewBag.error</span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Title" class="form-control" id="floatingInput" placeholder="Title">
+                            <label for="floatingInput">Title</label>
+                            <span class="text-danger" asp-validation-for="Title">@ViewBag.error</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating mb-3">
+                            <input asp-for="SKU" class="form-control" id="floatingInput" placeholder="SKU">
+                            <label for="floatingInput">SKU</label>
+                            <span class="text-danger" asp-validation-for="SKU">@ViewBag.error</span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Feature" class="form-control" id="floatingInput" placeholder="Feature">
+                            <label for="floatingInput">Feature</label>
+                            <span class="text-danger" asp-validation-for="Feature">@ViewBag.error</span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Weight" class="form-control" id="floatingInput" placeholder="Weight">
+                            <label for="floatingInput">Weight</label>
+                            <span class="text-danger" asp-validation-for="Weight">@ViewBag.error</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Price</label>
-            <input class="form-control" asp-for="Price" type="number" step=".01" />
-            <span class="text-danger" asp-validation-for="Price"></span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Title</label>
-            <input class="form-control" id="customFile" asp-for="Title" />
-            <span class="text-danger" asp-validation-for="Title"></span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add SKU</label>
-            <input class="form-control" id="customFile" asp-for="SKU" />
-            <span class="text-danger" asp-validation-for="SKU"></span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Categoies</label>
-            <select class="form-control" id="customFile" asp-for="CategoryIds" asp-items="@ViewBag.categories"></select>
-            <span class="text-danger" asp-validation-for="CategoryIds">@ViewBag.error</span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Tags</label>
-            <select class="form-control" id="customFile" asp-for="TagIds" asp-items="@ViewBag.tags"></select>
-            <span class="text-danger" asp-validation-for="TagIds">@ViewBag.error</span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Model</label>
-            <select class="form-control" id="customFile" asp-for="BrandModelId" asp-items="@ViewBag.brandModels"></select>
-            <span class="text-danger" asp-validation-for="BrandModelId">@ViewBag.error</span>
-        </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Discount</label>
-            <select class="form-control" id="customFile" asp-for="DiscountId" asp-items="@ViewBag.discounts"></select>
-            <span class="text-danger" asp-validation-for="DiscountId">@ViewBag.error</span>
-        </div>
+          
         
-       
-        <div class="form-group">
-            <label style="padding-left:6px;" for=" formFile" class="form-label my-2">Add Feature</label>
-            <input class="form-control" asp-for="Feature" type="text" />
-            <span class="text-danger" asp-validation-for="Feature"></span>
+        <div class="form-group mb-3">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="text-center mb-2">Categories</h6>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CategoryIds" asp-items="@ViewBag.categories">
+                        </select>
+                        <span class="text-danger" asp-validation-for="CategoryIds">@ViewBag.error</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="text-center mb-2">Tags</h6>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="TagIds" asp-items="@ViewBag.tags">
+                        </select>
+                        <span class="text-danger" asp-validation-for="TagIds">@ViewBag.error</span>
+                    </div>
+                </div>
+            </div>
+          
+          
         </div>
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Weight</label>
-            <input class="form-control" asp-for="Weight" type="number" />
-            <span class="text-danger" asp-validation-for="Weight"></span>
+            
+        <div class="form-group mb-3">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" asp-for="BrandModelId" asp-items="@ViewBag.brandModels">
+                                        <option selected="">Open this select menu</option>
+                              </select>
+                              <label for="floatingSelect">Brand Model</label>
+                            <span class="text-danger" asp-validation-for="BrandModelId">@ViewBag.error</span>
+                         </div>
+                     </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                       <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" asp-for="DiscountId" asp-items="@ViewBag.discounts">
+                                        <option selected="">Open this select menu</option>
+                              </select>
+                              <label for="floatingSelect">Discount</label>
+                            <span class="text-danger" asp-validation-for="DiscountId">@ViewBag.error</span>
+                         </div>
+                     </div>
+                </div>
+            </div>
+           
         </div>
 
-        <div class="form-group">
-            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Description</label>
-            <textarea class="form-control" asp-for="Description" rows="5"></textarea>
-            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+        <div class="form-group mb-3">
+            <div class="row">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating">
+                            <textarea class="form-control" asp-for=" Description" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
+                            <label for="floatingTextarea">Description</label>
+                            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                      <div class="bg-secondary rounded h-100 p-4">
+                         <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" asp-for="RatingId" asp-items="@ViewBag.ratingCount">
+                                            <option selected="">Open this select menu</option>
+                                  </select>
+                                  <label for="floatingSelect">Rating Count</label>
+                                <span class="text-danger" asp-validation-for="RatingId">@ViewBag.error</span>
+                            </div>
+                      </div>
+                </div>
+
+            </div>
+         
+           
         </div>
+        <div class="form-group mb-3">
+            <div class="row g-4">
+                <div class="col-sm-12 ">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <label  for="formFile" class="form-label mb-2">Choose Photos</label>
+                        <input class="form-control bg-dark" type="file" id="formFileMultiple" multiple="" asp-for="Photos">
+                        <span class="text-danger" asp-validation-for="Photos"></span>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+       
+       
+
+   
         <div class="buttons my-3">
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <button type="submit" class="btn btn-outline-success mr-2">Submit</button>
             <a class="btn btn-outline-light" asp-action="Index">Cancel</a>
         </div>
     </form>
