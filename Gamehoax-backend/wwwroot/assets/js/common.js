@@ -308,9 +308,11 @@
 
     $(document).on("click", '.decrementDetail', function (e) {
         let count = $('.qty-input').val();
-        if ($(count) != '1') {
-            $('.qty-input').val(parseInt(count) - 1);
+        if ($('.qty-input').val() == 1) {
+            return;
         }
+        $('.qty-input').val(parseInt(count) - 1);
+       
     });
     
     $(document).on("click", "#add-to-cart-productDetail", function (e) {

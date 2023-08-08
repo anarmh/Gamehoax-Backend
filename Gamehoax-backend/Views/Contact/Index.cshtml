@@ -1,4 +1,7 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity;
+@model ContactVM
+@inject UserManager<AppUser> userManager;
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -18,7 +21,7 @@
                 <div class="col-12">
                     <div class="page">
                         <div class="link">
-                            <a href="./home.html">
+                            <a asp-controller="Home" asp-action="Index">
                                 <span>Home</span>
                             </a>
                             <span class="shop"> » Contact</span>
@@ -55,37 +58,73 @@
                             <h3>Contact Us</h3>
                             <p>Get in touch with us for inquiries or business proposals.we'll get back to you!</p>
                             <div class="line"></div>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form asp-action="PostComment" method="post">
 
-                            <form action="" method="post">
-
-                                <div class="input-group">
-                                    <input type="text">
-                                    <label for="">Subject</label>
-                                </div>
-
-                                <div class="input-group">
-                                    <input type="text">
-                                    <label for="">Your Name</label>
-                                </div>
-
-                                <div class="input-group">
-                                    <input type="text">
-                                    <label for="">Your Email</label>
-                                </div>
-
-
-                                <div class="input-group">
-                                    <textarea name="" id="" cols="40" rows="10"></textarea>
-                                    <label for="">Your Message</label>
-                                </div>
-
-                                <button>
-                                    <div class="wrapper">
-                                        <i class="fa-solid fa-share"></i>
+                                    <div class="input-group">
+                                        <input class="messageInput" asp-for="Subject">
+                                        <label class="input-label" asp-for="Subject">Subject</label>
                                     </div>
-                                    <span>Send</span>
-                                </button>
-                            </form>
+
+                                    <div class="input-group">
+                                        <input type="text" class="messageInput" asp-for="Name" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).FullName">
+                                        <label class="input-label" asp-for="Name">Your Name</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" class="messageInput" asp-for="Email" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).Email">
+                                        <label class="input-label" asp-for="Email">Your Email</label>
+                                    </div>
+
+
+                                    <div class="input-group">
+                                        <textarea name="Message" class="messageInput" id="" cols="40" rows="10" asp-for="Message"></textarea>
+                                        <label class="input-label" asp-for="Message" style="">Your Message</label>
+                                    </div>
+
+                                    <button>
+                                        <div class="wrapper">
+                                            <i class="fa-solid fa-share"></i>
+                                        </div>
+                                        <span>Send</span>
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <form asp-controller="Account" asp-action="SignIn" method="post">
+
+                                    <div class="input-group">
+                                        <input type="text">
+                                        <label for="">Subject</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text">
+                                        <label for="">Your Name</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text">
+                                        <label for="">Your Email</label>
+                                    </div>
+
+
+                                    <div class="input-group">
+                                        <textarea name="" id="" cols="40" rows="10"></textarea>
+                                        <label for="">Your Message</label>
+                                    </div>
+
+                                    <button type="submit">
+                                        <div class="wrapper">
+                                            <i class="fa-solid fa-share"></i>
+                                        </div>
+                                        <span>Send</span>
+                                    </button>
+                                </form>
+                            }
+                            
                         </div>
 
                     </div>
@@ -157,4 +196,5 @@
 
 @section Scripts {
     <script src="~/assets/js/contact.js"></script>
+    
 }

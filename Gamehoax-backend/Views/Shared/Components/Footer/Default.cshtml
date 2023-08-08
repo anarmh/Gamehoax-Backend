@@ -67,12 +67,12 @@
                         <h3>Our Newsletter</h3>
                         <p>There are many variations of passages of form humour or randomised</p>
                         <div class="tnp tnp-widget">
-                            <form action="" method="post">
-                                <input type="hidden">
-                                <input type="hidden">
+                            <form asp-controller="Home" asp-action="PostSubscribe" method="post">
+                                <input type="hidden" asp-for="Email">
+                                <input type="hidden" asp-for="Email">
                                 <div class="tnp-field tnp-field-email">
-                                    <input type="email" class="tnp-email">
-
+                                    <input asp-for="Email" class="tnp-email">
+                                    <span class="text-danger" style="z-index:5;" asp-validation-for="Email">@ViewBag.error</span>
                                 </div>
                                 <div class="tnp-field tnp-field-button">
                                     <input class="tnp-submit" type="submit" value="Subscribe">

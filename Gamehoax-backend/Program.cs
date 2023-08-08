@@ -58,6 +58,11 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IBrandModelService, BrandModelService>();
+builder.Services.AddScoped<ISubscribeService, SubscribeService>();
+
+
+
+
 var app = builder.Build();
 
 
