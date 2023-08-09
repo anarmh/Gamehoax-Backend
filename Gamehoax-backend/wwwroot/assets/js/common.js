@@ -30,11 +30,10 @@
         let tbody = $(".tbody-basket").children()
         let sum = 0;
         for (var prod of tbody) {
-            let price = parseFloat($(prod).children().eq(5).children().eq(1).text())
-
+            let price = parseFloat($(prod).children().eq(5).children().eq(1).text());
             sum += price
         }
-        $(".grand-total").text(sum + ".00");
+        $(".grand-total").text(sum.toFixed(2));
     }
 
     //delete product from basket
@@ -111,6 +110,12 @@
 
     //decrement product count
     $(document).on("click", ".dec", function (e) {
+        let counterss = $(this).parent().prev();
+
+        if (($(counterss).val() - 1) <= 0) {
+            e.preventDefault();
+            return;
+        }
         e.preventDefault();
         let id = $(this).parent().parent().parent().attr("data-id");
 
@@ -119,14 +124,13 @@
 
         let total = parseFloat($(this).parent().parent().next().find(".total-price").text());
         let total_el = $(this).parent().parent().next().find(".total-price");
-        let counterss = $(this).parent().prev();
 
 
         $.ajax({
             type: "POST",
-            url: `Cart/DecrementProductCount?id=${id}`,
+            url: `/Cart/DecrementProductCount?id=${id}`,
             success: function (res) {
-                if ($(counterss).val() == 1) {
+                if ($(counterss).val() < 1) {
                     return;
                 }
                 res--;
@@ -217,7 +221,7 @@
             let countWishlist = $(".wish-count");
             $.ajax({
                 type: "Post",
-                url: `Wishlist/DeleteDataFromWishlist?id=${id}`,
+                url: `/Wishlist/DeleteDataFromWishlist?id=${id}`,
                 data: data,
                 success: function (res) {
                     el.removeClass('checked'); 
@@ -256,7 +260,7 @@
 
         $.ajax({
             type: "Post",
-            url: `Wishlist/DeleteDataFromWishlist?id=${id}`,
+            url: `/Wishlist/DeleteDataFromWishlist?id=${id}`,
             data: data,
             success: function (res) {
                 if ($(tbody).length == 1) {
