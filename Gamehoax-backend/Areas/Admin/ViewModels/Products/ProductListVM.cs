@@ -12,5 +12,6 @@ namespace Gamehoax_backend.Areas.Admin.ViewModels.Products
         public string Image { get; set; }
         public string Model { get; set; }
         public ICollection<Category> Categories { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }

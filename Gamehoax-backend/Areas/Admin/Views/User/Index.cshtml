@@ -1,43 +1,30 @@
-﻿@model Paginate<ProductListVM>
+﻿@model Paginate<UserVM>
 @{
     ViewData["Title"] = "Index";
 }
 
 
+
 <div class="container my-3">
-    <h2 class="text-center">Products</h2>
-    <div class="create-btn ">
-        <a asp-controller="Product" asp-action="Create" class="btn btn-outline-success ">Create</a>
-    </div>
+    <h2 class="text-center">Users</h2>
+   
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>
-                        Image
+                        Username
                     </th>
                     <th>
-                        Name
-                    </th>
-                   
-                    <th>
-                        Price
-                    </th>
-                   
-                    <th>
-                        Weight
-                    </th>
-                   
-                    <th>
-                        Model
+                        FullName
                     </th>
 
                     <th>
-                        Category
+                        Email
                     </th>
 
                     <th>
-                        Tag
+                      Role
                     </th>
                     <th>
                         Options
@@ -48,40 +35,29 @@
                 @foreach (var item in Model.Datas)
                 {
                     <tr>
+                        
                         <td class="py-1">
-                            <img src="~/assets/img/product/@item.Image" style="width:100px;height:100px" />
+                            @item.UserName
+                        </td>
+
+                        <td class="py-1">
+                            @item.FullName
                         </td>
                         <td class="py-1">
-                            @item.Name
+                            @item.Email
                         </td>
-                       
+
                         <td class="py-1">
-                            @item.Price
-                        </td>
-                        <td class="py-1">
-                            @item.Weight
-                        </td>
-                        <td class="py-1">
-                            @item.Model
-                        </td>
-                        <td class="py-1">
-                            @foreach (var category in item.Categories)
+                           @foreach (var role in item.UserRoles)
                             {
-                                <div>@category.Name</div>
+                                @role
                             }
                         </td>
-                         <td class="py-1">
-                            @foreach (var tag in item.Tags)
-                            {
-                                <div>@tag.Name</div>
-                            }
-                        </td>
-                       
-                       
+
+
                         <td>
-                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info  ">Detail</a>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning  my-2">Edit</a>
-                            <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                          
+                            <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
                                 <button type="submit" class="btn btn-outline-danger  ">Delete</button>
                             </form>
                         </td>
@@ -111,6 +87,5 @@
         </div>
     </div>
 </div>
-
 
 

@@ -5,6 +5,8 @@ using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
@@ -62,6 +64,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             foreach (var product in products)
             {
                 var categories = product.ProductCategories.Select(pt => pt.Category).ToList();
+                var tags = product.ProductTags.Select(pt => pt.Tag).ToList();
                 ProductListVM productList = new()
                 {
                     Id = product.Id,
@@ -70,7 +73,8 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     Image = product.ProductImages.FirstOrDefault(m=>m.IsMain).Image,
                     Weight=product.Weight,
                     Model=product.BrandModel.Name,
-                    Categories= categories
+                    Categories= categories,
+                    Tags= tags
                 };
                 mappedDatas.Add(productList);
             }
@@ -105,6 +109,69 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> Detail(int? id)
+        {
+            try
+            {
+                if (id == null) return BadRequest();
+                Product dbProduct=await _productService.GetAllDataById(id);
+
+                if(dbProduct == null) return NotFound();
+
+                ProductDetailVM model = new()
+                {
+                    Id=dbProduct.Id,
+                    Name=dbProduct.Name,
+                    Description=dbProduct.Description,
+                    Title=dbProduct.Title,
+                    Price=dbProduct.Price,
+                    Weight=dbProduct.Weight,
+                    Feature=dbProduct.Feature,
+                    DiscountName=dbProduct.Discount.Name,
+                    Model=dbProduct.BrandModel.Name,
+                    RatingCount=dbProduct.Rating.RatingCount,
+                    Images=dbProduct.ProductImages,
+                    ProductCategories=dbProduct.ProductCategories,
+                    ProductTags=dbProduct.ProductTags,
+                };
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = ex.Message;  
+
+                return View();
+            }
+           
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            try
+            {
+                if (id is null) return BadRequest();
+                Product dbProduct = await _productService.GetAllDataById((int)id);
+                if (dbProduct is null) return NotFound();
+
+                foreach (var productImage in dbProduct.ProductImages)
+                {
+                    string dbPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/product", productImage.Image);
+                    FileHelper.DeleteFile(dbPath);
+                }
+
+                _context.Products.Remove(dbProduct);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = ex.Message;
+                return View();
+            }
+        }
         [HttpGet]
         public async Task<IActionResult> Create() 
         {
@@ -407,5 +474,24 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             }
            
         }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProductImage(int id)
+        {
+            ProductImage image = await _context.ProductImages.FirstOrDefaultAsync(m => m.Id == id);
+            _context.ProductImages.Remove(image);
+            await _context.SaveChangesAsync();
+
+            string path = Path.Combine(_env.WebRootPath, "img", image.Image);
+
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+            return Ok();
+        }
+
     }
 }

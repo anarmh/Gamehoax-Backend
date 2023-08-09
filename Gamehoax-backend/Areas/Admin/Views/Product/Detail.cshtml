@@ -1,0 +1,120 @@
+﻿@model ProductDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+@section AdminCss{
+    <link href="~/admin/css/admin.css" rel="stylesheet">
+
+}
+
+<div class="container my-5">
+    <div class="d-flex">
+        <div class="images" style="text-align:center">
+            <h4>Images</h4>
+            @foreach (var productImage in Model.Images)
+            {
+                <img src="~/assets/img/product/@productImage.Image" style="width:200px;height:200px" alt="image" />
+            }
+        </div>
+      
+    </div>
+
+   
+
+    <div class="row my-3">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Details</h6>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Feature</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Discount</th>
+                            <th scope="col">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">@Model.Name</th>
+                            <td>@Model.Title</td>
+                            <td>@Model.Feature</td>
+                            <td>@Model.Price</td>
+                            <td>@Model.Weight</td>
+                            <td>@Model.Model</td>
+                            <td>@Model.DiscountName</td>
+                            <td>
+                                <ul style="display:flex;list-style:none;padding:0px">
+                                    @for (int i = 0; i < Model.RatingCount; i++)
+                                    {
+                                        <li><i class="fa fa-star" style="color: #ffe24d;"></i></li>
+                                    }
+                                    @for (int i = 0; i < 5 - Model.RatingCount; i++)
+                                    {
+                                        <li><i class="fa fa-star" style="color:darkgrey"></i></li>
+                                    }
+                                </ul>
+                              
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mb-3">
+        <div class="row">
+            <div class="col-sm-12 col-xl-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <div class="form-floating">
+                        <textarea disabled class="form-control" asp-for=" Description" placeholder="Leave a comment here" id="floatingTextarea" style="background-color: black;height:150px;"></textarea>
+                        <label for="floatingTextarea">Description</label>
+                        
+                    </div>
+                </div>
+            </div>
+          
+
+        </div>
+
+
+    </div>
+   
+    <div class="col-sm-12 col-xl-12">
+        <div class="bg-secondary rounded h-100 p-4">
+            <div class="form-floating mb-3">
+                <input disabled value="@string.Join(", " ,Model.ProductCategories.Select(m=>m.Category.Name))" class="form-control" id="floatingInput" style="background-color: black; ">
+                <label for="floatingInput">Categories</label>
+              
+            </div>
+            <div class="form-floating mb-3">
+                <input disabled value="@string.Join(", ",Model.ProductTags.Select(m=>m.Tag.Name))" class="form-control" id="floatingInput" style="background-color: black;">
+                <label for="floatingInput">Tags</label>
+             
+            </div>
+           
+        </div>
+
+    </div>
+  
+   
+    <div class="form-group">
+        <div class="buttons my-3">
+            <a class="btn btn-outline-info mt-3"  asp-action="Index">Back</a>
+        </div>
+    </div>
+</div>
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+
+
