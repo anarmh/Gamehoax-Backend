@@ -173,6 +173,22 @@ namespace Gamehoax_backend.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> SearchAll(string searchText, int page = 1, int take = 2)
+        {
+
+            ViewBag.searchText = searchText;
+
+            List<Product> products = await _productService.GetAllBySearchText(searchText);
+
+            var productCount = await _productService.GetCountAsync();
+            var pageCount = (int)Math.Ceiling((decimal)productCount / take);
+            List<ProductVM> mappedDatas = _productService.GetMappedDatas(products);
+            Paginate<ProductVM> paginatedDatas = new(mappedDatas, page, pageCount);
+            return RedirectToAction("Index",paginatedDatas);
+        }
+
+
+        [HttpGet]
         public async Task<IActionResult> GetProductsByCategory(int? id, int page = 1, int take = 2)
         {
             if (id is null) return BadRequest();

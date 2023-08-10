@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1OHzYgGw/wH33GDJw0uxWElDWeroX+R5mJGD4RBT2vE=",
+  "Hash": "SdimTd0JEXJkHYIAkkC2TDFDIkphBKFXDwSjs/oLSqo=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -2310,6 +2310,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\brand\\brand-05.png"
+    },
+    {
+      "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\brand\\e9c79b3e-ce91-4780-aeb1-eab53d585ddc brand-04.png",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/img/brand/e9c79b3e-ce91-4780-aeb1-eab53d585ddc brand-04.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\brand\\e9c79b3e-ce91-4780-aeb1-eab53d585ddc brand-04.png"
     },
     {
       "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\c1ed6e15-2c2b-4171-a492-28c69e3ab929_15.jpg",

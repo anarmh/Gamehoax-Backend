@@ -16,7 +16,12 @@ namespace Gamehoax_backend.Services
 
         public async Task<List<BrandModel>> GetAllAsync()
         {
-            return await _context.BrandModels.ToListAsync();
+            return await _context.BrandModels.Include(m=>m.Brand).ToListAsync();
+        }
+
+        public async Task<BrandModel> GetByIdAsync(int id)
+        {
+            return await _context.BrandModels.Include(m => m.Brand).FirstOrDefaultAsync(m => m.Id == id);
         }
     }
 }

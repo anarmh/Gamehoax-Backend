@@ -1,0 +1,34 @@
+﻿@model BrandModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+    <div class="container mt-5">
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="detail-card">
+
+            <div class="detail-content">
+                <h1 class="detail-name">Name: @Model.Name</h1>
+                <p class="detail-createdate">Brand :@Model.Brand.Name</p>
+                <p class="detail-createdate">CreateDate: @Model.CreateDate.ToString("MM-dd-yyyy")</p>
+            </div>
+
+
+        </div>
+           
+      </div>
+        <div class="form-group">
+                        <div class="buttons my-3">
+                          <a class="btn btn-outline-info d-block mt-3" asp-action="Index">Back</a>
+                         </div>
+             </div>
+
+     </div>
+
+
+@section AdminScripts{
+            <partial name="_ValidationScriptsPartial" />
+ }
+
+

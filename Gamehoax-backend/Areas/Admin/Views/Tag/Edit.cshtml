@@ -1,0 +1,41 @@
+﻿@model TagEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<div class="container my-5">
+    <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <div class="row g-4 ">
+                <div class="col-sm-12 col-xl-12">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Name" class="form-control" id="floatingInput" placeholder="Name">
+                            <label for="floatingInput">Name</label>
+                            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-outline-success mr-2">Submit</button>
+            <a class="btn btn-outline-light" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+

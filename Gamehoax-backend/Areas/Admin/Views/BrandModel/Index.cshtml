@@ -1,0 +1,62 @@
+﻿@model List<BrandModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container my-3">
+    <h2 class="text-center">Brands</h2>
+    <div class="create-btn ">
+        <a asp-action="Create" class="btn btn-outline-success ">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Brand
+                    </th>
+                    <th>
+                        CreateDate
+                    </th>
+
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td class="">
+                            @item.Name
+                        </td>
+                        
+                        <td class="">
+                            @item.Brand.Name
+                        </td>
+                        <td class="">
+                            @item.CreateDate.ToString("MM-dd-yyyy")
+                        </td>
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info d-block ">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning d-block  my-2">Edit</a>
+                            <form style="width: 100%;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger d-block w-100">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
