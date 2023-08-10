@@ -1,4 +1,4 @@
-﻿using Gamehoax_backend.Areas.Admin.ViewModels.Categories;
+﻿using Gamehoax_backend.Areas.Admin.ViewModels.Brands;
 using Gamehoax_backend.Data;
 using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
@@ -8,32 +8,32 @@ using Microsoft.AspNetCore.Mvc;
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class BrandController : Controller
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        private readonly ICategoryService _categoryService;
-        public CategoryController(AppDbContext context, IWebHostEnvironment env, ICategoryService categoryService)
+        private readonly IBrandService _brandService;
+        public BrandController(AppDbContext context, IWebHostEnvironment env, IBrandService brandService)
         {
             _context = context;
             _env = env;
-            _categoryService = categoryService;
+            _brandService = brandService;
         }
         public async Task<IActionResult> Index()
         {
-            List<CategoryVM> categoryVMs= await _categoryService.GetAllMappedDatasAsync();
-            return View(categoryVMs);
+            List<Brand> brands= await _brandService.GetAllAsync();
+            return View(brands);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-
             try
             {
                 if (id == null) return BadRequest();
-                Category dbCategory = await _categoryService.GetCategoryById(id);
-                if (dbCategory == null) return NotFound();
-                return View(_categoryService.GetMappedData(dbCategory));
+                Brand brand = await _brandService.GetByIdAsync((int)id);
+                if (brand == null) return NotFound();
+                return View(brand);
             }
             catch (Exception ex)
             {
@@ -41,6 +41,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 return View();
             }
         }
+
 
         [HttpGet]
         public IActionResult Create()
@@ -51,42 +52,39 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CategoryCreateVM category)
+        public async Task<IActionResult> Create(BrandCreateVM brand)
         {
             try
             {
-
-
                 if (!ModelState.IsValid)
                 {
-                    return View(category);
+                    return View(brand);
                 }
 
-                if (!category.Photo.CheckFileType("image/"))
+                if (!brand.Photo.CheckFileType("image/"))
                 {
                     ModelState.AddModelError("Photo", "File type must be image");
-                    return View(category);
+                    return View(brand);
                 }
 
-                if (!category.Photo.CheckFileSize(500))
+                if (!brand.Photo.CheckFileSize(500))
                 {
                     ModelState.AddModelError("Photo", "Image size must be max 500kb");
-                    return View(category);
+                    return View(brand);
 
                 }
 
-                string fileName = Guid.NewGuid().ToString() + " " + category.Photo.FileName;
-                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/category", fileName);
-                await FileHelper.SaveFileAsync(newPath, category.Photo);
+                string fileName = Guid.NewGuid().ToString() + " " + brand.Photo.FileName;
+                string newPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/brand", fileName);
+                await FileHelper.SaveFileAsync(newPath, brand.Photo);
 
-                Category newCategory = new()
+                Brand newBrand = new()
                 {
                     Image = fileName,
-                    Name = category.Name,
-                    Title= category.Title,
-                    Description= category.Description,
+                    Name = brand.Name,
+
                 };
-                await _context.Categories.AddAsync(newCategory);
+                await _context.Brands.AddAsync(newBrand);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
 
@@ -94,10 +92,12 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             catch (Exception ex)
             {
                 ViewBag.error = ex.Message;
-                return View();
+                throw;
             }
-            
+
         }
+
+
 
 
         [HttpPost]
@@ -106,11 +106,11 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             try
             {
                 if (id == null) return BadRequest();
-                Category category = await _categoryService.GetCategoryById(id);
-                if (category == null) return NotFound();
-                string path = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/category", category.Image);
+                Brand dbBrand = await _brandService.GetByIdAsync((int)id);
+                if (dbBrand == null) return NotFound();
+                string path = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/brand", dbBrand.Image);
                 FileHelper.DeleteFile(path);
-                _context.Categories.Remove(category);
+                _context.Brands.Remove(dbBrand);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
 
@@ -122,22 +122,19 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             }
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             try
             {
                 if (id == null) return BadRequest();
-                Category dbCategory = await _categoryService.GetCategoryById(id);
-                if (dbCategory == null) return NotFound();
+                Brand dbBrand = await _brandService.GetByIdAsync((int)id);
+                if (dbBrand == null) return NotFound();
 
-                CategoryEditVM model = new()
+                BrandEditVM model = new()
                 {
-                    Image = dbCategory.Image,
-                    Name = dbCategory.Name,
-                    Title= dbCategory.Title,
-                    Description= dbCategory.Description,
+                    Image = dbBrand.Image,
+                    Name = dbBrand.Name,
                 };
                 return View(model);
             }
@@ -150,54 +147,48 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, CategoryEditVM category)
+        public async Task<IActionResult> Edit(int? id, BrandEditVM brand)
         {
             try
             {
                 if (id == null) return BadRequest();
-                Category dbCategory = await _categoryService.GetCategoryById(id);
-                if (dbCategory == null) return NotFound();
+                Brand dbBrand = await _brandService.GetByIdAsync((int)id);
+                if (dbBrand == null) return NotFound();
 
-                CategoryEditVM model = new()
+                BrandEditVM model = new()
                 {
-                    Image = dbCategory.Image,
-                    Name = dbCategory.Name, 
-                    Title= dbCategory.Title,
-                    Description= dbCategory.Description,
+                    Image = dbBrand.Image,
+                    Name = dbBrand.Name,
                 };
-                if (category.Photo != null)
+                if (brand.Photo != null)
                 {
-                    if (!category.Photo.CheckFileType("image/"))
+                    if (!brand.Photo.CheckFileType("image/"))
                     {
                         ModelState.AddModelError("Photo", "File type must be image");
                         return View(model);
                     }
-                    if (!category.Photo.CheckFileSize(500))
+                    if (!brand.Photo.CheckFileSize(500))
                     {
                         ModelState.AddModelError("Photo", "Image size must be max 500kb");
                         return View(model);
                     }
 
-                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/category", dbCategory.Image);
+                    string deletePath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/brand", dbBrand.Image);
                     FileHelper.DeleteFile(deletePath);
-                    string fileName = Guid.NewGuid().ToString() + " " + category.Photo.FileName;
-                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/category", fileName);
-                    await FileHelper.SaveFileAsync(newPath, category.Photo);
-                    dbCategory.Image = fileName;
+                    string fileName = Guid.NewGuid().ToString() + " " + brand.Photo.FileName;
+                    string newPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/brand", fileName);
+                    await FileHelper.SaveFileAsync(newPath, brand.Photo);
+                    dbBrand.Image = fileName;
                 }
                 else
                 {
-                    Category newCategory = new()
+                    Brand newBrand = new()
                     {
-                        Image = dbCategory.Image,
-
+                        Image = dbBrand.Image
                     };
                 }
 
-                dbCategory.Name = category.Name;
-                dbCategory.Title = category.Title;
-                dbCategory.Description = category.Description;
-
+                dbBrand.Name = brand.Name;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -207,5 +198,6 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 return View();
             }
         }
+
     }
 }

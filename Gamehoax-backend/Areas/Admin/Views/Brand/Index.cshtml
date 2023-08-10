@@ -1,13 +1,13 @@
-﻿@model List<CategoryVM>
+﻿@model List<Brand>
 @{
     ViewData["Title"] = "Index";
 }
 
 
 <div class="container my-3">
-    <h2 class="text-center">Products</h2>
+    <h2 class="text-center">Brands</h2>
     <div class="create-btn ">
-        <a  asp-action="Create" class="btn btn-outline-success ">Create</a>
+        <a asp-action="Create" class="btn btn-outline-success ">Create</a>
     </div>
     <div class="table-responsive">
         <table class="table table-striped">
@@ -21,15 +21,6 @@
                     </th>
 
                     <th>
-                        Title
-                    </th>
-
-                    <th>
-                        Description
-                    </th>
-
-                    
-                    <th>
                         Options
                     </th>
                 </tr>
@@ -38,27 +29,19 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td class="py-1">
-                            <img src="~/assets/img/category/@item.Image" style="width:100px;height:100px" />
+                        <td class="">
+                            <img src="~/assets/img/brand/@item.Image" style="width:200px;height:100px" />
                         </td>
-                        <td class="py-1">
+                        <td class="">
                             @item.Name
                         </td>
-
-                        <td class="py-1">
-                            @item.Title
-                        </td>
-                        <td class="py-1">
-                            @item.Description
-                        </td>
-                      
 
 
                         <td>
                             <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info d-block ">Detail</a>
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning d-block  my-2">Edit</a>
-                            <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
-                                <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                            <form style="width: 100%;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger d-block w-100">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -68,3 +51,4 @@
         </table>
     </div>
 </div>
+

@@ -1,0 +1,51 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@section AdminCss{
+        <link href="~/admin/css/admin.css" rel="stylesheet">
+
+}
+
+
+<div class="container d-block my-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th >
+                    Image
+                </th>
+                <th>
+                    Name
+                </th>
+                <th >
+                    CreateDate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-1" >
+                    <img src="~/assets/img/brand/@Model.Image" style="width:250px;height:200px; " />
+                </td>
+                <td class="py-1" >
+                    @Model.Name
+                </td>
+                <td class="py-1" >
+                    @Model.CreateDate.ToString("MM-dd-yyyy")
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-outline-info mt-3"  asp-action="Index">Back</a>
+</div>
+
+
+
+@section AdminScripts{
+        <partial name="_ValidationScriptsPartial" />
+ }
+
+
+

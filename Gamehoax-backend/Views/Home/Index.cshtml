@@ -101,18 +101,18 @@
                 <div class="row">
                     @foreach (var item in Model.Categories.Skip(2))
                 {
-                    <div class="col-sm-12 col-md-6 col-lg-4 ">
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                         <div class="card-item">
                             <div class="img">
                                 <img src="~/assets/img/category/@item.Image" alt="">
                             </div>
-                            <div class="card-desc">
+                            <div class="card-desc" style="height:20%;">
                                 <div class="text-content name">
-                                    <span>@item.Name</span>
+                                    <span style="font-size:15px;">@item.Name</span>
                                 </div>
                                 <div class="text-content shop">
                                     <a asp-controller="Shop" asp-action="Index" asp-route-id="@item.Id">
-                                        <span>Shop Now</span>
+                                        <span  style="font-size:15px;">Shop Now</span>
                                     </a>
 
                                 </div>
