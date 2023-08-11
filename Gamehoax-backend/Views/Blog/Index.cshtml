@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="page">
                         <div class="link">
-                            <a href="./home.html">
+                            <a asp-controller="Home" asp-action="Index">
                                 <span>Home</span>
                             </a>
                             <span class="shop"> » Blog</span>
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-9">
-                    @foreach (var blog in Model.Blogs.Take(5))
+                    @foreach (var blog in Model.Blogs)
                     {
                         <div class="post mb-4">
                             <div class="row">
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="col-6 m-auto">
                                     <div class="blog-info">
-                                        <div class="blog-icon"></div>
+                                        <div class="blog-icon"><i class="@blog.BlogIcon"></i></div>
                                         <div class="entry-header">
                                             <h1>
                                                @blog.Title
@@ -145,7 +145,7 @@
                 <div class="mobile d-none">
                     <div class="col-12">
                         <div class="container-fluid">
-                            @foreach (var item in Model.Blogs.Take(5))
+                            @foreach (var item in Model.Blogs)
                             {
                                 <div class="post mb-4">
                                     <div class="row">
@@ -158,7 +158,7 @@
                                         </div>
                                         <div class="col-6 m-auto">
                                             <div class="blog-info">
-                                                <div class="blog-icon"></div>
+                                                <div class="blog-icon"><i class="@item.BlogIcon"></i></div>
                                                 <div class="entry-header">
                                                     <h1>
                                                        @item.Title

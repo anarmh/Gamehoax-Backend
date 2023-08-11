@@ -60,7 +60,7 @@
                             <div class="line"></div>
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <form asp-action="PostComment" method="post">
+                                <form asp-controller="Contact" asp-action="PostComment" method="post">
 
                                     <div class="input-group">
                                         <input class="messageInput" asp-for="Subject">
@@ -79,7 +79,7 @@
 
 
                                     <div class="input-group">
-                                        <textarea name="Message" class="messageInput" id="" cols="40" rows="10" asp-for="Message"></textarea>
+                                        <textarea name="Message" class="messageArea" id="" cols="40" rows="10" asp-for="Message"></textarea>
                                         <label class="input-label" asp-for="Message" style="">Your Message</label>
                                     </div>
 

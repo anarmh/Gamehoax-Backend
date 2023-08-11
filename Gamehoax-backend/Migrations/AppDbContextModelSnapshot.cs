@@ -132,6 +132,9 @@ namespace Gamehoax_backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("BlogIcon")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
@@ -646,6 +649,9 @@ namespace Gamehoax_backend.Migrations
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -935,7 +941,7 @@ namespace Gamehoax_backend.Migrations
             modelBuilder.Entity("Gamehoax_backend.Models.Cart", b =>
                 {
                     b.HasOne("Gamehoax_backend.Models.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Carts")
                         .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
@@ -1064,7 +1070,7 @@ namespace Gamehoax_backend.Migrations
             modelBuilder.Entity("Gamehoax_backend.Models.Wishlist", b =>
                 {
                     b.HasOne("Gamehoax_backend.Models.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Wishlists")
                         .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
@@ -1138,6 +1144,13 @@ namespace Gamehoax_backend.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Gamehoax_backend.Models.AppUser", b =>
+                {
+                    b.Navigation("Carts");
+
+                    b.Navigation("Wishlists");
                 });
 
             modelBuilder.Entity("Gamehoax_backend.Models.Brand", b =>

@@ -1,0 +1,29 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+    <div class="container mt-5">
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="detail-card">
+            <img class="detail-image" src="~/assets/img/blog/@Model.Image" alt="Item Image" style="width:700px; height:500px;">
+            <div class="detail-content">    
+                <h1 class="text-center">Title</h1>
+                <p class="detail-name text-center">@Model.Title</p>
+                <h1 class="text-center">Description</h1>
+                <p class="detail-description">@Model.Description</p>
+                <h6>CreateDate: <span class="detail-createdate"> @Model.CreateDate.ToString("MM-dd-yyyy")</span></h6>
+            </div>
+
+
+        </div>
+             <div class="form-group">
+                        <div class="buttons my-3">
+                          <a class="btn btn-outline-info d-block mt-3" asp-action="Index">Back</a>
+                         </div>
+             </div>
+
+      </div>
+     </div>
+

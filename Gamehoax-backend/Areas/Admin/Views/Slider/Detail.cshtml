@@ -1,0 +1,40 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+@section AdminCss{
+    <link href="~/admin/css/admin.css" rel="stylesheet">
+
+}
+
+
+<div class="container mt-5">
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="detail-card">
+            <img class="detail-image" src="~/assets/img/slider/@Model.Image" alt="Item Image">
+            <div class="detail-content">
+               
+                <p class="detail-description ">Status: @Model.Status</p>
+              
+                <p class="detail-createdate ">CreateDate: @Model.CreateDate.ToString("MM-dd-yyyy")</p>
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="buttons my-3">
+                <a class="btn btn-outline-info d-block mt-3" asp-action="Index">Back</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+

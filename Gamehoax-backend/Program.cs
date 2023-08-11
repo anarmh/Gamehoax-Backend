@@ -60,6 +60,8 @@ builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IBrandModelService, BrandModelService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IContactService, ContactService>();
+
 
 
 

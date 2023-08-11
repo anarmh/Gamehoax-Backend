@@ -3,13 +3,16 @@ using Gamehoax_backend.Data;
 using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class UserController : Controller
     {
         private readonly IUserService _userService;

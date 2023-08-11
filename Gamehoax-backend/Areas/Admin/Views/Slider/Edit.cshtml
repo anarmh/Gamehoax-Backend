@@ -1,0 +1,44 @@
+﻿@model SliderEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<div class="container my-5">
+
+    <div class="category-content mb-3" style=" width: 300px;height: 200px;">
+        <img style="width:100%;height:100%;" src="~/assets/img/slider/@Model.Image" />
+    </div>
+    <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+       
+
+        <div class="form-group mb-3">
+            <div class="row g-4">
+                <div class="col-sm-12 ">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <label for="formFile" class="form-label mb-2">Choose Image</label>
+                        <input class="form-control bg-dark" type="file" id="formFileMultiple" multiple="" asp-for="NewImage">
+                        <span class="text-danger" asp-validation-for="NewImage"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-outline-success mr-2">Submit</button>
+            <a class="btn btn-outline-light" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+
+

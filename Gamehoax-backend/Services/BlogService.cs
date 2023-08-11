@@ -18,5 +18,10 @@ namespace Gamehoax_backend.Services
         {
             return await _context.Blogs.ToListAsync();
         }
+
+        public async Task<Blog> GetByIdAsync(int id)
+        {
+           return await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+        }
     }
 }

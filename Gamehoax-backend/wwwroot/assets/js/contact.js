@@ -33,16 +33,14 @@ $(document).ready(function(){
 
 
     $(document).ready(function () {
+
         $(".messageInput").on("focus", function () {
+            
             $(this).$(".input-label").removeClass("d-none");
-            console.log($(".messageInput")
+           
         });
 
-        $(".messageInput").on("blur", function () {
-            if ($(this).val() === '') {
-                $(this).$(".input-label").addClass("d-none");
-            }
-        });
+       
     });
 });
 

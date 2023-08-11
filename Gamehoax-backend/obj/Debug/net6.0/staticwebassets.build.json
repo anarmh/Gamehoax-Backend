@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SdimTd0JEXJkHYIAkkC2TDFDIkphBKFXDwSjs/oLSqo=",
+  "Hash": "poSIqw7ARnNIflaPNhjl/eHehbEKFfyLaCSdersgMtE=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\js\\product.js"
+    },
+    {
+      "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\js\\slider.js",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "admin/js/slider.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\js\\slider.js"
     },
     {
       "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\chart\\chart.min.js",
@@ -3704,6 +3721,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\5.png"
+    },
+    {
+      "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/img/slider/c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png"
     },
     {
       "Identity": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",

@@ -1,15 +1,18 @@
 ﻿using Gamehoax_backend.Areas.Admin.ViewModels.BrandModels;
 using Gamehoax_backend.Areas.Admin.ViewModels.Tags;
 using Gamehoax_backend.Data;
+using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Services;
 using Gamehoax_backend.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class BrandModelController : Controller
     {
 

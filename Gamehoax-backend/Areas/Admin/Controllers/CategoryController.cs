@@ -3,11 +3,14 @@ using Gamehoax_backend.Data;
 using Gamehoax_backend.Helpers;
 using Gamehoax_backend.Models;
 using Gamehoax_backend.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;

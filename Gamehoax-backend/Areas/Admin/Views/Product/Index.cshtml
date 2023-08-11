@@ -7,7 +7,13 @@
 <div class="container my-3">
     <h2 class="text-center">Products</h2>
     <div class="create-btn ">
-        <a asp-controller="Product" asp-action="Create" class="btn btn-outline-success ">Create</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("SuperAdmin"))
+            {
+                <a asp-action="Create" class="btn btn-outline-success ">Create</a>
+            }
+        }
     </div>
     <div class="table-responsive">
         <table class="table table-striped">

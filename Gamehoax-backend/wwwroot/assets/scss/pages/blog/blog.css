@@ -1481,12 +1481,12 @@ footer .backtotop #to-top:hover::after {
     text-align: center;
     z-index: 1;
   }
-  #blog .post .blog-info .blog-icon::before {
-    content: "\f08d";
-    font-family: "FontAwesome";
-    font-size: 15px !important;
-    line-height: 25px !important;
-  }
+
+    #blog .post .blog-info .blog-icon i {
+        font-size: 15px !important;
+        line-height: 25px !important;
+    }
+  
   #blog .post .blog-info .entry-header {
     padding: 10px 0;
   }
@@ -2102,12 +2102,16 @@ footer .backtotop #to-top:hover::after {
     text-align: center;
     z-index: 1;
   }
-  #blog .post .blog-info .blog-icon::before {
-    content: "\f08d";
-    font-family: "FontAwesome";
-    font-size: 25px;
-    line-height: 37px;
-  }
+    #blog .post .blog-info .blog-icon i {
+        font-size: 25px;
+        line-height: 37px;
+    }
+  /*  #blog .post .blog-info .blog-icon::before {
+        content: "\f08d";
+        font-family: "FontAwesome";
+        font-size: 25px;
+        line-height: 37px;
+    }*/
   #blog .post .blog-info .entry-header {
     padding: 10px 0;
   }
@@ -2560,13 +2564,18 @@ body {
   text-align: center;
   z-index: 1;
 }
-#blog .post .blog-info .blog-icon::before {
+
+
+    #blog .post .blog-info .blog-icon {
+        font-size: 25px;
+        line-height: 37px;
+    }
+        /*#blog .post .blog-info .blog-icon::before {
   content: "\f08d";
   font-family: "FontAwesome";
-  font-size: 25px;
-  line-height: 37px;
-}
-#blog .post .blog-info .entry-header {
+  
+}*/
+        #blog .post .blog-info .entry-header {
   padding: 10px 0;
 }
 #blog .post .blog-info .entry-header h1 {

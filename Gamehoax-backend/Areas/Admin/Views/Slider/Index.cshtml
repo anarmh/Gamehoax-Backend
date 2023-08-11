@@ -1,0 +1,87 @@
+﻿@model List<Slider>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<style>
+    .status-slider {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .status-true {
+        background-color: green;
+    }
+
+    .status-false {
+        background-color: red;
+    }
+</style>
+
+<div class="container my-3">
+    <h2 class="text-center">Sliders</h2>
+    <div class="create-btn ">
+         @if (User.Identity.IsAuthenticated)
+         {
+            if (User.IsInRole("SuperAdmin"))
+            {
+                <a asp-action="Create" class="btn btn-outline-success ">Create</a>
+            }
+         }
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Create Date
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var slider in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                            <img src="~/assets/img/slider/@slider.Image" alt="image" style="width:125px;height:75px;" />
+                        </td>
+                        <td>
+                            @slider.CreateDate.ToString("MM-dd-yyyy")
+                        </td>
+                        <td>
+                            <div data-id="@slider.Id" class="status-slider @(slider.Status ? "status-true":"status-false")"></div>
+                        </td>
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@slider.Id" class="btn btn-outline-info d-block ">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@slider.Id" class="btn btn-outline-warning d-block  my-2">Edit</a>
+                            <form style="width: 100%;" method="post" asp-action="Delete" asp-route-id="@slider.Id">
+                                <button type="submit" class="btn btn-outline-danger d-block w-100">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+@section AdminScripts{
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/admin/js/slider.js"></script>
+ }
+

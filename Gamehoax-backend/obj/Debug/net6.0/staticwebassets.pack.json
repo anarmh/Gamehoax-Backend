@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\admin\\js\\product.js"
     },
     {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\js\\slider.js",
+      "PackagePath": "staticwebassets\\admin\\js\\slider.js"
+    },
+    {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\admin\\lib\\chart\\chart.min.js",
       "PackagePath": "staticwebassets\\admin\\lib\\chart\\chart.min.js"
     },
@@ -863,6 +867,10 @@
     {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\5.png",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png"
     },
     {
       "Id": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",
