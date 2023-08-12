@@ -1,0 +1,31 @@
+﻿@model ServiceIcon
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div class="container mt-5">
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="detail-card justify-content-center">
+            <h1>Icon: <i class="detail-image fa @Model.Icon " style="font-size:50px;color:#888888; "></i></h1>
+            <div class="detail-content ">
+               
+                <h6>Title: <span class="detail-name " style="color:#888888">@Model.Title</span></h6>
+                <h6>Description: <span class="detail-description" style="color:#888888"> @Model.Description</span></h6>
+              
+                <h6>CreateDate: <span class="detail-createdate" style="color:#888888"> @Model.CreateDate.ToString("MM-dd-yyyy")</span></h6>
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="buttons my-3">
+                <a class="btn btn-outline-info d-block mt-3" asp-action="Index">Back</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

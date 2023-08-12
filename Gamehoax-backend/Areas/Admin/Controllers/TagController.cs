@@ -13,7 +13,6 @@ using System.Data;
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
     public class TagController : Controller
     {
         private readonly AppDbContext _context;

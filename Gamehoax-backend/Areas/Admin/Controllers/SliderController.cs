@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
     public class SliderController : Controller
     {
         private readonly AppDbContext _context;

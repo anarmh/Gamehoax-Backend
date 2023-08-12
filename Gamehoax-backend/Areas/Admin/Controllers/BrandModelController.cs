@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
     public class BrandModelController : Controller
     {
 

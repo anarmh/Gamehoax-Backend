@@ -16,5 +16,10 @@ namespace Gamehoax_backend.Services
         {
             return await _context.ServiceIcons.ToListAsync();
         }
+
+        public async Task<ServiceIcon> GetByIdAsync(int id)
+        {
+            return await _context.ServiceIcons.FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

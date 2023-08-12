@@ -1,0 +1,68 @@
+﻿@model List<ServiceIcon>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container my-3">
+    <h2 class="text-center">Abouts</h2>
+    <div class="create-btn ">
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("SuperAdmin"))
+            {
+                <a asp-action="Create" class="btn btn-outline-success ">Create</a>
+            }
+        }
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class=" text-center">
+                        Icon
+                    </th>
+                    <th class=" text-center">
+                        Title
+                    </th>
+
+                    <th class=" text-center">
+                        Description
+                    </th>
+
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="py-1 text-center">
+                            <i class="service-icon fa @item.Icon" aria-hidden="true" style="font-size:30px;"></i>
+                        </td>
+                        <td class="py-1 text-center">
+                            @item.Title
+                        </td>
+
+                        <td class="py-1 text-center">
+                            @item.Description
+                        </td>
+
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info d-block ">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning d-block  my-2">Edit</a>
+                            <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

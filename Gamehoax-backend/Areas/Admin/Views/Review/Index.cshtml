@@ -1,0 +1,109 @@
+﻿@model Paginate<ReviewVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+<div class="container my-3">
+    <h2 class="text-center">Reviews</h2>
+    @if (Model.Datas.Count > 0)
+    {
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Describe
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Rating
+                        </th>
+                        <th>
+                            Options
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Datas)
+                    {
+                        <tr>
+
+                            <td class="py-1">
+                                @item.FullName
+                            </td>
+
+                            <td class="py-1">
+                                @item.Describe
+                            </td>
+                            <td class="py-1">
+                                @item.Email
+                            </td>
+                            <td class="py-1">
+                                @item.ProductName
+                            </td>
+                            <td class="py-1">
+                                <ul class="list-unstyled d-flex">
+                                    @for (int i = 1; i <= item.RatingId - 1; i++)
+                                    {
+                                        <li class="icofont-ui-rating"> <i class="fa fa-star" style="color:#f9aa01"></i></li>
+                                    }
+                                    @for (int i = 1; i <= 5 - (item.RatingId - 1); i++)
+                                    {
+                                        <li> <i class="fa-solid fa-star" style="color:#888888"></i></li>
+                                    }
+                                </ul>
+                            </td>
+
+
+                            <td>
+
+                                <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                    <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <div class="pagination d-flex justify-content-center mt-3">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+                            <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)" tabindex="-1">Prev</a>
+                        </li>
+                        @for (int i = 1; i <= Model.TotalPage; i++)
+                        {
+                            <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")">
+                                <a class="page-link @(Model.CurrentPage == i ? "active-paginate" : "")" asp-route-page="@i">@i</a>
+                            </li>
+                        }
+
+                        <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                            <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    }
+   
+</div>
+
+
+
+

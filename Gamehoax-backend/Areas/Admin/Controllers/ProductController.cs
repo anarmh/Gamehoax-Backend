@@ -13,7 +13,7 @@ using System.IO;
 namespace Gamehoax_backend.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;

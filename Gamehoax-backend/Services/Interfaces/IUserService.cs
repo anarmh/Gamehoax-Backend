@@ -8,8 +8,6 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<AppUser> GetByIdAsync(string userId);
         Task DeleteAsync(AppUser user);
         Task<int> GetCountAsync();
-
-
         Task<List<AppUser>> GetPaginatedDatasAsync(int page, int take);
     }
 }

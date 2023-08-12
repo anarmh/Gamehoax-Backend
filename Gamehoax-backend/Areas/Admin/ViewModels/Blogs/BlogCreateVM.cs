@@ -4,7 +4,6 @@ namespace Gamehoax_backend.Areas.Admin.ViewModels.Blogs
 {
     public class BlogCreateVM
     {
-
         [Required]
         public string Icon { get; set; }
         [Required]
