@@ -1,12 +1,13 @@
-﻿@model TagEditVM
+﻿@model DiscountCreateVM
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
 
 
+
 <div class="container my-5">
-    <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <form class="forms-sample" asp-action="Create" method="post" >
         <div class="form-group mb-3">
             <div class="row g-4 ">
                 <div class="col-sm-12 col-xl-12">
@@ -17,6 +18,11 @@
                             <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
                         </div>
 
+                        <div class="form-floating mb-3">
+                            <input asp-for="Percent" class="form-control" id="floatingInput" placeholder="Percent">
+                            <label for="floatingInput">Percent</label>
+                            <span class="text-danger" asp-validation-for="Percent">@ViewBag.error</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,4 +39,3 @@
 @section AdminScripts{
     <partial name="_ValidationScriptsPartial" />
  }
-

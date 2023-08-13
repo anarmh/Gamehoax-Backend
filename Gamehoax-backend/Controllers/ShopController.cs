@@ -50,7 +50,7 @@ namespace Gamehoax_backend.Controllers
 
             List<Product> paginateProducts = await _productService.GetPaginateDatasAsync(page,take,sortValue,searchText,categoryId,tagId,value1,value2);
             List<ProductVM> mappedDatas = _productService.GetMappedDatas(paginateProducts);
-            //int pageCount = await GetPageCountAsync(take);
+           
             ViewBag.categoryId = categoryId;
             ViewBag.tagId = tagId;
             ViewBag.value1 = value1;
@@ -109,7 +109,7 @@ namespace Gamehoax_backend.Controllers
 
         private async Task<int> GetPageCountAsync(int take,string sortValue,string searchText,int? categoryId, int? tagId,int? value1,int? value2)
         {
-            //int prodCount=await _productService.GetCountAsync();
+           
 
             int prodCount=0;
             if (sortValue is not null)

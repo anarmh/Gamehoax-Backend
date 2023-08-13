@@ -5,5 +5,6 @@ namespace Gamehoax_backend.Services.Interfaces
     public interface IDiscountService
     {
         Task<List<Discount>> GetAllAsync();
+        Task<Discount> GetByIdAsync(int id);
     }
 }

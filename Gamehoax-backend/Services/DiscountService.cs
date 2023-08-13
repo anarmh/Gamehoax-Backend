@@ -17,5 +17,10 @@ namespace Gamehoax_backend.Services
         {
             return await _context.Discounts.ToListAsync();
         }
+
+        public async Task<Discount> GetByIdAsync(int id)
+        {
+           return await _context.Discounts.FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

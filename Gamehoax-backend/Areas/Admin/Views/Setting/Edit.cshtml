@@ -1,7 +1,8 @@
-﻿@model TagEditVM
+﻿@model Setting
 @{
     ViewData["Title"] = "Edit";
 }
+
 
 
 
@@ -12,15 +13,20 @@
                 <div class="col-sm-12 col-xl-12">
                     <div class="bg-secondary rounded h-100 p-4">
                         <div class="form-floating mb-3">
-                            <input asp-for="Name" class="form-control" id="floatingInput" placeholder="Name">
-                            <label for="floatingInput">Name</label>
-                            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+                            <input asp-for="Value" class="form-control" id="floatingInput" placeholder="Value">
+                            <label for="floatingInput">Value</label>
+                            <span class="text-danger" asp-validation-for="Value">@ViewBag.error</span>
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
 
         <div class="buttons my-3">
             <button type="submit" class="btn btn-outline-success mr-2">Submit</button>

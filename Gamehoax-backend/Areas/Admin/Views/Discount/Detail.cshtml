@@ -1,0 +1,46 @@
+﻿@model Discount
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+@section AdminCss{
+    <link href="~/admin/css/admin.css" rel="stylesheet">
+
+}
+
+
+
+
+<div class="container mt-5">
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="detail-card">
+
+            <div class="detail-content">
+                <h6 class="detail-name">Name: <span style="color:#888888">@Model.Name</span></h6>
+                <h6 class="detail-name">Percent: <span style="color:#888888">@Model.Percent%</span></h6>
+                <h6 class="detail-name">CreateDate: <span style="color:#888888"> @Model.CreateDate.ToString("MM-dd-yyyy")</span></h6>
+               
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="buttons my-3">
+                <a class="btn btn-outline-info d-block mt-3" asp-action="Index">Back</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section AdminScripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
+
+
+
+
+

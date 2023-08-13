@@ -1,4 +1,6 @@
-﻿using Gamehoax_backend.Models;
+﻿using Gamehoax_backend.Helpers;
+using Gamehoax_backend.Models;
+using Gamehoax_backend.Services;
 using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
 using Microsoft.AspNetCore.Mvc;
@@ -17,19 +19,49 @@ namespace Gamehoax_backend.Controllers
             _tagService = tagService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1, int take=5,string searchText="")
         {
+            List<Blog> paginateBlogs=await _blogService.GetPaginateDatasAsync(page, take, searchText);
             List<Blog> blogs= await _blogService.GetAllAsync();
             List<Category> categories= await _categoryService.GetAllAsync();
             List<Tag> tags= await _tagService.GetAllAsync();
+
+            ViewBag.searchText = searchText;
+            int pageCount = 0;
+            if(searchText!=null)
+            {
+                pageCount = await GetPageCountAsync(take,searchText);
+            }
+            else
+            {
+                pageCount = await GetPageCountAsync(take,null);
+            }
+
+            Paginate<Blog> paginateDatas = new(paginateBlogs,page,pageCount);
 
             BlogVM model = new()
             {
                 Blogs = blogs,
                 Categories = categories,
-                Tags = tags
+                Tags = tags,
+                PaginateDatas= paginateDatas
             };
             return View(model);
+        }
+
+        private async Task<int> GetPageCountAsync(int take,string searchText)
+        {
+            int blogCount = 0;
+            if (searchText != null)
+            {
+                blogCount = await _blogService.GetBlogsCountBySearchTextAsync(searchText);
+            }
+            else
+            {
+                blogCount = await _blogService.GetCountAsync();
+            }
+
+            return (int)Math.Ceiling((decimal)blogCount / take);
         }
     }
 }

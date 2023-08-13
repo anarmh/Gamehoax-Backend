@@ -276,7 +276,7 @@ namespace Gamehoax_backend.Controllers
 
             Cart dbCart = await _cartService.GetByUserIdAsync(userId);
             Wishlist dbWishlist = await _wishlistService.GetByUserIdAsync(userId);
-            if (carts.Count != null)
+            if (carts.Count > 0)
             {
 
                 if (dbCart == null)
@@ -324,7 +324,7 @@ namespace Gamehoax_backend.Controllers
             }
 
 
-            if (wishlists.Count != null)
+            if (wishlists.Count > 0)
             {
 
                 if (dbWishlist == null)

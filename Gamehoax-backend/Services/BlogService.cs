@@ -19,9 +19,31 @@ namespace Gamehoax_backend.Services
             return await _context.Blogs.ToListAsync();
         }
 
+        public async Task<int> GetBlogsCountBySearchTextAsync(string searchText)
+        {
+            return await _context.Blogs.Where(m => m.Title.ToLower().Trim().Contains(searchText.ToLower().Trim())).CountAsync();
+        }
+
         public async Task<Blog> GetByIdAsync(int id)
         {
            return await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<int> GetCountAsync()=> await _context.Blogs.CountAsync();
+       
+
+        public async Task<List<Blog>> GetPaginateDatasAsync(int page, int take, string searchtext)
+        {
+            List<Blog> blogs=await _context.Blogs.Skip((page-1)*take).Take(take).ToListAsync();
+
+            if(searchtext!=null)
+            {
+                blogs=await _context.Blogs.OrderByDescending(m=>m.Id).
+                                           Where(m=>m.Title.ToLower().Trim().Contains(searchtext.ToLower().Trim())).
+                                           Skip((page - 1) * take).
+                                           Take(take).ToListAsync();
+            }
+            return blogs;
         }
     }
 }

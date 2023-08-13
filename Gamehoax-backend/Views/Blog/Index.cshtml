@@ -35,35 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-9">
-                    @foreach (var blog in Model.Blogs)
-                    {
-                        <div class="post mb-4">
-                            <div class="row">
-                                <div class="col-6">
-
-                                    <div class="img">
-                                        <img src="~/assets/img/blog/@blog.Image" alt="">
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-6 m-auto">
-                                    <div class="blog-info">
-                                        <div class="blog-icon"><i class="@blog.BlogIcon"></i></div>
-                                        <div class="entry-header">
-                                            <h1>
-                                               @blog.Title
-
-                                            </h1>
-                                        </div>
-                                        <div class="other">
-                                            <p>@blog.Description </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                    <partial name="_BlogsPartial" model="Model.PaginateDatas" />
                  
                    
 
@@ -145,35 +117,7 @@
                 <div class="mobile d-none">
                     <div class="col-12">
                         <div class="container-fluid">
-                            @foreach (var item in Model.Blogs)
-                            {
-                                <div class="post mb-4">
-                                    <div class="row">
-                                        <div class="col-6">
-
-                                            <div class="img">
-                                                <img src="~/assets/img/blog/@item.Image" alt="">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-6 m-auto">
-                                            <div class="blog-info">
-                                                <div class="blog-icon"><i class="@item.BlogIcon"></i></div>
-                                                <div class="entry-header">
-                                                    <h1>
-                                                       @item.Title
-
-                                                    </h1>
-                                                </div>
-                                                <div class="other">
-                                                    <p>@item.Description </p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
+                             <partial name="_BlogsPartial" model="Model.PaginateDatas" />
                            
                           
                         </div>
