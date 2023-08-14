@@ -79,6 +79,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     Categories= categories,
                     Tags= tags,
                     Title=product.Title,
+                    Popularity=product.Popularity,
                 };
                 mappedDatas.Add(productList);
             }

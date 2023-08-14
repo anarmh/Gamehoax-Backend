@@ -65,15 +65,15 @@ namespace Gamehoax_backend.Controllers
         }
 
 
-        public async Task<IActionResult> Search(string searchtext,int page=1, int take=5)
+        public async Task<IActionResult> Search(string searchText,int page=1, int take=5)
         {
-            ViewBag.searchText = searchtext;
+            ViewBag.searchText = searchText;
 
-            List<Blog> blogs= await _blogService.GetAllBySearchText(searchtext);
+            List<Blog> blogs= await _blogService.GetAllBySearchText(searchText);
             var blogCount = await _blogService.GetCountAsync();
             var pageCount = (int)Math.Ceiling((decimal)blogCount / take);
             Paginate<Blog> paginatedDatas = new(blogs, page, pageCount);
-            return PartialView("_BlogPartial",paginatedDatas);
+            return PartialView("_BlogsPartial", paginatedDatas);
         } 
     }
 }

@@ -35,22 +35,16 @@ $(document).ready(function(){
     //search
     $(document).on("submit", "#blog-search", function (e) {
         e.preventDefault();
-        console.log("#blog-search");
-       /* $(".search-submit").trigger("click");*/
 
-        let searchText = $(".search-field").val();
-        console.log($(".search-field").val())
-        let data = { searchText: searchText };
-        console.log(data)
+        console.log($(".search-field-input"));
+        let searchText = $(".search-field-input").val();
         let parent = $(".blogs-area");
 
         console.log(parent)
         $.ajax({
-            url: "/Blog/Search",
+            url: `/Blog/Search?searchText=${searchText}`,
             type: "GET",
-            data: data,
             success: function (res) {
-
                 $(parent).html(res);
                 $(".search-field").val = "";
             }
