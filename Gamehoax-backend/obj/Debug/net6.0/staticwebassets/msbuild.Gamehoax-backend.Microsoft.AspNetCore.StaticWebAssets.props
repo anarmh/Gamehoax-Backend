@@ -2624,6 +2624,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\15.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\15f1ebb8-a5dd-4bb8-af01-de6555c9fc58_2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/15f1ebb8-a5dd-4bb8-af01-de6555c9fc58_2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\15f1ebb8-a5dd-4bb8-af01-de6555c9fc58_2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\16.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -2688,6 +2704,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\1cd84658-875d-4896-a5d9-f219a848a6a3_3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\1efa89ed-01d4-4436-b344-978823023cfc_7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/1efa89ed-01d4-4436-b344-978823023cfc_7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\1efa89ed-01d4-4436-b344-978823023cfc_7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -2704,6 +2736,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\28599152-1455-4b58-92ec-a213699cc981_52f74035-6c3d-42b0-8e5a-cfc985398e69_10.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/28599152-1455-4b58-92ec-a213699cc981_52f74035-6c3d-42b0-8e5a-cfc985398e69_10.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\28599152-1455-4b58-92ec-a213699cc981_52f74035-6c3d-42b0-8e5a-cfc985398e69_10.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2940b6ef-d66e-4d65-bc6a-f0defee8325b_3.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -2719,6 +2767,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2940b6ef-d66e-4d65-bc6a-f0defee8325b_3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2bc17795-faf5-4511-9938-e9ee81f02971_66eb016a-2850-4968-bf35-37ee78130414_1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2bd39041-d0b3-486e-8d08-7288ce89347c_6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/2bd39041-d0b3-486e-8d08-7288ce89347c_6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2bd39041-d0b3-486e-8d08-7288ce89347c_6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\2c3ea09b-3fab-4cbc-81ef-fc16357c4584_1cd84658-875d-4896-a5d9-f219a848a6a3_3.jpg))">
       <SourceType>Package</SourceType>
@@ -2815,6 +2895,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\428fc1a7-e268-41ad-94ed-3d79ba5fc7d0_8ab807e7-531d-4b8b-8591-64c266052d0f_8.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\4afccfe7-a862-48de-bcfe-4a26f42802b5_0d5fd427-3774-4cc5-8073-7af310351cc0_9.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/4afccfe7-a862-48de-bcfe-4a26f42802b5_0d5fd427-3774-4cc5-8073-7af310351cc0_9.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\4afccfe7-a862-48de-bcfe-4a26f42802b5_0d5fd427-3774-4cc5-8073-7af310351cc0_9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\5.jpg))">
       <SourceType>Package</SourceType>
@@ -2976,6 +3072,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\6f351f2d-b134-48dd-a6fb-a4fb1053435b_12.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\6ff52aa6-ee7d-48b0-8a6c-7686ddb59f35_12.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/6ff52aa6-ee7d-48b0-8a6c-7686ddb59f35_12.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\6ff52aa6-ee7d-48b0-8a6c-7686ddb59f35_12.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\7.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -3040,6 +3152,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\83e1eaa6-d1c1-4e6a-a6dd-c031dfd855ff_4.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\853e2ade-ab16-45ec-9b0f-c8509c5363c5_15.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/853e2ade-ab16-45ec-9b0f-c8509c5363c5_15.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\853e2ade-ab16-45ec-9b0f-c8509c5363c5_15.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\8ab807e7-531d-4b8b-8591-64c266052d0f_8.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -3072,6 +3200,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\9d87a4a5-bf04-4594-977b-1598081ba88b_5.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/9d87a4a5-bf04-4594-977b-1598081ba88b_5.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\9d87a4a5-bf04-4594-977b-1598081ba88b_5.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\9ff0747a-8f10-4e35-b920-26b2b61a6195_2.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Gamehoax-backend</SourceId>
@@ -3103,6 +3247,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\a22a1df7-0cf5-4937-b319-ec55f2860e7a_9.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\a7876e3e-cf65-4b2d-b4f8-597bd265331b_12.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/a7876e3e-cf65-4b2d-b4f8-597bd265331b_12.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\a7876e3e-cf65-4b2d-b4f8-597bd265331b_12.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\ae50b1e2-6b63-45c9-ac07-ec1080b5cc5a_6.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/ae50b1e2-6b63-45c9-ac07-ec1080b5cc5a_6.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\ae50b1e2-6b63-45c9-ac07-ec1080b5cc5a_6.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\b59aca0b-2a2c-440a-84ae-2880ab507453_9.jpg))">
       <SourceType>Package</SourceType>
@@ -3231,6 +3407,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\d82c0771-7df6-4b2c-be71-b5fd491480a0_1cd84658-875d-4896-a5d9-f219a848a6a3_3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\dc02f9eb-d861-414a-bae4-6a705a3b7e63_10.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Gamehoax-backend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Gamehoax-backend</BasePath>
+      <RelativePath>assets/img/product/dc02f9eb-d861-414a-bae4-6a705a3b7e63_10.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\dc02f9eb-d861-414a-bae4-6a705a3b7e63_10.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\img\product\dffb5d77-b15d-45c3-afd8-c75c5df02da2_2.jpg))">
       <SourceType>Package</SourceType>

@@ -11,6 +11,7 @@ namespace Gamehoax_backend.Areas.Admin.ViewModels.Products
         public decimal Price { get; set; }
         public string Image { get; set; }
         public string Model { get; set; }
+        public int Popularity { get; set; }
         public ICollection<Category> Categories { get; set; }
         public ICollection<Tag> Tags { get; set; }
     }

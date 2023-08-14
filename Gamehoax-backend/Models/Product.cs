@@ -7,7 +7,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int SKU { get; set; }
-        public int RateCount { get; set; }
+        public int Popularity { get; set; }
         public string Feature { get; set; }
         public decimal Weight { get; set; }
         public ICollection<ProductCategory> ProductCategories { get; set; }

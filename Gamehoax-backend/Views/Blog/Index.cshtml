@@ -33,17 +33,15 @@
 
     <section id="blog">
         <div class="container">
-            <div class="row">
+            <div class="row blogs-area">
                 <div class="col-9">
-                    <partial name="_BlogsPartial" model="Model.PaginateDatas" />
-                 
-                   
-
+                <partial name="_BlogsPartial" model="Model.PaginateDatas" />
                 </div>
+
                 <div class="col-3">
                     <aside id="search">
-                        <form action="" method="get">
-                            <input type="text" class="search-field" placeholder="Search">
+                        <form asp-controller="Blog" asp-action="Search" method="GET" id="blog-search">
+                            <input type="text" name="searchText" class="search-field" placeholder="Search">
                             <input type="submit" class="search-submit">
                         </form>
                     </aside>
@@ -53,10 +51,10 @@
                             <h3 class="widget-title">Popular Feeds</h3>
                         </div>
                         <ul>
-                            @foreach (var item in Model.Blogs.OrderByDescending(m=>m.CreateDate).Take(4))
+                            @foreach (var item in Model.Blogs.OrderByDescending(m => m.CreateDate).Take(4))
                             {
                                 <li>
-                                    <a href="">
+                                    <a asp-controller="Shop" asp-action="Index">
                                         <div class="content">
                                             <div class="left">
                                                 <img src="~/assets/img/blog/@item.Image" alt="">
@@ -77,12 +75,12 @@
                                     </a>
                                 </li>
                             }
-                           
-                          
+
+
                         </ul>
                     </aside>
 
-                 
+
 
                     <aside id="product-category">
                         <div class="title-outer">
@@ -92,10 +90,10 @@
                         <ul class="product-categories">
                             @foreach (var item in Model.Categories)
                             {
-                                <li><a href="">@item.Name</a></li>
+                                <li><a asp-controller="Shop" asp-action="Index">@item.Name</a></li>
                             }
-                           
-                         
+
+
                         </ul>
                     </aside>
 
@@ -107,19 +105,19 @@
                         <div class="tagcloud">
                             @foreach (var tag in Model.Tags)
                             {
-                                <a href="">@tag.Name</a>
+                                <a asp-controller="Shop" asp-action="Index">@tag.Name</a>
                             }
-                          
-                           
+
+
                         </div>
                     </aside>
                 </div>
                 <div class="mobile d-none">
                     <div class="col-12">
                         <div class="container-fluid">
-                             <partial name="_BlogsPartial" model="Model.PaginateDatas" />
-                           
-                          
+                            <partial name="_BlogsPartial" model="Model.PaginateDatas" />
+
+
                         </div>
                         <div class="accordion my-3" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item" style="background-color: #170f1f;">
@@ -164,7 +162,7 @@
                                                 {
                                                     <li><a href="">@item.Name</a></li>
                                                 }
-                                            
+
                                             </ul>
                                         </aside>
                                     </div>
@@ -188,7 +186,7 @@
                                                 {
                                                     <a href="">@item.Name</a>
                                                 }
-                                              
+
                                             </div>
                                         </aside>
                                     </div>
@@ -238,7 +236,7 @@
                                 </div>
                             </div>
 
-                           
+
                         </div>
                     </div>
                 </div>

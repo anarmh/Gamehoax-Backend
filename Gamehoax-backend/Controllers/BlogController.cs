@@ -19,7 +19,7 @@ namespace Gamehoax_backend.Controllers
             _tagService = tagService;
         }
 
-        public async Task<IActionResult> Index(int page=1, int take=5,string searchText="")
+        public async Task<IActionResult> Index(int page=1, int take=5,string searchText=null)
         {
             List<Blog> paginateBlogs=await _blogService.GetPaginateDatasAsync(page, take, searchText);
             List<Blog> blogs= await _blogService.GetAllAsync();
@@ -27,7 +27,7 @@ namespace Gamehoax_backend.Controllers
             List<Tag> tags= await _tagService.GetAllAsync();
 
             ViewBag.searchText = searchText;
-            int pageCount = 0;
+            int pageCount;
             if(searchText!=null)
             {
                 pageCount = await GetPageCountAsync(take,searchText);
@@ -51,7 +51,7 @@ namespace Gamehoax_backend.Controllers
 
         private async Task<int> GetPageCountAsync(int take,string searchText)
         {
-            int blogCount = 0;
+            int blogCount;
             if (searchText != null)
             {
                 blogCount = await _blogService.GetBlogsCountBySearchTextAsync(searchText);
@@ -63,5 +63,17 @@ namespace Gamehoax_backend.Controllers
 
             return (int)Math.Ceiling((decimal)blogCount / take);
         }
+
+
+        public async Task<IActionResult> Search(string searchtext,int page=1, int take=5)
+        {
+            ViewBag.searchText = searchtext;
+
+            List<Blog> blogs= await _blogService.GetAllBySearchText(searchtext);
+            var blogCount = await _blogService.GetCountAsync();
+            var pageCount = (int)Math.Ceiling((decimal)blogCount / take);
+            Paginate<Blog> paginatedDatas = new(blogs, page, pageCount);
+            return PartialView("_BlogPartial",paginatedDatas);
+        } 
     }
 }

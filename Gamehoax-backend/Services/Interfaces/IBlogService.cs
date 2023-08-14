@@ -9,5 +9,6 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<List<Blog>> GetPaginateDatasAsync(int page, int take, string searchtext);
         Task<int> GetBlogsCountBySearchTextAsync(string searchText);
         Task<int> GetCountAsync();
+        Task<List<Blog>> GetAllBySearchText(string searchText, int page = 1, int take = 5);
     }
 }

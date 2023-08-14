@@ -77,7 +77,8 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     Weight=product.Weight,
                     Model=product.BrandModel.Name,
                     Categories= categories,
-                    Tags= tags
+                    Tags= tags,
+                    Title=product.Title,
                 };
                 mappedDatas.Add(productList);
             }

@@ -10,7 +10,8 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
-        }
+        } 
     }
 }

@@ -186,7 +186,7 @@ namespace Gamehoax_backend.Services
 
         }
 
-        public async Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 2)
+        public async Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 9)
         {
             List<ProductVM> model = new();
             List<Product> products = await _context.ProductCategories.Include(p => p.Product)
@@ -212,7 +212,7 @@ namespace Gamehoax_backend.Services
             return model;
         }
 
-        public async Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 2)
+        public async Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 9)
         {
 
             List<ProductVM> model = new();
@@ -275,7 +275,7 @@ namespace Gamehoax_backend.Services
             };
             if (sortValue == "2")
             {
-                count = await _context.Products.Include(m => m.ProductImages).OrderByDescending(p => p.CreateDate).CountAsync();
+                count = await _context.Products.Include(m => m.ProductImages).OrderByDescending(p => p.Popularity).CountAsync();
 
             };
             if (sortValue == "3")
@@ -308,7 +308,7 @@ namespace Gamehoax_backend.Services
                  .CountAsync();
         }
 
-        public async Task<List<Product>> GetAllBySearchText(string searchText,int page=1, int take = 2)
+        public async Task<List<Product>> GetAllBySearchText(string searchText,int page=1, int take = 9)
         {
             var products = await _context.Products
                 .Include(p => p.ProductImages)

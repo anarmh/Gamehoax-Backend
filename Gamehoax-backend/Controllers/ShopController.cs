@@ -38,7 +38,7 @@ namespace Gamehoax_backend.Controllers
             _accessor = accessor;
         }
 
-        public async Task<IActionResult> Index(int page=1, int take=2,string sortValue=null,string searchText=null,int? categoryId=null, int? tagId=null,int? value1=null, int? value2=null)
+        public async Task<IActionResult> Index(int page=1, int take=9,string sortValue=null,string searchText=null,int? categoryId=null, int? tagId=null,int? value1=null, int? value2=null)
         {
             if(_accessor.HttpContext.Request.Cookies["wishlist"] != null)
             {
@@ -143,7 +143,7 @@ namespace Gamehoax_backend.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetRangeProducts(int value1, int value2, int page = 1, int take = 2)
+        public async Task<IActionResult> GetRangeProducts(int value1, int value2, int page = 1, int take = 9)
         {
             ViewBag.value1 = value1;
             ViewBag.value2 = value2;
@@ -158,7 +158,7 @@ namespace Gamehoax_backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Search(string searchText,int page=1, int take = 2)
+        public async Task<IActionResult> Search(string searchText,int page=1, int take = 9)
         {
 
             ViewBag.searchText = searchText;
@@ -173,7 +173,7 @@ namespace Gamehoax_backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SearchAll(string searchText, int page = 1, int take = 2)
+        public async Task<IActionResult> SearchAll(string searchText, int page = 1, int take = 9)
         {
 
             ViewBag.searchText = searchText;
@@ -189,7 +189,7 @@ namespace Gamehoax_backend.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetProductsByCategory(int? id, int page = 1, int take = 2)
+        public async Task<IActionResult> GetProductsByCategory(int? id, int page = 1, int take = 9)
         {
             if (id is null) return BadRequest();
             ViewBag.categoryId = id;
@@ -204,7 +204,7 @@ namespace Gamehoax_backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProductsByTag(int? id, int page = 1, int take = 2)
+        public async Task<IActionResult> GetProductsByTag(int? id, int page = 1, int take = 9)
         {
             if (id is null) return BadRequest();
             ViewBag.tagId = id;
@@ -219,7 +219,7 @@ namespace Gamehoax_backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Sort(string sortValue, int page = 1, int take = 2)
+        public async Task<IActionResult> Sort(string sortValue, int page = 1, int take = 9)
         {
             ViewBag.sortValue = sortValue;
 
@@ -231,7 +231,7 @@ namespace Gamehoax_backend.Controllers
             };
             if (sortValue == "2")
             {
-                products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(p => p.CreateDate).Skip((page - 1) * take).Take(take).ToListAsync();
+                products = await _context.Products.Include(m => m.ProductImages).Include(m => m.Rating).OrderByDescending(p => p.Popularity).Skip((page - 1) * take).Take(take).ToListAsync();
 
             };
             if (sortValue == "3")

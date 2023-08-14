@@ -25,7 +25,9 @@
                     <th>
                         Name
                     </th>
-                   
+                    <th>
+                        Title
+                    </th>
                     <th>
                         Price
                     </th>
@@ -60,7 +62,9 @@
                         <td class="py-1">
                             @item.Name
                         </td>
-                       
+                        <td class="py-1">
+                            @item.Title
+                        </td>
                         <td class="py-1">
                             @item.Price
                         </td>
@@ -85,10 +89,10 @@
                        
                        
                         <td>
-                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info  ">Detail</a>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning  my-2">Edit</a>
-                            <form style="display: inline-block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
-                                <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-info d-block ">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning  d-block my-2">Edit</a>
+                            <form style="display: block;" method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger w-100 ">Delete</button>
                             </form>
                         </td>
                     </tr>
