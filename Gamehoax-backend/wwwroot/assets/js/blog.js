@@ -46,7 +46,7 @@ $(document).ready(function(){
             type: "GET",
             success: function (res) {
                 $(parent).html(res);
-                $(".search-field").val = "";
+                $(".search-field-input").val = "";
             }
 
         })
