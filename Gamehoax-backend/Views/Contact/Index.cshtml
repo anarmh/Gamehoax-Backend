@@ -63,24 +63,24 @@
                                 <form asp-controller="Contact" asp-action="PostComment" method="post">
 
                                     <div class="input-group">
-                                        <input class="messageInput" asp-for="Subject">
-                                        <label class="input-label" asp-for="Subject">Subject</label>
+                                        <input class="messageInput" asp-for="Subject" placeholder="Your Subject">
+                                        
                                     </div>
 
                                     <div class="input-group">
-                                        <input type="text" class="messageInput" asp-for="Name" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).FullName">
-                                        <label class="input-label" asp-for="Name">Your Name</label>
+                                        <input type="text" class="messageInput" placeholder="Your Name" asp-for="Name" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).FullName">
+                                       
                                     </div>
 
                                     <div class="input-group">
-                                        <input type="text" class="messageInput" asp-for="Email" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).Email">
-                                        <label class="input-label" asp-for="Email">Your Email</label>
+                                        <input type="text" class="messageInput" asp-for="Email" placeholder="Your Email" value="@userManager.Users.FirstOrDefault(m=>m.UserName==User.Identity.Name).Email">
+                                       
                                     </div>
 
 
                                     <div class="input-group">
-                                        <textarea name="Message" class="messageArea" id="" cols="40" rows="10" asp-for="Message"></textarea>
-                                        <label class="input-label" asp-for="Message" style="">Your Message</label>
+                                        <textarea name="Message" class="messageArea" placeholder="Your Message" id="" cols="40" rows="10" asp-for="Message"></textarea>
+                                      
                                     </div>
 
                                     <button>
@@ -96,24 +96,24 @@
                                 <form asp-controller="Account" asp-action="SignIn" method="post">
 
                                     <div class="input-group">
-                                        <input type="text">
-                                        <label for="">Subject</label>
+                                        <input type="text" placeholder="Your Subject">
+                                      
                                     </div>
 
                                     <div class="input-group">
-                                        <input type="text">
-                                        <label for="">Your Name</label>
+                                        <input type="text" placeholder="Your Name">
+                                     
                                     </div>
 
-                                    <div class="input-group">
-                                        <input type="text">
-                                        <label for="">Your Email</label>
+                                    <div class="input-group" >
+                                        <input type="text" placeholder="Yout Email">
+                                       
                                     </div>
 
 
                                     <div class="input-group">
-                                        <textarea name="" id="" cols="40" rows="10"></textarea>
-                                        <label for="">Your Message</label>
+                                        <textarea name="" id="" cols="40" rows="10" placeholder="Your Email"></textarea>
+                                       
                                     </div>
 
                                     <button type="submit">
@@ -140,54 +140,25 @@
                     <h1>Codezeel Web Service Pvt. Ltd.</h1>
                     <p>We Possess Within Us Two Minds. So Far I Have Written Only Of The Conscious Mind. I Would Now Like To Introduce You To Your Second Mind, The Hidden And Mysterious Subconscious. Our Subconscious Mind Contains Such Power And Complexity That It Literally Staggers The Imagination.</p>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
-                    <div class="address-text-inner">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="content">
-                            <div class="address-label">
-                                <p class="title">Address:</p>
-                                <p class="desc"> 60, 29th Street #343, San Francisco, CA 94110, United States of America</p>
+                @foreach (var item in Model.ServiceIcons.Take(^3..^0))
+                {
+                    <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
+                        <div class="address-text-inner">
+                            <div class="icon">
+                                <i class="@item.Icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="address-label">
+                                    <p class="title">@item.Title:</p>
+                                    <p class="desc"> @item.Description</p>
+
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4  mb-3">
-                    <div class="address-text-inner">
-                        <div class="icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="content">
-                            <div class="address-label">
-                                <p class="title">Phone Numbers:</p>
-                                <p class="desc"> +91 1234567898</p>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4  mb-3">
-                    <div class="address-text-inner">
-                        <div class="icon">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div class="content">
-                            <div class="address-label">
-                                <p class="title">Email:</p>
-                                <p class="desc">
-                                    Demo@Example.Com
-                                    Monday – Friday 10 AM – 8 PM
-                                </p>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                }      
+            
             </div>
         </div>
     </section>

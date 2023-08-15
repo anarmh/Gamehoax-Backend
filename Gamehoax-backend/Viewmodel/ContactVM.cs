@@ -1,4 +1,5 @@
-﻿using Microsoft.Build.Framework;
+﻿using Gamehoax_backend.Models;
+using Microsoft.Build.Framework;
 using System.ComponentModel.DataAnnotations;
 
 namespace Gamehoax_backend.Viewmodel
@@ -14,5 +15,6 @@ namespace Gamehoax_backend.Viewmodel
         public string Email { get; set; }
       
         public string Message { get; set; }
+        public IEnumerable<ServiceIcon> ServiceIcons { get; set; }
     }
 }

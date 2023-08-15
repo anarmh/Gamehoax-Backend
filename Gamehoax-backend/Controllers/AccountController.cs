@@ -76,7 +76,7 @@ namespace Gamehoax_backend.Controllers
                 }
 
 
-                await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Member.ToString());
 
                 string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token }, Request.Scheme);

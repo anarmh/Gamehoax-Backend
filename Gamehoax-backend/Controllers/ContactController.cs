@@ -1,5 +1,6 @@
 ﻿using Gamehoax_backend.Data;
 using Gamehoax_backend.Models;
+using Gamehoax_backend.Services.Interfaces;
 using Gamehoax_backend.Viewmodel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,14 +9,22 @@ namespace Gamehoax_backend.Controllers
     public class ContactController : Controller
     {
         private readonly AppDbContext _context;
-        public ContactController(AppDbContext context)
+        private readonly IServiceIconService _service;
+        public ContactController(AppDbContext context,IServiceIconService service)
         {
             _context = context;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<ServiceIcon> serviceIcons=await _service.GetAllAsync();
+
+            ContactVM model = new()
+            {
+                ServiceIcons = serviceIcons
+            };
+            return View(model);
         }
 
         [HttpPost]
