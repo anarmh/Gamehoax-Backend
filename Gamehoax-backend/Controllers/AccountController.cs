@@ -76,7 +76,7 @@ namespace Gamehoax_backend.Controllers
                 }
 
 
-                await _userManager.AddToRoleAsync(user, Roles.Member.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
 
                 string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token }, Request.Scheme);
@@ -320,7 +320,8 @@ namespace Gamehoax_backend.Controllers
             }
             else
             {
-                _context.Carts.Remove(dbCart);
+                if (dbCart != null)
+                    _context.Carts.Remove(dbCart);
             }
 
 
@@ -365,6 +366,7 @@ namespace Gamehoax_backend.Controllers
             }
             else
             {
+                if(dbWishlist != null)
                 _context.Wishlists.Remove(dbWishlist);
 
             }

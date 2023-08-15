@@ -11001,11 +11001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+      "projectUniqueName": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
       "projectName": "Gamehoax-backend",
-      "projectPath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+      "projectPath": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
       "packagesPath": "C:\\Users\\Anar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\obj\\",
+      "outputPath": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anar\\AppData\\Roaming\\NuGet\\NuGet.Config",

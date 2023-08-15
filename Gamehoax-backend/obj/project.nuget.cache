@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wUQQeBGSls+uBioe0bZZHPUalSsErl8HkA8aEBmsNDYXXM+wPcWhsabIziJQfwWauneSOFbVJ0YdL7hzc48PHg==",
+  "dgSpecHash": "O6z1lNarv3Rr3c3bpvm/jpL0utOBxkq3dOXV+CjoOgphgK/SetwvNQ6PK1Hen+pKpqcUUd0CYpPmUkpX70k8+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anar\\Desktop\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
+  "projectFilePath": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\Gamehoax-backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anar\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Anar\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

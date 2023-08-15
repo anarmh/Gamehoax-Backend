@@ -9,309 +9,309 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gamehoax_backend
 build_property.RootNamespace = Gamehoax_backend
-build_property.ProjectDir = C:\Users\Anar\Desktop\Gamehoax-Backend\Gamehoax-backend\
+build_property.ProjectDir = D:\Asp.net\Gamehoax-Backend\Gamehoax-backend\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Anar\Desktop\Gamehoax-Backend\Gamehoax-backend
+build_property.MSBuildProjectDirectory = D:\Asp.net\Gamehoax-Backend\Gamehoax-backend
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRNb2RlbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRNb2RlbFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRNb2RlbFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/BrandModel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRNb2RlbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Brand/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Contact/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Dashboard/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Discount/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Review/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Review/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Service/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Setting/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Setting/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2V0dGluZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Setting/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Setting/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2V0dGluZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Shared/_Layout.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFnXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFnXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFnXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Tag/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFnXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Create.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Detail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Edit.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/Testimonial/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/User/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/About/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Account/ForgotPassword.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Account/ResetPassword.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Account/SignIn.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Account/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Account/SignUp.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Account/VerifyEmail.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Account/VerifyEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlFbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Blog/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Cart/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Contact/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Home/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/ProductDetail/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/ProductDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Components/Footer/Default.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Components/Footer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Components/Header/Default.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Error.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_BlogsPartial.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_BlogsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CbG9nc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_ProductsPartial.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_ProductsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shop/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Wishlist/Index.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Wishlist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/_ViewImports.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/_ViewStart.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anar/Desktop/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_Layout.cshtml]
+[D:/Asp.net/Gamehoax-Backend/Gamehoax-backend/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pnqmvf7l1m
