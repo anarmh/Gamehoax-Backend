@@ -1,6 +1,12 @@
-﻿@model Paginate<UserVM>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@model Paginate<UserVM>
 @{
     ViewData["Title"] = "Index";
+   
 }
 
 
@@ -56,10 +62,11 @@
 
 
                         <td>
-                          
-                            <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
-                                <button type="submit" class="btn btn-outline-danger  ">Delete</button>
-                            </form>
+                         
+                                <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
+                                    <button type="submit" class="btn btn-outline-danger  ">Delete</button>
+                                </form>
+                            
                         </td>
                     </tr>
                 }
