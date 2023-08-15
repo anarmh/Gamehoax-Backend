@@ -39,7 +39,7 @@
                 <div class="col-5  main">
                     <div class="zoom-container ">
                             
-                        <img src="/assets/img/product/@Model.Images?.FirstOrDefault()?.Image" alt="xxxx" class="xzoom" xoriginal="/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
+                        <img src="/assets/img/product/@Model.Images?.FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
                         <div class="xzoom-thumbs">
                             @foreach (var item in Model.Images)
@@ -134,15 +134,16 @@
                     <div class="col-12">
                         <div class="zoom-container ">
 
-                            <img src="~/assets/img/product/@Model.Images?.Where(m=>m.IsMain).FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
+
+                            <img src="/assets/img/product/@Model.Images?.Where(m=>m.IsMain).FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
                             <div class="xzoom-thumbs">
 
 
                                     @foreach (var item in Model.Images)
                                     {
-                                    <a href="~/assets/img/product/@item.Image">
-                                        <img class="xzoom-gallery" src="~/assets/img/product/@item.Image" xpreview="~/assets/img/product/@item.Image">
+                                    <a href="/assets/img/product/@item.Image">
+                                        <img class="xzoom-gallery" src="/assets/img/product/@item.Image" xpreview="/assets/img/product/@item.Image">
                                     </a>
                                     }
                             </div>

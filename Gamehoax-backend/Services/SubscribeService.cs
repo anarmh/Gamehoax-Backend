@@ -17,5 +17,20 @@ namespace Gamehoax_backend.Services
         {
             return await _context.Subscribes.ToListAsync();
         }
+
+        public async Task<Subscribe> GetByIdAsync(int id)
+        {
+            return await _context.Subscribes.FirstOrDefaultAsync(m=>m.Id== id);
+        }
+
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Subscribes.CountAsync();
+        }
+
+        public async Task<List<Subscribe>> GetPaginatedDatasAsync(int page, int take)
+        {
+            return await _context.Subscribes.Skip((page - 1) * take).Take(take).ToListAsync();
+        }
     }
 }
