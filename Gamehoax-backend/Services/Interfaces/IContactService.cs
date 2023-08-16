@@ -6,6 +6,7 @@ namespace Gamehoax_backend.Services.Interfaces
     {
         Task<List<Contact>> GetAllAsync();
         Task<Contact> GetByIdAsync(int id);
+        Task<int> GetCountAsync();
 
     }
 }

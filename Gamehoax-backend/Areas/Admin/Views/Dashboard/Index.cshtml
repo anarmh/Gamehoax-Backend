@@ -1,4 +1,4 @@
-﻿
+﻿@model DashboardVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,45 +6,38 @@
 <!-- Sale & Revenue Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-12 col-xl-6">
             <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <i class="fa-solid fa-users fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Today Sale</p>
-                    <h6 class="mb-0">$1234</h6>
+                    <p class="mb-2">SuperAdmin</p>
+                    <h6 class="mb-0"><i class="fa-solid fa-user"> @Model.SuperAdminCount</i> </h6>
+                </div>
+                <div class="ms-3">
+                    <p class="mb-2">Total Users</p>
+                    <h6 class="mb-0"><i class="fa-solid fa-user"></i> @Model.UserCount</h6>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-12 col-xl-6">
             <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <i class="fa-solid fa-envelope fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Total Sale</p>
-                    <h6 class="mb-0">$1234</h6>
+                    <p class="mb-2">Total Contacts</p>
+                    <h6 class="mb-0"><i class="fa-solid fa-envelope-open"></i> @Model.Contacts.Count</h6>
+                    
+                </div>
+                  <div class="ms-3">
+                    <p class="mb-2">Latest Created</p>
+
+                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Contacts.OrderByDescending(m=>m.CreateDate).FirstOrDefault().CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-area fa-3x text-primary"></i>
-                <div class="ms-3">
-                    <p class="mb-2">Today Revenue</p>
-                    <h6 class="mb-0">$1234</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                <div class="ms-3">
-                    <p class="mb-2">Total Revenue</p>
-                    <h6 class="mb-0">$1234</h6>
-                </div>
-            </div>
-        </div>
+    
     </div>
 </div>
-<!-- Sale & Revenue End -->
+@*!-- Sale & Revenue End -->
 <!-- Sales Chart Start -->
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
@@ -261,5 +254,5 @@
     </div>
 </div>
 <!-- Widgets End -->
-
+*@
 

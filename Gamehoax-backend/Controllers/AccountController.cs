@@ -200,7 +200,12 @@ namespace Gamehoax_backend.Controllers
                 if (user == null)
                 {
                     ModelState.AddModelError(string.Empty, "Email or password is wrong");
+                    
                     return View(model);
+                }
+                else
+                {
+                    Response.Cookies.Append("user_info", JsonConvert.SerializeObject(user.UserName));
                 }
                 var res = await _signInManager.PasswordSignInAsync(user, model.Password,false, false);
 
@@ -244,6 +249,7 @@ namespace Gamehoax_backend.Controllers
                     }
 
                     Response.Cookies.Append("wishlist", JsonConvert.SerializeObject(wishlistVMs));
+                    
                 }
 
 

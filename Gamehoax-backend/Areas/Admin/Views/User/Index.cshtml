@@ -2,6 +2,7 @@
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 @model Paginate<UserVM>
 @{
@@ -40,35 +41,38 @@
             <tbody>
                 @foreach (var item in Model.Datas)
                 {
-                    <tr>
-                        
-                        <td class="py-1">
-                            @item.UserName
-                        </td>
+                    @if (item.UserName.ToString() != HttpContextAccessor.HttpContext.Request.Cookies["user_info"].Trim('"'))
+                    {
+                        <tr>
+                            <td class="py-1">
+                                @item.UserName
+                            </td>
 
-                        <td class="py-1">
-                            @item.FullName
-                        </td>
-                        <td class="py-1">
-                            @item.Email
-                        </td>
+                            <td class="py-1">
+                                @item.FullName
+                            </td>
+                            <td class="py-1">
+                                @item.Email
+                            </td>
 
-                        <td class="py-1">
-                           @foreach (var role in item.UserRoles)
-                            {
-                                @role
-                            }
-                        </td>
+                            <td class="py-1">
+                                @foreach (var role in item.UserRoles)
+                                {
+                                    @role
+                                }
+                            </td>
 
 
-                        <td>
-                         
+                            <td>
+
                                 <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
                                     <button type="submit" class="btn btn-outline-danger  ">Delete</button>
                                 </form>
-                            
-                        </td>
-                    </tr>
+
+                            </td>
+                        </tr>
+                    }
+                    
                 }
 
             </tbody>

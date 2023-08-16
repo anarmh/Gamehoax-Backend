@@ -23,5 +23,10 @@ namespace Gamehoax_backend.Services
         {
             return await _context.Contacts.FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        public async Task<int> GetCountAsync()
+        {
+           return await _context.Contacts.CountAsync();
+        }
     }
 }
