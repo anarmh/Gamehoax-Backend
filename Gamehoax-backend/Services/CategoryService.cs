@@ -44,6 +44,11 @@ namespace Gamehoax_backend.Services
             return await _context.Categories.Include(m => m.ProductCategories).FirstOrDefaultAsync(m=>m.Id==id);
         }
 
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Categories.CountAsync();
+        }
+
         public CategoryDetailVM GetMappedData(Category category)
         {
 

@@ -92,5 +92,9 @@ namespace Gamehoax_backend.Services
             return await _context.CartProducts.Where(c => c.CartId == cartId).ToListAsync();
         }
 
+        public async Task<int> GetCountAsync()
+        {
+           return await _context.Carts.CountAsync();
+        }
     }
 }

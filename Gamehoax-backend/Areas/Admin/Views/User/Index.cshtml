@@ -64,10 +64,13 @@
 
 
                             <td>
-
-                                <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
+                                @if (User.IsInRole("SuperAdmin"))
+                                {
+                                     <form style="display: inline-block;" method="post" asp-controller="User" asp-action="Delete" asp-route-id="@item.Id">
                                     <button type="submit" class="btn btn-outline-danger  ">Delete</button>
-                                </form>
+                                     </form>
+                                }
+                             
 
                             </td>
                         </tr>

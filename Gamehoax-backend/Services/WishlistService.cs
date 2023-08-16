@@ -93,5 +93,10 @@ namespace Gamehoax_backend.Services
         {
             return await _context.WishlistProducts.Where(c => c.WishlistId == wishlistId).ToListAsync();
         }
+
+        public async Task<int> GetCountAsync()
+        {
+           return await  _context.Wishlists.CountAsync();
+        }
     }
 }

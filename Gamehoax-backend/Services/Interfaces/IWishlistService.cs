@@ -11,5 +11,6 @@ namespace Gamehoax_backend.Services.Interfaces
         int GetCount();
         Task<Wishlist> GetByUserIdAsync(string userId);
         Task<List<WishlistProduct>> GetAllByWishlistIdAsync(int? wishlistId);
+        Task<int> GetCountAsync();
     }
 }

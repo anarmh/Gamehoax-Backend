@@ -12,5 +12,6 @@ namespace Gamehoax_backend.Services.Interfaces
         void DeleteData(int? id);
         Task<Cart> GetByUserIdAsync(string userId);
         Task<List<CartProduct>> GetAllByCartIdAsync(int? cartId);
+        Task<int> GetCountAsync();
     }
 }

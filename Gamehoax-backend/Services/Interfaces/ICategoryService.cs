@@ -9,6 +9,6 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<Category> GetCategoryById(int? id);
         Task<List<CategoryVM>> GetAllMappedDatasAsync();
         CategoryDetailVM GetMappedData(Category category);
-       
+        Task<int> GetCountAsync();
     }
 }
