@@ -21,13 +21,15 @@ namespace Gamehoax_backend.Controllers
         private readonly ITagService _tagService;
         private readonly ICartService _cartService;
         private readonly IHttpContextAccessor _accessor;
+        private readonly ISettingService _settingService;
 
         public ShopController(IProductService productService, 
                               ICategoryService categoryService, 
                               ITagService tagService,
                               AppDbContext context,
                               ICartService cartService,
-                               IHttpContextAccessor accessor
+                               IHttpContextAccessor accessor,
+                               ISettingService settingService
                               )
         {
             _productService = productService;
@@ -36,6 +38,7 @@ namespace Gamehoax_backend.Controllers
             _context= context;
             _cartService= cartService;
             _accessor = accessor;
+            _settingService= settingService;
         }
 
         public async Task<IActionResult> Index(int page=1, int take=9,string sortValue=null,string searchText=null,int? categoryId=null, int? tagId=null,int? value1=null, int? value2=null)
@@ -92,7 +95,7 @@ namespace Gamehoax_backend.Controllers
             List<Product> products= await _productService.GetAllAsync();
             List<Category> categories= await _categoryService.GetAllAsync();
             List<Tag> tags= await _tagService.GetAllAsync();
-         
+            Dictionary<string, string> settings = _settingService.GetAll();
             
             ShopVM model = new()
             {
@@ -100,6 +103,7 @@ namespace Gamehoax_backend.Controllers
                 Categories= categories,
                 Tags= tags,
                 PaginateDatas= paginatedDatas,
+                Settings= settings,
                
             };
             return View(model);

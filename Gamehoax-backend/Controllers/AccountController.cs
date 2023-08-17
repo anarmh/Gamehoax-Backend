@@ -149,6 +149,7 @@ namespace Gamehoax_backend.Controllers
                     wishlistVMs.Add(new WishlistVM
                     {
                         ProductId = wishlistProduct.ProductId,
+                        Count= wishlistProduct.Count
                     });
                 }
 
@@ -245,6 +246,7 @@ namespace Gamehoax_backend.Controllers
                         wishlistVMs.Add(new WishlistVM
                         {
                             ProductId = wishlistProduct.ProductId,
+                            Count = wishlistProduct.Count
                         });
                     }
 
@@ -347,6 +349,7 @@ namespace Gamehoax_backend.Controllers
                         {
                             ProductId = wishlist.ProductId,
                             WishlistId = dbWishlist.Id,
+                            Count = wishlist.Count
                         });
                     }
                     await _context.Wishlists.AddAsync(dbWishlist);
@@ -361,6 +364,7 @@ namespace Gamehoax_backend.Controllers
                         {
                             ProductId = wishlist.ProductId,
                             WishlistId = dbWishlist.Id,
+                            Count = wishlist.Count
                         });
                     }
                     dbWishlist.WishlistProducts = wishlistProducts;

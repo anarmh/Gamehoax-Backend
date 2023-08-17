@@ -331,8 +331,8 @@
                         </div>
                         <aside id="left-banner-widget-2">
                             <div class="left-banner">
-                                <a href="">
-                                    <img src="~/assets/img/shop/left-banner.jpg" alt="">
+                                <a asp-action="Index">
+                                    <img src="~/assets/img/shop/@Model.Settings["ShopBanner"]" alt="">
                                 </a>
                             </div>
 
@@ -516,7 +516,7 @@
                             <aside id="left-banner-widget-2">
                                 <div class="left-banner">
                                     <a href="">
-                                        <img src="~/assets/img/shop/left-banner.jpg" alt="">
+                                        <img src="~/assets/img/shop/@Model.Settings["ShopBanner"]" alt="">
                                     </a>
                                 </div>
 
