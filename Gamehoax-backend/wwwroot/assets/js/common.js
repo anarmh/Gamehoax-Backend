@@ -235,7 +235,7 @@
             let id = $(this).attr("data-id");
            
             let data = { id: id };
-            let countWishlist = (".wish-count");
+            let countWishlist = $(".wish-count");
             $.ajax({
                 type: "POST",
                 url: `/Wishlist/AddToWishlist?id=${id}`,
@@ -346,3 +346,18 @@ function count_all() {
     })
     return (total_sum);
 }
+
+
+let navlinks = document.querySelectorAll("#site-header-main .header-center ul li a")
+let windowPathname = window.location.pathname;
+
+navlinks.forEach(navlink => {
+    const navLinkpathname = new URL(navlink.href).pathname;
+    
+    if ((windowPathname === navLinkpathname) || (windowPathname === `/home.html` && navLinkpathname === `/`)) {
+        navlink.classList.add(`active`)
+
+    }
+
+
+});

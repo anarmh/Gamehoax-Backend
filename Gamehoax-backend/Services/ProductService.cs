@@ -261,7 +261,7 @@ namespace Gamehoax_backend.Services
         {
             return await _context.Products.Where(p => p.Title.ToLower().Trim().Contains(searchText.ToLower().Trim()))
                                 .Include(p => p.ProductImages)
-                                .Include(p=>p.Rating.RatingCount)
+                                .Include(p=>p.Rating)
                                 .CountAsync();
         }
 
@@ -319,7 +319,7 @@ namespace Gamehoax_backend.Services
                 .Take(take)
                 .ToListAsync();
 
-            var ratingCounts = products.Select(p => p.Rating.RatingCount).ToList();
+            var ratingCounts = products.Select(p => p.Rating).ToList();
 
             return products;
         }

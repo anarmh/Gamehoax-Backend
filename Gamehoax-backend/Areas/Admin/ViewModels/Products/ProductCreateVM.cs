@@ -19,6 +19,8 @@ namespace Gamehoax_backend.Areas.Admin.ViewModels.Products
         [Required]
         public int SKU { get; set; }
         [Required]
+        public int Popularity { get; set; }
+        [Required]
         public int DiscountId { get; set; }
         [Required]
         public int RatingId { get; set; }

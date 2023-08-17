@@ -18,9 +18,9 @@ namespace Gamehoax_backend.Services.Interfaces
         Task<int> GetProductsCountByRangeAsync(int? value1, int? value2);
         Task<int> GetProductsCountByCategoryAsync(int? id);
         Task<int> GetProductsCountByTagAsync(int? id);
-        Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 2);
-        Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 2);
-        Task<List<Product>> GetAllBySearchText(string searchText,int page=1 ,int take=2);
+        Task<List<ProductVM>> GetProductsByCategoryIdAsync(int? id, int page = 1, int take = 9);
+        Task<List<ProductVM>> GetProductsByTagIdAsync(int? id, int page = 1, int take = 9);
+        Task<List<Product>> GetAllBySearchText(string searchText,int page=1 ,int take=9);
        
 
     }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Globalization;
 using System.IO;
 
 namespace Gamehoax_backend.Areas.Admin.Controllers
@@ -72,9 +73,9 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 {
                     Id = product.Id,
                     Name = product.Name,
-                    Price = product.Price,
+                    Price = product.Price.ToString("0.##")+ " £",
                     Image = product.ProductImages.FirstOrDefault(m=>m.IsMain).Image,
-                    Weight=product.Weight,
+                    Weight=product.Weight.ToString("0.##")+ " kg",
                     Model=product.BrandModel.Name,
                     Categories= categories,
                     Tags= tags,
@@ -276,22 +277,30 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     return View(model);
                 }
 
-                var convertedPrice = decimal.Parse(model.Price);
-                var convertWeight=decimal.Parse(model.Weight);
+
+
+                decimal decimalPrice;
+                decimal decimalWeight;
+                CultureInfo cultureInfo = CultureInfo.InvariantCulture;
                 Random random = new();
 
+                if(Decimal.TryParse(model.Price, NumberStyles.Any, cultureInfo, out decimalPrice)&& Decimal.TryParse(model.Weight, NumberStyles.Any, cultureInfo, out decimalWeight))
+                {
+                    newProduct.Name = model.Name;
+                    newProduct.SKU = model.SKU + random.Next(100, 1000);
+                    newProduct.Description = model.Description;
+                    newProduct.Price = decimalPrice;
+                    newProduct.RatingId = model.RatingId;
+                    newProduct.Feature = model.Feature;
+                    newProduct.BrandModelId = model.BrandModelId;
+                    newProduct.DiscountId = model.DiscountId;
+                    newProduct.Weight = decimalWeight;
+                    newProduct.Title = model.Title;
+                    newProduct.Description = model.Description;
+                    newProduct.Popularity = model.Popularity;
 
-                newProduct.Name= model.Name;
-                newProduct.SKU = model.SKU+random.Next(100,1000);
-                newProduct.Description= model.Description;
-                newProduct.Price = convertedPrice;
-                newProduct.RatingId= model.RatingId;
-                newProduct.Feature=model.Feature;
-                newProduct.BrandModelId= model.BrandModelId;
-                newProduct.DiscountId= model.DiscountId;
-                newProduct.Weight = convertWeight;
-                newProduct.Title= model.Title;
-                newProduct.Description= model.Description;
+                 
+                }
 
                 await _context.ProductImages.AddRangeAsync(productImages);
                 await _context.Products.AddAsync(newProduct);
@@ -322,6 +331,9 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                 ViewBag.discounts = await GetDiscountsAsync();
                 ViewBag.ratingCount = await GetRatingCountAsync();
 
+
+              
+
                 ProductEditVM model = new()
                 {
                     Id = dbProduct.Id,
@@ -329,15 +341,16 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     Title = dbProduct.Title,
                     Description = dbProduct.Description,
                     Feature = dbProduct.Feature,
-                    Weight = dbProduct.Weight,
-                    Price = dbProduct.Price,
+                    Weight = dbProduct.Weight.ToString("0.##") ,
+                    Price = dbProduct.Price.ToString("0.##") ,
                     SKU=dbProduct.SKU,
                     Images= dbProduct.ProductImages,
                     CategoryIds=dbProduct.ProductCategories.Select(m=>m.Category.Id).ToList(),
                     TagIds=dbProduct.ProductTags.Select(m=>m.Tag.Id).ToList(),
                     BrandModelId=dbProduct.BrandModelId,
                     DiscountId=dbProduct.DiscountId,
-                    RatingId=dbProduct.RatingId
+                    RatingId=dbProduct.RatingId,
+                    Popularity=dbProduct.Popularity,
                 };
 
                 return View(model);
@@ -392,7 +405,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
                     foreach (var item in dbProduct.ProductImages)
                     {
-                        string dbPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/images", item.Image);
+                        string dbPath = FileHelper.GetFilePath(_env.WebRootPath, "assets/img/product", item.Image);
                         FileHelper.DeleteFile(dbPath);
                     }
                     List<ProductImage> productImages = new();
@@ -453,16 +466,25 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     dbProduct.ProductCategories = productCategories;
                 }
 
+                decimal decimalPrice;
+                decimal decimalWeight;
+                if (!(decimal.TryParse(updatedProduct.Price, out decimalPrice)&& decimal.TryParse(updatedProduct.Weight, out decimalWeight)))
+                {
+                    throw new ArgumentException("Invalid price format. Please enter a valid decimal number.");
+                }
+
+
                 dbProduct.Name = updatedProduct.Name;
                 dbProduct.Description = updatedProduct.Description;
-                dbProduct.Price = updatedProduct.Price;
-                dbProduct.Weight = updatedProduct.Weight;
+                dbProduct.Price = decimalPrice;
+                dbProduct.Weight = decimalWeight;
                 dbProduct.Title = updatedProduct.Title;
                 dbProduct.BrandModelId = updatedProduct.BrandModelId;
                 dbProduct.Feature = updatedProduct.Feature;
                 dbProduct.RatingId = updatedProduct.RatingId;
                 dbProduct.SKU = updatedProduct.SKU;
                 dbProduct.DiscountId = updatedProduct.DiscountId;
+                dbProduct.Popularity= updatedProduct.Popularity;
               
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -489,7 +511,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             _context.ProductImages.Remove(image);
             await _context.SaveChangesAsync();
 
-            string path = Path.Combine(_env.WebRootPath, "img", image.Image);
+            string path = Path.Combine(_env.WebRootPath, "assets/img/product", image.Image);
 
             if (System.IO.File.Exists(path))
             {

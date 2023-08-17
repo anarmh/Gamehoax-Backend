@@ -9,19 +9,22 @@ namespace Gamehoax_backend.Areas.Admin.ViewModels.Products
         public int Id { get; set; }
         [Required(ErrorMessage = "Don`t be empty")]
         public string Name { get; set; }
+        [Required]
         public int SKU { get; set; }
+        [Required]
+        public int Popularity { get; set; }
 
         [Required(ErrorMessage = "Don`t be empty")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Don`t be empty")]
-        public decimal Price { get; set; }
+        public string Price { get; set; }
 
         [Required(ErrorMessage = "Don`t be empty")]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Don`t be empty")]
-        public decimal Weight { get; set; }
+        public string Weight { get; set; }
         [Required(ErrorMessage = "Don`t be empty")]
         public string Feature { get; set; }
         public List<IFormFile> Photos { get; set; }

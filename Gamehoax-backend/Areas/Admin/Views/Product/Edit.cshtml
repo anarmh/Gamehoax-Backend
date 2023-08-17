@@ -36,7 +36,7 @@
                             <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
                         </div>
                         <div class="form-floating mb-3">
-                            <input asp-for="Price" class="form-control" id="floatingInput" placeholder="Price">
+                            <input asp-for="Price" type="number" class="form-control" id="floatingInput" placeholder="Price">
                             <label for="floatingInput">Price</label>
                             <span class="text-danger" asp-validation-for="Price">@ViewBag.error</span>
                         </div>
@@ -61,7 +61,7 @@
                             <span class="text-danger" asp-validation-for="Feature">@ViewBag.error</span>
                         </div>
                         <div class="form-floating mb-3">
-                            <input asp-for="Weight" class="form-control" id="floatingInput" placeholder="Weight">
+                            <input asp-for="Weight" type="number" class="form-control" id="floatingInput" placeholder="Weight">
                             <label for="floatingInput">Weight</label>
                             <span class="text-danger" asp-validation-for="Weight">@ViewBag.error</span>
                         </div>
@@ -145,6 +145,11 @@
                             </select>
                             <label for="floatingSelect">Rating Count</label>
                             <span class="text-danger" asp-validation-for="RatingId">@ViewBag.error</span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Popularity" class="form-control" id="floatingInput" placeholder="Popularity">
+                            <label for="floatingInput">Popularity</label>
+                            <span class="text-danger" asp-validation-for="Popularity">@ViewBag.error</span>
                         </div>
                     </div>
                 </div>
