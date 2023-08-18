@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uQ6sDqkEFxSQe37AF8z95Oy4Ybtba6gLkricqbx9uEo=",
+  "Hash": "DzhgL6IagSryNgQ17qqvm0vkEsdYwrfs8blIKvn8Oy0=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -3468,6 +3468,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\product\\543e128d-6543-4050-ba40-7bfcef99160a_4.jpg"
     },
     {
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\5640fb8e-a2b0-4ae2-a308-bac138b205a2_5.jpg",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/img/product/5640fb8e-a2b0-4ae2-a308-bac138b205a2_5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\5640fb8e-a2b0-4ae2-a308-bac138b205a2_5.jpg"
+    },
+    {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\57cea4e9-a261-4afd-9d52-4c7232243344_3.jpg",
       "SourceId": "Gamehoax-backend",
       "SourceType": "Discovered",
@@ -4403,6 +4420,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\product\\dc02f9eb-d861-414a-bae4-6a705a3b7e63_10.jpg"
     },
     {
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\ddf3c3dc-c6d6-48f7-805b-04d6463096bb_10.jpg",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/img/product/ddf3c3dc-c6d6-48f7-805b-04d6463096bb_10.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\ddf3c3dc-c6d6-48f7-805b-04d6463096bb_10.jpg"
+    },
+    {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\product\\dffb5d77-b15d-45c3-afd8-c75c5df02da2_2.jpg",
       "SourceId": "Gamehoax-backend",
       "SourceType": "Discovered",
@@ -4726,12 +4760,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\5.png"
     },
     {
-      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png",
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\b579c649-6ca5-4da2-92e4-b2fe321b755d 4.jpg",
       "SourceId": "Gamehoax-backend",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
       "BasePath": "_content/Gamehoax-backend",
-      "RelativePath": "assets/img/slider/c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png",
+      "RelativePath": "assets/img/slider/b579c649-6ca5-4da2-92e4-b2fe321b755d 4.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4740,7 +4774,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\c7dbc6bd-0d04-43d6-b3cf-451adf7cb862 5.png"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\b579c649-6ca5-4da2-92e4-b2fe321b755d 4.jpg"
     },
     {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\1.jpg",

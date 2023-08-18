@@ -14,13 +14,13 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
 
-                        @foreach (var slider in Model.Sliders)
+                        @foreach (var slider in Model.Sliders.Where(m=>m.Status))
                     {
-                        @if(slider.Status == true){
+                       
                          <div class="swiper-slide">
                             <img src="~/assets/img/slider/@slider.Image" />
                         </div>
-                        }
+                        
                     }
                      
                     </div>
