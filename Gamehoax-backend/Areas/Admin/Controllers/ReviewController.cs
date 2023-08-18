@@ -41,21 +41,31 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
         private  List<ReviewVM> GetDatas(List<Review> reviews)
         {
+           
+
             List<ReviewVM> mappedDatas = new();
-            foreach (var review in reviews)
+            if (reviews != null)
             {
-               
-                ReviewVM reviewList = new()
+                foreach (var review in reviews)
                 {
-                    Id = review.Id,
-                    FullName = review.AppUser.FullName,
-                    Email = review.AppUser.Email,
-                    Describe = review.Describe,
-                   RatingId=review.RatingId,
-                   ProductName=review.Product.Name
-                };
-                mappedDatas.Add(reviewList);
+                    if(review.AppUserId != null)
+                    {
+                        ReviewVM reviewList = new()
+                        {
+                            Id = review.Id,
+                            FullName = review.AppUser.FullName,
+                            Email = review.AppUser.Email,
+                            Describe = review.Describe,
+                            RatingId = review.RatingId,
+                            ProductName = review.Product.Name,
+                            UserId = review.AppUserId,
+                        };
+                        mappedDatas.Add(reviewList);
+                    }
+                  
+                }
             }
+           
             return mappedDatas;
         }
 

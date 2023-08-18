@@ -7,5 +7,6 @@ namespace Gamehoax_backend.Models
         public string FullName { get; set; }
         public ICollection<Wishlist> Wishlists { get; set; }
         public ICollection<Cart> Carts { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }

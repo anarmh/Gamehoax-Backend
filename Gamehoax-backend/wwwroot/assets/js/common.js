@@ -211,7 +211,8 @@
 
    
     //add to wish
-    $(".add-to-wish").unbind().click(function (e) {
+    $(document).on("click", ".add-to-wish", function (e) {
+    //$(".add-to-wish").unbind().click(function (e) {
         e.stopPropagation();
         let el = $(this);
         if (el.hasClass('checked')) {

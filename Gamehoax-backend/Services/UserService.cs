@@ -22,12 +22,13 @@ namespace Gamehoax_backend.Services
 
         public async Task<List<AppUser>> GetAllAsync()
         {
-            return await _userManager.Users.Include(m=>m.Carts).Include(m=>m.Wishlists).ToListAsync();
+            return await _userManager.Users.Include(m=>m.Carts).Include(m=>m.Wishlists).Include(m=>m.Reviews).ToListAsync();
         }
 
         public async Task<AppUser> GetByIdAsync(string userId)
         {
-            return await _userManager.Users.Include(m=>m.Carts).Include(m=>m.Wishlists).FirstOrDefaultAsync(m=>m.Id==userId);
+            var data =  await _userManager.Users.Include(m=>m.Carts).Include(m=>m.Wishlists).Include(m=>m.Reviews).FirstOrDefaultAsync(m=>m.Id==userId);
+            return data;
         }
 
         public async Task<int> GetCountAsync()
@@ -37,7 +38,7 @@ namespace Gamehoax_backend.Services
 
         public async Task<List<AppUser>> GetPaginatedDatasAsync(int page, int take)
         {
-            return await _context.Users.Skip((page * take) - take).Take(take).ToListAsync();
+            return await _context.Users.Include(m=>m.Carts).Include(m=>m.Wishlists).Include(m=>m.Reviews).Skip((page * take) - take).Take(take).ToListAsync();
 
         }
     }

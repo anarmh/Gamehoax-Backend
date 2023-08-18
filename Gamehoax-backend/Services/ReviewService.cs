@@ -15,12 +15,12 @@ namespace Gamehoax_backend.Services
 
         public async Task<List<Review>> GetAllAsync()
         {
-            return await _context.Reviews.Include(m=>m.Product).Include(m=>m.Rating).ToListAsync();
+            return await _context.Reviews.Include(m=>m.Product).Include(m=>m.Rating).Include(m=>m.AppUser).ToListAsync();
         }
 
         public async Task<Review> GetByIdAsync(int id)
         {
-           return await _context.Reviews.Include(m => m.Product).Include(m => m.Rating).FirstOrDefaultAsync(r => r.Id == id);
+           return await _context.Reviews.Include(m => m.Product).Include(m => m.Rating).Include(m=>m.AppUser).FirstOrDefaultAsync(r => r.Id == id);
         }
 
         public async Task<int> GetCountAsync()

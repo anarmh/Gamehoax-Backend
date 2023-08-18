@@ -11,17 +11,24 @@
     
     
              <div class="row  my-3">
-                    @foreach (var item in Model.Images)
-                    {<div class="col-3">
-                        <div class="images   my-2">
-                            <img src="~/assets/img/product/@item.Image" class="product-image " style="width:200px; height:200px;" />
-                            @if (!(item.IsMain || item.IsHover))
-                            {
-                                <button data-id="@item.Id" class="btn btn-outline-danger">Delete</button>
-                            }
-                        </div>
-                     </div>
-                    }
+        @if (Model.Images != null)
+        {
+            @foreach (var item in Model.Images)
+            {
+                <div class="col-3">
+                    <div class="images   my-2">
+                        <img src="~/assets/img/product/@item.Image" class="product-image " style="width:200px; height:200px;" />
+                        @if (!(item.IsMain || item.IsHover))
+                        {
+                            <button data-id="@item.Id" class="btn btn-outline-danger">Delete</button>
+                        }
+
+                    </div>
+
+                </div>
+            }
+        }
+       
               </div>
     
 

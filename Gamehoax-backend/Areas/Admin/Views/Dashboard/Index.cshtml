@@ -38,7 +38,7 @@
                   <div class="ms-3">
                     <p class="mb-2">Latest Created</p>
 
-                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Contacts.OrderByDescending(m=>m.CreateDate).FirstOrDefault().CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
+                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Contacts.OrderByDescending(m=>m.CreateDate)?.FirstOrDefault()?.CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                   <div class="ms-3">
                     <p class="mb-2">Latest Created</p>
 
-                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Subscribes.OrderByDescending(m=>m.CreateDate).FirstOrDefault().CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
+                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Subscribes.OrderByDescending(m=>m.CreateDate)?.FirstOrDefault()?.CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
                 </div>
             </div>
         </div>
@@ -87,8 +87,10 @@
                 </div>
                   <div class="ms-3">
                     <p class="mb-2">Latest Created</p>
-
-                    <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Reviews.OrderByDescending(m=>m.CreateDate).FirstOrDefault().CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
+                  
+                           <h6 class="mb-0"><i class="fa-solid fa-clock"></i>  @Model.Reviews.OrderByDescending(m=>m.CreateDate)?.FirstOrDefault()?.CreateDate.ToString("dd MMMMM yyyy HH:mm")</h6>
+                        
+                    
                 </div>
             </div>
         </div>

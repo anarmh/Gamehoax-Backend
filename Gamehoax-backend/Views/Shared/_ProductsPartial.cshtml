@@ -27,7 +27,7 @@
             <div class="card-carousel ">
                 <div class="action-buttons">
                     <img class="w-100 main" src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
+                    <img class="w-100 hover d-none" src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
                 </div>
                 <div class="product-detail">
 
@@ -118,6 +118,6 @@ else
 @section Scripts{
     <script src="~/assets/js/shop.js"></script>
     <script src="~/assets/js/shop-filter.js"></script>
-    <script src="~/assets/js/common.js"></script>
+   
 }
 

@@ -238,9 +238,18 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
                     productImages.Add(productImage);
                 }
+
                 newProduct.ProductImages = productImages;
                 newProduct.ProductImages.FirstOrDefault().IsMain = true;
-                newProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
+                if (newProduct.ProductImages.Count > 1)
+                {
+                    newProduct.ProductImages.Skip(1).First().IsHover = true;
+                }
+                else
+                {
+                    ModelState.AddModelError("Photos", "There must be at least two images to set hover state.");
+                    return View(model);
+                }
 
                 if (model.CategoryIds.Count > 0)
                 {
@@ -344,7 +353,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     Weight = dbProduct.Weight.ToString("0.##") ,
                     Price = dbProduct.Price.ToString("0.##") ,
                     SKU=dbProduct.SKU,
-                    Images= dbProduct.ProductImages,
+                    Images= dbProduct.ProductImages.ToList(),
                     CategoryIds=dbProduct.ProductCategories.Select(m=>m.Category.Id).ToList(),
                     TagIds=dbProduct.ProductTags.Select(m=>m.Tag.Id).ToList(),
                     BrandModelId=dbProduct.BrandModelId,
@@ -352,6 +361,8 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     RatingId=dbProduct.RatingId,
                     Popularity=dbProduct.Popularity,
                 };
+
+              
 
                 return View(model);
             }
@@ -362,6 +373,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
             }
             
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -382,7 +394,7 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
 
                 if (!ModelState.IsValid)
                 {
-                    updatedProduct.Images = dbProduct.ProductImages;
+                    updatedProduct.Images = dbProduct.ProductImages.ToList();
                     return View(updatedProduct);
                 }
                 if (updatedProduct.Photos != null)
@@ -392,13 +404,13 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                         if (!photo.CheckFileType("image/"))
                         {
                             ModelState.AddModelError("Photos", "File type must be image");
-                            updatedProduct.Images = dbProduct.ProductImages;
+                            updatedProduct.Images = dbProduct.ProductImages.ToList();
                             return View(updatedProduct);
                         }
                         if (!photo.CheckFileSize(600))
                         {
                             ModelState.AddModelError("Photos", "Image size must be max 600kb");
-                            updatedProduct.Images = dbProduct.ProductImages;
+                            updatedProduct.Images = dbProduct.ProductImages.ToList();
                             return View(updatedProduct);
                         }
                     }
@@ -426,13 +438,22 @@ namespace Gamehoax_backend.Areas.Admin.Controllers
                     }
                     dbProduct.ProductImages = productImages;
                     dbProduct.ProductImages.FirstOrDefault().IsMain = true;
-                    dbProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
+                    if (dbProduct.ProductImages.Count > 1)
+                    {
+                        dbProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Photos", "There must be at least two images to set hover state.");
+                        return View(updatedProduct);
+                    }
+                    //dbProduct.ProductImages.Skip(1).FirstOrDefault().IsHover = true;
 
                     await _context.ProductImages.AddRangeAsync(productImages);
                 }
                 else
                 {
-                    updatedProduct.Images = dbProduct.ProductImages;
+                    updatedProduct.Images = dbProduct.ProductImages.ToList();
                 }
 
 

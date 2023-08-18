@@ -8,5 +8,6 @@
         public string Describe { get; set; }
         public int RatingId { get; set; }
         public string ProductName { get; set; }
+        public string UserId { get; set; }
     }
 }

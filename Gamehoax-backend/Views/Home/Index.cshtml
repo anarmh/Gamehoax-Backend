@@ -16,9 +16,11 @@
 
                         @foreach (var slider in Model.Sliders)
                     {
+                        @if(slider.Status == true){
                          <div class="swiper-slide">
-                        <img src="~/assets/img/slider/@slider.Image" />
-                      </div>
+                            <img src="~/assets/img/slider/@slider.Image" />
+                        </div>
+                        }
                     }
                      
                     </div>
@@ -152,7 +154,7 @@
                                     <div class="card-carousel">
                                         <div class="action-buttons">
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
+                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
                                         </div>
                                         <div class="product-detail">
 
@@ -222,7 +224,7 @@
                                     <div class="card-carousel">
                                         <div class="action-buttons">
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
+                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
                                         </div>
                                         <div class="product-detail">
 
@@ -292,7 +294,7 @@
                                     <div class="card-carousel">
                                         <div class="action-buttons">
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
+                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
                                         </div>
                                         @if (@item.Discount.Percent == 0)
                                         {
@@ -470,7 +472,7 @@
                                 <div class="card-carousel">
                                     <div class="action-buttons">
                                         <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover).Image" alt="">
+                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
                                     </div>
                                     @if (@item.Discount.Percent == 0)
                                     {
