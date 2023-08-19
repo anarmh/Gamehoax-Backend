@@ -1,0 +1,193 @@
+@import "../layout/header";
+@import "../layout/footer";
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+
+   
+    background-color: #1d1427;
+    background-image: url("/assets/img/body-bg.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #888888;
+    
+}
+
+.box{
+    position: relative;
+    width: 370px;
+    height: 700px;
+    background: #23242a;
+    border-radius: 50px 5px;
+    overflow: hidden;
+    &::before{
+
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 370px;
+        height: 700px;
+        background: linear-gradient(60deg,transparent, #f9aa01,#f9aa01 );
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+        animation-delay: -3s;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 370px;
+        height: 700px;
+        background: linear-gradient(60deg,transparent,   #1e90ff,  #1e90ff );
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+    }
+
+    form{
+
+        position: absolute;
+        inset: 2px;
+        border-radius: 50px 5px;
+        background: #1d1427;
+        z-index: 10;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+
+        h2{
+            color: #f9aa01;
+            font-size: 35px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .input-box{
+
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+
+            input{
+                width: 100%;
+                position: relative;
+                padding: 20px 10px 10px;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: #23242a;
+                font-size: 16px;
+                letter-spacing: 0.8px;
+                z-index: 10;
+                &:valid ~ span,
+                &:focus ~ span{
+                    color: #f9aa01;
+                    transform: translateX(-10px) translateY(-30px);
+                    font-size: 12px;
+                }
+
+                &:valid ~ i,
+                &:focus ~ i{
+                        height: 44px;
+                }
+            }
+
+            span{
+
+                position: absolute;
+                left: 0;
+                padding: 20px 10px 10px;
+                font-size: 16px;
+                color: #8f8f8f;
+                pointer-events:none;
+                letter-spacing: 0.8px;
+                transition: 0.5s;
+            }
+
+            i{
+
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #f9aa01;
+                border-radius: 4px;
+                transition: 0.5s;
+                pointer-events: none;
+                z-index: 9;
+            }
+        }
+
+        
+
+        input[type="submit"]{
+
+            font-size: 20px;
+            border: none;
+            outline: none;
+            background: #f9aa01;
+            padding: 5px;
+            margin-top: 40px;
+            border-radius: 90px;
+            font-weight: 600;
+            cursor: pointer;
+            &:active{
+
+                background: linear-gradient(90deg,transparent, #f9aa01,#1e90ff  );
+                opacity: 0.8;
+            }
+        }
+
+        .links{
+
+            display: flex;
+            justify-content: space-between;
+
+            a{
+                margin: 25px 0;
+                font-size: 16px;
+                color: #8f8f8f;
+                text-decoration: none;
+                &:hover,
+                &:nth-child(2){
+                    color: #f9aa01;
+                    text-decoration: underline 2px;
+                    text-underline-offset: 5px;
+                }
+
+                &:nth-child(2):hover{
+                    text-decoration: underline 2px;
+                    text-underline-offset: 5px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes animate{
+
+
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+
+        transform: rotate(360deg);
+    }
+}
