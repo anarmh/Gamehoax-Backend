@@ -1,7 +1,11 @@
 ﻿$(document).ready(function () {
 
 
-  
+    $(document).on("click", ".click-search", function (e) {
+        e.preventDefault();
+        
+        $("#search-area").submit();
+    });
 
 
     //let cart_count = $(".cart-count").text();

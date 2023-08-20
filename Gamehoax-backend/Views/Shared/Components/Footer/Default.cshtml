@@ -45,21 +45,21 @@
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                     <h3>Information</h3>
                     <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="product-detail.html">Product Detail</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Wishlist" asp-action="Index">Wishlist</a></li>
+                        <li><a asp-controller="ProductDetail" asp-action="Index">Product Detail</a></li>
+                        <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                        <li><a asp-controller="Contact" asp-action="Index">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                     <h3>Extrass</h3>
                     <ul>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                        <li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
+                        <li><a asp-controller="Account" asp-action="SignUp">Register</a></li>
+                        <li><a asp-controller="Account" asp-action="SignIn">Login</a></li>
+                        <li><a asp-controller="About" asp-action="Index">About Us</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
@@ -71,7 +71,7 @@
                                 @*<input type="hidden" >
                                 <input type="hidden" >*@
                                 <div class="tnp-field tnp-field-email">
-                                    <input asp-for="Email" value="" class="tnp-email">
+                                    <input asp-for="Email" value="" class="tnp-email" placeholder="Subscribe to our newsletter...">
                                     <span class="text-danger" style="z-index:5;" asp-validation-for="Email">@ViewBag.error</span>
                                 </div>
                                 <div class="tnp-field tnp-field-button">

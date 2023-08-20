@@ -546,7 +546,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -646,7 +646,7 @@
     text-transform: capitalize;
     line-height: 20px;
     font-weight: 600;
-    letter-spacing: 0.4;
+    letter-spacing: 0.4px;
     background: transparent;
     border: none;
     padding-bottom: 20px;
@@ -759,7 +759,7 @@ footer #footer-top h3 {
   text-transform: capitalize;
   line-height: 20px;
   font-weight: 600;
-  letter-spacing: 0.4;
+  letter-spacing: 0.4px;
   background: transparent;
   border: none;
   padding-bottom: 20px;
@@ -915,12 +915,13 @@ footer .backtotop #to-top:hover::after {
   }
 }
 
-@media(max-width:575.98px){
+@media(max-width:575.98px) {
 
     #team-member .swiper .swiper-slide {
-        width:50%!important;
-        margin-right:15px !important;
+        width: 50% !important;
+        margin-right: 15px !important;
     }
+}
 @media (max-width: 991.98px) {
   #page-title {
     margin: 50px 0;
@@ -988,7 +989,7 @@ footer .backtotop #to-top:hover::after {
   }
   #about .about-content p {
     font-size: 12px;
-    margin: 1-px 0 !important;
+    margin: 1px 0 !important;
   }
   #about .about-content .text .info {
     margin-top: 10px;
@@ -1031,7 +1032,7 @@ footer .backtotop #to-top:hover::after {
     transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
+   
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: var(--fa-display, inline-block);
@@ -1284,7 +1285,7 @@ body {
   transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
+  
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);

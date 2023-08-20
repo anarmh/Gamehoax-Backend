@@ -114,7 +114,7 @@
                 </div>
                 <div class="mobile d-none">
                     <div class="col-12">
-                        <div class="container-fluid">
+                        <div class="container-fluid blogs-area-mobile">
                             <partial name="_BlogsPartial" model="Model.PaginateDatas" />
 
 
@@ -135,8 +135,8 @@
                                     <div class="accordion-body">
 
                                         <aside id="search">
-                                            <form action="" method="get">
-                                                <input type="text" class="search-field" placeholder="Search">
+                                            <form asp-controller="Blog" asp-action="Search" id="blog-search-mobile" method="GET">
+                                                <input type="text" class="search-field search-field-input-mobile" placeholder="Search">
                                                 <input type="submit" class="search-submit">
                                             </form>
                                         </aside>
@@ -160,7 +160,7 @@
                                             <ul class="product-categories">
                                                 @foreach (var item in Model.Categories)
                                                 {
-                                                    <li><a href="">@item.Name</a></li>
+                                                    <li><a asp-controller="Shop" asp-action="Index">@item.Name</a></li>
                                                 }
 
                                             </ul>
@@ -184,7 +184,7 @@
                                             <div class="tagcloud">
                                                 @foreach (var item in Model.Tags)
                                                 {
-                                                    <a href="">@item.Name</a>
+                                                    <a asp-controller="Shop" asp-action="Index">@item.Name</a>
                                                 }
 
                                             </div>
@@ -209,7 +209,7 @@
                                                 @foreach (var item in Model.Blogs.OrderByDescending(m => m.CreateDate).Take(4))
                                                 {
                                                     <li>
-                                                        <a href="">
+                                                        <a asp-controller="Blog" asp-action="Index">
                                                             <div class="content">
                                                                 <div class="left">
                                                                     <img src="~/assets/img/blog/@item.Image" alt="">

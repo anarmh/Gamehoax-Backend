@@ -24,11 +24,11 @@
         })
     })
 
-
+    
       //search
     $(document).on("submit", "#search-area", function (e) {
         e.preventDefault();
-        $(".search").trigger("click");
+        
         let value = $(".search-text").val();
       
         let data = { searchText: value };
@@ -43,7 +43,7 @@
             success: function (res) {
                 
                 $(parent).html(res);
-                $(".search-text").val = "";
+                $(".search-text").val("");
             }
 
         })

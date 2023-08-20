@@ -36,9 +36,28 @@ $(document).ready(function(){
     $(document).on("submit", "#blog-search", function (e) {
         e.preventDefault();
 
-        console.log($(".search-field-input"));
+      
         let searchText = $(".search-field-input").val();
         let parent = $(".blogs-area");
+
+      
+        $.ajax({
+            url: `/Blog/Search?searchText=${searchText}`,
+            type: "GET",
+            success: function (res) {
+                $(parent).html(res);
+                $(".search-field-input").val("");
+            }
+
+        })
+    })
+
+    $(document).on("submit", "#blog-search-mobile", function (e) {
+        e.preventDefault();
+
+        
+        let searchText = $(".search-field-input-mobile").val();
+        let parent = $(".blogs-area-mobile");
 
         console.log(parent)
         $.ajax({
@@ -46,7 +65,7 @@ $(document).ready(function(){
             type: "GET",
             success: function (res) {
                 $(parent).html(res);
-                $(".search-field-input").val = "";
+                $(".search-field-input-mobile").val("");
             }
 
         })

@@ -100,7 +100,7 @@
     
             p{
                 font-size: 12px;
-                margin: 1-px 0 !important;
+                margin: 1px 0 !important;
             }
     
             .text{
@@ -158,7 +158,7 @@
                 transition: all 0.3s ease 0s;
                 -webkit-transition: all 0.3s ease 0s;
                 -o-transition: all 0.3s ease 0s;
-                -ms-transition: all 0.3s ease 0s;
+                
                 -moz-osx-font-smoothing: grayscale;
                 -webkit-font-smoothing: antialiased;
                 display: var(--fa-display,inline-block);
@@ -510,7 +510,7 @@ body{
             transition: all 0.3s ease 0s;
             -webkit-transition: all 0.3s ease 0s;
             -o-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
+            
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
             display: var(--fa-display,inline-block);

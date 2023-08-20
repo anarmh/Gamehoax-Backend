@@ -3,7 +3,16 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    
+@@media(max-width:575.98px) {
 
+    #team-member .swiper .swiper-slide {
+        width: 50% !important;
+        margin-right: 15px !important;
+    }
+}
+</style>
 
 @section Css {
 
@@ -17,7 +26,7 @@
                     <div class="col-12">
                         <div class="page">
                             <div class="link">
-                                <a href="./home.html">
+                                <a asp-controller="Home" asp-action="Index">
                                     <span>Home</span>
                                 </a>
                                 <span class="shop"> » About</span>

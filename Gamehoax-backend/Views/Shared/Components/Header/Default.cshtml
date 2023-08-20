@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <a asp-controller="Home" asp-action="Index">
-                            <img src="~/assets/img/logo (1).png" alt="">
+                            <img src="~/assets/img/@Model.SettingDatas["Logo"]" alt="">
                         </a>
 
                     </div>
@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="search-field">
                                         <input name="searchText" type="text" class="search-text" placeholder="Search...">
-                                        <i class="fas fa-search search"></i>
+                                        <i class="fas fa-search search click-search"></i>
                                     </div>
 
                                 </div>
