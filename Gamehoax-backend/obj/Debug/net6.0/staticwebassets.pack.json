@@ -1221,6 +1221,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\shop.js"
     },
     {
+      "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\toastr.js",
+      "PackagePath": "staticwebassets\\assets\\js\\toastr.js"
+    },
+    {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\wishlist.js",
       "PackagePath": "staticwebassets\\assets\\js\\wishlist.js"
     },
@@ -1371,6 +1375,10 @@
     {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.scss",
       "PackagePath": "staticwebassets\\assets\\scss\\pages\\wishlist\\wishlist.scss"
+    },
+    {
+      "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\toastr.css",
+      "PackagePath": "staticwebassets\\assets\\scss\\toastr.css"
     },
     {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\templates\\account.html",

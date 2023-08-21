@@ -3,6 +3,7 @@
 @model LayoutVM
 @inject UserManager<AppUser> userManager;
 
+   
 <header>
     <section id="topbar-outer">
         <div class="container theme">
@@ -11,9 +12,9 @@
 
                     <div class="widget">
 
-                        <div class="header-contact">
-                            <span class="widget-title">
-                                need help ?
+                        <div class="header-contact w-100" >
+                            <span class="widget-title w-100 d-block">
+                                need help?
                                 <i class="fa-solid fa-angle-down"></i>
                             </span>
 
@@ -144,7 +145,7 @@
                                         <i class="fas fa-search search"></i>
                                     </div>
                                     <div class="search-field">
-                                        <input name="searchText" type="text" class="search-text" placeholder="Search...">
+                                        <input name="searchText" type="text" class="search-text" placeholder="Search..." required>
                                         <i class="fas fa-search search click-search"></i>
                                     </div>
 
@@ -157,7 +158,10 @@
                             <a asp-controller="Wishlist" asp-action="Index" class="wish">
                                 <!-- <img src="~/assets/img/wishlist/icons8-heart-64.png" alt="">  -->
                                 <i class="fa-solid fa-heart"></i>
-                                <span class="wish-count">(@Model.WishlistCount)</span>
+                              
+                                    <span class="wish-count">(@Model.WishlistCount)</span>
+                                
+                              
                             </a>
                            
                         </div>
@@ -165,7 +169,10 @@
                             
                             <a asp-controller="Cart" asp-action="Index" class="cart">
                                 <i class="fa-solid fa-basket-shopping"></i>
-                                <span class="cart-count">(@Model.BasketCount)</span>
+                               
+                                     <span class="cart-count">(@Model.BasketCount)</span>
+                                
+                              
                             </a>
                            
                         </div>

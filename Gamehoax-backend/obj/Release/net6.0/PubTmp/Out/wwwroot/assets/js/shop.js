@@ -37,6 +37,61 @@ inputElements.forEach((element) => {
 
 validateRange(inputElements[0].value, inputElements[1].value);
 
+////Filter Price
+//let minValue = document.getElementById("min-value-tablet");
+//let maxValue = document.getElementById("max-value-tablet");
+
+//function validateRange(minPrice, maxPrice) {
+//    if (minPrice > maxPrice) {
+
+//        let tempValue = maxPrice;
+//        maxPrice = minPrice;
+//        minPrice = tempValue;
+//    }
+
+//    minValue.innerHTML = "&euro;" + minPrice;
+//    maxValue.innerHTML = "&euro;" + maxPrice;
+//}
+
+//const inputElements = document.querySelectorAll(".range-slider-tablet input");
+//inputElements.forEach((element) => {
+//    element.addEventListener("change", (e) => {
+//        let minPrice = parseInt(inputElements[0].value);
+//        let maxPrice = parseInt(inputElements[1].value);
+
+//        validateRange(minPrice, maxPrice);
+//    });
+//});
+
+//validateRange(inputElements[0].value, inputElements[1].value);
+
+////Filter Price
+//let minValue = document.getElementById("min-value-mobile");
+//let maxValue = document.getElementById("max-value-mobile");
+
+//function validateRange(minPrice, maxPrice) {
+//    if (minPrice > maxPrice) {
+
+//        let tempValue = maxPrice;
+//        maxPrice = minPrice;
+//        minPrice = tempValue;
+//    }
+
+//    minValue.innerHTML = "&euro;" + minPrice;
+//    maxValue.innerHTML = "&euro;" + maxPrice;
+//}
+
+//const inputElements = document.querySelectorAll(".range-slider-mobile input");
+//inputElements.forEach((element) => {
+//    element.addEventListener("change", (e) => {
+//        let minPrice = parseInt(inputElements[0].value);
+//        let maxPrice = parseInt(inputElements[1].value);
+
+//        validateRange(minPrice, maxPrice);
+//    });
+//});
+
+//validateRange(inputElements[0].value, inputElements[1].value);
 
 
 $(document).ready(function(){

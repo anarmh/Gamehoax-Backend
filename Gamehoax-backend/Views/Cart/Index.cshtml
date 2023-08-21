@@ -93,15 +93,15 @@
                         </table>
 
 
-                        <table class="mobile d-none">
+                        <table class="mobile product-table  d-none">
 
 
-                            <tbody>
+                            <tbody >
                                 @foreach (var item in Model)
                                 {
                                     <tr class="product-table mb-3" data-id="@item.Id">
                                         <td class="product-remove" data-title="Action">
-                                            <a href="">x</a>
+                                            <a class="delete-product" style="cursor:pointer;">x</a>
                                         </td>
                                         <td class="product-image" data-title="Image">
                                             <img src="~/assets/img/product/@item.Image" alt="">
@@ -110,9 +110,7 @@
                                             <p>@item.Name</p>
                                         </td>
                                         <td class="product-price" data-title="Price">
-
                                             <span> <span>£</span><span class="item-price"> @item.Price.ToString("0.00") </span></span>
-
                                         </td>
                                         <td class="product-quantity" data-title="Quantity">
                                             <span>Qty: </span>
@@ -130,14 +128,14 @@
 
                                     </tr>
                                 }
-                              
-                                <tr>
+
+                                <tr class="footer-total">
                                     <td class="product-total" data-title="Total">
                                    @*      @foreach (var item in Model)
                                     {
                                         grandTotal += item.Total;
                                     }*@
-                                        <div class="amount"> <span>£</span> <span class="grand-total">@grandTotal.ToString("0.00")</span></div>
+                                        <div class="amount"> <span>£</span> <span class="grand-total-mobile">@grandTotal.ToString("0.00")</span></div>
                                     </td>
                                 </tr>
 

@@ -16,7 +16,7 @@
     $(document).on("click", "#add-to-cart", function (e) {
       
         let id = $(this).attr("data-id");
-        console.log(id)
+        
         let data = { id: id };
         $.ajax({
             type: "POST",
@@ -31,13 +31,18 @@
 
 
     function grandTotal() {
-        let tbody = $(".tbody-basket").children()
+        let tbody = $(".tbody-basket").children();
+       
         let sum = 0;
         for (var prod of tbody) {
             let price = parseFloat($(prod).children().eq(5).children().eq(1).text());
+            console.log('PRICE: ' + price);
+            
             sum += price
         }
+        console.log('SUM: ' + sum);
         $(".grand-total").text(sum.toFixed(2));
+      
     }
 
     //delete product from basket
@@ -70,13 +75,11 @@
     })
 
     function subTotal(res, priceValue, total_el) {
-        
-        //counterss.val(res);
-
-        
+        //console.log('REs: ' + res, 'PRiceVal: ' + priceValue, 'Total_el: ' + total_el);
         let mega = count_all();
-        //console.log(mega);
+        //console.log('MEGA: ' + mega);
         $(".cart-count").text(`(${mega})`);
+       
     }
 
 
@@ -90,6 +93,8 @@
 
         let total = parseFloat($(this).parent().parent().next().find(".total-price").text());
         let total_el = $(this).parent().parent().next().find(".total-price");
+        //let total_el = $(this).parent().parent().next()[0].innerText.slice(1);
+        //console.log('UUU: ' + total.el, $(this).parent().parent().next()[0].innerText.slice(1));
         let counterss = $(this).parent().prev();
         //console.log(count);
         //console.log(counterss);
@@ -99,12 +104,15 @@
             type: "POST",
             url: `Cart/IncrementProductCount?id=${id}`,
             success: function (res) {
-                res++;
-                subTotal(res, priceValue, total, total_el)
-                grandTotal();
-                counterss.val(res);
+                ++res;
+                //console.log(res, priceValue, total, total_el);
+                
+                
+                $(counterss).val(res);
                 let subtotal = parseFloat(priceValue * res);
                 $(total_el).text(subtotal);
+                grandTotal();
+                subTotal(res, priceValue, total, total_el)
             }
         })
     })
@@ -138,11 +146,13 @@
                     return;
                 }
                 res--;
-                subTotal(res, priceValue, total, total_el)
-                grandTotal();
-                counterss.val(res);
+               
+                
+                $(counterss).val(res);
                 let subtotal = parseFloat(priceValue * res);
                 $(total_el).text(subtotal);
+                grandTotal();
+                subTotal(res, priceValue, total, total_el)
             }
         })
     })
@@ -151,7 +161,7 @@
     $(document).on("click", "#add-to-cart-rating", function (e) {
 
         let id = $(this).attr("data-id");
-        console.log(id)
+       
         let data = { id: id };
         $.ajax({
             type: "POST",
@@ -168,7 +178,7 @@
     $(document).on("click", "#add-to-cart-date", function (e) {
 
         let id = $(this).attr("data-id");
-        console.log(id)
+       
         let data = { id: id };
         $.ajax({
             type: "POST",
@@ -184,7 +194,7 @@
     $(document).on("click", "#add-to-cart-discount", function (e) {
 
         let id = $(this).attr("data-id");
-        console.log(id)
+       
         let data = { id: id };
         $.ajax({
             type: "POST",
@@ -200,7 +210,7 @@
     $(document).on("click", "#add-to-cart-sale", function (e) {
 
         let id = $(this).attr("data-id");
-        console.log(id)
+        
         let data = { id: id };
         $.ajax({
             type: "POST",
@@ -292,7 +302,7 @@
        console.log()
         let id = $(this).attr("data-id");
         let inputCount = $(".qty-input").val();
-        console.log(inputCount)
+       
         let data = { id: id, count: inputCount };
       
         let countBasket = (".cart-count");
@@ -327,7 +337,7 @@
     $(document).on("click", "#add-to-cart-productDetail", function (e) {
 
         let id = $(this).attr("data-id");
-        console.log(id)
+       
         let data = { id: id };
         $.ajax({
             type: "POST",

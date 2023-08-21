@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     
     @await RenderSectionAsync("Css", required: false)
+    <link rel="stylesheet" href="~/assets/scss/toastr.css">
     <link rel="stylesheet" href="~/assets/scss/pages/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="~/assets/scss/pages/home/home.css">
 </head>
@@ -34,7 +35,7 @@
   
     <script src="https://kit.fontawesome.com/9c6e6ff268.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
-   @* <script src="~/assets/js/shop-filter.js"></script>*@
+    <script src="~/assets/js/toastr.js"></script>
     <script src="~/assets/js/common.js"></script>
     <script src="~/assets/js/bootstrap.js"></script>
     <script src="~/assets/js/home.js"></script>

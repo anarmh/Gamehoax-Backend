@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav>
-                        <a href="home.html">Home</a>
+                        <a asp-controller="Home" asp-action="Index">Home</a>
                         <span> / ProductDetail</span>
                     </nav>
                 </div>
@@ -110,7 +110,7 @@
                                 Categories:
                                 @foreach (var item in Model.ProductCategories)
                                 {
-                                    <a href=""> @item.Category.Name</a>
+                                    <a asp-controller="Shop" asp-action="Index"> @item.Category.Name</a>
                                 }
                               
                                
@@ -120,7 +120,7 @@
                                 Tags:
                                 @foreach (var item in Model.ProductTags)
                                 {
-                                    <a href="">@item.Tag.Name</a>
+                                    <a asp-controller="Shop" asp-action="Index">@item.Tag.Name</a>
                                 }
                               
                               
@@ -132,13 +132,11 @@
 
                 <div class="mobile d-none">
                     <div class="col-12">
-                        <div class="zoom-container ">
+                        <div class="zoom-container">
+                          <img src="~/assets/img/product/@Model.Images?.Where(m=>m.IsMain).FirstOrDefault()?.Image" alt="" class="xzoom d-none" xoriginal="~/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
 
-
-                            <img src="/assets/img/product/@Model.Images?.Where(m=>m.IsMain).FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
-
-                            <div class="xzoom-thumbs">
-
+                            <img src="/assets/img/product/@Model.Images?.FirstOrDefault()?.Image" alt="" class="xzoom" xoriginal="/assets/img/product/@Model.Images.Where(m=>m.IsMain).FirstOrDefault()?.Image">
+                          <div class="xzoom-thumbs">
 
                                     @foreach (var item in Model.Images)
                                     {
@@ -207,7 +205,7 @@
                                   
                                     @foreach (var item in Model.ProductCategories)
                                 {
-                                    <a href=""> @item.Category.Name</a>
+                                    <a asp-controller="Shop" asp-action="Index"> @item.Category.Name</a>
                                 }
                                 </span>
 
@@ -215,7 +213,7 @@
                                     Tags:
                                     @foreach (var item in Model.ProductTags)
                                     {
-                                    <a href="">@item.Tag.Name</a>
+                                    <a asp-controller="Shop" asp-action="Index">@item.Tag.Name</a>
                                     }
                                 </span>
                             </div>

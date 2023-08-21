@@ -24,6 +24,51 @@
         })
     })
 
+    //SORT
+    $(document).on("change", "#sort-tablet", function (e) {
+        e.preventDefault();
+        
+        let SortValueTablet = $(this).val();
+        let data = { SortValueTablet: SortValueTablet };
+        let parent = $(".productss-area-tablet");
+
+        $.ajax({
+            url: `/Shop/sort`,
+            type: "GET",
+            data: data,
+            success: function (res) {
+
+
+                $(parent).html(res);
+
+            }
+
+        })
+    })
+
+    //SORT
+    $(document).on("change", "#sort-mobile", function (e) {
+        e.preventDefault();
+        console.log("#sort-mobile")
+        let SortValueMobile = $(this).val();
+        console.log($(SortValueMobile))
+        let data = { SortValueMobile: SortValueMobile };
+        let parent = $(".productss-area-mobile");
+
+        $.ajax({
+            url: `/Shop/sort`,
+            type: "GET",
+            data: data,
+            success: function (res) {
+                console.log(res);
+
+                $(parent).html(res);
+
+            }
+
+        })
+    })
+
     
       //search
     $(document).on("submit", "#search-area", function (e) {
@@ -76,6 +121,32 @@
 
     //FILTER
     $(document).on("submit", "#filter-price", function (e) {
+        e.preventDefault();
+        let value1 = $(".min-price").val();
+        let value2 = $(".max-price").val();
+        let data = { value1: value1, value2: value2 }
+        let parent = $(".productss-area");
+
+        $.ajax({
+            url: "/Shop/GetRangeProducts",
+            type: "Get",
+            data: data,
+            success: function (res) {
+                console.log(res)
+                $(parent).html(res);
+
+                //if (value1 == "10" && value2 == "500") {
+                //    $(".shop-navigation").addClass("d-none")
+                //}
+
+            }
+
+        })
+    })
+
+
+    //FILTER
+    $(document).on("submit", ".filter-price-responsive", function (e) {
         e.preventDefault();
         let value1 = $(".min-price").val();
         let value2 = $(".max-price").val();

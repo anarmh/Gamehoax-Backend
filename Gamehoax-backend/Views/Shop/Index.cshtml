@@ -91,7 +91,7 @@
                             @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
                             {
                                 <li>
-                                    <a href="">
+                                    <a asp-controller="Shop" asp-action="Index">
                                         <div class="content">
                                             <div class="left">
                                                 <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
@@ -125,8 +125,8 @@
 
                         <aside id="left-banner-widget-2">
                             <div class="left-banner">
-                                <a href="">
-                                    <img src="~/assets/img/shop/left-banner.jpg" alt="">
+                                <a asp-controller="Shop" asp-action="Index">
+                                    <img src="~/assets/img/shop/@Model.Settings["ShopBanner"]" alt="">
                                 </a>
                             </div>
 
@@ -171,20 +171,20 @@
 
                         <div class="toolbar">
                             <div class="left">
-                                <p>Showing 1–12 of 24 results</p>
+                                <p>Showing <span>@Model.PaginateDatas.CurrentPage–@Model.PaginateDatas.TotalPage</span> of <span>@Model.PaginateDatas.Datas.Count()</span> results</p>
                             </div>
                             <div class="right">
-                                <select name="" id="sort">
-                                    <option value="selected">Default Sorting</option>
-                                    <option value="selected">Sort by popularity</option>
-                                    <option value="selected">Sort by average rating</option>
-                                    <option value="selected">Sort by price: low to high</option>
-                                    <option value="selected">Sort by price: high to low</option>
+                                <select name="SortValueTablet" id="sort-tablet">
+                                    <option value="1" selected>Default Sorting</option>
+                                    <option value="2">Sort by popularity</option>
+                                    <option value="3">Sort by average rating</option>
+                                    <option value="4">Sort by price: low to high</option>
+                                    <option value="5">Sort by price: high to low</option>
                                 </select>
                             </div>
                         </div>
                         <div class="container-fluid">
-                            <div class="row productss-area">
+                            <div class="row productss-area-tablet">
                                 <partial name="_ProductsPartial" model="Model.PaginateDatas" />
                             </div>
 
@@ -209,7 +209,7 @@
                                             <ul class="product-categories">
                                                 @foreach (var category in Model.Categories)
                                                 {
-                                                    <li><a href="">@category.Name</a></li>
+                                                    <li><a style="cursor:pointer;" data-id="@category.Id" class="category">@category.Name</a></li>
                                                 }
 
                                             </ul>
@@ -231,11 +231,11 @@
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                     <div class="accordion-body">
                                         <aside id="product-price">
-                                            <form method="get" action="">
-                                                <div class="range-slider">
-                                                    <input type="range" class="min-price" value="70" min="10" max="200"
+                                            <form class="filter-price-responsive" method="get" action="">
+                                                <div class="range-slider range-slider-tablet">
+                                                    <input type="range" class="min-price" value="10" min="10" max="200"
                                                            step="10" style="accent-color: #ffba00;">
-                                                    <input type="range" class="max-price" value="160" min="10" max="200"
+                                                    <input type="range" class="max-price" value="200" min="10" max="200"
                                                            step="10" style="accent-color: #ffba00;">
                                                 </div>
                                                 <div class="button">
@@ -243,7 +243,7 @@
                                                 </div>
 
                                                 <div class="price_label">
-                                                    Price: <span class="from">£50</span> — <span class="to">£200</span>
+                                                    Price: <span id="min-value-tablet" class="from">£10</span> — <span id="max-value-tablet" class="to">£200</span>
                                                 </div>
 
                                             </form>
@@ -267,7 +267,7 @@
                                             <div class="tagcloud">
                                                 @foreach (var tag in Model.Tags)
                                                 {
-                                                    <a href="">@tag.Name</a>
+                                                    <a style="cursor:pointer;" data-id="@tag.Id" class="tag">@tag.Name</a>
                                                 }
 
 
@@ -293,7 +293,7 @@
                                                 @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
                                                 {
                                                     <li>
-                                                        <a href="">
+                                                        <a asp-controller="Shop" asp-action="Index">
                                                             <div class="content">
                                                                 <div class="left">
                                                                     <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
@@ -345,20 +345,20 @@
                     <div class="col-12">
                         <div class="toolbar">
                             <div class="left">
-                                <p>Showing 1–12 of 24 results</p>
+                                <p>Showing <span>@Model.PaginateDatas.CurrentPage–@Model.PaginateDatas.TotalPage</span> of <span>@Model.PaginateDatas.Datas.Count()</span> results</p>
                             </div>
                             <div class="right">
-                                <select name="" id="sort">
-                                    <option value="selected">Default Sorting</option>
-                                    <option value="selected">Sort by popularity</option>
-                                    <option value="selected">Sort by average rating</option>
-                                    <option value="selected">Sort by price: low to high</option>
-                                    <option value="selected">Sort by price: high to low</option>
+                                <select name="SortValueMobile" id="sort-mobile">
+                                    <option value="1" selected>Default Sorting</option>
+                                    <option value="2">Sort by popularity</option>
+                                    <option value="3">Sort by average rating</option>
+                                    <option value="4">Sort by price: low to high</option>
+                                    <option value="5">Sort by price: high to low</option>
                                 </select>
                             </div>
                         </div>
                         <div class="container-fluid">
-                            <div class="row productss-area">
+                            <div class="row productss-area-mobile">
                                 <partial name="_ProductsPartial" model="Model.PaginateDatas" />
 
                                 @*   <div class="pagination">
@@ -392,7 +392,7 @@
                                                 <ul class="product-categories">
                                                     @foreach (var item in Model.Categories)
                                                     {
-                                                        <li><a href="">@item.Name</a></li>
+                                                        <li><a style="cursor:pointer;" data-id="@item.Id" class="category">@item.Name</a></li>
                                                     }
 
 
@@ -415,11 +415,11 @@
                                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                         <div class="accordion-body">
                                             <aside id="product-price">
-                                                <form method="get" action="">
-                                                    <div class="range-slider">
-                                                        <input type="range" class="min-price" value="70" min="10" max="200"
+                                                <form class="filter-price-responsive" method="get" action="">
+                                                    <div class="range-slider range-slider-mobile">
+                                                        <input type="range" class="min-price" value="10" min="10" max="200"
                                                                step="10" style="accent-color: #ffba00;">
-                                                        <input type="range" class="max-price" value="160" min="10" max="200"
+                                                        <input type="range" class="max-price" value="200" min="10" max="200"
                                                                step="10" style="accent-color: #ffba00;">
                                                     </div>
                                                     <div class="button">
@@ -427,7 +427,7 @@
                                                     </div>
 
                                                     <div class="price_label">
-                                                        Price: <span class="from">£50</span> — <span class="to">£200</span>
+                                                        Price: <span id="min-value-mobile" class="from">£10</span> — <span id="max-value-mobile" class="to">£200</span>
                                                     </div>
 
                                                 </form>
@@ -451,7 +451,7 @@
                                                 <div class="tagcloud">
                                                     @foreach (var tag in Model.Tags)
                                                     {
-                                                        <a href="">@tag.Name</a>
+                                                        <a style="cursor:pointer;" data-id="@tag.Id" class="tag">@tag.Name</a>
                                                     }
 
 
@@ -477,7 +477,7 @@
                                                     @foreach (var item in Model.Products.OrderByDescending(m => m.Rating.RatingCount).Take(3))
                                                     {
                                                         <li>
-                                                            <a href="">
+                                                            <a asp-controller="Shop" asp-action="Index">
                                                                 <div class="content">
                                                                     <div class="left">
                                                                         <img src="~/assets/img/product/@item.ProductImages.Where(m=>m.IsMain).FirstOrDefault().Image" alt="">
@@ -515,7 +515,7 @@
                             </div>
                             <aside id="left-banner-widget-2">
                                 <div class="left-banner">
-                                    <a href="">
+                                    <a asp-controller="Shop" asp-action="Index">
                                         <img src="~/assets/img/shop/@Model.Settings["ShopBanner"]" alt="">
                                     </a>
                                 </div>
