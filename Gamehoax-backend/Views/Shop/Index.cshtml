@@ -44,7 +44,7 @@
                             <ul class="product-categories">
                                 @foreach (var category in Model.Categories)
                             {
-                                <li><a style="cursor:pointer;" data-id="@category.Id" class="category">@category.Name</a></li>
+                                <li><a style="cursor:pointer;" data-id="@category.Id" class="category" selected>@category.Name</a></li>
                             }
                                
                             </ul>
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="price_label" >
-                                    Price: <span id="min-value" class="from">£50</span> — <span id="max-value" class="to">£200</span>
+                                    Price: <span id="min-value" class="from">£10</span> — <span id="max-value" class="to">£200</span>
                                 </div>
 
                             </form>
@@ -174,7 +174,7 @@
                                 <p>Showing <span>@Model.PaginateDatas.CurrentPage–@Model.PaginateDatas.TotalPage</span> of <span>@Model.PaginateDatas.Datas.Count()</span> results</p>
                             </div>
                             <div class="right">
-                                <select name="SortValueTablet" id="sort-tablet">
+                                <select name="SortValue" id="sort-tablet">
                                     <option value="1" selected>Default Sorting</option>
                                     <option value="2">Sort by popularity</option>
                                     <option value="3">Sort by average rating</option>
@@ -348,7 +348,7 @@
                                 <p>Showing <span>@Model.PaginateDatas.CurrentPage–@Model.PaginateDatas.TotalPage</span> of <span>@Model.PaginateDatas.Datas.Count()</span> results</p>
                             </div>
                             <div class="right">
-                                <select name="SortValueMobile" id="sort-mobile">
+                                <select name="SortValue" id="sort-mobile">
                                     <option value="1" selected>Default Sorting</option>
                                     <option value="2">Sort by popularity</option>
                                     <option value="3">Sort by average rating</option>

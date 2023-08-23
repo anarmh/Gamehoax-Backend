@@ -27,9 +27,9 @@
     //SORT
     $(document).on("change", "#sort-tablet", function (e) {
         e.preventDefault();
-        
-        let SortValueTablet = $(this).val();
-        let data = { SortValueTablet: SortValueTablet };
+        console.log("#sort-tablet")
+        let SortValue = $(this).val();
+        let data = { SortValue: SortValue};
         let parent = $(".productss-area-tablet");
 
         $.ajax({
@@ -50,9 +50,9 @@
     $(document).on("change", "#sort-mobile", function (e) {
         e.preventDefault();
         console.log("#sort-mobile")
-        let SortValueMobile = $(this).val();
-        console.log($(SortValueMobile))
-        let data = { SortValueMobile: SortValueMobile };
+        let SortValue = $(this).val();
+        console.log($(SortValue))
+        let data = { SortValue: SortValue };
         let parent = $(".productss-area-mobile");
 
         $.ajax({

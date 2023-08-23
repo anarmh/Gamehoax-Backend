@@ -146,6 +146,27 @@ namespace Gamehoax_backend.Controllers
 
 
 
+        //[HttpGet]
+        //public async Task<IActionResult> Filter(int value1, int value2,string sortValue,string searchText,int categoryId,int tagId, int page = 1, int take = 9)
+        //{
+
+        //    ViewBag.categoryId = categoryId;
+        //    ViewBag.tagId = tagId;
+        //    ViewBag.value1 = value1;
+        //    ViewBag.value2 = value2;
+        //    ViewBag.searchText = searchText;
+        //    ViewBag.sortValue = sortValue;
+
+
+        //    List<Product> products = await _productService.GetPaginateDatasAsync(page, take,sortValue,searchText,categoryId,tagId,value1,value2);
+        //    var productCount = products.Count();
+        //    var pageCount = (int)Math.Ceiling((decimal)productCount / take);
+        //    List<ProductVM> mappedDatas = _productService.GetMappedDatas(products);
+        //    Paginate<ProductVM> paginatedDatas = new(mappedDatas, page, pageCount);
+        //    return PartialView("_ProductsPartial", paginatedDatas);
+        //}
+
+
         [HttpGet]
         public async Task<IActionResult> GetRangeProducts(int value1, int value2, int page = 1, int take = 9)
         {

@@ -25,6 +25,7 @@
             url: "/Cart/AddToCart",
             data: data,
             success: function (res) {
+              
                 $('.cart-count').text('(' + res + ')');
                 toastr["success"]("Product added!")
 
@@ -37,11 +38,11 @@
                     "preventDuplicates": false,
                     "onclick": null,
                     "showDuration": "100",
-                    "hideDuration": "300",
-                    "timeOut": "1000",
-                    "extendedTimeOut": "500",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    //"showEasing": "swing",
+                    //"hideEasing": "linear",
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
@@ -190,6 +191,25 @@
             data: data,
             success: function (res) {
                 $('.cart-count').text('(' + res + ')');
+                toastr["success"]("Product added!");
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;
@@ -207,6 +227,24 @@
             data: data,
             success: function (res) {
                 $('.cart-count').text('(' + res + ')');
+                toastr["success"]("Product added!");
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;
@@ -223,6 +261,24 @@
             data: data,
             success: function (res) {
                 $('.cart-count').text('(' + res + ')');
+                toastr["success"]("Product added!");
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;
@@ -239,6 +295,24 @@
             data: data,
             success: function (res) {
                 $('.cart-count').text('(' + res + ')');
+                toastr["success"]("Product added!");
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;
@@ -292,20 +366,19 @@
         let prod = $(this).parent().parent();
         let tbody = $(".tbody-wishlist").children();
         let data = { id: id };
-      
+        
 
         $.ajax({
             type: "Post",
             url: `/Wishlist/DeleteDataFromWishlist?id=${id}`,
             data: data,
             success: function (res) {
-                if ($(tbody).length == 1) {
+              
+                $(prod).remove();
+                if ($('.product-table-wishlist .web tr').length == 0) {
                     $(".product-table-wishlist").addClass("d-none");
                     $(".alert-warning").removeClass("d-none");
-                  
-
                 }
-                $(prod).remove();
                 res--;
                 $(".wish-count").text(`(${res})`)
             }
@@ -335,11 +408,31 @@
             success: function (res) {
                 $('.qty-input').val(1);
                 $(countBasket).text(`(${res})`);
+                toastr["success"]("Product added!");
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;
     })
 
+
+   
 
     $(document).on("click", '.incrementDetail', function (e) {
         let count = $('.qty-input').val();
@@ -366,6 +459,25 @@
             data: data,
             success: function (res) {
                 $('.cart-count').text('(' + res + ')');
+
+                toastr["success"]("Product added!");
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": true,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "200",
+                    "timeOut": "500",
+                    "extendedTimeOut": "300",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
             }
         })
         return false;

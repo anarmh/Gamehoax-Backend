@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zdP8v5x5Mo9l/wymFsZFwnSJ5Im8qsEwNPKlzx9fGOQ=",
+  "Hash": "lFYykuUbIqz/HcFtLftwEJmneGHwaFhU5wxNYNLY6bs=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -5219,6 +5219,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\shop-filter.js"
     },
     {
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\toastr.js",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/js/toastr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\toastr.js"
+    },
+    {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\js\\wishlist.js",
       "SourceId": "Gamehoax-backend",
       "SourceType": "Discovered",
@@ -5863,6 +5880,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\scss\\pages\\wishlist\\wishlist.scss"
+    },
+    {
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\scss\\toastr.css",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/scss/toastr.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\scss\\toastr.css"
     },
     {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\templates\\account.html",

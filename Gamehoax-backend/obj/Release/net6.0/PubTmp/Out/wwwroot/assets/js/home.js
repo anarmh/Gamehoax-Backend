@@ -140,7 +140,7 @@ $(document).ready(function() {
   
     let id = $(this).data("id");
     $(".item").addClass("d-none");
-    $(`.item[data-id=${id}]`).removeClass("d-none").slick("setPosition");
+    $(`.item[data-id=${id}]`).removeClass("d-none");
   });
  
 

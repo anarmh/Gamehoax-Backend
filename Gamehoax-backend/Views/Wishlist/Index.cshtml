@@ -7,13 +7,15 @@
 @section Css {
 
         <link rel="stylesheet" href="~/assets/scss/pages/wishlist/wishlist.css">
-}
 
+        
 <style>
     .checked{
         color:red !important;
     }
 </style>
+}
+
 
 <main>
     <section id="page-title">
@@ -56,7 +58,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody class="tbody-wishlist">
+                            <tbody class="tbody-wishlist web">
                                 @foreach (var item in Model)
                                 {
                                     <tr data-id="@item.Id">
@@ -87,15 +89,15 @@
                         </table>
 
 
-                        <table class="mobile d-none">
+                        <table class="mobile d-none  product-table-wishlist">
 
 
-                            <tbody>
+                            <tbody class="tbody-wishlist">
                                 @foreach (var item in Model)
                                 {
-                                    <tr class="product-table mb-3">
+                                    <tr data-id="@item.Id" class="product-table mb-3">
                                         <td class="product-remove" data-title="Action">
-                                            <a href="">x</a>
+                                            <a class="delete-wishlist">x</a>
                                         </td>
                                         <td class="product-image" data-title="Image">
                                             <img src="~/assets/img/product/@item.Image" alt="">

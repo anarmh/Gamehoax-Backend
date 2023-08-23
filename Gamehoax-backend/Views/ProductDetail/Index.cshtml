@@ -9,15 +9,31 @@
     var user = await userManager.GetUserAsync(User);
 }
 
-<style>
-    .checked {
-        color: red !important;
-    }
-</style>
+
 
 @section Css {
 
         <link rel="stylesheet" href="~/assets/scss/pages/product-detail/product-detail.css">
+
+
+    <style>
+        .checked {
+            color: red !important;
+        }
+
+        @@media (max-width: 575.98px) {
+            #related-products .swiper .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50% !important;
+                margin-right: 15px !important;
+            }
+        }
+    </style>
 }
 
 <main>
@@ -164,7 +180,7 @@
                             <form action="">
                                 <div class="quantity">
                                     <span class="template-quantity">Qty: </span>
-                                    <input type="number" class="qty" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
+                                    <input type="number" class="qty qty-input" value="1" step="1" min="1" size="4" pattern="[0-9]*" inputmode="numeric">
                                     <div class="quantity-button">
                                         <button type="button" class="plus incrementDetail" value="+">
                                             +

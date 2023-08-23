@@ -14,6 +14,14 @@ using Newtonsoft.Json;
 
 namespace Gamehoax_backend.Controllers
 {
+
+            //1)SuperAdmin
+            //Login:cavid_53,
+            //Parol:Cavid123_
+            //2)Admin
+            //Login:anarmh,
+            //Parol:Anar123_
+
     public class AccountController : Controller
     {
         private readonly AppDbContext _context;
