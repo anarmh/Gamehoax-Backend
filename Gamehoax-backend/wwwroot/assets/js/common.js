@@ -25,7 +25,7 @@
             url: "/Cart/AddToCart",
             data: data,
             success: function (res) {
-              
+             
                 $('.cart-count').text('(' + res + ')');
                 toastr["success"]("Product added!")
 
@@ -41,8 +41,8 @@
                     "hideDuration": "200",
                     "timeOut": "500",
                     "extendedTimeOut": "300",
-                    //"showEasing": "swing",
-                    //"hideEasing": "linear",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                 }
@@ -89,7 +89,13 @@
                 prod.remove();
                 res--;
                 let mega = count_all();
-                $(".cart-count").text('(' + mega+')');
+                if (mega == 0) {
+                    $(".cart-count").text('');
+                }
+                else {
+                    $(".cart-count").text('(' + mega+')');
+
+                }
                 grandTotal();
             }
         })
@@ -337,7 +343,13 @@
                     el.removeClass('checked'); 
                     $(countWishlist).text(`(${res})`);
                     res--;
-                    $(countWishlist).text(`(${res})`);
+                    if (res == 0) {
+                        $(countWishlist).text(``);
+                    }
+                    else {
+                        $(countWishlist).text(`(${res})`);
+                    }
+                   
                 }
             })
             el.removeClass('checked');
@@ -352,7 +364,11 @@
                 data: data,
                 success: function (res) {
                     el.addClass('checked');
-                    $(countWishlist).text(`(${res})`);
+                    if (res == 0) {
+                        $(countWishlist).text('');
+                    } else {
+                        $(countWishlist).text(`(${res})`);
+                    }
                 }
             })
         }
@@ -380,7 +396,11 @@
                     $(".alert-warning").removeClass("d-none");
                 }
                 res--;
-                $(".wish-count").text(`(${res})`)
+                if (res == 0) {
+                    $(".wish-count").text("");
+                } else {
+                    $(".wish-count").text(`(${res})`)
+                }
             }
         })
         return false;

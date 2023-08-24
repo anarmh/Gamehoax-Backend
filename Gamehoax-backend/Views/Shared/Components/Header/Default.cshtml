@@ -3,7 +3,10 @@
 @model LayoutVM
 @inject UserManager<AppUser> userManager;
 
-   
+@{
+    var countWish = "";
+    var countCart = "";
+}
 <header>
     <section id="topbar-outer">
         <div class="container theme">
@@ -158,8 +161,11 @@
                             <a asp-controller="Wishlist" asp-action="Index" class="wish">
                                 <!-- <img src="~/assets/img/wishlist/icons8-heart-64.png" alt="">  -->
                                 <i class="fa-solid fa-heart"></i>
-                              
-                                    <span class="wish-count">(@Model.WishlistCount)</span>
+                                @if (Model.WishlistCount != 0)
+                                {
+                                    countWish = $"({Model.WishlistCount.ToString()})";
+                                }
+                                <span class="wish-count">@(countWish)</span>
                                 
                               
                             </a>
@@ -169,8 +175,11 @@
                             
                             <a asp-controller="Cart" asp-action="Index" class="cart">
                                 <i class="fa-solid fa-basket-shopping"></i>
-                               
-                                     <span class="cart-count">(@Model.BasketCount)</span>
+                                @if (Model.BasketCount != 0)
+                                {
+                                    countCart = $"({Model.BasketCount.ToString()})";
+                                }
+                                <span class="cart-count">@(countCart)</span>
                                 
                               
                             </a>
