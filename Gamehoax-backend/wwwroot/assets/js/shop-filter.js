@@ -30,7 +30,7 @@
         console.log("#sort-tablet")
         let SortValue = $(this).val();
         let data = { SortValue: SortValue};
-        let parent = $(".productss-area-tablet");
+        let parent = $(".productss-area");
 
         $.ajax({
             url: `/Shop/sort`,
@@ -53,7 +53,7 @@
         let SortValue = $(this).val();
         console.log($(SortValue))
         let data = { SortValue: SortValue };
-        let parent = $(".productss-area-mobile");
+        let parent = $(".productss-area");
 
         $.ajax({
             url: `/Shop/sort`,
