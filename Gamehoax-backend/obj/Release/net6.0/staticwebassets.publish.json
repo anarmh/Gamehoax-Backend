@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lFYykuUbIqz/HcFtLftwEJmneGHwaFhU5wxNYNLY6bs=",
+  "Hash": "4ut1JmFqwoYj1alHGAWU/8DNxLY38s87I87Bi48SgRo=",
   "Source": "Gamehoax-backend",
   "BasePath": "_content/Gamehoax-backend",
   "Mode": "Default",
@@ -4792,6 +4792,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\5.png"
+    },
+    {
+      "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\903f49bd-9047-4ca5-a76e-0e36d0f049c2 5.png",
+      "SourceId": "Gamehoax-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\",
+      "BasePath": "_content/Gamehoax-backend",
+      "RelativePath": "assets/img/slider/903f49bd-9047-4ca5-a76e-0e36d0f049c2 5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\903f49bd-9047-4ca5-a76e-0e36d0f049c2 5.png"
     },
     {
       "Identity": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\slider\\b579c649-6ca5-4da2-92e4-b2fe321b755d 4.jpg",
