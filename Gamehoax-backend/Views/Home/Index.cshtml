@@ -20,8 +20,8 @@
             #most-popular .theme-container .column-inner .wpb-wrapper .cms-banner-item .cms-banner-inner .static-wrapper .static-inner .text1.static-text {
                 display: inline-block;
                 width: auto;
-                font-size: 25px !important;
-                line-height: 19px !important;
+                font-size: 15px !important;
+                line-height: 15px !important;
                 letter-spacing: 0;
                 font-weight: 700;
                 color: #000;
@@ -34,10 +34,32 @@
                 margin-left: 18px;
             }
 
+                #most-popular .theme-container .column-inner .wpb-wrapper .cms-banner-item .cms-banner-inner .static-wrapper .static-inner .text1.static-text::before {
+                    content: "";
+                    border-right: 0px solid #f9aa01;
+                    border-bottom: 20px solid #f9aa01 !important;
+                    border-left: 17px solid transparent;
+                    border-top: 17px solid transparent;
+                    position: absolute;
+                    left: -17px;
+                    top: -18px;
+                }
+
+                #most-popular .theme-container .column-inner .wpb-wrapper .cms-banner-item .cms-banner-inner .static-wrapper .static-inner .text1.static-text::after {
+                    content: "";
+                    border-right: 17px solid transparent;
+                    border-bottom: 17px solid transparent;
+                    border-left: 0px solid #f9aa01;
+                    border-top: 20px solid #f9aa01 !important;
+                    position: absolute;
+                    right: -17px;
+                    top: 0px;
+                }
+
             #most-popular .theme-container .column-inner .wpb-wrapper .cms-banner-item .cms-banner-inner .static-wrapper .static-inner .text2.static-text {
                 display: block;
-                font-size: 20px !important;
-                line-height: 20px !important;
+                font-size: 15px !important;
+                line-height: 15px !important;
                 letter-spacing: 0;
                 font-weight: 600;
                 color: #fff;
@@ -119,7 +141,7 @@
                     border-top: 12px solid transparent !important;
                     position: absolute;
                     left: -12px;
-                    top: -12px !important;
+                    top: -11px !important;
                 }
 
                 #our-products .swiper .swiper-slide .card-carousel .percent::after {
@@ -230,6 +252,17 @@
                 width: 50% !important;
                 margin-right: 15px !important;
             }
+
+            #blog .swiper .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50% !important;
+                margin-right: 15px !important;
+            }
         }
 
     </style>
@@ -309,8 +342,8 @@
                                         <span class="static-wrapper">
 
                                             <span class="static-inner">
-                                                <span class="text1 static-text">@category.Title</span>
-                                                <span class="text2 static-text">@category.Name</span>
+                                                <span class="text1 static-text" style="font-size:10px !important">@category.Title</span>
+                                                <span class="text2 static-text" style="font-size:10px !important">@category.Name</span>
                                             </span>
                                         </span>
                                     </div>
