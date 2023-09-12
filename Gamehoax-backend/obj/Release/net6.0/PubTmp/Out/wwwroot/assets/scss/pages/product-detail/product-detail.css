@@ -3000,14 +3000,13 @@ body {
   right: -12px;
   top: 0px;
 }
-#related-products .swiper .swiper-slide .card-carousel:hover .main {
-  display: none;
-  transition: all 1s ease;
-}
-#related-products .swiper .swiper-slide .card-carousel:hover .hover {
-  display: block !important;
-  transition: all 1s ease;
-}
+    #related-products .swiper .swiper-slide .card-carousel:hover .main {
+        opacity: 0 !important;
+        transition: all 1s ease 0s !important;
+    }
+    #related-products .swiper .swiper-slide .card-carousel:hover .hover {
+        opacity: 1 !important;
+    }
 #related-products .swiper .swiper-slide .card-carousel:hover .product-button-outer {
   opacity: 1;
   height: 7%;
@@ -3017,13 +3016,29 @@ body {
   width: 100%;
   height: 80%;
 }
-#related-products .swiper .swiper-slide .card-carousel .action-buttons img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+    #related-products .swiper .swiper-slide .card-carousel .action-buttons .img {
+        width: 100%;
+        position: relative;
+    }
+
+        #related-products .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+    #related-products .swiper .swiper-slide .card-carousel .action-buttons .img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 #related-products .swiper .swiper-slide .card-carousel .product-detail {
   width: 100%;
   height: 20%;

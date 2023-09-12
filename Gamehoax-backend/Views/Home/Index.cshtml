@@ -414,8 +414,10 @@
                                 <div data-aos="fade-right" class="swiper-slide">
                                     <div class="card-carousel">
                                         <div class="action-buttons">
+                                            <div class="img"> 
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            <img class="w-100 hover" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            </div>
                                         </div>
                                         <div class="product-detail">
 
@@ -484,8 +486,10 @@
                                 <div data-aos="fade-right" class="swiper-slide">
                                     <div class="card-carousel">
                                         <div class="action-buttons">
+                                            <div class="img">
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            <img class="w-100 hover " src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            </div>
                                         </div>
                                         <div class="product-detail">
 
@@ -554,8 +558,10 @@
                                 <div data-aos="fade-right" class="swiper-slide">
                                     <div class="card-carousel">
                                         <div class="action-buttons">
+                                            <div class="img">
                                             <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                            <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            <img class="w-100 hover" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                            </div>
                                         </div>
                                         @if (@item.Discount.Percent == 0)
                                         {
@@ -732,8 +738,10 @@
                             <div data-aos="fade-right" class="swiper-slide">
                                 <div class="card-carousel">
                                     <div class="action-buttons">
-                                        <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                        <div class="img">
+                                            <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
+                                            <img class="w-100 hover"  src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                        </div>
                                     </div>
                                     @if (@item.Discount.Percent == 0)
                                     {

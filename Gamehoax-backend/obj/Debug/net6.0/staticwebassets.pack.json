@@ -601,6 +601,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\footer-bg.png"
     },
     {
+      "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\icon-user.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon-user.png"
+    },
+    {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\loading.gif",
       "PackagePath": "staticwebassets\\assets\\img\\loading.gif"
     },
@@ -1167,6 +1171,10 @@
     {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\testmonial\\quote.png",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\quote.png"
+    },
+    {
+      "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\user.png",
+      "PackagePath": "staticwebassets\\assets\\img\\user.png"
     },
     {
       "Id": "D:\\Asp.net\\Gamehoax-Backend\\Gamehoax-backend\\wwwroot\\assets\\img\\wishlist\\icons8-heart-64.png",

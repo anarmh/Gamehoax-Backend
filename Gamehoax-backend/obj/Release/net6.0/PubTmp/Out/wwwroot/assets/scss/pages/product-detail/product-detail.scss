@@ -2548,9 +2548,10 @@ body{
     }
 }
 
-#related-products{
+#related-products {
     margin-bottom: 30px;
-    h2{
+
+    h2 {
         text-align: center;
         color: #ffffff;
         margin: 0px;
@@ -2563,15 +2564,16 @@ body{
         line-height: 40px;
         font-weight: 600;
         letter-spacing: 0.2px;
-        &::before{
-                content: "";
-                border-bottom: 2px solid #f9aa01;
-                position: absolute;
-                width: 54px;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
+
+        &::before {
+            content: "";
+            border-bottom: 2px solid #f9aa01;
+            position: absolute;
+            width: 54px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
         }
     }
 
@@ -2579,6 +2581,7 @@ body{
     .swiper {
         width: 100%;
         height: 100%;
+
         .swiper-slide {
             text-align: center;
             font-size: 18px;
@@ -2587,13 +2590,13 @@ body{
             justify-content: center;
             align-items: center;
 
-            .card-carousel{
-                 width: 100%;
-                 height: 100%;
-                  position: relative;
-                  background-color: #170f1f;
+            .card-carousel {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                background-color: #170f1f;
 
-                  .percent{
+                .percent {
                     width: auto;
                     text-align: center;
                     margin: 0;
@@ -2613,7 +2616,8 @@ body{
                     -moz-transition: all 500ms ease 0s;
                     -o-transition: all 500ms ease 0s;
                     transition: all 500ms ease 0s;
-                    &::before{
+
+                    &::before {
                         content: "";
                         border-right: 0px solid #f9aa01;
                         border-bottom: 20px solid #f9aa01;
@@ -2623,8 +2627,8 @@ body{
                         left: -12px;
                         top: -12px;
                     }
-                    &::after{
 
+                    &::after {
                         content: "";
                         border-right: 12px solid transparent;
                         border-bottom: 12px solid transparent;
@@ -2634,103 +2638,127 @@ body{
                         right: -12px;
                         top: 0px;
                     }
-                  }
+                }
 
-                &:hover .main{
-                    display: none;
-                    transition: all 1s ease;
+                &:hover .main {
+                    opacity: 0 !important;
+                    transition: all 1s ease !important;
                 }
-                &:hover .hover{
-                    display: block !important;
-                    
-                    transition: all 1s ease;
+
+                &:hover .hover {
+                    opacity: 1 !important;
                 }
-                &:hover  .product-button-outer{
+
+                &:hover .product-button-outer {
                     opacity: 1;
                     height: 7%;
                     transition: all 0.5s ease;
                 }
-               
-                .action-buttons{
+
+                .action-buttons {
                     width: 100%;
                     height: 80%;
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+
+                    .img {
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .hover {
+                            opacity: 0;
+                            transition: all 1s ease;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            visibility: hidden;
+                            max-width: 100%;
+                            height: auto;
+                        }
                     }
-                   
                 }
-               
-                .product-detail{
+
+                .product-detail {
                     width: 100%;
                     height: 20%;
                     background-color: #170f1f;
                     //  position: relative;
-                        // bottom: 10%;
+                    // bottom: 10%;
                     display: flex;
                     flex-direction: column;
                     align-items: start;
                     justify-content: center;
-                    .content{
-                       
-                        padding:0 5px;
+
+                    .content {
+                        padding: 0 5px;
                     }
-                    .stars{
-                      
-                        i{
+
+                    .stars {
+
+                        i {
                             font-size: 12px;
                         }
-                        .orange{
+
+                        .orange {
                             color: #f9aa01;
                         }
                     }
-                    .title{
-                           
-                        span{
+
+                    .title {
+
+                        span {
                             color: #ffffff;
                             font-size: 15px;
-                            &:hover{
+
+                            &:hover {
                                 color: #f9aa01;
                             }
                         }
                     }
-                    .price{
-                        background-color: #170f1f;
-                            span{
-                                font-size: 15px;
-                            }
-                            .actual-price{
-                                color: #f9aa01;
-                            }
-                            .discount{
-                                text-decoration: line-through !important;
-                                color: #808080;
-                            }
 
+                    .price {
+                        background-color: #170f1f;
+
+                        span {
+                            font-size: 15px;
+                        }
+
+                        .actual-price {
+                            color: #f9aa01;
+                        }
+
+                        .discount {
+                            text-decoration: line-through !important;
+                            color: #808080;
+                        }
                     }
                 }
 
-                .product-button-outer{
-                  background-color: #170f1f;
+                .product-button-outer {
+                    background-color: #170f1f;
                     position: absolute;
                     bottom: 0;
                     height: 0;
                     width: 100% !important;
-                    
                     opacity: 0;
                     display: flex;
-                     justify-content: space-around;
-                     align-items: center;
-                     &::before{
+                    justify-content: space-around;
+                    align-items: center;
+
+                    &::before {
                         border-top: 1px solid #2f2736;
                         content: "";
                         width: 100%;
                         position: absolute;
                         top: 0
-                     }
-                    a{
+                    }
+
+                    a {
                         text-decoration: none;
                         display: flex;
                         align-items: center;
@@ -2738,36 +2766,32 @@ body{
                         width: 33.33%;
                         height: 100%;
                         color: #ffffff;
-                         border-right: 1px solid #2f2736;
-                         i{
+                        border-right: 1px solid #2f2736;
+
+                        i {
                             font-size: 15px;
-                         }
-                         &:last-child{
+                        }
+
+                        &:last-child {
                             border: none;
-                         }
-                      
+                        }
                     }
-               
-                      
-                    
-                   
                 }
             }
-           
-          }
-          .next-prev{
-                color: #f9aa01;
-                display: none;
-          }
-          &:hover .next-prev{
+        }
+
+        .next-prev {
+            color: #f9aa01;
+            display: none;
+        }
+
+        &:hover .next-prev {
             display: block;
-          }
-
+        }
         //   .custom-pagination{
-
         //    span{
         //        background-color: #f9aa01;
         //    }
         //   }
-      }
+    }
 }

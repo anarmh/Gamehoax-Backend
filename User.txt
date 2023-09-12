@@ -1,8 +1,0 @@
-1)SuperAdmin
-Login:cavid_53,
-Parol:Cavid123_
-2)Admin
-Login:anarmh,
-Parol:Anar123_
-
-

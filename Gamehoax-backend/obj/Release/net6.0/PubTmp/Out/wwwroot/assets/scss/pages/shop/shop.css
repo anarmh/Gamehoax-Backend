@@ -1037,12 +1037,12 @@ footer .backtotop #to-top:hover::after {
     top: 0px;
   }
   #shop .tablet .card-carousel:hover .main {
-    display: none;
+    opacity: 0 !important;
     transition: all 1s ease;
   }
   #shop .tablet .card-carousel:hover .hover {
-    display: block !important;
-    transition: all 1s ease;
+    opacity: 1 !important;
+   
   }
   #shop .tablet .card-carousel:hover .product-button-outer {
     opacity: 1;
@@ -1053,13 +1053,28 @@ footer .backtotop #to-top:hover::after {
     width: 100%;
     height: 80%;
   }
-  #shop .tablet .card-carousel .action-buttons img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+    #shop .tablet .card-carousel .action-buttons .img{
+        width:100%;
+        position:relative;
+    }
+        #shop .tablet .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+    #shop .tablet .card-carousel .action-buttons .img img {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
   #shop .tablet .card-carousel .product-detail {
     width: 100%;
     height: 20%;
@@ -1589,12 +1604,12 @@ footer .backtotop #to-top:hover::after {
     top: 0px;
   }
   #shop .mobile .card-carousel:hover .main {
-    display: none;
+    opacity: 0 !important;
     transition: all 1s ease;
   }
   #shop .mobile .card-carousel:hover .hover {
-    display: block !important;
-    transition: all 1s ease;
+    opacity: 1 !important;
+   
   }
   #shop .mobile .card-carousel:hover .product-button-outer {
     opacity: 1;
@@ -1605,7 +1620,23 @@ footer .backtotop #to-top:hover::after {
     width: 100%;
     height: 80%;
   }
-  #shop .mobile .card-carousel .action-buttons img {
+    #shop .mobile .card-carousel .action-buttons .img{
+        position:relative;
+        width:100%;
+    }
+
+    #shop .mobile .card-carousel .action-buttons .img .hover {
+        opacity: 0;
+        transition: all 1s ease !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        max-width: 100%;
+        height: auto;
+    }
+  #shop .mobile .card-carousel .action-buttons .img img {
     display: block;
     width: 100%;
     height: 100%;
@@ -3090,14 +3121,13 @@ body {
   right: -12px;
   top: 0px;
 }
-#shop .card-carousel:hover .main {
-  display: none;
-  transition: all 1s ease;
-}
-#shop .card-carousel:hover .hover {
-  display: block !important;
-  transition: all 1s ease;
-}
+    #shop .card-carousel:hover .main {
+        opacity: 0 !important;
+        transition: all 1s ease 0s !important;
+    }
+    #shop .card-carousel:hover .hover {
+        opacity: 1 !important;
+    }
 #shop .card-carousel:hover .product-button-outer {
   opacity: 1;
   height: 9%;
@@ -3106,7 +3136,24 @@ body {
 #shop .card-carousel .action-buttons {
   width: 100%;
 }
-#shop .card-carousel .action-buttons img {
+
+    #shop .card-carousel .action-buttons .img {
+        width: 100%;
+        position: relative;
+    }
+
+  #shop .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+  }
+#shop .card-carousel .action-buttons .img img {
   display: block;
   width: 100%;
   height: 100%;

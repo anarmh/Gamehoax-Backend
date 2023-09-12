@@ -300,7 +300,7 @@
                                             {
                                                 <li class="review-item" style="border:1px solid #888888">
                                                     <div class="review-media">
-                                                        <a class="review-avatar" href="#"><img src="~/assets/img/product/2.jpg" alt="review"></a>
+                                                        <a class="review-avatar" href="#"><img src="~/assets/img/user.png" alt="review"></a>
                                                         <h5 class="review-meta">
                                                             @if (item.AppUser != null)
                                                             {
@@ -438,8 +438,10 @@
                             <div class="swiper-slide">
                                 <div class="card-carousel">
                                     <div class="action-buttons">
+                                        <div class="img">
                                         <img class="w-100 main" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsMain).Image" alt="">
-                                        <img class="w-100 hover d-none" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                        <img class="w-100 hover" src="~/assets/img/product/@item.ProductImages.FirstOrDefault(m=>m.IsHover)?.Image" alt="">
+                                        </div>
                                     </div>
                                     @if (item.Discount.Percent != 0)
                                     {

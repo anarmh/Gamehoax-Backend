@@ -1419,12 +1419,12 @@ footer .backtotop #to-top:hover::after {
     top: 0px;
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .main {
-    display: none;
+    opacity: 0 !important;
     transition: all 1s ease;
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .hover {
-    display: block !important;
-    transition: all 1s ease;
+    opacity: 1 !important;
+  
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .product-button-outer {
     opacity: 1;
@@ -1435,13 +1435,29 @@ footer .backtotop #to-top:hover::after {
     width: 100%;
     height: 80%;
   }
-  #our-products .swiper .swiper-slide .card-carousel .action-buttons img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+
+    #our-products .swiper .swiper-slide .card-carousel .action-buttons .img{
+        width:100%;
+        position:relative;
+    }
+        #our-products .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+    #our-products .swiper .swiper-slide .card-carousel .action-buttons .img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
   #our-products .swiper .swiper-slide .card-carousel .product-detail {
     width: 100%;
     height: 20%;
@@ -1743,13 +1759,13 @@ footer .backtotop #to-top:hover::after {
     right: -12px;
     top: 0px;
   }
-  #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .main {
-    display: none;
-    transition: all 1s ease;
-  }
+    #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .main {
+        opacity: 0 !important;
+        transition: all 1s ease 0s !important;
+    }
   #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .hover {
-    display: block !important;
-    transition: all 1s ease;
+    opacity: 1 !important;
+   
   }
   #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .product-button-outer {
     opacity: 1;
@@ -1760,13 +1776,30 @@ footer .backtotop #to-top:hover::after {
     width: 100%;
     height: 80%;
   }
-  #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+
+    #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img{
+        width:100%;
+        position:relative;
+    }
+
+        #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+    #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
   #deal-of-the-day .swiper .swiper-slide .card-carousel .product-detail {
     width: 100%;
     height: 20%;
@@ -2253,12 +2286,12 @@ footer .backtotop #to-top:hover::after {
     top: 0px;
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .main {
-    display: none;
+    opacity: 0 !important;
     transition: all 1s ease;
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .hover {
-    display: block !important;
-    transition: all 1s ease;
+    opacity: 1 !important;
+  
   }
   #our-products .swiper .swiper-slide .card-carousel:hover .product-button-outer {
     opacity: 1;
@@ -2269,13 +2302,30 @@ footer .backtotop #to-top:hover::after {
     width: 100%;
     height: 80%;
   }
-  #our-products .swiper .swiper-slide .card-carousel .action-buttons img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+
+    #our-products .swiper .swiper-slide .card-carousel .action-buttons .img {
+        width: 100%;
+        position: relative;
+    }
+
+        #our-products .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+    #our-products .swiper .swiper-slide .card-carousel .action-buttons .img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
   #our-products .swiper .swiper-slide .card-carousel .product-detail {
     width: 100%;
     height: 20% !important;
@@ -3628,13 +3678,13 @@ body {
   right: -12px;
   top: 0px;
 }
-#our-products .swiper .swiper-slide .card-carousel:hover .main {
-  display: none;
-  transition: all 1s ease;
-}
+    #our-products .swiper .swiper-slide .card-carousel:hover .main {
+        opacity: 0 !important;
+        transition: all 1s ease 0s !important;
+    }
 #our-products .swiper .swiper-slide .card-carousel:hover .hover {
-  display: block !important;
-  transition: all 1s ease;
+  opacity: 1 !important;
+ 
 }
 #our-products .swiper .swiper-slide .card-carousel:hover .product-button-outer {
   opacity: 1;
@@ -3644,13 +3694,29 @@ body {
 #our-products .swiper .swiper-slide .card-carousel .action-buttons {
   width: 100%;
 }
-#our-products .swiper .swiper-slide .card-carousel .action-buttons img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+    #our-products .swiper .swiper-slide .card-carousel .action-buttons .img {
+        width: 100%;
+        position: relative;
+      
+    }
+        #our-products .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+        #our-products .swiper .swiper-slide .card-carousel .action-buttons .img img {
+            display:block;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
 #our-products .swiper .swiper-slide .card-carousel .product-detail {
   width: 100%;
   height: auto;
@@ -3951,14 +4017,14 @@ body {
   right: -12px;
   top: 0px;
 }
-#deal-of-the-day .swiper .swiper-slide .card-carousel:hover .main {
-  display: none;
-  transition: all 1s ease;
-}
-#deal-of-the-day .swiper .swiper-slide .card-carousel:hover .hover {
-  display: block !important;
-  transition: all 1s ease;
-}
+    #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .main {
+        opacity: 0 !important;
+        transition: all 1s ease 0s !important;
+    }
+    #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .hover {
+        opacity: 1 !important;
+      
+    }
 #deal-of-the-day .swiper .swiper-slide .card-carousel:hover .product-button-outer {
   opacity: 1;
   height: 7%;
@@ -3967,13 +4033,32 @@ body {
 #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons {
   width: 100%;
 }
-#deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+
+#deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img{
+        width: 100%;
+       
+        position:relative;
+    }
+
+ #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img .hover {
+            opacity: 0;
+            transition: all 1s ease !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            height: auto;
+        }
+ #deal-of-the-day .swiper .swiper-slide .card-carousel .action-buttons .img img {
+       display:block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      
+    }
 #deal-of-the-day .swiper .swiper-slide .card-carousel .product-detail {
   width: 100%;
   height: auto;
